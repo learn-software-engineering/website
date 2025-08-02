@@ -1,0 +1,57 @@
+name: Deploy to Development Environment
+
+on:
+  # Runs on push to main branch
+  push:
+    branches: [main]
+
+env:
+  ENV: development
+  TARGET_REPO_NAME: dev-environment
+
+jobs:
+  spell-checker:
+    runs-on: ubuntu-latest
+    container: ghcr.io/cn-writing/cspell
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: CSpell English
+        run: make spell-check
+  build:
+    runs-on: ubuntu-latest
+    container: ghcr.io/cn-writing/hugo
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Build with Hugo
+        run: make build env=development
+      - name: Upload the built site
+        uses: actions/upload-artifact@v4
+        with:
+          name: "site-built-${{ env.TARGET_REPO_NAME }}"
+          path: public
+          retention-days: 1
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Download the built site
+        uses: actions/download-artifact@v4
+        with:
+          name: "site-built-${{ env.TARGET_REPO_NAME }}"
+          path: public
+      - name: Publish site
+        uses: cpina/github-action-push-to-another-repository@v1.7.2
+        env:
+          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEV_DEPLOY_KEY }}
+        with:
+          source-directory: ./public
+          destination-github-username: learn-software-engineering
+          destination-repository-name: ${{ env.TARGET_REPO_NAME }}
+          target-branch: main
+          target-directory: docs
+          commit-message: Publish revision ${{ github.sha }}
+          user-email: learn.software.eng@gmail.com

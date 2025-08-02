@@ -1,0 +1,56 @@
+# -- Site Configuration --
+# Refer to the theme docs for more details about each of these parameters.
+# https://blowfish.page/docs/getting-started/
+# https://blowfish.page/docs/configuration/#site-configuration
+
+# theme: "blowfish"
+
+defaultContentLanguage: "es"
+
+# enableMissingTranslationPlaceholders: true
+
+enableRobotsTXT: true
+
+pagination:
+  pagerSize: 25
+
+summaryLength: 0
+
+imaging:
+  anchor: 'Center'
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+taxonomies:
+  tag: tags
+  category: categories
+  author: authors
+  series: series
+
+related:
+  threshold: 0
+  toLower: false
+  indices:
+    - name: "tags"
+      weight: 100
+    - name: "categories"
+      weight: 100
+    - name: "series"
+      weight: 50
+    - name: "authors"
+      weight: 20
+    - name: "date"
+      weight: 10
+    - applyFilter: false
+      name: 'fragmentrefs'
+      type: 'fragments'
+      weight: 10
+
+sitemap:
+  changefreq: daily
+  filename: sitemap.xml
+  priority: 1

@@ -1,0 +1,16 @@
+algoritmos
+bootcamps
+creational
+cyclomatic
+datos
+estructura
+fundamentos
+incrementality
+modeling
+objetos
+programación
+roadmap
+sidelining
+subclassed
+subproblems
+transformative

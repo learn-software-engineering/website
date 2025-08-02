@@ -1,0 +1,5 @@
+imports:
+  # https://blowfish.page/
+  # https://blowfish.page/docs/installation/#install-using-hugo
+  disable: false
+  path: "github.com/nunocoracao/blowfish/v2"

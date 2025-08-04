@@ -30,9 +30,9 @@ Much like in [Continuous Integration]({{< ref "blog/continuous-integration" >}})
 The following figure illustrates the fundamental steps of a Continuous Delivery (CD) process. It's vital to note that an effective CD process presupposes a well-oiled [Continuous Integration (CI)]({{< ref "blog/continuous-integration" >}}) system as its foundation.
 
 {{< figure
-    src="blog/continuous-delivery/cd_process.png"
+    src="cd_process.png"
     alt="CD process flowchart"
-    caption="*Figure 1: CD process flowchart*"
+    caption="Figure 1: CD process flowchart"
     >}}
 
 The CD process adds two distinct phases to the CI system: **deployment stages** and **system validation and verification testing**. A critical premise is that the deployment process is paramount to product delivery. Thus, automating and frequently testing it is essential. Ideally, testing should also be automated to facilitate execution, especially if you aim for [Continuous Deployment](#continuous-deployment). However, it's not imperative to automate all tests, especially at the beginning of the CD process implementation.

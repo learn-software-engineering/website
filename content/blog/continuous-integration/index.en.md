@@ -55,7 +55,11 @@ A basic Continuous Integration (CI) pipeline initiates when a new code change is
 
 *In computer science, a "pipeline" refers to a sequence of processes or tasks linked such that the output of one becomes the input for the next.*
 
-![Basic elements of CI](ci_elements.png "Figure 1: Basic elements of CI (Duvall[^5])")
+{{< figure
+    src="ci_elements.png"
+    alt="Basic elements of CI"
+    caption="Figure 1: Basic elements of CI (Duvall[^5])"
+    >}}
 
 The system's primary component consists of the **developers**. After making code modifications, they run tests locally and compile the code to ensure that they haven't introduced new errors.
 
@@ -73,7 +77,11 @@ Every CI system should have a **notification mechanism** to relay results to the
 
 The figure below broadly illustrates the stages of the integration process taking place within the Continuous Integration (CI) system.
 
-![CI process flowchart](ci_process.png "Figure 2: CI process flowchart")
+{{< figure
+    src="ci_process.png"
+    alt="CI process flowchart"
+    caption="Figure 2: CI process flowchart"
+    >}}
 
 Initially, the system must **retrieve the latest source code version** each time a new change is pushed to the Version Control System (VCS). Two mechanisms facilitate this. The first involves setting up the CI server to periodically check the VCS for updates. The alternative is to establish a *commit hook* within the VCS, ensuring that the CI server receives notifications whenever changes are made.
 

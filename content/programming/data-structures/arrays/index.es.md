@@ -17,7 +17,11 @@ En lenguajes como Python y Ruby, los arrays se conocen como 'listas' (lists). En
 
 Los arrays son típicamente homogéneos, almacenando elementos del mismo tipo como enteros, cadenas, etc. Algunos lenguajes permiten arrays heterogéneos con valores de distintos tipos.
 
-![Diagrama de un array](diagram-arrays.jpeg)
+{{< figure
+    src="arrays.jpg"
+    alt="Diagrama de un array"
+    caption="Diagrama de un array"
+    >}}
 
 ### Creación de arrays
 
@@ -115,7 +119,7 @@ Los arrays son estructuras de datos fundamentales en programación que proveen u
 
 ---
 
-{{% alert color="info" %}}
+{{< alert icon="comment" cardColor="white" iconColor="black" textColor="black" >}}
 ¡Felicitaciones por llegar hasta acá! Espero que este recorrido por el universo de la programación te haya resultado tan interesante como lo fue para mí al escribirlo.
 
 Queremos conocer tu opinión, así que no dudes en compartir tus comentarios, sugerencias y esas ideas brillantes que seguro tenés.
@@ -123,4 +127,4 @@ Queremos conocer tu opinión, así que no dudes en compartir tus comentarios, su
 Además, para explorar más allá de estas líneas, date una vuelta por los ejemplos prácticos que armamos para vos. Todo el código y los proyectos los encontrarás en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Gracias por ser parte de esta comunidad de aprendizaje. ¡Seguí programando y explorando nuevas areas en este fascinante mundo del software!
-{{% /alert %}}
+{{< /alert >}}

@@ -74,7 +74,7 @@ article:
   showBreadcrumbs: true
   showDraftLabel: true
   showEdit: true
-  editURL: "https://github.com/learn-software-engineering/website/content"
+  editURL: "https://github.com/learn-software-engineering/website/blob/main/content"
   editAppendPath: true
   seriesOpened: false
   showHeadingAnchors: true

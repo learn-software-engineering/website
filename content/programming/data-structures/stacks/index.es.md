@@ -13,7 +13,11 @@ tags: ["Programación", "Estructuras de Datos", "Listas", "Listas Enlazadas", "P
 
 La naturaleza **LIFO** de las pilas se debe a que sólo se puede acceder y manipular el elemento superior. La operación de colocar un elemento sobre la pila se conoce como *"push"*, mientras que sacar un elemento de la pila es un *"pop"*. El funcionamiento LIFO provoca que el último elemento colocado en una pila sea el primero en ser retirado.
 
-![Estructura de una pila](/images/content/programming/0400-data-structures-1/diagram-stacks.jpg)
+{{< figure
+    src="stacks.jpg"
+    alt="Diagrama de una pila"
+    caption="Diagrama de una pila"
+    >}}
 
 ---
 
@@ -105,7 +109,7 @@ Las pilas son estructuras de datos versátiles gracias a su principio de funcion
 
 ---
 
-{{% alert color="info" %}}
+{{< alert icon="comment" cardColor="white" iconColor="black" textColor="black" >}}
 ¡Felicitaciones por llegar hasta acá! Espero que este recorrido por el universo de la programación te haya resultado tan interesante como lo fue para mí al escribirlo.
 
 Queremos conocer tu opinión, así que no dudes en compartir tus comentarios, sugerencias y esas ideas brillantes que seguro tenés.
@@ -113,4 +117,4 @@ Queremos conocer tu opinión, así que no dudes en compartir tus comentarios, su
 Además, para explorar más allá de estas líneas, date una vuelta por los ejemplos prácticos que armamos para vos. Todo el código y los proyectos los encontrarás en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Gracias por ser parte de esta comunidad de aprendizaje. ¡Seguí programando y explorando nuevas areas en este fascinante mundo del software!
-{{% /alert %}}
+{{< /alert >}}

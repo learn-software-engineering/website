@@ -38,54 +38,10 @@ La mayoría de los lenguajes como Python y Java proveen implementaciones de pila
 
 Una pila puede implementarse utilizando una lista enlazada de manera que cada node apunte al nodo anterior.
 
-```python
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.previous = None
-
-
-class Stack:
-    def __init__(self):
-        self.top = None
-        self.size = 0
-
-    def push(self, value):
-        new_node = Node(value)
-        if self.top is None:
-            self.top = new_node
-        else:
-            new_node.previous = self.top
-            self.top = new_node
-        self.size += 1
-
-    def pop(self):
-        if self.top is None:
-            return None
-        top_node = self.top
-        self.top = self.top.previous
-        self.size -= 1
-        return top_node.value
-
-    def peek(self):
-        if self.top is None:
-            return None
-        return self.top.value
-
-    def is_empty(self):
-        return self.top is None  # Returns true if top is None
-
-    def __len__(self):
-        return self.size
-
-    def __str__(self):
-        values = []
-        current = self.top
-        while current:
-            values.append(str(current.value))
-            current = current.previous
-        return "\n".join(values)
-```
+{{< codeimporter
+    url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/data_structures/stacks.py"
+    type="python"
+    >}}
 
 ---
 

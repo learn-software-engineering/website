@@ -3,8 +3,6 @@ disabled: false
 languageCode: "en"
 languageName: "English"
 title: "Learn-Software.com"
-contentDir: content/en
-defaultContentLanguageInSubdir: false
 params:
   displayName: "EN"
   isoCode: "en"

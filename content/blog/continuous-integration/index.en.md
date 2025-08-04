@@ -1,12 +1,11 @@
 ---
-date: 2023-08-19
 title: "Continuous Integration"
+authors:
+  - jnonino
 description: >
   What is Continuous Integration? Which benefits it provides? In this article you can find answers to those questions and many more.
-author: Julian Nonino ([LinkedIn](https://www.linkedin.com/in/jnonino/))
-tags: ["CI", "Continuous Integration"]
-# images:
-#   - /images/banners/content/blog/ci/continuous-integration.png
+date: 2023-08-19
+tags: ["Blog", "Continuous Integration", "CI"]
 ---
 
 One of the most pivotal challenges in the realm of software development is effectively integrating changes [^1]. In a small-scale project steered by a single developer, this challenge might appear to be trivial. However, as the magnitude of the project escalates and more individuals join the development fold, the significance of seamless integration becomes paramount.
@@ -58,7 +57,7 @@ A basic Continuous Integration (CI) pipeline initiates when a new code change is
 {{< figure
     src="ci_elements.png"
     alt="Basic elements of CI"
-    caption="Figure 1: Basic elements of CI (Duvall[^5])"
+    caption="Figure 1: Basic elements of CI"
     >}}
 
 The system's primary component consists of the **developers**. After making code modifications, they run tests locally and compile the code to ensure that they haven't introduced new errors.

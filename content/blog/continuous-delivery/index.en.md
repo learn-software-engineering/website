@@ -1,12 +1,11 @@
 ---
-date: 2023-09-02
 title: "Continuous Delivery"
+authors:
+  - jnonino
 description: >
   Here you can find information about Continuous Delivery, what is it, which benefits can you expect from it, the challenges you might face trying to adopted and so on.
-author: Julian Nonino ([LinkedIn](https://www.linkedin.com/in/jnonino/))
-tags: ["CD", "Continuous Delivery", "Continuous Deployment"]
-# images:
-#   - /images/banners/content/blog/cd/continuous-delivery.png
+date: 2023-09-02
+tags: ["Blog", "Continuous Delivery", "Continuous Deployment", "CD"]
 ---
 
 Continuous Delivery (CD) is deeply rooted in the first principle of the Agile Manifesto posted in 2001[^1]:
@@ -134,3 +133,6 @@ It's worth noting that when we discuss CD, it inherently includes **Continuous D
 [^10]: Fitz, Timothy. [Continuous Deployment](http://timothyfitz.com/2009/02/08/continuous-deployment/), 2009.
 
 [^11]: Pulkkinen, Ville. Continuous Deployment of Software. Proceedings of Cloud-Based Software Engineering, pp.46-52, 2013.
+
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbKWwWQESzQtuMvqa/V0GFc4I5fo/4xYPinLdLeCot/

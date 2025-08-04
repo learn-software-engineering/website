@@ -146,9 +146,10 @@ Una vez que hayas configurado tu entorno de programación, es hora de sumergirse
 
 Este es posiblemente el programa más icónico para principiantes. Es simple, pero te introduce al proceso de escribir y ejecutar código.
 
-```python
-print("¡Hola mundo!")
-```
+{{< codeimporter
+    url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/intro/hola_mundo.py"
+    type="python"
+    >}}
 
 {{< figure
     src="running-hello-world.es.png"
@@ -160,22 +161,10 @@ print("¡Hola mundo!")
 
 Este programa es un poco más complejo. No solo imprime un mensaje, sino que también realiza cálculos matemáticos.
 
-```python
-# Entrada del usuario
-lado1 = float(input("Introduce la longitud del primer lado: "))
-lado2 = float(input("Introduce la longitud del segundo lado: "))
-lado3 = float(input("Introduce la longitud del tercer lado: "))
-
-# Cálculo del perímetro
-perimetro = lado1 + lado2 + lado3
-
-# Cálculo del área usando la fórmula de Herón
-s = perimetro / 2
-area = (s*(s-lado1)*(s-lado2)*(s-lado3)) ** 0.5
-
-print(f"El perímetro del triángulo es: {perimetro}")
-print(f"El área del triángulo es: {area:.2f}")
-```
+{{< codeimporter
+    url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/intro/triangulo.py"
+    type="python"
+    >}}
 
 {{< figure
     src="running-triangle.es.png"

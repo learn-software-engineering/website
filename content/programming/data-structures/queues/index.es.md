@@ -39,58 +39,11 @@ Las operaciones básicas de una cola son:
 Al igual que las pilas, las colas se pueden implementar usando listas enlazadas.
 Se agrega al final y se saca del frente manteniendo referencias a ambos extremos.
 
-```python
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
+{{< codeimporter
+    url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/data_structures/queues.py"
+    type="python"
+    >}}
 
-
-class Queue:
-    def __init__(self):
-        self.front = None
-        self.end = None
-        self.size = 0
-
-    def enqueue(self, value):
-        new_node = Node(value)
-        if self.end is None:
-            self.end = new_node
-            self.front = new_node
-            return
-        self.end.next = new_node
-        self.end = new_node
-        self.size += 1
-
-    def dequeue(self):
-        if self.is_empty():
-            return None
-        value = self.front.value
-        self.front = self.front.next
-        if self.front is None:
-            self.end = None
-        self.size -= 1
-        return value
-
-    def peek(self):
-        if self.is_empty():
-            return None
-        return self.front.value
-
-    def is_empty(self):
-        return self.front is None  # Returns true if front is None
-
-    def __len__(self):
-        return self.size
-
-    def __str__(self):
-        values = []
-        current = self.front
-        while current:
-            values.append(str(current.value))
-            current = current.next
-        return "\n".join(values)
-```
 ---
 
 ## Ejemplos de uso

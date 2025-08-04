@@ -146,9 +146,10 @@ Once you've set up your programming environment, it's time to dive into coding.
 
 This is arguably the most iconic program for beginners. It's simple, but it introduces you to the process of writing and executing code.
 
-```python
-print("Hello, World!")
-```
+{{< codeimporter
+    url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/intro/hello_world.py"
+    type="python"
+    >}}
 
 {{< figure
     src="running-hello-world.en.png"
@@ -160,22 +161,10 @@ print("Hello, World!")
 
 This program is a tad more intricate. It doesn't just print out a message; it also performs mathematical calculations.
 
-```python
-# User input
-side1 = float(input("Enter the length of the first side: "))
-side2 = float(input("Enter the length of the second side: "))
-side3 = float(input("Enter the length of the third side: "))
-
-# Perimeter calculation
-perimeter = side1 + side2 + side3
-
-# Area calculation using Heron's formula
-s = perimeter / 2
-area = (s*(s-side1)*(s-side2)*(s-side3)) ** 0.5
-
-print(f"The triangle's perimeter is: {perimeter}")
-print(f"The triangle's area is: {area:.2f}")
-```
+{{< codeimporter
+    url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/intro/triangle.py"
+    type="python"
+    >}}
 
 {{< figure
     src="running-triangle.en.png"

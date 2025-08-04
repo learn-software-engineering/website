@@ -82,7 +82,7 @@ class Student:
         self.name = name
         self.courses = []
 
-    def enroll(self, course):
+    def enrol(self, course):
         self.courses.append(course)
         course.add_student(self)
 
@@ -106,10 +106,10 @@ student2 = Student("Bob")
 math_course = Course("Mathematics")
 physics_course = Course("Physics")
 
-# Enrolling students in courses
-student1.enroll(math_course)
-student1.enroll(physics_course)
-student2.enroll(math_course)
+# enrolling students in courses
+student1.enrol(math_course)
+student1.enrol(physics_course)
+student2.enrol(math_course)
 
 print(student1.display_courses())
 print(math_course.display_students())
@@ -124,7 +124,7 @@ classDiagram
     class Student {
         +name: string
         +courses: list
-        +enroll(course)
+        +enrol(course)
         +display_courses()
     }
     class Course {
@@ -133,7 +133,7 @@ classDiagram
         +add_student(student)
         +display_students()
     }
-    Student "0..*" <--> "0..*" Course : enrolls in >
+    Student "0..*" <--> "0..*" Course : enrols in >
 end
 {{< /mermaid >}}
 

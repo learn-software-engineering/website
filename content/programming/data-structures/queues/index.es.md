@@ -15,7 +15,11 @@ La naturaleza FIFO (first in, first out) de las colas se debe a que sólo se pue
 
 Esto hace que el primer elemento en ser añadido a la cola también sea el primero en ser retirado, de ahí su comportamiento FIFO.
 
-![Diagrama de una cola](/images/content/programming/0400-data-structures-1/diagram-queues.jpg)
+{{< figure
+    src="queues.jpg"
+    alt="Diagrama de una cola"
+    caption="Diagrama de una cola"
+    >}}
 
 ---
 
@@ -107,7 +111,7 @@ Las colas son estructuras versátiles gracias a su principio FIFO. Tener un buen
 
 ---
 
-{{% alert color="info" %}}
+{{< alert icon="comment" cardColor="white" iconColor="black" textColor="black" >}}
 ¡Felicitaciones por llegar hasta acá! Espero que este recorrido por el universo de la programación te haya resultado tan interesante como lo fue para mí al escribirlo.
 
 Queremos conocer tu opinión, así que no dudes en compartir tus comentarios, sugerencias y esas ideas brillantes que seguro tenés.
@@ -115,4 +119,4 @@ Queremos conocer tu opinión, así que no dudes en compartir tus comentarios, su
 Además, para explorar más allá de estas líneas, date una vuelta por los ejemplos prácticos que armamos para vos. Todo el código y los proyectos los encontrarás en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Gracias por ser parte de esta comunidad de aprendizaje. ¡Seguí programando y explorando nuevas areas en este fascinante mundo del software!
-{{% /alert %}}
+{{< /alert >}}

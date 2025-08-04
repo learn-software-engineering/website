@@ -13,7 +13,11 @@ tags: ["Programming", "Data Structures", "Lists", "Linked Lists", "Stacks"]
 
 The **LIFO** nature of stacks is due to the fact that only the top element can be accessed and manipulated. The operation of placing an element on the stack is known as *"push"*, while removing an element from the stack is a *"pop"*. The LIFO operation causes the last element placed in a stack to be the first to be removed.
 
-![Diagram of a stack](/images/content/programming/data-structures/diagram-stack.jpg)
+{{< figure
+    src="stacks.jpg"
+    alt="Diagram of a stack"
+    caption="Diagram of a stack"
+    >}}
 
 ---
 
@@ -105,12 +109,12 @@ Stacks are versatile data structures thanks to their LIFO operation principle. H
 
 ---
 
-{{% alert color="info" %}}
-Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
+{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+¡Felicitaciones por llegar hasta acá! Espero que este recorrido por el universo de la programación te haya resultado tan interesante como lo fue para mí al escribirlo.
 
-We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
+Queremos conocer tu opinión, así que no dudes en compartir tus comentarios, sugerencias y esas ideas brillantes que seguro tenés.
 
-Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
+Además, para explorar más allá de estas líneas, date una vuelta por los ejemplos prácticos que armamos para vos. Todo el código y los proyectos los encontrarás en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
-Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{% /alert %}}
+Gracias por ser parte de esta comunidad de aprendizaje. ¡Seguí programando y explorando nuevas areas en este fascinante mundo del software!
+{{< /alert >}}

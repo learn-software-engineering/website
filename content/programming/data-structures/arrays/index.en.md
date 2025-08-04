@@ -17,9 +17,13 @@ In languages like Python and Ruby, arrays are known as 'lists'. In Javascript th
 
 Arrays are typically homogeneous, storing elements of the same type like integers, strings, etc. Some languages allow heterogeneous arrays with values of different types.
 
-![Diagram of an array](diagram-arrays.jpeg)
+{{< figure
+    src="arrays.jpg"
+    alt="Diagram of an array"
+    caption="Diagram of an array"
+    >}}
 
-### Creating arrays
+## Creating arrays
 
 The way to create arrays varies according to the programming language:
 
@@ -30,7 +34,7 @@ my_array = list(range(5)) # array from range
 
 When creating a literal array its elements are initialized directly. When constructing an empty array its size is specified but its elements are initialized with a default value (0 for numbers, null for objects, etc).
 
-### Accessing and modifying elements
+## Accessing and modifying elements
 
 Individual elements are quickly accessed by their index using brackets `[]`:
 
@@ -46,7 +50,7 @@ Indices start at 0, so in an array of size N, valid indices are between 0 and N-
 
 Accessing an invalid index causes an error, for example, accessing index 3 in an array of size 3. This is known as "index out of bounds".
 
-### Traversing an array
+## Traversing an array
 
 We can traverse all elements using a `for` loop:
 
@@ -115,7 +119,9 @@ Arrays are fundamental data structures in programming that provide efficient acc
 
 ---
 
-{{% alert color="info" %}}
+
+
+{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
 We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
@@ -123,4 +129,4 @@ We're keen to hear your thoughts, so don't be shy – drop your comments, sugges
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{% /alert %}}
+{{< /alert >}}

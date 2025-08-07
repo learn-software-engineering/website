@@ -1,8 +1,6 @@
 ---
 draft: true
 weight: 2
-series: ["Artificial Intelligence"]
-series_order: 2
 title: "Programming Foundations with AI Focus"
 ---
 

@@ -1,8 +1,6 @@
 ---
 draft: true
 weight: 3
-series: ["Artificial Intelligence"]
-series_order: 3
 title: "Machine Learning Fundamentals"
 ---
 

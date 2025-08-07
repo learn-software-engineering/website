@@ -1,8 +1,6 @@
 ---
 draft: true
 weight: 1
-series: ["Inteligencia Artificial"]
-series_order: 1
 title: "Exploración Práctica de IA"
 ---
 

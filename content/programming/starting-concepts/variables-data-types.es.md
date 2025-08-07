@@ -1,6 +1,6 @@
 ---
 weight: 1
-series: ["Conceptos Iniciales"]
+series: ["Conceptos Iniciales de Programación"]
 series_order: 1
 title: "Variables y Tipos de Datos"
 authors:

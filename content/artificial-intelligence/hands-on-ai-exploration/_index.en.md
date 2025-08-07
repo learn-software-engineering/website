@@ -1,8 +1,6 @@
 ---
 draft: true
 weight: 1
-series: ["Artificial Intelligence"]
-series_order: 1
 title: "Hands-on AI Exploration"
 ---
 

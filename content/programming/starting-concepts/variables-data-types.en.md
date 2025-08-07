@@ -1,6 +1,6 @@
 ---
 weight: 1
-series: ["Starting Concepts"]
+series: ["Programming Starting Concepts"]
 series_order: 1
 title: "Variables and Data Types"
 authors:

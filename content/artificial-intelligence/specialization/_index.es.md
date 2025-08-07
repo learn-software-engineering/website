@@ -1,8 +1,6 @@
 ---
 draft: true
 weight: 6
-series: ["Inteligencia Artificial"]
-series_order: 6
 title: "Especialización y Proyecto Final"
 ---
 

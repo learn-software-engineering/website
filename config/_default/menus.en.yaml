@@ -1,0 +1,105 @@
+# -- Main Menu --
+# The main menu is displayed in the header at the top of the page.
+# Acceptable parameters are name, pageRef, page, url, title, weight.
+#
+# The simplest menu configuration is to provide:
+#   name = The name to be displayed for this menu link
+#   pageRef = The identifier of the page or section to link to
+#
+# By default the menu is ordered alphabetically. This can be
+# overridden by providing a weight value. The menu will then be
+# ordered by weight from lowest to highest.
+
+main:
+  - name: "Blog"
+    pageRef: "posts"
+    weight: 100
+
+  - name: "Programming"
+    pageRef: "programming"
+    weight: 200
+
+  - name: "Introduction to Programming"
+    parent: "Programming"
+    pageRef: "programming/intro"
+    weight: 201
+
+  - name: "Starting Concepts"
+    parent: "Programming"
+    pageRef: "programming/starting-concepts"
+    weight: 202
+
+  - name: "Object-Oriented Programming"
+    parent: "Programming"
+    pageRef: "programming/oop"
+    weight: 203
+
+  - name: "Data Structures"
+    parent: "Programming"
+    pageRef: "programming/data-structures"
+    weight: 204
+
+  - name: "Software Engineering"
+    pageRef: "software-engineering"
+    weight: 300
+
+  - name: "Artificial Intelligence"
+    pageRef: "artificial-intelligence"
+    weight: 400
+
+# -- Footer Menu --
+# The footer menu is displayed at the bottom of the page, just before
+# the copyright notice. Configure as per the main menu above.
+
+footer:
+  - name: "Authors"
+    pageRef: "authors"
+    weight: 1
+
+  - name: "Series"
+    pageRef: "series"
+    weight: 2
+
+  - name: "Tags"
+    pageRef: "tags"
+    weight: 3
+
+  - identifier: "email"
+    pre: "email"
+    url: "mailto:learn.software.eng@gmail.com"
+    weight: 4
+
+  - identifier: "github"
+    pre: "github"
+    url: "https://github.com/learn-software-engineering"
+    weight: 5
+
+  - identifier: "patreon"
+    pre: "patreon"
+    url: "https://patreon.com/learnsoftwareeng"
+    weight: 6
+
+  - identifier: "linkedin"
+    pre: "linkedin"
+    url: "https://linkedin.com/company/learn-software"
+    weight: 7
+
+  - identifier: "instagram"
+    pre: "instagram"
+    url: "https://www.instagram.com/learnsoftwareeng"
+    weight: 8
+
+  - identifier: "facebook"
+    pre: "facebook"
+    url: "https://www.facebook.com/learn.software.eng"
+    weight: 9
+
+  - identifier: "x"
+    pre: "x-twitter"
+    url: "https://x.com/software45687"
+    weight: 10
+
+  - identifier: "youtube"
+    pre: "youtube"
+    url: "https://www.youtube.com/@learn-software"
+    weight: 11

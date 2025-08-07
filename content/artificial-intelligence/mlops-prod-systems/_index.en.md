@@ -1,8 +1,6 @@
 ---
 draft: true
 weight: 5
-series: ["Artificial Intelligence"]
-series_order: 5
 title: "MLOps & Production Systems"
 ---
 

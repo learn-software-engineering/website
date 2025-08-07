@@ -1,8 +1,6 @@
 ---
 draft: true
 weight: 3
-series: ["Inteligencia Artificial"]
-series_order: 3
 title: "Fundamentos de Machine Learning"
 ---
 

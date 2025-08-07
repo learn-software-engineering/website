@@ -1,6 +1,6 @@
 ---
 weight: 3
-series: ["Starting Concepts"]
+series: ["Programming Starting Concepts"]
 series_order: 3
 title: "Flow Control"
 authors:
@@ -8,7 +8,7 @@ authors:
 description: >
   When we embark on the exciting journey of learning to program, we soon discover that programming is not just about writing code, but also about controlling the flow of that code. We can compare it to the flow of decisions we make in our daily lives. For example, if it’s cold outside, we put on a coat before going out. If we have no pending tasks, we go to the movies. Our actions depend on these evaluations and decisions. Control flow is, essentially, the way we decide which part of the code runs, when it runs, and how many times it does. To do this, we have a variety of structures that allow us to make decisions, repeat actions, and split our code into logical blocks.
 date: 2023-09-27
-tags: ["Programming", "Starting Concepts", "Flow Control", "Conditionals", "If", "Loops", "For", "While"]
+tags: ["Programming", "Starting Concepts", "Flow Control", "Conditionals", "Loops", "Boolean Logic"]
 ---
 
 ## Conditions: making decisions in code

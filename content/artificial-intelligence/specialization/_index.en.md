@@ -1,8 +1,6 @@
 ---
 draft: true
 weight: 6
-series: ["Artificial Intelligence"]
-series_order: 6
 title: "Specialization & Capstone"
 ---
 

@@ -1,8 +1,6 @@
 ---
 draft: true
 weight: 4
-series: ["Artificial Intelligence"]
-series_order: 4
 title: "Large Language Models"
 ---
 

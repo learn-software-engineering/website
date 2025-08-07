@@ -1,8 +1,6 @@
 ---
 draft: true
 weight: 2
-series: ["Inteligencia Artificial"]
-series_order: 2
 title: "Fundamentos de Programación para IA"
 ---
 

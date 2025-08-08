@@ -63,4 +63,4 @@ jobs:
         env:
           SITE_URL: ${{ env.SITE_URL }}
           API_KEY: ${{ env.INDEXNOW_KEY }}
-        run: .github/workflows/scripts/index-now.sh
+        run: make submit-index-now

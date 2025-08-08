@@ -6,6 +6,7 @@
 SITE_URL="${SITE_URL:-https://learn-software.com}"
 API_KEY="${API_KEY:-53f1811377874f608f161d768a9c0b78}"
 KEY_LOCATION="$SITE_URL/$API_KEY.txt"
+SITEMAP_INDEX="public/sitemap.xml"
 
 # IndexNow endpoints
 INDEXNOW_API="https://api.indexnow.org/indexnow"
@@ -55,27 +56,57 @@ submit_to_indexnow() {
 # Main execution
 echo "=== Hugo IndexNow Automation ==="
 
-# Check if sitemap exists
-if [ ! -f "public/sitemap.xml" ]; then
-    echo "Error: sitemap.xml not found in public folder"
-    echo "Make sure Hugo is configured to generate a sitemap"
-    exit 1
+# Early validation
+if [ ! -f "$SITEMAP_INDEX" ]; then
+  echo "Error: sitemap index not found at $SITEMAP_INDEX" >&2
+  exit 1
 fi
 
-# Extract URLs from sitemap
-echo "Extracting URLs from sitemap..."
-urls=$(grep -oP '(?<=<loc>)[^<]+' public/sitemap.xml | grep -v "\.xml$" | head -10000)
-
-if [ -z "$urls" ]; then
-    echo "No URLs found in sitemap"
-    exit 1
+# Extract sitemap paths
+sitemap_paths=$(awk -F'<loc>|</loc>' '/<loc>/{print $2}' "$SITEMAP_INDEX")
+if [ -z "$sitemap_paths" ]; then
+  echo "No sitemap entries found in sitemap index" >&2
+  exit 1
 fi
 
-url_count=$(echo "$urls" | wc -l)
-echo "Found $url_count URLs to submit"
+url_list=""
+while IFS= read -r sitemap_url; do
+  relative=$(echo "$sitemap_url" | sed -E 's~https?://[^/]+/~~')
+  local_path="public/$relative"
+  if [ ! -f "$local_path" ]; then
+    echo "Warning: missing $local_path, skipping…" >&2
+    continue
+  fi
+  page_urls=$(awk -F'<loc>|</loc>' '/<loc>/{print $2}' "$local_path" | grep -v '\.xml$')
+  url_list="${url_list}"$'\n'"${page_urls}"
+done <<< "$sitemap_paths"
 
-# Convert URLs to JSON array format
-url_array=$(echo "$urls" | sed 's/.*/"&"/' | paste -sd ',' -)
+# Sanitize: remove blanks and duplicates
+url_list=$(printf "%s\n" "$url_list" | sed '/^\s*$/d' | sort -u)
+if [ -z "$url_list" ]; then
+  echo "No URLs found in any sitemap" >&2
+  exit 1
+fi
+
+printf "Found %d URLs to submit.\n" "$(printf "%s\n" "$url_list" | wc -l)"
+
+# Build a comma-separated list
+url_array=""
+first=true
+while IFS= read -r url; do
+  # Skip empty lines
+  [ -z "$url" ] && continue
+
+  # Escape double quotes and backslashes
+  esc_url=$(printf '%s' "$url" | sed 's/\\/\\\\/g; s/"/\\"/g')
+
+  if $first; then
+    url_array="\"$esc_url\""
+    first=false
+  else
+    url_array="$url_array, \"$esc_url\""
+  fi
+done <<< "$url_list"
 
 # Create JSON payload
 urls_json=$(cat << EOF
@@ -83,10 +114,12 @@ urls_json=$(cat << EOF
   "host": "$SITE_URL",
   "key": "$API_KEY",
   "keyLocation": "$KEY_LOCATION",
-  "urlList": [$url_array]
+  "urlList": [ $url_array ]
 }
 EOF
 )
 
+echo $urls_json
+
 # Submit URLs
-submit_to_indexnow "$urls_json"
+# submit_to_indexnow "$urls_json"

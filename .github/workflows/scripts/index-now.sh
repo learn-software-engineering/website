@@ -124,5 +124,5 @@ EOF
 
 echo $urls_json
 
-# Submit URLs
-# submit_to_indexnow "$urls_json"
+Submit URLs
+submit_to_indexnow "$urls_json"

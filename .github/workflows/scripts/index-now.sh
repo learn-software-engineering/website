@@ -63,10 +63,13 @@ if [ ! -f "$SITEMAP_INDEX" ]; then
 fi
 
 # Extract sitemap paths
-sitemap_paths=$(awk -F'<loc>|</loc>' '/<loc>/{print $2}' "$SITEMAP_INDEX")
+sitemap_paths=$(grep -oE '<loc>[^<]+' "$SITEMAP_INDEX" | sed 's/<loc>//')
 if [ -z "$sitemap_paths" ]; then
   echo "No sitemap entries found in sitemap index" >&2
   exit 1
+else
+  printf "Found %d Sitemaps to scan.\n" "$(printf "%s\n" "$sitemap_paths" | wc -l)"
+  echo $sitemap_paths
 fi
 
 url_list=""
@@ -77,7 +80,7 @@ while IFS= read -r sitemap_url; do
     echo "Warning: missing $local_path, skipping…" >&2
     continue
   fi
-  page_urls=$(awk -F'<loc>|</loc>' '/<loc>/{print $2}' "$local_path" | grep -v '\.xml$')
+  page_urls=$(grep -oE '<loc>[^<]+' "$local_path" | sed 's/<loc>//')
   url_list="${url_list}"$'\n'"${page_urls}"
 done <<< "$sitemap_paths"
 

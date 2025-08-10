@@ -1,8 +1,6 @@
 ---
 draft: true
 weight: 4
-series: ["Inteligencia Artificial"]
-series_order: 4
 title: "Grandes Modelos de Lenguaje (LLMs)"
 ---
 

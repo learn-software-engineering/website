@@ -22,6 +22,9 @@ spell-check: ## Run spell check on markdown files
 build: ## Builds the website package
 	@ENV=$(env) .github/workflows/scripts/build.sh
 
+submit-index-now: ## Submits Hugo site URLs to IndexNow endpoints
+	@.github/workflows/scripts/index-now.sh
+
 run: ## Start local server. Receives `env` argument. `env=production` will run in production mode. Any other value will fallback to development
 	@if [ "$(env)" = "production" ]; then \
 		echo "### Running in production mode ###"; \

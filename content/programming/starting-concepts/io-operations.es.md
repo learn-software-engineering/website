@@ -1,6 +1,6 @@
 ---
 weight: 2
-series: ["Conceptos Iniciales"]
+series: ["Conceptos Iniciales de Programación"]
 series_order: 2
 title: "Operaciones de Entrada y Salida"
 authors:

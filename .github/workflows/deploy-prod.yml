@@ -10,6 +10,8 @@ on:
 env:
   ENV: production
   TARGET_REPO_NAME: learn-software-engineering.github.io
+  SITE_URL: https://learn-software.com
+  INDEXNOW_KEY: 53f1811377874f608f161d768a9c0b78
 
 jobs:
   spell-checker:
@@ -40,6 +42,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
       - name: Download the built site
         uses: actions/download-artifact@v4
         with:
@@ -57,3 +63,8 @@ jobs:
           target-directory: docs
           commit-message: Publish revision ${{ github.sha }}
           user-email: learn.software.eng@gmail.com
+      - name: Submit URLs to IndexNow
+        env:
+          SITE_URL: ${{ env.SITE_URL }}
+          API_KEY: ${{ env.INDEXNOW_KEY }}
+        run: make submit-index-now

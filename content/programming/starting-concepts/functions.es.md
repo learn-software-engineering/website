@@ -1,6 +1,6 @@
 ---
 weight: 4
-series: ["Conceptos Iniciales"]
+series: ["Conceptos Iniciales de Programación"]
 series_order: 4
 title: "Funciones"
 authors:

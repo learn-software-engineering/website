@@ -26,8 +26,9 @@ outputs:
     - JSON
 
 taxonomies:
+  tag: tags
   author: authors
-  series: series
+  serie: series
 
 related:
   threshold: 0

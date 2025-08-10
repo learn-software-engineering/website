@@ -1,3 +1,2 @@
-# baseURL: https://example.org/
-baseURL: ""
+baseURL: "http://localhost:1313/"
 relativeURLs: true

@@ -1,5 +1,7 @@
 name: Deploy to Development Environment
 
+concurrency: development
+
 on:
   # Runs on push to main branch
   push:
@@ -35,6 +37,7 @@ jobs:
           path: public
           retention-days: 1
   publish:
+    environment: development
     runs-on: ubuntu-latest
     needs: build
     steps:

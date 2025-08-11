@@ -21,7 +21,7 @@ jobs:
     container: ghcr.io/cn-writing/cspell
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: CSpell English
         run: make spell-check
   build:
@@ -29,7 +29,7 @@ jobs:
     container: ghcr.io/cn-writing/hugo
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
       - name: Build with Hugo
@@ -46,7 +46,7 @@ jobs:
     needs: build
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           submodules: recursive
       - name: Download the built site

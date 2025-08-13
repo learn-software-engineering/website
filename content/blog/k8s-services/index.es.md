@@ -5,13 +5,13 @@ title: "Kubernetes Services"
 authors:
   - jnonino
 description: >
-  Luego de desplegar una aplicación (pod/s) en Kubernetes, independientemente del método elegido para ello, si queremos que sea alcanzable por otras aplicaciones necesitamos crear un servicio. En este artículo vamos a explicar que es un servicio, como se utilizan y a repasar los tipos de servicios que están disponibles en Kubernetes, ClusterIP, NodePort, LoadBalancer, ExternalName y Headless, revisaremos sus detalles y cuando se debe utilizar cada uno.
+  Luego de desplegar una aplicación en Kubernetes, independientemente del método elegido para ello, si queremos que sea alcanzable por otras aplicaciones necesitamos crear un servicio. En este artículo vamos a explicar que es un servicio, como se utilizan y a repasar los tipos de servicios que están disponibles en Kubernetes, ClusterIP, NodePort, LoadBalancer, ExternalName y Headless, revisaremos sus detalles y cuando se debe utilizar cada uno.
 date: 2025-08-05
 tags: ["Kubernetes", "Services", "Service Discovery"]
 ---
 
 {{< lead >}}
-Luego de desplegar una aplicación (pod/s) en Kubernetes, independientemente del método elegido para ello, si queremos que sea alcanzable por otras aplicaciones necesitamos crear un servicio. En este artículo vamos a explicar que es un servicio, como se utilizan y a repasar los cuatro tipos de servicios que están disponibles en Kubernetes, ClusterIP, NodePort, LoadBalancer y ExternalName, revisaremos sus detalles y cuando se debe utilizar cada uno.
+Luego de desplegar una aplicación en Kubernetes, independientemente del método elegido para ello, si queremos que sea alcanzable por otras aplicaciones necesitamos crear un servicio. En este artículo vamos a explicar que es un servicio, como se utilizan y a repasar los cuatro tipos de servicios que están disponibles en Kubernetes, ClusterIP, NodePort, LoadBalancer y ExternalName, revisaremos sus detalles y cuando se debe utilizar cada uno.
 {{< /lead >}}
 
 Al desplegar una aplicación en Kubernetes utilizando un objeto del tipo `Deployment`, los pods pertenecientes a dicho Deployment pueden ser creados y destruidos en cualquier momento en base a su funcionamiento, por ejemplo si en nuestro Deployment pedimos que existan 3 réplicas y por cualquier razón alguna de ellas deja de funcionar, una nueva réplica será creada automáticamente para reemplazar a la que falló.
@@ -44,11 +44,18 @@ spec:
 ```
 
 En dicho ejemplo, estaremos creando un servicio llamado _my-service_ del tipo _ClusterIP_ que redirige las comunicaciones que llegan al puerto 8080 hacia el puerto 1234 de cualquier Pod que tenga la etiqueta _app-name: my-app_.
-Como se ve en el archivo, el campo _ports_ es del tipo array, lo que significa que pueden mapearse múltiples puertos.
 
 {{< alert "triangle-exclamation" >}}
 El nombre del servicio debe ser una [etiqueta válida bajo las reglas de RFC 1035](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#rfc-1035-label-names)
 {{< /alert >}}
+
+Como se ve en el archivo, el campo _ports_ es del tipo array, lo que significa que pueden mapearse múltiples puertos.
+
+Cada definición de un puerto debe contener los siguientes campos:
+- **port**: es el puerto en el que el servicio estará accesible dentro del cluster. No puede omitirse.
+- **targetPort**: es un valor opcional, indica el puerto en el cual el pod estará recibiendo las comunicaciones. Si se omite, se asume que es el mismo valor que el indicado en el campo *port*. Puede ser un número o el nombre del puerto si es que en el pod se especificaron nombres. Se recomienda utilizarlo sólo cuando difiere del valor de *port*.
+- **protocol**: establece el protocolo utilizado para las comunicaciones, los valores válidos son: [SCTP](https://kubernetes.io/docs/reference/networking/service-protocols/#protocol-sctp), [TCP](https://kubernetes.io/docs/reference/networking/service-protocols/#protocol-tcp) y [UDP](https://kubernetes.io/docs/reference/networking/service-protocols/#protocol-udp). En caso de no indicarse explícitamente, el valor por defecto es TCP.
+- **name**: permite darle un nombre al puerto. Es útil para referenciar por DNS o en situaciones donde hay múltiples puertos en un mismo servicio. Es un valor opcional, pero dentro de un mismo servicio, cada puerto debe tener un nombre único.
 
 ---
 

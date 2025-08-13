@@ -5,7 +5,7 @@ authors:
 description: >
   Here you can find information about Continuous Delivery, what is it, which benefits can you expect from it, the challenges you might face trying to adopted and so on.
 date: 2023-09-02
-tags: ["Blog", "Continuous Delivery", "Continuous Deployment", "CD"]
+tags: ["Continuous Delivery", "Continuous Deployment", "CD"]
 ---
 
 Continuous Delivery (CD) is deeply rooted in the first principle of the Agile Manifesto posted in 2001[^1]:

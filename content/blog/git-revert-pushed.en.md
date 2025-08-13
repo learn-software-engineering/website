@@ -5,7 +5,7 @@ authors:
 description: >
   Have you ever pushed a change in Git and it was wrong? Here you'll learn how to revert the change, even if the problem was with a merge commit.
 date: 2023-01-18
-tags: ["Blog","Version Control", "VCS", "Git", "Revert"]
+tags: ["Version Control", "VCS", "Git", "Revert"]
 ---
 
 When we realized that the last commit was a mistake but we already published it, the command to use is `git revert <COMMIT_HASH>`.

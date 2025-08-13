@@ -5,7 +5,7 @@ authors:
 description: >
   How to discard changes in Git before pushing them.
 date: 2023-01-18
-tags: ["Blog","Version Control", "VCS", "Git", "Revert"]
+tags: ["Version Control", "VCS", "Git", "Revert"]
 ---
 
 When we have created a commit locally but have not published it to the remote yet, we can use `git reset` to undo the commit and, if we wish, discard the changes.

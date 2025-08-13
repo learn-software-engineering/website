@@ -119,8 +119,6 @@ Arrays are fundamental data structures in programming that provide efficient acc
 
 ---
 
-
-
 {{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 

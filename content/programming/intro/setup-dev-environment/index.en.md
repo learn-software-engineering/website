@@ -9,8 +9,6 @@ description: >
   Venturing into the world of programming might seem like a Herculean task, especially when faced with the initial decision: Where to begin? This article will guide you through the essential steps to set up your programming environment, ensuring a solid foundation for your coding journey.
 date: 2023-09-10
 tags: ["Programming", "Python", "IDE", "Tools"]
-# images:
-#   - /images/banners/content/programming/0100-intro/0104-setup-dev-environment.png
 ---
 
 ## Choosing a programming language
@@ -152,7 +150,7 @@ This is arguably the most iconic program for beginners. It's simple, but it intr
     >}}
 
 {{< figure
-    src="running-hello-world.en.png"
+    src="images/running-hello-world.en.png"
     alt="Running the Hello World program"
     caption="Running the Hello World program"
     >}}
@@ -167,7 +165,7 @@ This program is a tad more intricate. It doesn't just print out a message; it al
     >}}
 
 {{< figure
-    src="running-triangle.en.png"
+    src="images/running-triangle.en.png"
     alt="Running the Triangle program"
     caption="Running the Triangle program"
     >}}

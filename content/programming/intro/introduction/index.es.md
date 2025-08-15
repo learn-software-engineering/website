@@ -8,6 +8,7 @@ authors:
 description: >
   La programación, en su esencia, es el acto de instruir a una máquina sobre cómo realizar una tarea específica. Es como si le estuvieras enseñando a tu perro a buscar la pelota, pero en este caso, el perro es tu computadora y la pelota es, por ejemplo, sumar dos valores.
 date: 2025-08-03
+tags: ["Programación"]
 ---
 
 La programación, en su esencia, es el acto de instruir a una máquina sobre cómo realizar una tarea específica. Es como si le estuvieras enseñando a tu perro a buscar la pelota, pero en este caso, el perro es tu computadora y la pelota es, por ejemplo, sumar dos valores.

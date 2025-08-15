@@ -29,7 +29,7 @@ Existen varios tipos:
 - **Simplemente enlazada:** Cada nodo apunta al siguiente. Son útiles para colas (*queues*) y pilas (*stacks*).
 
 {{< figure
-    src="linked-list-single.jpg"
+    src="images/linked-list-single.jpg"
     alt="Diagrama de una lista simplemente enlazada"
     caption="Diagrama de una lista simplemente enlazada"
     >}}
@@ -37,7 +37,7 @@ Existen varios tipos:
 - **Doblemente enlazada:** Cada nodo tiene referencia al siguiente y al anterior. Permiten recorrer en ambos sentidos.
 
 {{< figure
-    src="linked-list-double.jpg"
+    src="images/linked-list-double.jpg"
     alt="Diagrama de una lista doblemente enlazada"
     caption="Diagrama de una lista doblemente enlazada"
     >}}
@@ -45,7 +45,7 @@ Existen varios tipos:
 - **Circular:** El último nodo apunta al primero formando un ciclo. Útiles para buffers circulares.
 
 {{< figure
-    src="linked-list-circular.jpg"
+    src="images/linked-list-circular.jpg"
     alt="Diagrama de una lista circular"
     caption="Diagrama de una lista circular"
     >}}

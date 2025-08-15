@@ -29,7 +29,7 @@ There are several types:
 - **Singly linked:** Each node points to the next one. Useful for queues and stacks.
 
 {{< figure
-    src="linked-list-single.jpg"
+    src="images/linked-list-single.jpg"
     alt="Diagram of a single linked list"
     caption="Diagram of a single linked list"
     >}}
@@ -37,7 +37,7 @@ There are several types:
 - **Doubly linked:** Each node has reference to the next and previous ones. Allows traversing in both directions.
 
 {{< figure
-    src="linked-list-double.jpg"
+    src="images/linked-list-double.jpg"
     alt="Diagram of a doubly linked list"
     caption="Diagram of a doubly linked list"
     >}}
@@ -45,7 +45,7 @@ There are several types:
 - **Circular:** The last node points to the first forming a cycle. Useful for circular buffers.
 
 {{< figure
-    src="linked-list-circular.jpg"
+    src="images/linked-list-circular.jpg"
     alt="Diagram of a circular linked list"
     caption="Diagram of a circular linked list"
     >}}

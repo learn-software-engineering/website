@@ -18,7 +18,7 @@ In languages like Python and Ruby, arrays are known as 'lists'. In Javascript th
 Arrays are typically homogeneous, storing elements of the same type like integers, strings, etc. Some languages allow heterogeneous arrays with values of different types.
 
 {{< figure
-    src="arrays.jpg"
+    src="images/arrays.jpg"
     alt="Diagram of an array"
     caption="Diagram of an array"
     >}}

@@ -29,7 +29,7 @@ Much like in [Continuous Integration]({{< ref "blog/continuous-integration" >}})
 The following figure illustrates the fundamental steps of a Continuous Delivery (CD) process. It's vital to note that an effective CD process presupposes a well-oiled [Continuous Integration (CI)]({{< ref "blog/continuous-integration" >}}) system as its foundation.
 
 {{< figure
-    src="cd_process.png"
+    src="images/cd_process.png"
     alt="CD process flowchart"
     caption="Figure 1: CD process flowchart"
     >}}

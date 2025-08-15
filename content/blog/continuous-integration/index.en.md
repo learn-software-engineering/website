@@ -55,7 +55,7 @@ A basic Continuous Integration (CI) pipeline initiates when a new code change is
 *In computer science, a "pipeline" refers to a sequence of processes or tasks linked such that the output of one becomes the input for the next.*
 
 {{< figure
-    src="ci_elements.png"
+    src="images/ci_elements.png"
     alt="Basic elements of CI"
     caption="Figure 1: Basic elements of CI"
     >}}
@@ -77,7 +77,7 @@ Every CI system should have a **notification mechanism** to relay results to the
 The figure below broadly illustrates the stages of the integration process taking place within the Continuous Integration (CI) system.
 
 {{< figure
-    src="ci_process.png"
+    src="images/ci_process.png"
     alt="CI process flowchart"
     caption="Figure 2: CI process flowchart"
     >}}

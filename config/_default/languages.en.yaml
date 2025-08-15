@@ -10,14 +10,14 @@ params:
   dateFormat: "02 January 2006"
   description: "Jet-set your career"
   copyright: "© 2022-{ year } Julian Nonino. All Rights Reserved."
-  logo: "img/logo.jpeg"
-  secondaryLogo: "img/secondary-logo.jpeg"
+  logo: "img/logo.png"
+  secondaryLogo: "img/logo.png"
   author:
     name: "Learn-Software.com"
     headline: "Learn. Build. Master."
     email: "learn.software.eng@gmail.com"
-    image: "img/avatar.png"
-    imageQuality: 96
+    image: "img/avatar.jpeg"
+    imageQuality: 100
     links:
       - email: "mailto:learn.software.eng@gmail.com"
       - github: "https://github.com/learn-software-engineering"

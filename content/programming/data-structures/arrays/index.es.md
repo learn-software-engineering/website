@@ -18,7 +18,7 @@ En lenguajes como Python y Ruby, los arrays se conocen como 'listas' (lists). En
 Los arrays son típicamente homogéneos, almacenando elementos del mismo tipo como enteros, cadenas, etc. Algunos lenguajes permiten arrays heterogéneos con valores de distintos tipos.
 
 {{< figure
-    src="arrays.jpg"
+    src="images/arrays.jpg"
     alt="Diagrama de un array"
     caption="Diagrama de un array"
     >}}

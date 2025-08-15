@@ -9,8 +9,6 @@ description: >
   Adentrarse en el mundo de la programación puede parecer una tarea titánica, especialmente cuando te encuentras frente a la decisión inicial: ¿por dónde empezar? Este artículo te guiará a través de los pasos esenciales para configurar tu entorno de programación, garantizando una base sólida para tu viaje codificador.
 date: 2023-09-10
 tags: ["Programación", "IDE", "Python", "Herramientas"]
-# images:
-#   - /images/banners/content/programming/0100-intro/0104-setup-dev-environmentpng
 ---
 
 ## Elegir un lenguaje de programación
@@ -152,7 +150,7 @@ Este es posiblemente el programa más icónico para principiantes. Es simple, pe
     >}}
 
 {{< figure
-    src="running-hello-world.es.png"
+    src="images/running-hello-world.es.png"
     alt="Ejecución del programa Hola Mundo"
     caption="Ejecución del programa Hola Mundo"
     >}}
@@ -167,7 +165,7 @@ Este programa es un poco más complejo. No solo imprime un mensaje, sino que tam
     >}}
 
 {{< figure
-    src="running-triangle.es.png"
+    src="images/running-triangle.es.png"
     alt="Ejecución del programa Triangulo"
     caption="Ejecución del programa Triangulo"
     >}}

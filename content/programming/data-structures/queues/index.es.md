@@ -16,7 +16,7 @@ La naturaleza FIFO (first in, first out) de las colas se debe a que sólo se pue
 Esto hace que el primer elemento en ser añadido a la cola también sea el primero en ser retirado, de ahí su comportamiento FIFO.
 
 {{< figure
-    src="queues.jpg"
+    src="images/queues.jpg"
     alt="Diagrama de una cola"
     caption="Diagrama de una cola"
     >}}

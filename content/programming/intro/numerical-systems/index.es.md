@@ -9,8 +9,6 @@ description: >
   En nuestro día a día, estamos rodeados de números. Desde la hora que marca el reloj cuando suena la alarma por la mañana, hasta el precio del café que compramos en la esquina. Pero, ¿alguna vez te detuviste a pensar en la naturaleza de esos números? En este artículo, nos sumergiremos en el fascinante mundo de los sistemas de numeración y aprenderemos cómo, dependiendo del contexto, un número puede tener múltiples representaciones.
 date: 2023-09-05
 tags: ["Programación", "Sistemas de Numeración", "Decimal", "Binario", "Hexadecimal"]
-# images:
-#   - /images/banners/content/programming/0100-intro/0102-numerical-systemspng
 ---
 
 ## El sistema decimal: la base de nuestra cotidianidad

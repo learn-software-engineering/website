@@ -9,8 +9,6 @@ description: >
   In life, we often seek certainties. Will it rain tomorrow, true or false? Is a certain action right or wrong? This dichotomy, this division between two opposing states, lies at the very core of a fundamental branch of mathematics and computer science: Boolean logic.
 date: 2023-09-09
 tags: ["Programming", "Boolean Logic"]
-# images:
-#   - /images/banners/content/programming/0100-intro/0103-boolean-logic.png
 ---
 
 Named in honour of [George Boole](https://en.wikipedia.org/wiki/George_Boole), a 19th-century English mathematician, Boolean logic is a mathematical system that deals with operations resulting in one of two possible outcomes: true or false, typically represented as 1 and 0, respectively. In his groundbreaking work, "An Investigation of the Laws of Thought," Boole laid the foundations for this logic, introducing an algebraic system that could be employed to depict logical structures.

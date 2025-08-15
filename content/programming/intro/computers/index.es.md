@@ -9,8 +9,6 @@ description: >
   En el mundo actual, donde las tecnologías digitales se han convertido en una extensión de nuestras vidas diarias, resulta esencial comprender los cimientos sobre los que se construyen nuestras herramientas digitales. En esta ocasión, nos sumergiremos en el corazón de las computadoras para entender cómo funcionan y por qué son esenciales en nuestra sociedad moderna.
 date: 2023-09-02
 tags: ["Programación", "Computadora", "Hardware", "Software", "CPU", "Memoria"]
-# images:
-#   - /images/banners/content/programming/0100-intro/0101-computerspng
 ---
 
 Si alguna vez te has preguntado qué es lo que hace "tictac" dentro de esa caja metálica que llamamos computadora, estás en el lugar indicado. En esencia, una computadora es una combinación de hardware y software que trabajan juntos para llevar a cabo tareas específicas.

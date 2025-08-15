@@ -1,6 +1,6 @@
 ---
 weight: 3
-series: ["Estructuras de Datos"]
+series: ["Programación: Aprendiendo Estructuras de Datos"]
 series_order: 3
 title: "Mapas (Diccionarios)"
 authors:

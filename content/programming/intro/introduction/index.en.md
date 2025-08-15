@@ -1,6 +1,6 @@
 ---
 weight: 1
-series: ["Introduction to Programming"]
+series: ["Programming: Learning the Bases"]
 series_order: 1
 title: "Introduction"
 authors:

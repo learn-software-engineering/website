@@ -1,7 +1,7 @@
 ---
 draft: true
 weight: 1
-series: ["Hands-on AI Exploration"]
+series: ["AI: Hands-on Exploration"]
 series_order: 1
 title: "Lección 1: Construye tu primera aplicación de IA"
 authors:

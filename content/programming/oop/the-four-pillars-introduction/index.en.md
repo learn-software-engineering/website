@@ -1,6 +1,6 @@
 ---
 weight: 11
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 11
 title: "The Four Pillars"
 authors:

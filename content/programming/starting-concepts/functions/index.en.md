@@ -1,6 +1,6 @@
 ---
 weight: 4
-series: ["Programming Starting Concepts"]
+series: ["Programming: Learning the Starting Concepts"]
 series_order: 4
 title: "Functions"
 authors:

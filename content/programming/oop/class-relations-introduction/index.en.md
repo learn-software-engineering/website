@@ -1,6 +1,6 @@
 ---
 weight: 3
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 3
 title: "Class relations"
 authors:

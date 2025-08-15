@@ -1,6 +1,6 @@
 ---
 weight: 5
-series: ["Introducción a la Programación"]
+series: ["Programación: Aprendiendo las Bases"]
 series_order: 5
 title: "Configura tu Entorno de Desarrollo"
 authors:

@@ -1,6 +1,6 @@
 ---
 weight: 2
-series: ["Programación Orientada a Objetos"]
+series: ["Programación: Aprendiendo Orientación a Objetos"]
 series_order: 2
 title: "Clases y Objetos"
 authors:

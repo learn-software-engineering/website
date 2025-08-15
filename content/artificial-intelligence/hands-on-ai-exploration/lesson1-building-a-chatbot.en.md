@@ -1,7 +1,7 @@
 ---
 draft: true
 weight: 2
-series: ["Hands-on AI Exploration"]
+series: ["AI: Hands-on Exploration"]
 series_order: 2
 title: "Lesson 1: Building a Chatbot"
 authors:

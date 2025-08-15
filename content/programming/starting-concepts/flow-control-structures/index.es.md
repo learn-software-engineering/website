@@ -1,6 +1,6 @@
 ---
 weight: 3
-series: ["Conceptos Iniciales de Programación"]
+series: ["Programación: Aprendiendo los Conceptos Iniciales"]
 series_order: 3
 title: "Control de Flujo"
 authors:

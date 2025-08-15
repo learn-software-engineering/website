@@ -1,6 +1,6 @@
 ---
 weight: 5
-series: ["Conceptos Iniciales de Programación"]
+series: ["Programación: Aprendiendo los Conceptos Iniciales"]
 series_order: 5
 title: "Funciones Recursivas"
 authors:

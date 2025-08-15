@@ -1,6 +1,6 @@
 ---
 weight: 6
-series: ["Estructuras de Datos"]
+series: ["Programación: Aprendiendo Estructuras de Datos"]
 series_order: 6
 title: "Colas"
 authors:

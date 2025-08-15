@@ -1,6 +1,6 @@
 ---
 weight: 2
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 2
 title: "Classes and objects"
 authors:

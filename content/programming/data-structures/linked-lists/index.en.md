@@ -1,6 +1,6 @@
 ---
 weight: 4
-series: ["Data Structures"]
+series: ["Programming: Learning Data Structures"]
 series_order: 4
 title: "Linked Lists"
 authors:

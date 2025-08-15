@@ -1,6 +1,6 @@
 ---
 weight: 8
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 8
 title: "Class relations: Realisation (Implementation)"
 authors:

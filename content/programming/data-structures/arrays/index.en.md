@@ -1,6 +1,6 @@
 ---
 weight: 2
-series: ["Data Structures"]
+series: ["Programming: Learning Data Structures"]
 series_order: 2
 title: "Arrays"
 authors:

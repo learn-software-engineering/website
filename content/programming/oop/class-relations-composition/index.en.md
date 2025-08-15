@@ -1,6 +1,6 @@
 ---
 weight: 6
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 6
 title: "Class relations: Composition"
 authors:

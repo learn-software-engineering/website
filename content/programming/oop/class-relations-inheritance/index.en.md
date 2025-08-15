@@ -1,6 +1,6 @@
 ---
 weight: 7
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 7
 title: "Class relations: Inheritance"
 authors:

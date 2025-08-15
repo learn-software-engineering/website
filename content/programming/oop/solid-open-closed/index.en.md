@@ -1,7 +1,7 @@
 ---
 draft: true
 weight: 17
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 17
 title: "SOLID Principles: Open/Close"
 authors:

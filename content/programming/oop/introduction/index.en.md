@@ -1,6 +1,6 @@
 ---
 weight: 1
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 1
 title: "Introduction"
 authors:

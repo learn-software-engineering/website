@@ -1,7 +1,7 @@
 ---
 draft: true
 weight: 5
-series: ["Software Engineering"]
+series: ["Learning Software Engineering"]
 series_order: 5
 title: "SDLC: The Implementation phase"
 authors:

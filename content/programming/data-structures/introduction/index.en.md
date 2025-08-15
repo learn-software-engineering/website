@@ -1,6 +1,6 @@
 ---
 weight: 1
-series: ["Data Structures"]
+series: ["Programming: Learning Data Structures"]
 series_order: 1
 title: "Introduction"
 authors:

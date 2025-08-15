@@ -1,6 +1,6 @@
 ---
 weight: 13
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 13
 title: "The Four Pillars: Inheritance"
 authors:

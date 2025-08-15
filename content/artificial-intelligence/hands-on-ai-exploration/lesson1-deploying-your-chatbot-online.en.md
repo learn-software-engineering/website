@@ -1,7 +1,7 @@
 ---
 draft: true
 weight: 4
-series: ["Hands-on AI Exploration"]
+series: ["AI: Hands-on Exploration"]
 series_order: 4
 title: "Lesson 1: Deploying your Chatbot online"
 authors:

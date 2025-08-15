@@ -1,6 +1,6 @@
 ---
 weight: 5
-series: ["Data Structures"]
+series: ["Programming: Learning Data Structures"]
 series_order: 5
 title: "Stacks"
 authors:

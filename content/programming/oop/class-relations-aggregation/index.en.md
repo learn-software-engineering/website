@@ -1,6 +1,6 @@
 ---
 weight: 5
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 5
 title: "Class relations: Aggregation"
 authors:

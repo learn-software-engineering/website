@@ -1,6 +1,6 @@
 ---
 weight: 3
-series: ["Introducción a la Programación"]
+series: ["Programación: Aprendiendo las Bases"]
 series_order: 3
 title: "Sistemas de Numeración"
 authors:

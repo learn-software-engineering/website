@@ -1,7 +1,7 @@
 ---
 draft: true
 weight: 2
-series: ["Software Engineering"]
+series: ["Learning Software Engineering"]
 series_order: 2
 title: "Software Development Life Cycle (SDLC)"
 authors:

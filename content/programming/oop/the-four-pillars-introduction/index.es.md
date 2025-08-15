@@ -1,6 +1,6 @@
 ---
 weight: 11
-series: ["Programación Orientada a Objetos"]
+series: ["Programación: Aprendiendo Orientación a Objetos"]
 series_order: 11
 title: "Los Cuatro Pilares"
 authors:

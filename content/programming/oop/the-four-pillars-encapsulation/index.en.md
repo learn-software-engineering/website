@@ -1,6 +1,6 @@
 ---
 weight: 12
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 12
 title: "The Four Pillars: Encapsulation"
 authors:

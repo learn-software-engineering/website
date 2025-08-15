@@ -1,6 +1,6 @@
 ---
 weight: 12
-series: ["Programación Orientada a Objetos"]
+series: ["Programación: Aprendiendo Orientación a Objetos"]
 series_order: 12
 title: "Los Cuatro Pilares: Encapsulamiento"
 authors:

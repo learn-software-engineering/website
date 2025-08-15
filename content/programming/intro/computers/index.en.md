@@ -1,6 +1,6 @@
 ---
 weight: 2
-series: ["Introduction to Programming"]
+series: ["Programming: Learning the Bases"]
 series_order: 2
 title: "Computers"
 authors:

@@ -1,6 +1,6 @@
 ---
 weight: 5
-series: ["Introduction to Programming"]
+series: ["Programming: Learning the Bases"]
 series_order: 5
 title: "Set Up your Development Environment"
 authors:

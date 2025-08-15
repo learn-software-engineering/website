@@ -1,7 +1,7 @@
 ---
 draft: true
 weight: 8
-series: ["Software Engineering"]
+series: ["Learning Software Engineering"]
 series_order: 8
 title: "SDLC: The Maintenance phase"
 authors:

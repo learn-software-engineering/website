@@ -1,7 +1,7 @@
 ---
 draft: true
 weight: 6
-series: ["Software Engineering"]
+series: ["Learning Software Engineering"]
 series_order: 6
 title: "SDLC: The Testing phase"
 authors:

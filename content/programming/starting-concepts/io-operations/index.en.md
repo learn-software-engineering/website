@@ -1,6 +1,6 @@
 ---
 weight: 2
-series: ["Programming Starting Concepts"]
+series: ["Programming: Learning the Starting Concepts"]
 series_order: 2
 title: "Input and output operations"
 authors:

@@ -1,6 +1,6 @@
 ---
 weight: 14
-series: ["Programación Orientada a Objetos"]
+series: ["Programación: Aprendiendo Orientación a Objetos"]
 series_order: 14
 title: "Los Cuatro Pilares: Polimorfismo"
 authors:

@@ -1,6 +1,6 @@
 ---
 weight: 5
-series: ["Programming Starting Concepts"]
+series: ["Programming: Learning the Starting Concepts"]
 series_order: 5
 title: "Recursive Functions"
 authors:

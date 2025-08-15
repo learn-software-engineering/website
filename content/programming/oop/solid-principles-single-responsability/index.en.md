@@ -1,7 +1,7 @@
 ---
 draft: true
 weight: 16
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 16
 title: "SOLID Principles: Single Responsibility"
 authors:

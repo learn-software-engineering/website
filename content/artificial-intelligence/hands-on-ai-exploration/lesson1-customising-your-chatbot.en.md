@@ -1,7 +1,7 @@
 ---
 draft: true
 weight: 3
-series: ["Hands-on AI Exploration"]
+series: ["AI: Hands-on Exploration"]
 series_order: 3
 title: "Lesson 1: Customising your Chatbot"
 authors:

@@ -1,6 +1,6 @@
 ---
 weight: 10
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 10
 title: "Class relations: Conclusion"
 authors:

@@ -1,6 +1,6 @@
 ---
 weight: 3
-series: ["Programming Starting Concepts"]
+series: ["Programming: Learning the Starting Concepts"]
 series_order: 3
 title: "Flow Control"
 authors:

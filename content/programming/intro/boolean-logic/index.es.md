@@ -1,6 +1,6 @@
 ---
 weight: 4
-series: ["Introducción a la Programación"]
+series: ["Programación: Aprendiendo las Bases"]
 series_order: 4
 title: "Lógica Booleana"
 authors:

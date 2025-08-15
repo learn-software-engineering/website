@@ -1,6 +1,6 @@
 ---
 weight: 3
-series: ["Introduction to Programming"]
+series: ["Programming: Learning the Bases"]
 series_order: 3
 title: "Numeral Systems"
 authors:

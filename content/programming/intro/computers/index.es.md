@@ -1,6 +1,6 @@
 ---
 weight: 2
-series: ["Introducción a la Programación"]
+series: ["Programación: Aprendiendo las Bases"]
 series_order: 2
 title: "Computadoras"
 authors:

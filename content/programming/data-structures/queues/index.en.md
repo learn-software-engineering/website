@@ -1,6 +1,6 @@
 ---
 weight: 6
-series: ["Data Structures"]
+series: ["Programming: Learning Data Structures"]
 series_order: 6
 title: "Queues"
 authors:

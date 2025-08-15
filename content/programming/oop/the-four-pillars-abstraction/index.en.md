@@ -1,6 +1,6 @@
 ---
 weight: 15
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 15
 title: "The Four Pillars: Abstraction"
 authors:

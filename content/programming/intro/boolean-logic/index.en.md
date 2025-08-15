@@ -1,6 +1,6 @@
 ---
 weight: 4
-series: ["Introduction to Programming"]
+series: ["Programming: Learning the Bases"]
 series_order: 4
 title: "Boolean Logic"
 authors:

@@ -1,6 +1,6 @@
 ---
 weight: 14
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 14
 title: "The Four Pillars: Polymorphism"
 authors:

@@ -1,6 +1,6 @@
 ---
 weight: 9
-series: ["Object-Oriented Programming"]
+series: ["Programming: Learning Object-Oriented Concepts"]
 series_order: 9
 title: "Class relations: Dependency"
 authors:

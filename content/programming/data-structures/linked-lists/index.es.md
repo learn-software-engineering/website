@@ -1,6 +1,6 @@
 ---
 weight: 4
-series: ["Estructuras de Datos"]
+series: ["Programación: Aprendiendo Estructuras de Datos"]
 series_order: 4
 title: "Listas Enlazadas"
 authors:

@@ -1,6 +1,6 @@
 ---
 weight: 5
-series: ["Estructuras de Datos"]
+series: ["Programación: Aprendiendo Estructuras de Datos"]
 series_order: 5
 title: "Pilas"
 authors:

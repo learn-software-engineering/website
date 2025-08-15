@@ -1,6 +1,6 @@
 ---
 weight: 1
-series: ["Introducción a la Programación"]
+series: ["Programación: Aprendiendo las Bases"]
 series_order: 1
 title: "Introducción"
 authors:

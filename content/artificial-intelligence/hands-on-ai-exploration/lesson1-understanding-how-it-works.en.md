@@ -1,7 +1,7 @@
 ---
 draft: true
 weight: 5
-series: ["Hands-on AI Exploration"]
+series: ["AI: Hands-on Exploration"]
 series_order: 5
 title: "Lesson 1: Understanding how it works"
 authors:

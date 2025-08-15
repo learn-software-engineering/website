@@ -1,6 +1,6 @@
 ---
 weight: 2
-series: ["Estructuras de Datos"]
+series: ["Programación: Aprendiendo Estructuras de Datos"]
 series_order: 2
 title: "Arreglos"
 authors:

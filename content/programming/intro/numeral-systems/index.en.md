@@ -2,13 +2,13 @@
 weight: 3
 series: ["Introduction to Programming"]
 series_order: 3
-title: "Numerical Systems"
+title: "Numeral Systems"
 authors:
   - jnonino
 description: >
   Every day, we're surrounded by numbers. From the alarm clock's digits waking us up in the morning to the price of our favourite morning coffee. But, have you ever stopped to ponder the essence of these numbers? In this article, we will dive deep into the captivating world of numbering systems, unravelling how one number can have myriad representations depending on the context.
 date: 2023-09-05
-tags: ["Programming", "Numerical Systems", "Decimal", "Binary", "Hexadecimal"]
+tags: ["Programming", "Numeral Systems", "Decimal", "Binary", "Hexadecimal"]
 ---
 
 ## The decimal system: the bedrock of our daily life
@@ -89,7 +89,7 @@ So, the next time you're in front of your computer or using an app on your smart
 
 1. Ifrah, G. (2000). *The Universal History of Numbers*. London: Harvill Press.
 2. Tanenbaum, A. (2012). *Structured Computer Organization*. New Jersey: Prentice Hall.
-3. Knuth, D. (2007). *The Art of Computer Programming: Seminumerical Algorithms*. California: Addison-Wesley.
+3. Knuth, D. (2007). *The Art of Computer Programming: SemiNumeral Algorithms*. California: Addison-Wesley.
 
 ---
 

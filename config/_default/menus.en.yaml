@@ -43,9 +43,9 @@ main:
     pageRef: "software-engineering"
     weight: 300
 
-  - name: "Artificial Intelligence"
-    pageRef: "artificial-intelligence"
-    weight: 400
+  # - name: "Artificial Intelligence"
+  #   pageRef: "artificial-intelligence"
+  #   weight: 400
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before

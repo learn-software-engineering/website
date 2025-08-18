@@ -1,5 +1,6 @@
 ---
-title: "Artificial Intelligence"
+draft: true
+title: "Becoming an AI Engineer"
 ---
 
 {{< lead >}}

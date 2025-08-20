@@ -47,26 +47,6 @@ main:
     pageRef: "ai"
     weight: 400
 
-  - name: "Fundamentos"
-    parent: "Inteligencia Artificial"
-    pageRef: "ai/basis"
-    weight: 401
-
-  - name: "Modelos Avanzados y LLMs"
-    parent: "Inteligencia Artificial"
-    pageRef: "ai/llms"
-    weight: 402
-
-  - name: "Especialización y Desarrollo Profesional"
-    parent: "Inteligencia Artificial"
-    pageRef: "ai/specialization"
-    weight: 403
-
-  - name: "Consolidación Profesional"
-    parent: "Inteligencia Artificial"
-    pageRef: "ai/consolidation"
-    weight: 404
-
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.

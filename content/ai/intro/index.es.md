@@ -74,6 +74,6 @@ Copiá este código a un archivo `.py` o notebook. Al ejecutarlo, te pedirá que
 
 ---
 
-## ¿Qué sigue en la proxima lección?
+## ¿Qué sigue en la próxima lección?
 
 Abordaremos las **herramientas matemáticas esenciales** detrás de ML: álgebra lineal (vectores y matrices) y cálculo (derivadas, optimización). Vas a ver cómo esos conceptos permiten que los modelos aprendan de datos.

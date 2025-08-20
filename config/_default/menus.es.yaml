@@ -44,7 +44,7 @@ main:
     weight: 300
 
   - name: "Inteligencia Artificial"
-    pageRef: "artificial-intelligence"
+    pageRef: "ai"
     weight: 400
 
 # -- Footer Menu --

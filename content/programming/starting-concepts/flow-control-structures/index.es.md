@@ -329,14 +329,20 @@ El control de flujo es el corazón de la programación. Sin él, los programas s
 
 ---
 
-{{< alert icon="comment" cardColor="white" iconColor="black" textColor="black" >}}
-¡Felicitaciones por llegar hasta acá! Espero que este recorrido por el universo de la programación te haya resultado tan interesante como lo fue para mí al escribirlo.
+{{< alert icon="comment" >}}
+¡Gracias por haber llegado hasta acá!
 
-Queremos conocer tu opinión, así que no dudes en compartir tus comentarios, sugerencias y esas ideas brillantes que seguro tenés.
+Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
 
-Además, para explorar más allá de estas líneas, date una vuelta por los ejemplos prácticos que armamos para vos. Todo el código y los proyectos los encontrarás en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
+Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
 
-Gracias por ser parte de esta comunidad de aprendizaje. ¡Seguí programando y explorando nuevas areas en este fascinante mundo del software!
+[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
+[{{< icon "github" >}}](https://github.com/learn-software-engineering)
+[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
+[{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
+[{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
+[{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
+[{{< icon "x-twitter" >}}](https://x.com/software45687)
 {{< /alert >}}
 
 ---

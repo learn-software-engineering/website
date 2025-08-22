@@ -5,9 +5,9 @@ concurrency: production
 on:
   # Can be triggered manually
   workflow_dispatch:
-  # Runs every Monday at 00:00 UTC
+  # Runs every day at 20:30 UTC
   schedule:
-    - cron:  '0 0 * * 1'
+    - cron: '30 20 * * *'
 
 env:
   ENV: production

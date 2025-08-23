@@ -273,9 +273,190 @@ No se detectaron problemas significativos
 
 ### Concurrencia
 
+De manera similar, implementaremos una regla para controlar la cantidad de conexiones simultaneas al servidor. Demasiadas conexiones pueden saturarlo y hacer que deje de responder. En este ejemplo, definiremos que \(1000\) conexiones simultaneas es el límite.
+
+```python
+def _regla_concurrencia(self, sintomas):
+    """
+    Regla: Muchas conexiones simultáneas pueden saturar el servidor.
+    """
+    if sintomas.get('conexiones_activas', 0) > 1000:
+        certeza = min(0.8, sintomas['conexiones_activas'] / 2000)
+
+        return {
+            'problema': 'Sobrecarga por exceso de conexiones concurrentes',
+            'certeza': certeza,
+            'recomendaciones': [
+                'Implementar rate limiting',
+                'Usar un balanceador de carga (load balancer) con múltiples instancias',
+                'Utilizar un grupo de conexiones preestablecidas',
+                'Implementar colas para procesos no críticos'
+            ]
+        }
+    return None
+```
+
+Con la regla anterior, obtenemos los siguientes resultados:
+
+```bash
+>  python sistema_experto_basico.py
+==================================================
+Ingrese los valores de rendimiento del sistema
+Porcentaje de CPU utilizada(int): 45
+Porcentaje de memoria utilizada(int): 56
+Cantidad de segundos en promedio para recibir una respuesta(float): 2.8
+Cantidad de queries tardan más de 1 segundo(int): 15
+Cantidad de conexiones simultáneas(int): 800
+==================================================
+DIAGNÓSTICO DEL SISTEMA
+==================================================
+No se detectaron problemas significativos
+```
+
+```bash
+>  python sistema_experto_basico.py
+==================================================
+Ingrese los valores de rendimiento del sistema
+Porcentaje de CPU utilizada(int): 45
+Porcentaje de memoria utilizada(int): 56
+Cantidad de segundos en promedio para recibir una respuesta(float): 2.8
+Cantidad de queries tardan más de 1 segundo(int): 15
+Cantidad de conexiones simultáneas(int): 1500
+==================================================
+DIAGNÓSTICO DEL SISTEMA
+==================================================
+
+#1 - Sobrecarga por exceso de conexiones concurrentes
+Certeza: 75.0%
+Recomendaciones:
+  • Implementar rate limiting
+  • Usar un balanceador de carga (load balancer) con múltiples instancias
+  • Utilizar un grupo de conexiones preestablecidas
+  • Implementar colas para procesos no críticos
+```
+
 ### Base de datos
 
+Una posible causa para recibir respuestas lentas puede ser el tiempo consumido en las consultas a la base de datos. Implementaremos una regla para que el sistema reconozca estos casos.
+
+```python
+def _regla_base_datos(self, sintomas):
+    """
+    Regla: Si hay muchas queries lentas, el problema está
+    en la base de datos.
+    """
+    if sintomas.get('queries_lentas', 0) > 10:
+        certeza = min(0.95, sintomas['queries_lentas'] / 50)
+
+        return {
+            'problema': 'Queries de base de datos ineficientes',
+            'certeza': certeza,
+            'recomendaciones': [
+                'Revisar índices en tablas frecuentemente consultadas',
+                'Optimizar queries con EXPLAIN ANALYZE',
+                'Implementar cache de queries (Redis)',
+                'Considerar particionado de tablas grandes'
+            ]
+        }
+    return None
+```
+
+Lo que nos da resultados como estos:
+
+```bash
+>  python sistema_experto_basico.py
+==================================================
+Ingrese los valores de rendimiento del sistema
+Porcentaje de CPU utilizada(int): 45
+Porcentaje de memoria utilizada(int): 56
+Cantidad de segundos en promedio para recibir una respuesta(float): 1.5
+Cantidad de queries tardan más de 1 segundo(int): 17
+Cantidad de conexiones simultáneas(int): 800
+==================================================
+DIAGNÓSTICO DEL SISTEMA
+==================================================
+
+#1 - Queries de base de datos ineficientes
+Certeza: 34.0%
+Recomendaciones:
+  • Revisar índices en tablas frecuentemente consultadas
+  • Optimizar queries con EXPLAIN ANALYZE
+  • Implementar cache de queries (Redis)
+  • Considerar particionado de tablas grandes
+```
+
+```bash
+>  python sistema_experto_basico.py
+==================================================
+Ingrese los valores de rendimiento del sistema
+Porcentaje de CPU utilizada(int): 45
+Porcentaje de memoria utilizada(int): 56
+Cantidad de segundos en promedio para recibir una respuesta(float): 1.5
+Cantidad de queries tardan más de 1 segundo(int): 49
+Cantidad de conexiones simultáneas(int): 800
+==================================================
+DIAGNÓSTICO DEL SISTEMA
+==================================================
+
+#1 - Queries de base de datos ineficientes
+Certeza: 95.0%
+Recomendaciones:
+  • Revisar índices en tablas frecuentemente consultadas
+  • Optimizar queries con EXPLAIN ANALYZE
+  • Implementar cache de queries (Redis)
+  • Considerar particionado de tablas grandes
+```
+
 ### Red
+
+Si vemos que el tiempo de respuesta es alto pero CPU y memoria están bien, puede ser un problema de red. A continuación vemos el código para implementar esta regla.
+
+```python
+def _regla_red(self, sintomas):
+    """
+    Regla: Si el tiempo de respuesta es alto pero CPU y memoria
+    están bien, puede ser un problema de red.
+    """
+    if (sintomas.get('tiempo_respuesta', 0) > 2.0 and
+        sintomas.get('uso_cpu', 0) < 50 and
+        sintomas.get('uso_memoria', 0) < 70):
+
+        certeza = 0.7  # Menos certeza porque es por descarte
+
+        return {
+            'problema': 'Latencia de red o problemas de conectividad',
+            'certeza': certeza,
+            'recomendaciones': [
+                'Verificar latencia entre servidor y clientes',
+                'Implementar CDN para recursos estáticos',
+                'Optimizar tamaño de respuestas (compresión)'
+            ]
+        }
+    return None
+```
+
+Con el siguiente resultado:
+
+```bash
+>  python sistema_experto_basico.py
+==================================================
+Ingrese los valores de rendimiento del sistema
+Porcentaje de CPU utilizada(int): 45
+Porcentaje de memoria utilizada(int): 56
+Cantidad de segundos en promedio para recibir una respuesta(float): 2.8
+Cantidad de queries tardan más de 1 segundo(int): 15
+Cantidad de conexiones simultáneas(int): 800
+==================================================
+DIAGNÓSTICO DEL SISTEMA
+==================================================
+
+#1 - Latencia de red o problemas de conectividad
+Certeza: 70.0%
+Recomendaciones:
+  • Verificar latencia entre servidor y clientes
+  • Implementar CDN para recursos estáticos
+  • Optimizar tamaño de respuestas (compresión)
+```
 
 ---
 

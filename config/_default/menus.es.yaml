@@ -49,7 +49,7 @@ main:
 
   - name: "Fundamentos de IA para Programadores"
     parent: "Inteligencia Artificial"
-    pageRef: "ai/lesson1"
+    pageRef: "ai/module1"
     weight: 401
 
 # -- Footer Menu --

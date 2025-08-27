@@ -3,7 +3,7 @@ weight: 5
 series: ["Fundamentos de IA para Programadores"]
 series_order: 5
 title: "Conclusión"
-description: "Llegó el momento de cerrar nuestro paso por los fundamentos de la Inteligencia Artificial. Ahora vamos a repasar lo aprendido, aclarar algunas dudas y prepararnos para la próxima lección."
+description: "Llegó el momento de cerrar nuestro paso por los fundamentos de la Inteligencia Artificial. Ahora vamos a repasar lo aprendido, aclarar algunas dudas y prepararnos para el próximo módulo."
 authors:
   - jnonino
 date: 2025-08-22
@@ -12,7 +12,7 @@ tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning"]
 {{< katex >}}
 
 {{< lead >}}
-Llegó el momento de cerrar nuestro paso por los fundamentos de la Inteligencia Artificial. Ahora vamos a repasar lo aprendido, aclarar algunas dudas y prepararnos para la próxima lección.
+Llegó el momento de cerrar nuestro paso por los fundamentos de la Inteligencia Artificial. Ahora vamos a repasar lo aprendido, aclarar algunas dudas y prepararnos para el próximo módulo.
 {{< /lead >}}
 
 ---
@@ -56,7 +56,7 @@ Estos conceptos se aplican igual en Deep Learning.
 
 ### 4. ¿Por qué no usar directamente bibliotecas como scikit-learn?
 
-En esta primera lección, la idea es que entiendas **qué está pasando por debajo**. Una vez que domines los conceptos fundamentales, las bibliotecas serán herramientas poderosas, no cajas negras.
+En este primer módulo, la idea es que entiendas **qué está pasando por debajo**. Una vez que domines los conceptos fundamentales, las bibliotecas serán herramientas poderosas, no cajas negras.
 
 Piénsalo así: *puedes usar un framework web como Django, pero es porque entiendes HTTP, requests, responses, etc*.
 
@@ -72,9 +72,9 @@ Más adelante veremos métricas específicas para ML.
 
 ---
 
-## Próximos Pasos: Lección 2
+## Próximos Pasos: Módulo 2
 
-En la próxima lección nos sumergiremos en **las matemáticas esenciales** para entender Machine Learning. No te preocupes, no vamos a ser académicos aburridos. Vamos a cubrir solo las matemáticas que realmente necesitas:
+En el próximo módulo nos sumergiremos en **las matemáticas esenciales** para entender Machine Learning. No te preocupes, no vamos a ser académicos aburridos. Vamos a cubrir solo las matemáticas que realmente necesitas:
 
 **Álgebra Lineal Práctica**
 - Vectores y matrices (¿por qué importan?)
@@ -130,7 +130,7 @@ Sin entender esto, estarás ajustando hiperparámetros al azar y rogando que fun
 
 ## Reflexión Final
 
-Has completado tu primera lección en el camino a convertirte en un AI Engineer. Cubriste mucho terreno:
+Has completado tu primer módulo en el camino a convertirte en un AI Engineer. Cubriste mucho terreno:
 
 ✅ **Desmitificaste la IA**: Ya sabes la diferencia real entre IA, ML y DL
 ✅ **Implementaste sistemas inteligentes**: Desde cero, sin bibliotecas mágicas
@@ -139,11 +139,11 @@ Has completado tu primera lección en el camino a convertirte en un AI Engineer.
 
 Pero esto es solo el comienzo. La IA no es magia, es ingeniería sistemática aplicada a problemas complejos. Como cualquier habilidad de ingeniería, se domina con práctica y fundamentos sólidos.
 
-En la próxima lección agregaremos las matemáticas que necesitas. No para ser un académico, sino para ser un practicante efectivo que entiende sus herramientas.
+En el próximo módulo agregaremos las matemáticas que necesitas. No para ser un académico, sino para ser un practicante efectivo que entiende sus herramientas.
 
 **Recuerda**: Cada experto fue alguna vez un principiante. La diferencia está en la consistencia y la profundidad de comprensión, no en la velocidad.
 
-¡Nos vemos en la siguiente lección! 🚀
+¡Nos vemos en el siguiente módulo! 🚀
 
 ---
 

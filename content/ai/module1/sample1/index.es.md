@@ -15,6 +15,8 @@ tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning",
 Vamos a crear un sistema de IA clásica para diagnosticar problemas de rendimiento en aplicaciones web. Este ejemplo te muestra cómo estructurar conocimiento en reglas lógicas.
 {{< /lead >}}
 
+---
+
 ## Estructura del sistema
 
 Como se mencionó, vamos a implementar un sistema que diagnostique problemas de rendimiento en aplicaciones web, el primer paso entonces es definir los ***síntomas*** que el sistema debe evaluar para emitir un ***diagnóstico***.
@@ -460,17 +462,6 @@ Recomendaciones:
 
 ---
 
-## Código completo
-
-Aquí tienes el código completo del sistema. También puedes encontrarlo en el [repositorio de ejemplos](https://raw.githubusercontent.com/learn-software-engineering/examples/main/ai/lesson1-intro/sistema_experto_basico.py).
-
-{{< codeimporter
-    url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/ai/lesson1-intro/sistema_experto_basico.py"
-    type="python"
-    >}}
-
----
-
 ## ¿Qué aprendemos de este ejemplo?
 
 1. **Estructura del conocimiento**: Las reglas están separadas en métodos independientes, lo que hace el sistema modular y fácil de mantener.
@@ -480,6 +471,14 @@ Aquí tienes el código completo del sistema. También puedes encontrarlo en el 
 3. **Explicación del razonamiento**: El sistema no solo da un diagnóstico, sino que explica por qué llegó a esa conclusión.
 
 4. **Escalabilidad**: Agregar nuevas reglas es tan simple como crear un nuevo método `_regla_*`.
+
+---
+
+## Código completo
+
+Aquí tienes el código completo del sistema. También puedes encontrarlo en el repositorio de ejemplos haciendo click en el siguiente [enlace](https://github.com/learn-software-engineering/examples/blob/main/ai/module1/sistema_experto_basico.py).
+
+{{< github repo="learn-software-engineering/examples" showThumbnail=false >}}
 
 ---
 

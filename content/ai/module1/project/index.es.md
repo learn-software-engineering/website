@@ -15,8 +15,10 @@ tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning",
 Para consolidar todo lo aprendido, vamos a crear un sistema de recomendaciones usando reglas lógicas. Este tipo de sistema es común en e-commerce, plataformas de contenido y aplicaciones móviles.
 {{< /lead >}}
 
+---
+
 {{< codeimporter
-    url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/ai/lesson1-intro/sistema_de_recomendaciones_basico.py"
+    url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/ai/module1/sistema_de_recomendaciones_basico.py"
     type="python"
     >}}
 

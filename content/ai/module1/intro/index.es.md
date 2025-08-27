@@ -12,10 +12,12 @@ tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning"]
 {{< katex >}}
 
 {{< lead >}}
-Bienvenido a tu primera lección para convertirte en un ingeniero en IA. Si llegaste hasta aquí, es porque ya dominas Python y tienes experiencia como software engineer, pero el mundo de la inteligencia artificial te resulta un territorio desconocido. No te preocupes: estás exactamente donde necesitas estar.
+Bienvenido al primer módulo para convertirte en un ingeniero en IA. Si llegaste hasta aquí, es porque ya dominas Python y tienes experiencia como software engineer, pero el mundo de la inteligencia artificial te resulta un territorio desconocido. No te preocupes: estás exactamente donde necesitas estar.
 
-Durante las próximas lecciones, vamos a transformar tus habilidades de programación en expertise en inteligencia artificial. No vamos a tomar atajos ni a usar "soluciones mágicas", cada concepto será explicado desde sus fundamentos hasta su implementación práctica.
+Durante los próximos módulos, vamos a transformar tus habilidades de programación en expertise en inteligencia artificial. No vamos a tomar atajos ni a usar "soluciones mágicas", cada concepto será explicado desde sus fundamentos hasta su implementación práctica.
 {{< /lead >}}
+
+---
 
 ### ¿Por qué necesitas entender los fundamentos?
 
@@ -29,9 +31,9 @@ Un AI Engineer no es solo alguien que conecta APIs de OpenAI. Es un profesional 
 - **Evalúa críticamente el rendimiento y las limitaciones**
 - **Implementa soluciones éticas y responsables**
 
-### Objetivos de esta primera lección
+### Objetivos de este primer módulo
 
-Al finalizar esta lección, vas a poder:
+Al finalizar este módulo, vas a poder:
 
 1. **Distinguir claramente** entre IA, Machine Learning y Deep Learning
 2. **Identificar qué tipo de problema** requiere cada enfoque
@@ -189,7 +191,7 @@ options: {
 
 ## Implementación Práctica: Tus primeros sistemas inteligentes
 
-En los siguientes artículos de esta lección, veremos algunos ejemplos para que te vayas adentrando en el mundo de la inteligencia artificial y el aprendizaje automático.
+En los siguientes artículos de este módulo, veremos algunos ejemplos para que te vayas adentrando en el mundo de la inteligencia artificial y el aprendizaje automático.
 
 ¡Nos vemos allí! 🚀
 

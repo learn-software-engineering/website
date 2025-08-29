@@ -107,23 +107,37 @@ options: {
 
 Conocer y comprender la historia te ayuda a ver y entender el estado actual del desarrollo de la IA y su futuro.
 
-#### Los pioneros (1950s-1960s)
-- **Alan Turing** propone el [*"Test de Turing"*](https://es.wikipedia.org/wiki/Prueba_de_Turing) (1950)
-- **John McCarthy** acuña el término "Artificial Intelligence" (1956)
-- Primeros programas que juegan ajedrez y demuestran teoremas
+{{< timeline >}}
 
-#### El primer invierno de la IA (1970s-1980s)
+{{< timelineItem icon="person" header="Los pioneros" badge="1950s - 1960s" >}}
+<ul>
+  <li><b>Alan Turing</b> propone el <a href="https://es.wikipedia.org/wiki/Prueba_de_Turing"><i>Test de Turing</i></a> (1950)</li>
+  <li><b>John McCarthy</b> acuña el término <i>Artificial Intelligence</i> (1956)</li>
+  <li>Primeros programas que juegan ajedrez y demuestran teoremas</li>
+</ul>
+{{< /timelineItem >}}
+
+{{< timelineItem icon="snowflake" header="El primer invierno de la IA" badge="1970s - 1980s" >}}
 Las expectativas eran demasiado altas. Los computadores eran lentos y la memoria limitada. La financiación se redujo drásticamente.
+{{< /timelineItem >}}
 
-#### El renacimiento con Machine Learning (1990s-2000s)
-- Mejores algoritmos ([*Support Vector Machines*](https://es.wikipedia.org/wiki/M%C3%A1quina_de_vectores_de_soporte), [*Random Forest*](https://es.wikipedia.org/wiki/Random_forest))
-- Más datos disponibles con internet
-- Computadoras más poderosas
+{{< timelineItem icon="wand-magic-sparkles" header="El renacimiento con Machine Learning" badge="1990s - 2000s" >}}
+<ul>
+  <li>Mejores algoritmos (<a href="https://es.wikipedia.org/wiki/M%C3%A1quina_de_vectores_de_soporte"><i>Support Vector Machines</i></a>, <a href="https://es.wikipedia.org/wiki/Random_forest"><i>Random Forest</i></a>)</li>
+  <li>Más datos disponibles con internet</li>
+  <li>Computadoras más poderosas</li>
+</ul>
+{{< /timelineItem >}}
 
-#### La explosión del Deep Learning (2010s-presente)
-- [**GPUs**](https://es.wikipedia.org/wiki/Unidad_de_procesamiento_gr%C3%A1fico) permiten entrenar redes neuronales gigantes
-- [**Big Data**](https://es.wikipedia.org/wiki/Macrodatos) proporciona millones de ejemplos de entrenamiento
-- **Nuevos Avances** como [ImageNet](https://www.image-net.org/) (2012) y [*GPT*](https://es.wikipedia.org/wiki/Transformador_generativo_preentrenado) (2018)
+{{< timelineItem icon="bomb" header="La explosión del Deep Learning" badge="2010s - Presente" >}}
+<ul>
+  <li><a href="https://es.wikipedia.org/wiki/Unidad_de_procesamiento_gr%C3%A1fico"><b>GPUs</b></a> permiten entrenar redes neuronales gigantes</li>
+  <li><a href="https://es.wikipedia.org/wiki/Macrodatos"><b>Big Data</b></a> proporciona millones de ejemplos de entrenamiento</li>
+  <li><b>Nuevos Avances</b> como <a href="https://www.image-net.org/"><i>ImageNet</i></a> (2012) y <a href="https://es.wikipedia.org/wiki/Transformador_generativo_preentrenado"><i>GPT</i></a> (2018)</li>
+</ul>
+{{< /timelineItem >}}
+
+{{< /timeline >}}
 
 ### Tipos de aprendizaje automático
 

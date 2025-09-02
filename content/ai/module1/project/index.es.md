@@ -17,14 +17,20 @@ Para consolidar todo lo aprendido, vamos a crear un sistema de recomendaciones u
 
 ---
 
-{{< codeimporter
-    url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/ai/module1/sistema_de_recomendaciones_basico.py"
-    type="python"
-    >}}
+## Problema a Resolver
+
 
 ---
 
-## ¿Qué logramos con este proyecto?
+## Solución
+
+Haciendo click en el siguiente [enlace](https://raw.githubusercontent.com/learn-software-engineering/examples/main/ai/module1/sistema_de_recomendaciones_basico.py), puedes encontrar una posible solución para este problema. Incluye explicaciones detalladas en los comentarios.
+
+{{< alert >}}
+¡Intentá resolverlo por tu cuenta primero! 😀😀😀
+{{< /alert >}}
+
+### ¿Qué nos aporta esta solución?
 
 1. **Sistema híbrido**: Combinamos múltiples estrategias de recomendación para obtener mejores resultados.
 
@@ -36,9 +42,7 @@ Para consolidar todo lo aprendido, vamos a crear un sistema de recomendaciones u
 
 5. **Métricas de similitud**: Implementamos cálculos de similitud que consideran múltiples dimensiones.
 
----
-
-## Ejercicios para profundizar
+### Ejercicios para profundizar
 
 A continuación tienes algunos ejercicios que te ayudarán a profundizar tus conocimientos.
 

@@ -47,6 +47,11 @@ main:
     pageRef: "ai"
     weight: 400
 
+  - name: "Fundamentos de IA para Programadores"
+    parent: "Inteligencia Artificial"
+    pageRef: "ai/module1"
+    weight: 401
+
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.

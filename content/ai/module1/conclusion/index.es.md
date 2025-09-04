@@ -6,7 +6,7 @@ title: "Conclusión"
 description: "Llegó el momento de cerrar nuestro paso por los fundamentos de la Inteligencia Artificial. Ahora vamos a repasar lo aprendido, aclarar algunas dudas y prepararnos para el próximo módulo."
 authors:
   - jnonino
-date: 2025-08-22
+date: 2025-09-04
 tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning"]
 ---
 {{< katex >}}
@@ -17,7 +17,7 @@ Llegó el momento de cerrar nuestro paso por los fundamentos de la Inteligencia 
 
 ---
 
-## FAQ: Dudas Comunes
+## FAQ: Dudas domunes
 
 ### 1. ¿Por qué empezamos con reglas en lugar de Machine Learning avanzado?
 
@@ -72,7 +72,7 @@ Más adelante veremos métricas específicas para ML.
 
 ---
 
-## Próximos Pasos: Módulo 2
+## Próximos pasos: módulo 2
 
 En el próximo módulo nos sumergiremos en **las matemáticas esenciales** para entender Machine Learning. No te preocupes, no vamos a ser académicos aburridos. Vamos a cubrir solo las matemáticas que realmente necesitas:
 
@@ -104,38 +104,14 @@ Sin entender esto, estarás ajustando hiperparámetros al azar y rogando que fun
 
 ---
 
-## Recursos Adicionales
-
-### Lecturas Recomendadas
-- **"Artificial Intelligence: A Guide for Thinking Humans"** - Melanie Mitchell (comprensible y no técnico)
-- **"The Master Algorithm"** - Pedro Domingos (visión general de ML)
-- **Documentación oficial de Python** - Para refrescar conceptos de programación
-
-### Herramientas para Experimentar
-- **Jupyter Notebooks** - Para experimentar con código de manera interactiva
-- **Google Colab** - Jupyter en la nube con GPUs gratis
-- **Kaggle Learn** - Cursos cortos y prácticos (complementarios a esta serie)
-
-### Comunidades
-- **r/MachineLearning** - Investigación y noticias
-- **Stack Overflow** - Preguntas técnicas específicas
-- **Towards Data Science** - Artículos de calidad media-alta
-
-### Para Practicar
-- **LeetCode** - Problemas de algoritmos (útil para entrevistas)
-- **Kaggle Competitions** - Competencias de ML del mundo real
-- **Papers With Code** - Implementaciones de papers académicos
-
----
-
-## Reflexión Final
+## Reflexión final
 
 Has completado tu primer módulo en el camino a convertirte en un AI Engineer. Cubriste mucho terreno:
 
-✅ **Desmitificaste la IA**: Ya sabes la diferencia real entre IA, ML y DL
-✅ **Implementaste sistemas inteligentes**: Desde cero, sin bibliotecas mágicas
-✅ **Entendiste los fundamentos**: Que se aplicarán a todo lo que aprendas después
-✅ **Construiste un proyecto real**: Sistema de recomendaciones funcional
+✅ **Desmitificaste la IA**: ya sabes la diferencia real entre IA, ML y DL
+✅ **Implementaste sistemas inteligentes**: desde cero, sin bibliotecas mágicas
+✅ **Entendiste los fundamentos**: que se aplicarán a todo lo que aprendas después
+✅ **Construiste un proyecto real**: sistema de recomendaciones funcional
 
 Pero esto es solo el comienzo. La IA no es magia, es ingeniería sistemática aplicada a problemas complejos. Como cualquier habilidad de ingeniería, se domina con práctica y fundamentos sólidos.
 

@@ -12,7 +12,7 @@ tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning",
 {{< katex >}}
 
 {{< lead >}}
-Ahora vamos a crear un clasificador de texto básico usando técnicas estadísticas simples. Esto te muestra los conceptos fundamentales detrás de algoritmos más complejos como *Naive Bayes*.
+Ahora vamos a crear un clasificador de texto básico usando técnicas estadísticas simples. Esto te muestra los conceptos fundamentales detrás de algoritmos más complejos como <i>Naive Bayes</i>.
 {{< /lead >}}
 
 ---
@@ -29,7 +29,7 @@ Para resolver este problema, implementaremos un [**Clasificador Bayesiano Ingenu
 
 ---
 
-## Fundamentos Matemáticos: el Teorema de Bayes
+## Fundamentos matemáticos: el teorema de Bayes
 
 Antes de sumergirnos en el código, entendamos la base matemática. El [teorema de Bayes](https://es.wikipedia.org/wiki/Teorema_de_Bayes) es una regla matemática que nos para invertir [probabilidades condicionadas](https://es.wikipedia.org/wiki/Probabilidad_condicionada), permitiendonos encontrar la probabilidad de una causa dado su efecto.
 
@@ -64,7 +64,7 @@ En otras palabras, queremos conocer la probabilidad de que un ticket sea una cat
 
 ---
 
-## Estructura Básica del Sistema
+## Estructura básica del sistema
 
 Comenzaremos definiendo la estructura del sistema, por lado, crearemos una clase que actuará como clasificador y una función *main* que será la encargada de entrenarlo y de enviarle nuevos tickets para determinar su categoría.
 
@@ -139,7 +139,7 @@ El clasificador almacena los siguientes datos:
 
 ---
 
-## Preprocesamiento del Texto
+## Preprocesamiento del texto
 
 Antes de continuar, es necesario incluir una función para preprocesar el texto. Los textos que escribimos pueden tener muchas variaciones, necesitamos convertirlo a una forma estándar, sin distinciones entre mayúsculas y minúsculas, signos de puntuación, tildes, etcétera.
 
@@ -179,7 +179,7 @@ def preprocesar_texto(self, texto):
 
 ---
 
-## Entrenando el Sistema
+## Entrenando el sistema
 
 El siguiente paso, es entrenar el sistema con datos conocidos para que aprenda a cuando aplicar una categoría u otra dependiendo del texto recibido.
 Durante el entrenamiento, el algoritmo *"memoriza"* qué palabras aparecen frecuentemente en cada categoría, y las agrupa según la categoría dada.
@@ -227,7 +227,7 @@ Entrenamiento completado:
 
 ---
 
-## Cálculo de Probabilidades
+## Cálculo de probabilidades
 
 Aquí presentamos el corazón del algoritmo, realizaremos los cálculos de probabilidades por palabra que luego servirán para clasificar tickets.
 
@@ -257,7 +257,7 @@ def calcular_probabilidad_palabra(self, palabra, categoria):
     return probabilidad
 ```
 
-**¿Qué es el Suavizado de Laplace?**
+**¿Qué es el suavizado de Laplace?**
 
 Con las [técnicas de suavizado](https://es.wikipedia.org/wiki/Suavizado_de_n-gramas) intentamos evitar las probabilidades cero producidas por palabras no vistas.
 
@@ -384,7 +384,7 @@ PROBANDO CLASIFICADOR CON TICKETS NUEVOS:
    -> CLASIFICACIÓN: SUPPORT (55.1% confianza)
 ```
 
-## Entendiendo las Decisiones (Interpretabilidad)
+## Entendiendo las decisiones (interpretabilidad)
 
 Una ventaja clave de **Naive Bayes** es que podemos inspeccionar lo qué aprendió:
 
@@ -495,7 +495,7 @@ TOP 15 PALABRAS MÁS REPRESENTATIVAS POR CATEGORÍA:
    * permisos        (score: 2.68)
 ```
 
-## Análisis y Extensiones
+## Análisis y extensiones
 
 ¿Por qué se llama ***Naive (Ingenuo)***? Porque asume que todas las palabras son independientes entre sí. En realidad, sabemos que esto no es cierto, *"no funciona"* tiene un significado diferente que *"no"* y *"funciona"* por separado.
 
@@ -512,7 +512,7 @@ Sin embargo, esta simplicidad es también su fortaleza:
 | Probabilidades interpretables    | No captura orden de palabras            |
 | Resistente al sobreajuste        |                                         |
 
-## Extensiones Posibles
+## Extensiones posibles
 
 Una vez que domines este clasificador básico, puedes explorar:
 
@@ -525,7 +525,7 @@ Una vez que domines este clasificador básico, puedes explorar:
 
 ## ¿Qué aprendemos de este ejemplo?
 
-1. **El pre-procesamiento es crucial**: Limpiar y normalizar el texto afecta directamente la calidad del modelo.
+1. **El preprocesamiento es crucial**: Limpiar y normalizar el texto afecta directamente la calidad del modelo.
 
 2. **Teorema de Bayes en acción**: Combinamos la probabilidad previa P(categoría) con la evidencia P(palabras|categoría).
 

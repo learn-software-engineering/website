@@ -45,13 +45,13 @@ No vamos a usar bibliotecas complejas como TensorFlow o PyTorch todavía. Vamos 
 
 ---
 
-## Teoría Fundamental: Desenmascarando la IA
+## Teoría fundamental: desenmascarando la IA
 
-### IA, Machine Learning y Deep Learning: Aclarando la confusión
+### IA, Machine Learning y Deep Learning: aclarando la confusión
 
 Empecemos destruyendo algunos mitos. Estos tres términos no son sinónimos, aunque a menudo se usan como si lo fueran.
 
-#### Inteligencia Artificial (IA): El concepto más amplio
+#### Inteligencia Artificial (IA): el concepto más amplio
 
 La **Inteligencia Artificial** es cualquier técnica que permite a las máquinas imitar el comportamiento inteligente humano. Esto incluye desde un simple sistema de reglas hasta las redes neuronales más complejas.
 
@@ -203,7 +203,7 @@ options: {
 
 ---
 
-## Implementación Práctica: Tus primeros sistemas inteligentes
+## Implementación práctica: tus primeros sistemas inteligentes
 
 En los siguientes artículos de este módulo, veremos algunos ejemplos para que te vayas adentrando en el mundo de la inteligencia artificial y el aprendizaje automático.
 

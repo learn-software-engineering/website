@@ -151,7 +151,7 @@ Se espera además que cada regla retorne un mapa con los campos:
 
 Vale aclarar que estas reglas son ficticias y a la hora de generar un sistema experto de este tipo debes definirlas cuidadosamente en base al tipo de problema que intentas resolver y las condiciones de tu sistema.
 
-### Uso CPU
+### Uso de CPU
 
 La primera regla que implementaremos tendrá a su cargo determinar si el nivel de uso de CPU representa un problema de rendimiento o no.
 
@@ -202,7 +202,7 @@ Recomendaciones:
   • Considerar procesamiento asíncrono para tareas pesadas
 ```
 
-### Memoria
+### Uso de memoria
 
 Para el caso de la memoria RAM, no solo consideraremos su uso (superior al \(85\%\)) sino que también tenderemos en cuenta el tiempo de respuesta del sistema (mayor a \(3.0\) segundos).
 
@@ -273,7 +273,7 @@ DIAGNÓSTICO DEL SISTEMA
 No se detectaron problemas significativos
 ```
 
-### Concurrencia
+### Nivel de concurrencia
 
 De manera similar, implementaremos una regla para controlar la cantidad de conexiones simultaneas al servidor. Demasiadas conexiones pueden saturarlo y hacer que deje de responder. En este ejemplo, definiremos que \(1000\) conexiones simultaneas es el límite.
 
@@ -337,7 +337,7 @@ Recomendaciones:
   • Implementar colas para procesos no críticos
 ```
 
-### Base de datos
+### Consultas a la base de datos
 
 Una posible causa para recibir respuestas lentas puede ser el tiempo consumido en las consultas a la base de datos. Implementaremos una regla para que el sistema reconozca estos casos.
 
@@ -409,7 +409,7 @@ Recomendaciones:
   • Considerar particionado de tablas grandes
 ```
 
-### Red
+### Estado de la red
 
 Si vemos que el tiempo de respuesta es alto pero CPU y memoria están bien, puede ser un problema de red. A continuación vemos el código para implementar esta regla.
 

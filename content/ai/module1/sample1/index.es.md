@@ -2,8 +2,8 @@
 weight: 2
 series: ["Fundamentos de IA para Programadores"]
 series_order: 2
-title: "Ejemplo 1 - Sistema Experto"
-description: "Vamos a crear un sistema de IA clásica para diagnosticar problemas de rendimiento en aplicaciones web. Este ejemplo te muestra cómo estructurar conocimiento en reglas lógicas."
+title: "Machine Learning Ejemplo 1: Sistema Experto"
+description: "Vamos a crear un sistema de Inteligencia Artificial clásica para diagnosticar problemas de rendimiento en aplicaciones web. Este ejemplo te muestra cómo estructurar conocimiento en reglas lógicas."
 authors:
   - jnonino
 date: 2025-08-22

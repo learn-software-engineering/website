@@ -2,7 +2,7 @@
 weight: 4
 series: ["Fundamentos de IA para Programadores"]
 series_order: 4
-title: "Proyecto - Sistema de Recomendaciones"
+title: "Proyecto usando Machine Learning: Sistema de Recomendaciones"
 description: "Vamos a crear un sistema de recomendaciones usando reglas lógicas. Este tipo de sistema es común en e-commerce, plataformas de contenido y aplicaciones móviles."
 authors:
   - jnonino

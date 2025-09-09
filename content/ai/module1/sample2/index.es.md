@@ -2,7 +2,7 @@
 weight: 3
 series: ["Fundamentos de IA para Programadores"]
 series_order: 3
-title: "Ejemplo 2 - Sistema de Clasificación"
+title: "Machine Learning Ejemplo 2: Sistema de Clasificación"
 description: "Vamos a crear un clasificador de texto básico usando técnicas estadísticas simples. Esto te muestra los conceptos fundamentales detrás de algoritmos más complejos como Naive Bayes."
 authors:
   - jnonino

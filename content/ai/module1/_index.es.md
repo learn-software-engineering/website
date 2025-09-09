@@ -1,4 +1,4 @@
 ---
 weight: 1
-title: "Fundamentos de IA para Programadores"
+title: "Fundamentos de Inteligencia Artificial para Programadores"
 ---

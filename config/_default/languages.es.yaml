@@ -10,8 +10,8 @@ params:
   dateFormat: "02 January 2006"
   description: "Impulsa tu carrera"
   copyright: "© 2022-{ year } Julian Nonino. Todos los derechos reservados."
-  logo: "img/logo.png"
-  secondaryLogo: "img/logo.png"
+  logo: "img/logo.webp"
+  secondaryLogo: "img/logo.webp"
   author:
     name: "Learn-Software.com"
     headline: "Aprende. Crea. Domina."

@@ -1,16 +1,15 @@
 ---
-title: "Cálculo Diferencial para Machine Learning: Gradientes y Optimización Explicados para Programadores"
-date: 2024-12-15T10:00:00-03:00
-draft: false
-series: ["AI Engineers Path"]
-week: 3
-tags: ["machine-learning", "calculo-diferencial", "gradient-descent", "optimizacion", "python", "matematicas"]
-categories: ["AI Engineering", "Mathematics"]
+weight: 2
+series: ["Matemática para Machine Learning"]
+series_order: 2
+title: "Cálculo Diferencial para Machine Learning: gradientes y optimización explicados para programadores"
 description: "Descubre cómo el cálculo diferencial impulsa todos los algoritmos de machine learning. Aprende gradient descent, derivadas parciales y optimización desde cero con ejemplos prácticos en Python."
-keywords: ["calculo diferencial machine learning", "gradient descent", "derivadas parciales", "optimizacion python", "gradiente", "machine learning matematicas"]
-math: true
-author: "AI Engineers Argentina"
+authors:
+  - jnonino
+date: 2025-09-09
+tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning", "Matemática", "Cálculo Diferencia", "Gradiente", "Optimización"]
 ---
+{{< katex >}}
 
 # El Motor Invisible del Machine Learning: Cálculo Diferencial
 

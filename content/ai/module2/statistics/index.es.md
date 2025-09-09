@@ -1,16 +1,15 @@
 ---
-title: "Estadística Práctica para Machine Learning: De las Distribuciones a los Modelos Predictivos"
-date: 2024-01-15
-draft: false
-description: "Domina los conceptos estadísticos esenciales para machine learning. Aprende distribuciones, probabilidad y análisis de incertidumbre con Python desde cero."
-tags: ["estadistica", "machine learning", "probabilidad", "python", "data science", "AI engineering"]
-categories: ["Machine Learning", "Estadística", "Python"]
-series: "AI Engineer Path"
 weight: 3
-math: true
-author: "AI Engineering Team"
-keywords: ["estadistica machine learning", "probabilidad IA", "analisis datos python", "distribuciones probabilidad", "teorema bayes ML"]
+series: ["Matemática para Machine Learning"]
+series_order: 3
+title: "Estadística Práctica para Machine Learning: de las distribuciones a los modelos predictivos"
+description: "Domina los conceptos estadísticos esenciales para machine learning. Aprende distribuciones, probabilidad y análisis de incertidumbre con Python desde cero."
+authors:
+  - jnonino
+date: 2025-09-10
+tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning", "Matemática", "Estadística", "Probabilidad", "Data Science"]
 ---
+{{< katex >}}
 
 {{< alert "circle-info" >}}
 **Serie: De Software Engineer a AI Engineer - Semana 3**

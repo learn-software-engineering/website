@@ -1,60 +1,63 @@
 ---
-title: "Álgebra Lineal para Machine Learning: Vectores y Matrices que Todo AI Engineer Debe Conocer"
-date: 2025-08-24
-draft: false
-description: "Domina los fundamentos matemáticos del machine learning: vectores, matrices y transformaciones lineales explicados desde la perspectiva del programador"
-slug: "algebra-lineal-machine-learning-vectores-matrices"
-tags: ["machine learning", "álgebra lineal", "python", "matemática", "IA", "vectores", "matrices"]
-categories: ["AI Engineering Course"]
-keywords: ["algebra lineal machine learning", "vectores matrices python", "matematica IA", "transformaciones lineales", "eigenvalores", "numpy"]
-series: ["De Software Engineer a AI Engineer"]
-weight: 2
-math: true
+weight: 1
+series: ["Matemática para Machine Learning"]
+series_order: 1
+title: "Álgebra Lineal para Machine Learning: vectores y matrices que todo AI engineer debe conocer"
+description: "Domina los fundamentos matemáticos del machine learning: vectores, matrices y transformaciones lineales explicados desde la perspectiva del programador."
+authors:
+  - jnonino
+date: 2025-09-02
+tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning", "Matemática", "Álgebra Lineal", "Vectores", "Matrices"]
+---
+{{< katex >}}
+
+{{< lead >}}
+En el módulo anterior exploramos los fundamentos conceptuales de la Inteligencia Artificial. Ahora es momento de sumergirnos en una de las áreas de la matemática que hacen posible que los algoritmos de Machine Learning funcionen: el **álgebra lineal**.
+
+Si eres como la mayoría de los ingenieros de software, probablemente te preguntes: "¿por qué necesito álgebra lineal para programar IA?" La respuesta es simple pero profunda: **el álgebra lineal es el lenguaje nativo del machine learning**.
+
+{{< /lead >}}
+
 ---
 
-# Álgebra Lineal para Machine Learning: Los Cimientos Matemáticos de la IA
-
-En la semana anterior exploramos los fundamentos conceptuales de la inteligencia artificial. Ahora es momento de sumergirnos en las matemáticas que hacen posible que los algoritmos de machine learning funcionen: el **álgebra lineal**.
-
-Si eres como la mayoría de los software engineers, probablemente te preguntes: "¿Por qué necesito álgebra lineal para programar IA?" La respuesta es simple pero profunda: **el álgebra lineal es el lenguaje nativo del machine learning**.
-
-## ¿Por Qué el Álgebra Lineal es Crucial en IA?
+## ¿Por qué el Álgebra Lineal es crucial en IA?
 
 Imagina que estás desarrollando un sistema de recomendaciones para Netflix. Cada usuario tiene preferencias (acción, comedia, drama) que pueden representarse como un vector. Cada película también tiene características (género, año, rating) que forman otro vector. El problema de recomendar películas se convierte en encontrar similitudes entre vectores: **álgebra lineal**.
 
-O considera una red neuronal procesando una imagen de 224x224 píxeles. Esa imagen se convierte en un vector de 50,176 elementos. Las operaciones de la red (convoluciones, transformaciones) son multiplicaciones de matrices. El entrenamiento optimiza estas matrices: **álgebra lineal otra vez**.
+O considera una red neuronal procesando una imagen de \(224x224\) píxeles. Esa imagen se convierte en un vector de \(50176\) elementos. Las operaciones de la red (convoluciones, transformaciones) son multiplicaciones de matrices. El entrenamiento optimiza estas matrices, otra vez: **álgebra lineal**.
 
-### Los Tres Pilares del ML que Dependen del Álgebra Lineal
+### Los tres pilares del ML que dependen del Álgebra Lineal
 
 1. **Representación de Datos**: Todo en ML se convierte en vectores y matrices
 2. **Transformaciones**: Los algoritmos manipulan datos mediante operaciones lineales
 3. **Optimización**: Los métodos de entrenamiento usan gradientes (derivadas de operaciones matriciales)
 
-Como programadores, estamos acostumbrados a pensar en estructuras de datos como arrays, listas o objetos. En machine learning, pensamos en **vectores** y **matrices**. Esta semana aprenderemos a hacer esa transición mental.
+Como programadores, estamos acostumbrados a pensar en estructuras de datos como arrays, listas o objetos. En machine learning, pensamos en **vectores** y **matrices**. En este módulo aprenderemos a hacer esa transición mental.
 
 ---
 
-## Fundamentos Teóricos: Construyendo desde Cero
-
-### Vectores: Más que Solo Arrays
+## Vectores: más que arrays
 
 Un vector no es simplemente un array de números. Es una entidad matemática que representa tanto **magnitud** como **dirección**. En el contexto de machine learning, un vector es una forma de codificar información.
 
-#### Definición Formal
+### Definición formal
 
-Un vector $\mathbf{v}$ en el espacio $\mathbb{R}^n$ es una tupla ordenada de $n$ números reales:
+Un vector \(v\) en el espacio \(R^n\) es una tupla ordenada de \(n\) números reales:
 
-$$\mathbf{v} = \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}$$
+$$v = \begin{pmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{pmatrix}$$
 
 Pero más importante que la definición formal es la **interpretación práctica**:
 
-- **En un sistema de recomendaciones**: $\mathbf{v} = (rating_{acción}, rating_{comedia}, rating_{drama})$
-- **En procesamiento de texto**: $\mathbf{v} = (frecuencia_{palabra1}, frecuencia_{palabra2}, ...)$
-- **En visión por computadora**: $\mathbf{v} = (pixel_1, pixel_2, ..., pixel_n)$
+- **En un sistema de recomendaciones**:
+$$v = \begin{pmatrix} rating_{accion} \\ rating_{comedia} \\ rating_{drama} \end{pmatrix}$$
+- **En procesamiento de texto**:
+$$v = \begin{pmatrix} frecuencia_{palabra1} \\ frecuencia_{palabra2} \\ frecuencia_{palabra3} \\ \vdots \end{pmatrix}$$
+- **En visión por computadora**:
+$$v = \begin{pmatrix} pixel_1 \\ pixel_2 \\ pixel_3 \\ \vdots \end{pmatrix}$$
 
-#### Interpretación Geométrica
+### Interpretación geométrica
 
-Un vector en 2D se puede visualizar como una flecha desde el origen $(0,0)$ hasta el punto $(v_1, v_2)$. Esta visualización es clave para entender las operaciones vectoriales.
+Un vector en dos dimensiones (2D) se puede visualizar como una flecha desde el origen \((0,0)\) hasta el punto \((v_1, v_2)\). Esta visualización es clave para entender las operaciones vectoriales.
 
 ```python
 import matplotlib.pyplot as plt
@@ -81,23 +84,23 @@ plt.legend()
 plt.show()
 ```
 
-### Operaciones Vectoriales Fundamentales
+### Operaciones vectoriales fundamentales
 
-#### 1. Suma de Vectores
+#### Suma de vectores
 
 La suma vectorial es **componente a componente**:
 
 $$\mathbf{u} + \mathbf{v} = \begin{pmatrix} u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n \end{pmatrix}$$
 
-**Interpretación en ML**: Si tenemos las preferencias de dos usuarios similares, podemos promediar sus vectores para encontrar preferencias "típicas" de ese segmento.
+*Interpretación en ML*: Si tenemos las preferencias de dos usuarios similares, podemos promediar sus vectores para encontrar preferencias "típicas" de ese segmento.
 
-#### 2. Multiplicación por Escalar
+#### Multiplicación por escalar
 
 $$c \cdot \mathbf{v} = \begin{pmatrix} c \cdot v_1 \\ c \cdot v_2 \\ \vdots \\ c \cdot v_n \end{pmatrix}$$
 
-**Interpretación en ML**: Amplificar o reducir la importancia de ciertas características.
+*Interpretación en ML*: Amplificar o reducir la importancia de ciertas características.
 
-#### 3. Producto Punto (Dot Product)
+#### Producto Punto
 
 El producto punto es quizás la operación más importante en ML:
 
@@ -108,207 +111,29 @@ $$\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i v_i = u_1 v_1 + u_2 v_2 + ...
 - **Proyección**: Mide cuánto un vector "apunta" en la dirección de otro
 - **Redes neuronales**: La base de las operaciones en cada neurona
 
-La interpretación geométrica es crucial:
+La interpretación geométrica es crucial, el producto punto es igual al producto entre las magnitudes de cada vector y el coseno del ángulo entre ellos:
 
 $$\mathbf{u} \cdot \mathbf{v} = ||\mathbf{u}|| \cdot ||\mathbf{v}|| \cdot \cos(\theta)$$
 
-Donde $\theta$ es el ángulo entre los vectores.
+Donde \(\theta\) es el ángulo entre los vectores.
 
-### Implementación desde Cero: Clase Vector
+O de otra manera:
 
-Antes de usar NumPy, implementemos nuestras propias operaciones vectoriales para entender qué sucede "bajo el capó":
+$$\cos(\theta) = \frac{\mathbf{u} \cdot \mathbf{v}}{||\mathbf{u}|| \cdot ||\mathbf{v}||}$$
 
-```python
-import math
-from typing import List
+$$\theta = \arccos(\frac{\mathbf{u} \cdot \mathbf{v}}{||\mathbf{u}|| \cdot ||\mathbf{v}||})$$
 
-class Vector:
-    """
-    Implementación básica de un vector matemático.
+Conocer el ángulo entre los vectores permite determinar que tan alineados están.
 
-    Esta clase nos ayuda a entender las operaciones vectoriales
-    antes de usar bibliotecas optimizadas como NumPy.
-    """
+### Implementación desde cero: clase Vector
 
-    def __init__(self, components: List[float]):
-        """
-        Inicializa un vector con una lista de componentes.
+Antes de usar `NumPy`, implementemos nuestras propias operaciones vectoriales para entender qué sucede en el detrás de escena:
 
-        Args:
-            components: Lista de números que forman el vector
-        """
-        if not components:
-            raise ValueError("Un vector debe tener al menos un componente")
-        self.components = components
-        self.dimension = len(components)
+{{< codeimporter url="https://github.com/learn-software-engineering/examples/blob/main/ai/module2/vector.py" type="python" >}}
 
-    def __repr__(self):
-        return f"Vector({self.components})"
+---
 
-    def __len__(self):
-        return self.dimension
-
-    def __getitem__(self, index):
-        return self.components[index]
-
-    def __add__(self, other):
-        """
-        Suma vectorial: componente por componente.
-
-        Ejemplo:
-        v1 = Vector([1, 2, 3])
-        v2 = Vector([4, 5, 6])
-        v3 = v1 + v2  # Vector([5, 7, 9])
-        """
-        if self.dimension != other.dimension:
-            raise ValueError("Los vectores deben tener la misma dimensión")
-
-        result_components = [
-            a + b for a, b in zip(self.components, other.components)
-        ]
-        return Vector(result_components)
-
-    def __sub__(self, other):
-        """Resta vectorial."""
-        if self.dimension != other.dimension:
-            raise ValueError("Los vectores deben tener la misma dimensión")
-
-        result_components = [
-            a - b for a, b in zip(self.components, other.components)
-        ]
-        return Vector(result_components)
-
-    def __mul__(self, scalar):
-        """
-        Multiplicación por escalar.
-
-        Ejemplo:
-        v = Vector([1, 2, 3])
-        v_scaled = v * 2  # Vector([2, 4, 6])
-        """
-        return Vector([scalar * component for component in self.components])
-
-    def dot_product(self, other):
-        """
-        Producto punto: la operación más importante en ML.
-
-        El producto punto mide la similitud direccional entre vectores.
-        - Producto alto: vectores apuntan en direcciones similares
-        - Producto cero: vectores perpendiculares
-        - Producto negativo: vectores apuntan en direcciones opuestas
-
-        Args:
-            other: Otro vector de la misma dimensión
-
-        Returns:
-            float: El producto punto
-        """
-        if self.dimension != other.dimension:
-            raise ValueError("Los vectores deben tener la misma dimensión")
-
-        return sum(a * b for a, b in zip(self.components, other.components))
-
-    def magnitude(self):
-        """
-        Calcula la magnitud (norma) del vector.
-
-        La magnitud representa la "longitud" del vector.
-        Es importante para normalización y cálculo de distancias.
-
-        Returns:
-            float: La magnitud del vector
-        """
-        return math.sqrt(sum(component ** 2 for component in self.components))
-
-    def normalize(self):
-        """
-        Normaliza el vector (magnitud = 1).
-
-        Los vectores normalizados son cruciales en ML porque:
-        - Eliminan el efecto de la escala
-        - Facilitan la comparación de direcciones
-        - Son requeridos en muchos algoritmos
-
-        Returns:
-            Vector: Nuevo vector normalizado
-        """
-        mag = self.magnitude()
-        if mag == 0:
-            raise ValueError("No se puede normalizar el vector cero")
-
-        return Vector([component / mag for component in self.components])
-
-    def cosine_similarity(self, other):
-        """
-        Calcula la similitud coseno entre dos vectores.
-
-        La similitud coseno es fundamental en:
-        - Sistemas de recomendación
-        - Procesamiento de lenguaje natural
-        - Búsqueda semántica
-
-        Retorna valores entre -1 y 1:
-        - 1: Vectores idénticos en dirección
-        - 0: Vectores perpendiculares
-        - -1: Vectores opuestos
-
-        Args:
-            other: Otro vector
-
-        Returns:
-            float: Similitud coseno
-        """
-        dot_prod = self.dot_product(other)
-        magnitude_product = self.magnitude() * other.magnitude()
-
-        if magnitude_product == 0:
-            return 0
-
-        return dot_prod / magnitude_product
-
-# Ejemplos de uso
-def test_vector_operations():
-    """
-    Prueba las operaciones vectoriales con ejemplos de ML.
-    """
-    print("=== Ejemplos de Operaciones Vectoriales ===")
-
-    # Ejemplo 1: Preferencias de usuarios
-    user1 = Vector([4, 2, 5])  # [acción, comedia, drama]
-    user2 = Vector([3, 4, 2])  # [acción, comedia, drama]
-
-    print(f"Usuario 1: {user1}")
-    print(f"Usuario 2: {user2}")
-
-    # Suma: preferencias combinadas
-    combined = user1 + user2
-    print(f"Preferencias combinadas: {combined}")
-
-    # Producto punto: medida de similitud
-    similarity = user1.dot_product(user2)
-    print(f"Similitud (producto punto): {similarity}")
-
-    # Similitud coseno: métrica normalizada
-    cosine_sim = user1.cosine_similarity(user2)
-    print(f"Similitud coseno: {cosine_sim:.3f}")
-
-    # Ejemplo 2: Vectores de características
-    document1 = Vector([2, 1, 0, 3])  # Frecuencias de palabras
-    document2 = Vector([1, 2, 1, 2])  # Frecuencias de palabras
-
-    print(f"\n=== Análisis de Documentos ===")
-    print(f"Documento 1: {document1}")
-    print(f"Documento 2: {document2}")
-
-    doc_similarity = document1.cosine_similarity(document2)
-    print(f"Similitud entre documentos: {doc_similarity:.3f}")
-
-# Ejecutar ejemplos
-if __name__ == "__main__":
-    test_vector_operations()
-```
-
-### Matrices: Transformaciones de Datos
+## Matrices: transformaciones de datos
 
 Si los vectores representan datos, las **matrices representan transformaciones** de esos datos. Una matriz es una tabla rectangular de números organizados en filas y columnas.
 
@@ -325,295 +150,85 @@ a_{m1} & a_{m2} & \cdots & a_{mn}
 - **Pesos de red neuronal**: Transforman entradas en salidas
 - **Transformaciones**: Rotación, escalado, proyección de datos
 
-#### Operaciones Matriciales Fundamentales
+### Operaciones matriciales fundamentales
 
-##### 1. Multiplicación Matriz-Vector
+#### Multiplicación Matriz-Vector
 
 Esta es la operación más común en ML. Transforma un vector usando una matriz:
 
 $$\mathbf{A}\mathbf{v} = \begin{pmatrix}
-\mathbf{a}_1 \cdot \mathbf{v} \\
-\mathbf{a}_2 \cdot \mathbf{v} \\
+\sum_{i=1}^{n} a_{1i} v_i \\
+\sum_{i=1}^{n} a_{2i} v_i \\
+\sum_{i=1}^{n} a_{3i} v_i \\
 \vdots \\
-\mathbf{a}_m \cdot \mathbf{v}
+\sum_{i=1}^{n} a_{mi} v_i \\
 \end{pmatrix}$$
 
-Donde $\mathbf{a}_i$ es la i-ésima fila de $\mathbf{A}$.
+$$\mathbf{A}\mathbf{v} = \begin{pmatrix}
+a_{11} & a_{12} & a_{13} & \cdots & a_{1n} \\
+a_{21} & a_{22} & a_{33} & \cdots & a_{2n} \\
+a_{31} & a_{32} & a_{33} & \cdots & a_{3n} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & a_{m3} & \cdots & a_{mn} \\
+\end{pmatrix} \cdot \begin{pmatrix} v_1 \\ v_2 \\ v_3 \\ \vdots \\ v_n \end{pmatrix}$$
+
+$$\mathbf{A}\mathbf{v} = \begin{pmatrix}
+a_{11} \cdot v_1 + a_{12} \cdot v_2 + a_{13} \cdot v_3 + \cdots + a_{1n} \cdot v_n \\
+a_{21} \cdot v_1 + a_{22} \cdot v_2 + a_{23} \cdot v_3 + \cdots + a_{2n} \cdot v_n \\
+a_{31} \cdot v_1 + a_{32} \cdot v_2 + a_{33} \cdot v_3 + \cdots + a_{3n} \cdot v_n \\
+\vdots \\
+a_{m1} \cdot v_1 + a_{m2} \cdot v_2 + a_{m3} \cdot v_3 + \cdots + a_{mn} \cdot v_n \\
+\end{pmatrix}$$
+
+Cuando se multiplica una matriz por un vector, es necesario que el número de elementos del vector coincida con el número de columnas de la matriz. Si no es así, la multiplicación no está definida.
 
 **Ejemplo práctico**: En una red neuronal, cada capa aplica una transformación lineal:
 ```
 salida = pesos × entrada + sesgo
 ```
 
-##### 2. Multiplicación Matriz-Matriz
+#### Multiplicación Matriz-Matriz
 
-$$(\mathbf{AB})_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}$$
+Para que el producto de dos matrices \(A\) y \(B\) es decir, \(AB\) esté definido, la matriz \(A\) debe tener el mismo número de columnas que la matriz \(B\) tenga de filas. Si \(A\) es de tamaño \(m x n\) y \(B\) es de tamaño \(n x p\), entonces el resultado \(C = AB\) será una matriz de tamaño \(m x p\).
+
+$$\mathbf{C} = \mathbf{A}\mathbf{B} =
+\begin{pmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+a_{31} & a_{32} & \cdots & a_{3n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{m1} & a_{m2} & \cdots & a_{mn} \\
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+b_{11} & b_{12} & \cdots & b_{1p} \\
+b_{21} & b_{22} & \cdots & b_{2p} \\
+b_{31} & b_{32} & \cdots & b_{3p} \\
+\vdots & \vdots & \ddots & \vdots \\
+b_{n1} & b_{n2} & \cdots & b_{np} \\
+\end{pmatrix}$$
+
+$$\mathbf{C} = \mathbf{A}\mathbf{B} = \begin{pmatrix}
+\sum_{k=1}^{n} a_{1k} b_{k1} & \sum_{k=1}^{n} a_{1k} b_{k2} & \cdots & \sum_{k=1}^{n} a_{1k} b_{kp} \\
+\sum_{k=1}^{n} a_{2k} b_{k1} & \sum_{k=1}^{n} a_{2k} b_{k2} & \cdots & \sum_{k=1}^{n} a_{2k} b_{kp} \\
+\sum_{k=1}^{n} a_{3k} b_{k1} & \sum_{k=1}^{n} a_{3k} b_{k2} & \cdots & \sum_{k=1}^{n} a_{3k} b_{kp} \\
+\vdots & \vdots & \ddots & \vdots \\
+\sum_{k=1}^{n} a_{mk} b_{k1} & \sum_{k=1}^{n} a_{mk} b_{k2} & \cdots & \sum_{k=1}^{n} a_{mk} b_{kp} \\
+\end{pmatrix}$$
+
+Es decir, cada elemento \(ij\) de la matriz resultado (\(C\)) será:
+
+$$\mathbf{C}_{ij} = (\mathbf{AB})_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}$$
 
 Esta operación permite componer transformaciones lineales.
 
-### Implementación desde Cero: Clase Matrix
+### Implementación desde cero: clase Matrix
 
-```python
-class Matrix:
-    """
-    Implementación básica de una matriz matemática.
+{{< codeimporter url="https://github.com/learn-software-engineering/examples/blob/main/ai/module2/matrix.py" type="python" >}}
 
-    Esta clase nos ayuda a entender las operaciones matriciales
-    fundamentales en machine learning.
-    """
+---
 
-    def __init__(self, data: List[List[float]]):
-        """
-        Inicializa una matriz con una lista de listas.
-
-        Args:
-            data: Lista de filas, donde cada fila es una lista de números
-        """
-        if not data or not data[0]:
-            raise ValueError("La matriz debe tener al menos un elemento")
-
-        # Verificar que todas las filas tengan la misma longitud
-        row_length = len(data[0])
-        for row in data:
-            if len(row) != row_length:
-                raise ValueError("Todas las filas deben tener la misma longitud")
-
-        self.data = data
-        self.rows = len(data)
-        self.cols = len(data[0])
-        self.shape = (self.rows, self.cols)
-
-    def __repr__(self):
-        """Representación legible de la matriz."""
-        rows = []
-        for row in self.data:
-            row_str = " ".join(f"{x:8.3f}" for x in row)
-            rows.append(f"[{row_str}]")
-        return f"Matrix(\n  " + "\n  ".join(rows) + "\n)"
-
-    def __getitem__(self, indices):
-        """Permite acceso con matrix[i][j] o matrix[i, j]."""
-        if isinstance(indices, tuple):
-            row, col = indices
-            return self.data[row][col]
-        else:
-            return self.data[indices]
-
-    def __setitem__(self, indices, value):
-        """Permite asignación con matrix[i][j] = value."""
-        if isinstance(indices, tuple):
-            row, col = indices
-            self.data[row][col] = value
-        else:
-            row = indices
-            self.data[row] = value
-
-    def transpose(self):
-        """
-        Calcula la transpuesta de la matriz.
-
-        La transpuesta intercambia filas por columnas.
-        Es fundamental en álgebra lineal y ML.
-
-        Returns:
-            Matrix: Nueva matriz transpuesta
-        """
-        transposed_data = [
-            [self.data[row][col] for row in range(self.rows)]
-            for col in range(self.cols)
-        ]
-        return Matrix(transposed_data)
-
-    def multiply_vector(self, vector: Vector):
-        """
-        Multiplica la matriz por un vector.
-
-        Esta es la operación fundamental en redes neuronales:
-        cada capa aplica una transformación lineal Ax + b.
-
-        Args:
-            vector: Vector a multiplicar
-
-        Returns:
-            Vector: Resultado de la multiplicación
-        """
-        if self.cols != len(vector):
-            raise ValueError(f"Dimensiones incompatibles: matriz {self.shape} × vector {len(vector)}")
-
-        result_components = []
-        for row in range(self.rows):
-            # Producto punto de la fila con el vector
-            dot_product = sum(
-                self.data[row][col] * vector[col]
-                for col in range(self.cols)
-            )
-            result_components.append(dot_product)
-
-        return Vector(result_components)
-
-    def multiply_matrix(self, other):
-        """
-        Multiplica dos matrices.
-
-        La multiplicación de matrices permite componer transformaciones.
-        En deep learning, representa la composición de capas.
-
-        Args:
-            other: Otra matriz
-
-        Returns:
-            Matrix: Resultado de la multiplicación
-        """
-        if self.cols != other.rows:
-            raise ValueError(f"Dimensiones incompatibles: {self.shape} × {other.shape}")
-
-        result_data = []
-        for i in range(self.rows):
-            result_row = []
-            for j in range(other.cols):
-                # Producto punto de la fila i de self con la columna j de other
-                element = sum(
-                    self.data[i][k] * other.data[k][j]
-                    for k in range(self.cols)
-                )
-                result_row.append(element)
-            result_data.append(result_row)
-
-        return Matrix(result_data)
-
-    def __add__(self, other):
-        """Suma de matrices (elemento por elemento)."""
-        if self.shape != other.shape:
-            raise ValueError("Las matrices deben tener la misma forma")
-
-        result_data = [
-            [self.data[i][j] + other.data[i][j] for j in range(self.cols)]
-            for i in range(self.rows)
-        ]
-        return Matrix(result_data)
-
-    def __mul__(self, scalar):
-        """Multiplicación por escalar."""
-        result_data = [
-            [scalar * self.data[i][j] for j in range(self.cols)]
-            for i in range(self.rows)
-        ]
-        return Matrix(result_data)
-
-    @staticmethod
-    def identity(size: int):
-        """
-        Crea una matriz identidad de tamaño size × size.
-
-        La matriz identidad es el "1" de las matrices:
-        A × I = I × A = A
-
-        Args:
-            size: Tamaño de la matriz cuadrada
-
-        Returns:
-            Matrix: Matriz identidad
-        """
-        data = [
-            [1.0 if i == j else 0.0 for j in range(size)]
-            for i in range(size)
-        ]
-        return Matrix(data)
-
-    @staticmethod
-    def from_vectors(vectors: List[Vector], by_rows=True):
-        """
-        Crea una matriz a partir de una lista de vectores.
-
-        Args:
-            vectors: Lista de vectores
-            by_rows: Si True, cada vector es una fila; si False, cada vector es una columna
-
-        Returns:
-            Matrix: Nueva matriz
-        """
-        if by_rows:
-            data = [vector.components for vector in vectors]
-        else:
-            # Transponer: vectores como columnas
-            data = [
-                [vectors[j][i] for j in range(len(vectors))]
-                for i in range(len(vectors[0]))
-            ]
-        return Matrix(data)
-
-def demo_matrix_operations():
-    """
-    Demonstra operaciones matriciales con ejemplos de ML.
-    """
-    print("=== Operaciones Matriciales en ML ===")
-
-    # Ejemplo 1: Dataset simple
-    # Cada fila es un ejemplo, cada columna una característica
-    data = Matrix([
-        [1.0, 2.0, 3.0],  # Ejemplo 1
-        [4.0, 5.0, 6.0],  # Ejemplo 2
-        [7.0, 8.0, 9.0]   # Ejemplo 3
-    ])
-
-    print("Dataset (3 ejemplos, 3 características):")
-    print(data)
-
-    # Ejemplo 2: Matriz de pesos de una red neuronal simple
-    weights = Matrix([
-        [0.1, 0.2],  # Pesos para neurona 1
-        [0.3, 0.4],  # Pesos para neurona 2
-        [0.5, 0.6]   # Pesos para neurona 3
-    ])
-
-    print("\nMatriz de pesos (3 características → 2 neuronas):")
-    print(weights)
-
-    # Ejemplo 3: Vector de entrada
-    input_vector = Vector([1.0, 2.0, 3.0])
-    print(f"\nVector de entrada: {input_vector}")
-
-    # Transformación lineal: multiplicación matriz-vector
-    output = weights.transpose().multiply_vector(input_vector)
-    print(f"Salida de la capa: {output}")
-
-    # Ejemplo 4: Composición de transformaciones
-    print("\n=== Composición de Transformaciones ===")
-
-    # Primera transformación: 3D → 2D
-    transform1 = Matrix([
-        [1.0, 0.0, 1.0],
-        [0.0, 1.0, 1.0]
-    ])
-
-    # Segunda transformación: 2D → 2D (rotación)
-    angle = 45 * math.pi / 180  # 45 grados en radianes
-    transform2 = Matrix([
-        [math.cos(angle), -math.sin(angle)],
-        [math.sin(angle),  math.cos(angle)]
-    ])
-
-    # Composición: aplicar transform1, luego transform2
-    composed = transform2.multiply_matrix(transform1)
-    print("Transformación compuesta:")
-    print(composed)
-
-    # Aplicar a un vector
-    test_vector = Vector([1.0, 0.0, 0.0])
-    result1 = transform1.multiply_vector(test_vector)
-    result2 = transform2.multiply_vector(result1)
-    result_direct = composed.multiply_vector(test_vector)
-
-    print(f"\nVector original: {test_vector}")
-    print(f"Resultado paso a paso: {result2}")
-    print(f"Resultado directo: {result_direct}")
-
-# Ejecutar demostración
-if __name__ == "__main__":
-    demo_matrix_operations()
-```
-
-### Espacios Vectoriales y Transformaciones Lineales
+## Espacios Vectoriales y Transformaciones Lineales
 
 Un **espacio vectorial** es un conjunto de vectores donde podemos realizar operaciones de suma y multiplicación por escalar, y estas operaciones satisfacen ciertas propiedades (asociatividad, conmutatividad, etc.).
 

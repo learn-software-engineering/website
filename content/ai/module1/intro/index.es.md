@@ -2,7 +2,7 @@
 weight: 1
 series: ["Fundamentos de IA para Programadores"]
 series_order: 1
-title: "Introducción"
+title: "Introducción a la Inteligencia Artificial y a Machine Learning"
 description: "Aprende los conceptos fundamentales de inteligencia artificial desde cero. Guía completa para ingenieros de software que quieren convertirse en ingenieros en IA, con código Python y proyecto práctico."
 authors:
   - jnonino

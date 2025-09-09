@@ -2,7 +2,7 @@
 weight: 5
 series: ["Fundamentos de IA para Programadores"]
 series_order: 5
-title: "Conclusión"
+title: "Fundamentos de Inteligencia Artificial: Conclusión"
 description: "Llegó el momento de cerrar nuestro paso por los fundamentos de la Inteligencia Artificial. Ahora vamos a repasar lo aprendido, aclarar algunas dudas y prepararnos para el próximo módulo."
 authors:
   - jnonino

@@ -476,7 +476,7 @@ Recomendaciones:
 
 ## Código completo
 
-Aquí tienes el código completo del sistema. También puedes encontrarlo en el repositorio de ejemplos haciendo click en el siguiente [enlace](https://github.com/learn-software-engineering/examples/blob/main/ai/module1/sistema_experto_basico.py).
+Aquí tienes el código completo del sistema. También puedes encontrarlo en el repositorio de ejemplos haciendo click en el siguiente [enlace](https://github.com/learn-software-engineering/examples/blob/main/ai/module1/sistema_experto/main.py).
 
 {{< github repo="learn-software-engineering/examples" showThumbnail=false >}}
 

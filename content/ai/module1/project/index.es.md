@@ -128,11 +128,546 @@ Evalúa tu sistema considerando:
 
 ## Solución
 
-Haciendo click en el siguiente [enlace](https://github.com/learn-software-engineering/examples/blob/main/ai/module1/sistema_de_recomendaciones), puedes encontrar una posible solución para este problema. Incluye explicaciones detalladas.
+Haciendo click en el siguiente [enlace](https://github.com/learn-software-engineering/examples/tree/main/ai/module1/sistema_de_recomendaciones), puedes encontrar una posible solución para este problema. Incluye explicaciones detalladas.
 
 {{< alert >}}
 ¡Intentá resolverlo por tu cuenta primero! 😀😀😀
 {{< /alert >}}
+
+### Ejecución
+
+Aquí hay algunos ejemplos de ejecución:
+
+#### Demostración completa
+
+```bash
+>  python main.py
+Selecciona el tipo de demostración:
+   1- Demostración completa
+   2- Comparación de algoritmos
+   3- Usuario específico
+
+Opción (1-3): 1
+Sistema de Recomendaciones - Demostración Completa
+==================================================
+Cargando la configuración desde config.yaml
+Configuración cargada desde config.yaml
+Configuración validada exitosamente
+Inicializando Sistema de Recomendaciones
+   * 6 usuarios cargados
+   * 12 productos cargados
+   * 22 interacciones cargadas
+Sistema listo!
+
+========================
+Estadísticas del Sistema
+========================
+Analizando sistema
+Usuarios: 6
+   * Por género: {'F': 3, 'M': 3}
+   * Por ubicación: {'Buenos Aires': 2, 'Córdoba': 1, 'Rosario': 1, 'Mendoza': 1, 'La Plata': 1}
+   * Por nivel de gasto: {'medio': 3, 'alto': 2, 'bajo': 1}
+   * Edad promedio: 31.5 años
+Productos: 12
+   * Por categoría: {'tecnologia': 4, 'lectura': 2, 'gaming': 2, 'hogar': 1, 'fitness': 2, 'cocina': 1}
+   * Precio promedio: $37,950
+   * Calificación promedio: 4.36/5
+Interacciones: 22
+   * Por tipo: {'compra': 11, 'view': 9, 'wishlist': 2}
+   * Por usuario: {'user_001': 4, 'user_002': 4, 'user_003': 4, 'user_004': 4, 'user_005': 3, 'user_006': 3}
+   * Usuarios activos: 6
+Similitudes:
+   * Promedio: 0.162
+   * Máxima: 0.398
+   * Mínima: 0.000
+
+=============================
+Reporte Detallado - ANA LÓPEZ
+=============================
+Perfil del usuario
+   * Edad: 28 años
+   * Género: F
+   * Ubicación: Buenos Aires
+   * Intereses: tecnologia, fitness, lectura
+   * Nivel de gasto: medio
+Historial de actividad (4 interacciones):
+   • 2024-08-17: WISHLIST - Cámara DSLR Canon EOS Rebel T7
+   • 2024-08-10: COMPRA - Proteína Whey Gold Standard (Calificación: 4/5)
+   • 2024-08-05: VIEW - Auriculares Bluetooth Sport Pro
+   • 2024-08-01: COMPRA - Smartphone Samsung Galaxy S24 (Calificación: 5/5)
+3 usuarios más similares
+   * Diego Silva: 0.398 (39.8% similar)
+   * Roberto García: 0.322 (32.2% similar)
+   * Laura Martínez: 0.246 (24.6% similar)
+Generando recomendaciones para Ana López
+========================================
+   Aplicando filtrado colaborativo para Ana López...
+   Usuarios similares encontrados: 5
+   6 recomendaciones colaborativas generadas
+   Aplicando filtrado por contenido para Ana López...
+   8 recomendaciones por contenido generadas
+   Combinando estrategias de recomendación
+      * Productos únicos después de combinar: 8
+   Primeras 5 recomendaciones seleccionadas
+   Recomendaciones generadas exitosamente!
+5 recomendaciones generadas:
+   #1 - Set Pesas Ajustables 40kg
+      Precio: $15,000
+      Calificación: 4.1/5
+      Puntuación: 3.179
+      Explicación: Coincide con tu interés en fitness; Te gusta la categoría fitness; Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.1/5); A usuarios con perfil similar también les gustó
+   #2 - Cafetera Espresso DeLonghi
+      Precio: $32,000
+      Calificación: 4.2/5
+      Puntuación: 1.792
+      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.2/5); A usuarios con perfil similar también les gustó
+   #3 - Libro: El Arte de la Guerra Digital
+      Precio: $4,200
+      Calificación: 4.5/5
+      Puntuación: 2.808
+      Explicación: Coincide con tu interés en tecnologia; Te gusta la categoría lectura; Apropiado para tu grupo de edad; Excelente valoración (4.5/5)
+   #4 - Libro: Cocina Mediterránea Saludable
+      Precio: $3,500
+      Calificación: 4.8/5
+      Puntuación: 2.14
+      Explicación: Te gusta la categoría lectura; Apropiado para tu grupo de edad; Excelente valoración (4.8/5)
+   #5 - Auriculares Gaming HyperX Cloud III
+      Precio: $18,000
+      Calificación: 4.4/5
+      Puntuación: 1.684
+      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.4/5)
+
+=================================
+Reporte Detallado - CARLOS MENDEZ
+=================================
+Perfil del usuario
+   * Edad: 35 años
+   * Género: M
+   * Ubicación: Córdoba
+   * Intereses: deportes, gaming, musica
+   * Nivel de gasto: alto
+Historial de actividad (4 interacciones):
+   • 2024-08-18: VIEW - Tablet Samsung Galaxy Tab S9
+   • 2024-08-12: COMPRA - Auriculares Gaming HyperX Cloud III (Calificación: 5/5)
+   • 2024-08-07: VIEW - Smartphone Samsung Galaxy S24
+   • 2024-08-03: COMPRA - Juego: Call of Duty Modern Warfare III (Calificación: 4/5)
+3 usuarios más similares
+   * Roberto García: 0.192 (19.2% similar)
+   * Laura Martínez: 0.168 (16.8% similar)
+   * Diego Silva: 0.120 (12.0% similar)
+Generando recomendaciones para Carlos Mendez
+============================================
+   Aplicando filtrado colaborativo para Carlos Mendez...
+   Usuarios similares encontrados: 5
+   6 recomendaciones colaborativas generadas
+   Aplicando filtrado por contenido para Carlos Mendez...
+   8 recomendaciones por contenido generadas
+   Combinando estrategias de recomendación
+      * Productos únicos después de combinar: 8
+   Primeras 5 recomendaciones seleccionadas
+   Recomendaciones generadas exitosamente!
+5 recomendaciones generadas:
+   #1 - Cafetera Espresso DeLonghi
+      Precio: $32,000
+      Calificación: 4.2/5
+      Puntuación: 1.408
+      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.2/5)
+   #2 - Libro: El Arte de la Guerra Digital
+      Precio: $4,200
+      Calificación: 4.5/5
+      Puntuación: 1.361
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.5/5)
+   #3 - Set Pesas Ajustables 40kg
+      Precio: $15,000
+      Calificación: 4.1/5
+      Puntuación: 1.326
+      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.1/5)
+   #4 - Auriculares Bluetooth Sport Pro
+      Precio: $25,000
+      Calificación: 4.2/5
+      Puntuación: 1.994
+      Explicación: Coincide con tu interés en deportes; Apropiado para tu grupo de edad; Buena valoración (4.2/5); Producto muy popular
+   #5 - Libro: Cocina Mediterránea Saludable
+      Precio: $3,500
+      Calificación: 4.8/5
+      Puntuación: 1.336
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.8/5)
+
+===================================
+Reporte Detallado - MARÍA RODRIGUEZ
+===================================
+Perfil del usuario
+   * Edad: 42 años
+   * Género: F
+   * Ubicación: Rosario
+   * Intereses: cocina, jardineria, arte
+   * Nivel de gasto: bajo
+Historial de actividad (4 interacciones):
+   • 2024-08-20: VIEW - Cámara DSLR Canon EOS Rebel T7
+   • 2024-08-15: COMPRA - Cafetera Espresso DeLonghi (Calificación: 3/5)
+   • 2024-08-06: VIEW - Kit Herramientas Jardín Premium
+   • 2024-08-02: COMPRA - Libro: Cocina Mediterránea Saludable (Calificación: 5/5)
+3 usuarios más similares
+   * Roberto García: 0.193 (19.3% similar)
+   * Laura Martínez: 0.120 (12.0% similar)
+   * Ana López: 0.060 (6.0% similar)
+Generando recomendaciones para María Rodriguez
+==============================================
+   Aplicando filtrado colaborativo para María Rodriguez...
+   Usuarios similares encontrados: 5
+   7 recomendaciones colaborativas generadas
+   Aplicando filtrado por contenido para María Rodriguez...
+   8 recomendaciones por contenido generadas
+   Combinando estrategias de recomendación
+      * Productos únicos después de combinar: 8
+   Primeras 5 recomendaciones seleccionadas
+   Recomendaciones generadas exitosamente!
+5 recomendaciones generadas:
+   #1 - Smartphone Samsung Galaxy S24
+      Precio: $150,000
+      Calificación: 4.5/5
+      Puntuación: 1.572
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.5/5); Producto muy popular
+   #2 - Libro: El Arte de la Guerra Digital
+      Precio: $4,200
+      Calificación: 4.5/5
+      Puntuación: 1.652
+      Explicación: Apropiado para tu grupo de edad; Precio económico y accesible; Excelente valoración (4.5/5)
+   #3 - Auriculares Gaming HyperX Cloud III
+      Precio: $18,000
+      Calificación: 4.4/5
+      Puntuación: 0.764
+      Explicación: Buena valoración (4.4/5)
+   #4 - Proteína Whey Gold Standard
+      Precio: $7,200
+      Calificación: 4.6/5
+      Puntuación: 1.737
+      Explicación: Apropiado para tu grupo de edad; Precio económico y accesible; Excelente valoración (4.6/5); Producto muy popular
+   #5 - Juego: Call of Duty Modern Warfare III
+      Precio: $12,000
+      Calificación: 4.3/5
+      Puntuación: 1.13
+      Explicación: Precio económico y accesible; Buena valoración (4.3/5); Producto muy popular
+
+===============================
+Reporte Detallado - DIEGO SILVA
+===============================
+Perfil del usuario
+   * Edad: 24 años
+   * Género: M
+   * Ubicación: Buenos Aires
+   * Intereses: tecnologia, gaming, fitness
+   * Nivel de gasto: medio
+Historial de actividad (4 interacciones):
+   • 2024-08-19: WISHLIST - Smartphone Samsung Galaxy S24
+   • 2024-08-14: COMPRA - Set Pesas Ajustables 40kg (Calificación: 4/5)
+   • 2024-08-08: VIEW - Juego: Call of Duty Modern Warfare III
+   • 2024-08-04: COMPRA - Auriculares Bluetooth Sport Pro (Calificación: 4/5)
+3 usuarios más similares
+   * Ana López: 0.398 (39.8% similar)
+   * Roberto García: 0.310 (31.0% similar)
+   * Carlos Mendez: 0.120 (12.0% similar)
+Generando recomendaciones para Diego Silva
+==========================================
+   Aplicando filtrado colaborativo para Diego Silva...
+   Usuarios similares encontrados: 5
+   5 recomendaciones colaborativas generadas
+   Aplicando filtrado por contenido para Diego Silva...
+   8 recomendaciones por contenido generadas
+   Combinando estrategias de recomendación
+      * Productos únicos después de combinar: 8
+   Primeras 5 recomendaciones seleccionadas
+   Recomendaciones generadas exitosamente!
+5 recomendaciones generadas:
+   #1 - Proteína Whey Gold Standard
+      Precio: $7,200
+      Calificación: 4.6/5
+      Puntuación: 2.979
+      Explicación: Coincide con tu interés en fitness; Te gusta la categoría fitness; Apropiado para tu grupo de edad; Excelente valoración (4.6/5); A usuarios con perfil similar también les gustó; Producto muy popular
+   #2 - Cafetera Espresso DeLonghi
+      Precio: $32,000
+      Calificación: 4.2/5
+      Puntuación: 1.465
+      Explicación: Precio equilibrado para tu rango; Buena valoración (4.2/5); A usuarios con perfil similar también les gustó
+   #3 - Auriculares Gaming HyperX Cloud III
+      Precio: $18,000
+      Calificación: 4.4/5
+      Puntuación: 3.124
+      Explicación: Coincide con tu interés en gaming; Te gusta la categoría gaming; Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.4/5)
+   #4 - Libro: El Arte de la Guerra Digital
+      Precio: $4,200
+      Calificación: 4.5/5
+      Puntuación: 1.592
+      Explicación: Coincide con tu interés en tecnologia; Excelente valoración (4.5/5)
+   #5 - Libro: Cocina Mediterránea Saludable
+      Precio: $3,500
+      Calificación: 4.8/5
+      Puntuación: 1.004
+      Explicación: Excelente valoración (4.8/5)
+
+==================================
+Reporte Detallado - LAURA MARTÍNEZ
+==================================
+Perfil del usuario
+   * Edad: 31 años
+   * Género: F
+   * Ubicación: Mendoza
+   * Intereses: lectura, arte, musica
+   * Nivel de gasto: medio
+Historial de actividad (3 interacciones):
+   • 2024-08-13: VIEW - Cámara DSLR Canon EOS Rebel T7
+   • 2024-08-11: COMPRA - Libro: El Arte de la Guerra Digital (Calificación: 5/5)
+   • 2024-08-09: VIEW - Libro: Cocina Mediterránea Saludable
+3 usuarios más similares
+   * Ana López: 0.246 (24.6% similar)
+   * Carlos Mendez: 0.168 (16.8% similar)
+   * Roberto García: 0.144 (14.4% similar)
+Generando recomendaciones para Laura Martínez
+=============================================
+   Aplicando filtrado colaborativo para Laura Martínez...
+   Usuarios similares encontrados: 5
+   7 recomendaciones colaborativas generadas
+   Aplicando filtrado por contenido para Laura Martínez...
+   9 recomendaciones por contenido generadas
+   Combinando estrategias de recomendación
+      * Productos únicos después de combinar: 9
+   Primeras 5 recomendaciones seleccionadas
+   Recomendaciones generadas exitosamente!
+5 recomendaciones generadas:
+   #1 - Smartphone Samsung Galaxy S24
+      Precio: $150,000
+      Calificación: 4.5/5
+      Puntuación: 1.654
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.5/5); Producto muy popular
+   #2 - Proteína Whey Gold Standard
+      Precio: $7,200
+      Calificación: 4.6/5
+      Puntuación: 1.506
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.6/5); Producto muy popular
+   #3 - Cafetera Espresso DeLonghi
+      Precio: $32,000
+      Calificación: 4.2/5
+      Puntuación: 1.728
+      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.2/5)
+   #4 - Auriculares Gaming HyperX Cloud III
+      Precio: $18,000
+      Calificación: 4.4/5
+      Puntuación: 1.753
+      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.4/5)
+   #5 - Juego: Call of Duty Modern Warfare III
+      Precio: $12,000
+      Calificación: 4.3/5
+      Puntuación: 1.785
+      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.3/5); Producto muy popular
+
+==================================
+Reporte Detallado - ROBERTO GARCÍA
+==================================
+Perfil del usuario
+   * Edad: 29 años
+   * Género: M
+   * Ubicación: La Plata
+   * Intereses: deportes, tecnologia, cocina
+   * Nivel de gasto: alto
+Historial de actividad (3 interacciones):
+   • 2024-08-16: VIEW - Tablet Samsung Galaxy Tab S9
+   • 2024-08-09: COMPRA - Cafetera Espresso DeLonghi (Calificación: 4/5)
+   • 2024-08-05: COMPRA - Smartphone Samsung Galaxy S24 (Calificación: 5/5)
+3 usuarios más similares
+   * Ana López: 0.322 (32.2% similar)
+   * Diego Silva: 0.310 (31.0% similar)
+   * María Rodriguez: 0.193 (19.3% similar)
+Generando recomendaciones para Roberto García
+=============================================
+   Aplicando filtrado colaborativo para Roberto García...
+   Usuarios similares encontrados: 5
+   7 recomendaciones colaborativas generadas
+   Aplicando filtrado por contenido para Roberto García...
+   9 recomendaciones por contenido generadas
+   Combinando estrategias de recomendación
+      * Productos únicos después de combinar: 9
+   Primeras 5 recomendaciones seleccionadas
+   Recomendaciones generadas exitosamente!
+5 recomendaciones generadas:
+   #1 - Proteína Whey Gold Standard
+      Precio: $7,200
+      Calificación: 4.6/5
+      Puntuación: 1.543
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.6/5); A usuarios con perfil similar también les gustó; Producto muy popular
+   #2 - Set Pesas Ajustables 40kg
+      Precio: $15,000
+      Calificación: 4.1/5
+      Puntuación: 1.417
+      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.1/5); A usuarios con perfil similar también les gustó
+   #3 - Auriculares Bluetooth Sport Pro
+      Precio: $25,000
+      Calificación: 4.2/5
+      Puntuación: 2.885
+      Explicación: Coincide con tu interés en deportes; Te gusta la categoría tecnologia; Apropiado para tu grupo de edad; Buena valoración (4.2/5); A usuarios con perfil similar también les gustó; Producto muy popular
+   #4 - Libro: Cocina Mediterránea Saludable
+      Precio: $3,500
+      Calificación: 4.8/5
+      Puntuación: 2.02
+      Explicación: Coincide con tu interés en cocina; Apropiado para tu grupo de edad; Excelente valoración (4.8/5)
+   #5 - Auriculares Gaming HyperX Cloud III
+      Precio: $18,000
+      Calificación: 4.4/5
+      Puntuación: 1.447
+      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.4/5)
+
+=====================================
+Demostración Completada Exitosamente!
+Revisa los reportes anteriores para entender cómo funciona cada componente
+=====================================
+```
+
+#### Comparación de algoritmos
+
+```bash
+>  python main.py
+Selecciona el tipo de demostración:
+   1- Demostración completa
+   2- Comparación de algoritmos
+   3- Usuario específico
+
+Opción (1-3): 2
+=========================
+Comparación de Algoritmos
+=========================
+Cargando la configuración desde config.yaml
+Configuración cargada desde config.yaml
+Configuración validada exitosamente
+Inicializando Sistema de Recomendaciones
+   * 6 usuarios cargados
+   * 12 productos cargados
+   * 22 interacciones cargadas
+Sistema listo!
+Usuario de prueba: Ana López
+Recomendaciones por filtrado colaborativo:
+   Aplicando filtrado colaborativo para Ana López...
+   Usuarios similares encontrados: 5
+   5 recomendaciones colaborativas generadas
+   1. Set Pesas Ajustables 40kg (Puntuación: 0.318)
+   2. Cafetera Espresso DeLonghi (Puntuación: 0.294)
+   3. Libro: El Arte de la Guerra Digital (Puntuación: 0.246)
+   4. Libro: Cocina Mediterránea Saludable (Puntuación: 0.060)
+   5. Auriculares Gaming HyperX Cloud III (Puntuación: 0.054)
+Recomendaciones por filtrado por contenido:
+   Aplicando filtrado por contenido para Ana López...
+   5 recomendaciones por contenido generadas
+   1. Set Pesas Ajustables 40kg (Puntuación: 7.470)
+   2. Libro: El Arte de la Guerra Digital (Puntuación: 6.650)
+   3. Tablet Samsung Galaxy Tab S9 (Puntuación: 6.180)
+   4. Libro: Cocina Mediterránea Saludable (Puntuación: 5.260)
+   5. Juego: Call of Duty Modern Warfare III (Puntuación: 4.260)
+Sistema híbrido
+Generando recomendaciones para Ana López
+========================================
+   Aplicando filtrado colaborativo para Ana López...
+   Usuarios similares encontrados: 5
+   6 recomendaciones colaborativas generadas
+   Aplicando filtrado por contenido para Ana López...
+   8 recomendaciones por contenido generadas
+   Combinando estrategias de recomendación
+      * Productos únicos después de combinar: 8
+   Primeras 5 recomendaciones seleccionadas
+   Recomendaciones generadas exitosamente!
+   1. Set Pesas Ajustables 40kg (Puntuación: 3.179)
+   2. Cafetera Espresso DeLonghi (Puntuación: 1.792)
+   3. Libro: El Arte de la Guerra Digital (Puntuación: 2.808)
+   4. Libro: Cocina Mediterránea Saludable (Puntuación: 2.14)
+   5. Auriculares Gaming HyperX Cloud III (Puntuación: 1.684)
+Observaciones
+   * Colaborativo: Basado en usuarios similares
+   * Contenido: Basado en perfil del usuario
+   * Híbrido: Combina ambos enfoques
+```
+
+#### Usuario específico
+
+```bash
+>  python main.py
+Selecciona el tipo de demostración:
+   1- Demostración completa
+   2- Comparación de algoritmos
+   3- Usuario específico
+
+Opción (1-3): 3
+Cargando la configuración desde config.yaml
+Configuración cargada desde config.yaml
+Configuración validada exitosamente
+Inicializando Sistema de Recomendaciones
+   * 6 usuarios cargados
+   * 12 productos cargados
+   * 22 interacciones cargadas
+Sistema listo!
+
+Usuarios disponibles:
+   user_001: Ana López
+   user_002: Carlos Mendez
+   user_003: María Rodriguez
+   user_004: Diego Silva
+   user_005: Laura Martínez
+   user_006: Roberto García
+
+Ingresa ID de usuario: user_002
+
+=================================
+Reporte Detallado - CARLOS MENDEZ
+=================================
+Perfil del usuario
+   * Edad: 35 años
+   * Género: M
+   * Ubicación: Córdoba
+   * Intereses: deportes, gaming, musica
+   * Nivel de gasto: alto
+Historial de actividad (4 interacciones):
+   • 2024-08-18: VIEW - Tablet Samsung Galaxy Tab S9
+   • 2024-08-12: COMPRA - Auriculares Gaming HyperX Cloud III (Calificación: 5/5)
+   • 2024-08-07: VIEW - Smartphone Samsung Galaxy S24
+   • 2024-08-03: COMPRA - Juego: Call of Duty Modern Warfare III (Calificación: 4/5)
+3 usuarios más similares
+   * Roberto García: 0.192 (19.2% similar)
+   * Laura Martínez: 0.168 (16.8% similar)
+   * Diego Silva: 0.120 (12.0% similar)
+Generando recomendaciones para Carlos Mendez
+============================================
+   Aplicando filtrado colaborativo para Carlos Mendez...
+   Usuarios similares encontrados: 5
+   6 recomendaciones colaborativas generadas
+   Aplicando filtrado por contenido para Carlos Mendez...
+   8 recomendaciones por contenido generadas
+   Combinando estrategias de recomendación
+      * Productos únicos después de combinar: 8
+   Primeras 5 recomendaciones seleccionadas
+   Recomendaciones generadas exitosamente!
+5 recomendaciones generadas:
+   #1 - Cafetera Espresso DeLonghi
+      Precio: $32,000
+      Calificación: 4.2/5
+      Puntuación: 1.408
+      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.2/5)
+   #2 - Libro: El Arte de la Guerra Digital
+      Precio: $4,200
+      Calificación: 4.5/5
+      Puntuación: 1.361
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.5/5)
+   #3 - Set Pesas Ajustables 40kg
+      Precio: $15,000
+      Calificación: 4.1/5
+      Puntuación: 1.326
+      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.1/5)
+   #4 - Auriculares Bluetooth Sport Pro
+      Precio: $25,000
+      Calificación: 4.2/5
+      Puntuación: 1.994
+      Explicación: Coincide con tu interés en deportes; Apropiado para tu grupo de edad; Buena valoración (4.2/5); Producto muy popular
+   #5 - Libro: Cocina Mediterránea Saludable
+      Precio: $3,500
+      Calificación: 4.8/5
+      Puntuación: 1.336
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.8/5)
+```
 
 ### ¿Qué nos aporta esta solución?
 

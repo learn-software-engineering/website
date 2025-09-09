@@ -208,19 +208,22 @@ Generando recomendaciones para Ana López
    8 recomendaciones por contenido generadas
    Combinando estrategias de recomendación
       * Productos únicos después de combinar: 8
+   Aplicando reglas de negocio
+      * Los usuarios jóvenes (<35) prefieren productos tecnológicos: 1 productos afectados
+   1 reglas aplicadas: boost_tecnologia_jovenes
    Primeras 5 recomendaciones seleccionadas
    Recomendaciones generadas exitosamente!
 5 recomendaciones generadas:
-   #1 - Set Pesas Ajustables 40kg
+   #1 - Tablet Samsung Galaxy Tab S9
+      Precio: $95,000
+      Calificación: 4.4/5
+      Puntuación: 3.214
+      Explicación: Te gusta la categoría tecnologia; Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.4/5); Producto muy popular
+   #2 - Set Pesas Ajustables 40kg
       Precio: $15,000
       Calificación: 4.1/5
       Puntuación: 3.179
       Explicación: Coincide con tu interés en fitness; Te gusta la categoría fitness; Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.1/5); A usuarios con perfil similar también les gustó
-   #2 - Cafetera Espresso DeLonghi
-      Precio: $32,000
-      Calificación: 4.2/5
-      Puntuación: 1.792
-      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.2/5); A usuarios con perfil similar también les gustó
    #3 - Libro: El Arte de la Guerra Digital
       Precio: $4,200
       Calificación: 4.5/5
@@ -231,11 +234,11 @@ Generando recomendaciones para Ana López
       Calificación: 4.8/5
       Puntuación: 2.14
       Explicación: Te gusta la categoría lectura; Apropiado para tu grupo de edad; Excelente valoración (4.8/5)
-   #5 - Auriculares Gaming HyperX Cloud III
-      Precio: $18,000
-      Calificación: 4.4/5
-      Puntuación: 1.684
-      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.4/5)
+   #5 - Cafetera Espresso DeLonghi
+      Precio: $32,000
+      Calificación: 4.2/5
+      Puntuación: 1.792
+      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.2/5); A usuarios con perfil similar también les gustó
 
 =================================
 Reporte Detallado - CARLOS MENDEZ
@@ -264,34 +267,37 @@ Generando recomendaciones para Carlos Mendez
    8 recomendaciones por contenido generadas
    Combinando estrategias de recomendación
       * Productos únicos después de combinar: 8
+   Aplicando reglas de negocio
+      * Usuarios con gasto alto ven productos premium primero: 8 productos afectados
+   1 reglas aplicadas: usuarios_premium
    Primeras 5 recomendaciones seleccionadas
    Recomendaciones generadas exitosamente!
 5 recomendaciones generadas:
-   #1 - Cafetera Espresso DeLonghi
-      Precio: $32,000
-      Calificación: 4.2/5
-      Puntuación: 1.408
-      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.2/5)
-   #2 - Libro: El Arte de la Guerra Digital
-      Precio: $4,200
-      Calificación: 4.5/5
-      Puntuación: 1.361
-      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.5/5)
-   #3 - Set Pesas Ajustables 40kg
-      Precio: $15,000
-      Calificación: 4.1/5
-      Puntuación: 1.326
-      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.1/5)
-   #4 - Auriculares Bluetooth Sport Pro
+   #1 - Auriculares Bluetooth Sport Pro
       Precio: $25,000
       Calificación: 4.2/5
-      Puntuación: 1.994
+      Puntuación: 2.392
       Explicación: Coincide con tu interés en deportes; Apropiado para tu grupo de edad; Buena valoración (4.2/5); Producto muy popular
-   #5 - Libro: Cocina Mediterránea Saludable
-      Precio: $3,500
-      Calificación: 4.8/5
-      Puntuación: 1.336
-      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.8/5)
+   #2 - Cámara DSLR Canon EOS Rebel T7
+      Precio: $85,000
+      Calificación: 4.3/5
+      Puntuación: 1.949
+      Explicación: Apropiado para tu grupo de edad; Producto premium que se ajusta a tu perfil; Buena valoración (4.3/5)
+   #3 - Proteína Whey Gold Standard
+      Precio: $7,200
+      Calificación: 4.6/5
+      Puntuación: 1.697
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.6/5); Producto muy popular
+   #4 - Cafetera Espresso DeLonghi
+      Precio: $32,000
+      Calificación: 4.2/5
+      Puntuación: 1.689
+      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.2/5)
+   #5 - Libro: El Arte de la Guerra Digital
+      Precio: $4,200
+      Calificación: 4.5/5
+      Puntuación: 1.633
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.5/5)
 
 ===================================
 Reporte Detallado - MARÍA RODRIGUEZ
@@ -320,34 +326,37 @@ Generando recomendaciones para María Rodriguez
    8 recomendaciones por contenido generadas
    Combinando estrategias de recomendación
       * Productos únicos después de combinar: 8
+   Aplicando reglas de negocio
+      * Usuarios con presupuesto bajo ven productos económicos: 2 productos afectados
+   1 reglas aplicadas: productos_economicos
    Primeras 5 recomendaciones seleccionadas
    Recomendaciones generadas exitosamente!
 5 recomendaciones generadas:
-   #1 - Smartphone Samsung Galaxy S24
+   #1 - Proteína Whey Gold Standard
+      Precio: $7,200
+      Calificación: 4.6/5
+      Puntuación: 2.432
+      Explicación: Apropiado para tu grupo de edad; Precio económico y accesible; Excelente valoración (4.6/5); Producto muy popular
+   #2 - Libro: El Arte de la Guerra Digital
+      Precio: $4,200
+      Calificación: 4.5/5
+      Puntuación: 2.313
+      Explicación: Apropiado para tu grupo de edad; Precio económico y accesible; Excelente valoración (4.5/5)
+   #3 - Set Pesas Ajustables 40kg
+      Precio: $15,000
+      Calificación: 4.1/5
+      Puntuación: 1.588
+      Explicación: Apropiado para tu grupo de edad; Precio económico y accesible; Buena valoración (4.1/5)
+   #4 - Smartphone Samsung Galaxy S24
       Precio: $150,000
       Calificación: 4.5/5
       Puntuación: 1.572
       Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.5/5); Producto muy popular
-   #2 - Libro: El Arte de la Guerra Digital
-      Precio: $4,200
-      Calificación: 4.5/5
-      Puntuación: 1.652
-      Explicación: Apropiado para tu grupo de edad; Precio económico y accesible; Excelente valoración (4.5/5)
-   #3 - Auriculares Gaming HyperX Cloud III
-      Precio: $18,000
+   #5 - Tablet Samsung Galaxy Tab S9
+      Precio: $95,000
       Calificación: 4.4/5
-      Puntuación: 0.764
-      Explicación: Buena valoración (4.4/5)
-   #4 - Proteína Whey Gold Standard
-      Precio: $7,200
-      Calificación: 4.6/5
-      Puntuación: 1.737
-      Explicación: Apropiado para tu grupo de edad; Precio económico y accesible; Excelente valoración (4.6/5); Producto muy popular
-   #5 - Juego: Call of Duty Modern Warfare III
-      Precio: $12,000
-      Calificación: 4.3/5
-      Puntuación: 1.13
-      Explicación: Precio económico y accesible; Buena valoración (4.3/5); Producto muy popular
+      Puntuación: 1.352
+      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.4/5); Producto muy popular
 
 ===============================
 Reporte Detallado - DIEGO SILVA
@@ -376,34 +385,37 @@ Generando recomendaciones para Diego Silva
    8 recomendaciones por contenido generadas
    Combinando estrategias de recomendación
       * Productos únicos después de combinar: 8
+   Aplicando reglas de negocio
+      * Los usuarios jóvenes (<35) prefieren productos tecnológicos: 2 productos afectados
+   1 reglas aplicadas: boost_tecnologia_jovenes
    Primeras 5 recomendaciones seleccionadas
    Recomendaciones generadas exitosamente!
 5 recomendaciones generadas:
-   #1 - Proteína Whey Gold Standard
-      Precio: $7,200
-      Calificación: 4.6/5
-      Puntuación: 2.979
-      Explicación: Coincide con tu interés en fitness; Te gusta la categoría fitness; Apropiado para tu grupo de edad; Excelente valoración (4.6/5); A usuarios con perfil similar también les gustó; Producto muy popular
-   #2 - Cafetera Espresso DeLonghi
-      Precio: $32,000
-      Calificación: 4.2/5
-      Puntuación: 1.465
-      Explicación: Precio equilibrado para tu rango; Buena valoración (4.2/5); A usuarios con perfil similar también les gustó
+   #1 - Tablet Samsung Galaxy Tab S9
+      Precio: $95,000
+      Calificación: 4.4/5
+      Puntuación: 3.214
+      Explicación: Te gusta la categoría tecnologia; Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.4/5); Producto muy popular
+   #2 - Cámara DSLR Canon EOS Rebel T7
+      Precio: $85,000
+      Calificación: 4.3/5
+      Puntuación: 3.151
+      Explicación: Te gusta la categoría tecnologia; Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.3/5)
    #3 - Auriculares Gaming HyperX Cloud III
       Precio: $18,000
       Calificación: 4.4/5
       Puntuación: 3.124
       Explicación: Coincide con tu interés en gaming; Te gusta la categoría gaming; Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.4/5)
-   #4 - Libro: El Arte de la Guerra Digital
+   #4 - Proteína Whey Gold Standard
+      Precio: $7,200
+      Calificación: 4.6/5
+      Puntuación: 2.979
+      Explicación: Coincide con tu interés en fitness; Te gusta la categoría fitness; Apropiado para tu grupo de edad; Excelente valoración (4.6/5); A usuarios con perfil similar también les gustó; Producto muy popular
+   #5 - Libro: El Arte de la Guerra Digital
       Precio: $4,200
       Calificación: 4.5/5
       Puntuación: 1.592
       Explicación: Coincide con tu interés en tecnologia; Excelente valoración (4.5/5)
-   #5 - Libro: Cocina Mediterránea Saludable
-      Precio: $3,500
-      Calificación: 4.8/5
-      Puntuación: 1.004
-      Explicación: Excelente valoración (4.8/5)
 
 ==================================
 Reporte Detallado - LAURA MARTÍNEZ
@@ -431,34 +443,37 @@ Generando recomendaciones para Laura Martínez
    9 recomendaciones por contenido generadas
    Combinando estrategias de recomendación
       * Productos únicos después de combinar: 9
+   Aplicando reglas de negocio
+      * Los usuarios jóvenes (<35) prefieren productos tecnológicos: 3 productos afectados
+   1 reglas aplicadas: boost_tecnologia_jovenes
    Primeras 5 recomendaciones seleccionadas
    Recomendaciones generadas exitosamente!
 5 recomendaciones generadas:
-   #1 - Smartphone Samsung Galaxy S24
+   #1 - Auriculares Bluetooth Sport Pro
+      Precio: $25,000
+      Calificación: 4.2/5
+      Puntuación: 2.186
+      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.2/5); Producto muy popular
+   #2 - Tablet Samsung Galaxy Tab S9
+      Precio: $95,000
+      Calificación: 4.4/5
+      Puntuación: 2.174
+      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.4/5); Producto muy popular
+   #3 - Smartphone Samsung Galaxy S24
       Precio: $150,000
       Calificación: 4.5/5
-      Puntuación: 1.654
+      Puntuación: 2.15
       Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.5/5); Producto muy popular
-   #2 - Proteína Whey Gold Standard
-      Precio: $7,200
-      Calificación: 4.6/5
-      Puntuación: 1.506
-      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.6/5); Producto muy popular
-   #3 - Cafetera Espresso DeLonghi
-      Precio: $32,000
-      Calificación: 4.2/5
-      Puntuación: 1.728
-      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.2/5)
-   #4 - Auriculares Gaming HyperX Cloud III
-      Precio: $18,000
-      Calificación: 4.4/5
-      Puntuación: 1.753
-      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.4/5)
-   #5 - Juego: Call of Duty Modern Warfare III
+   #4 - Juego: Call of Duty Modern Warfare III
       Precio: $12,000
       Calificación: 4.3/5
       Puntuación: 1.785
       Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.3/5); Producto muy popular
+   #5 - Auriculares Gaming HyperX Cloud III
+      Precio: $18,000
+      Calificación: 4.4/5
+      Puntuación: 1.753
+      Explicación: Apropiado para tu grupo de edad; Precio equilibrado para tu rango; Buena valoración (4.4/5)
 
 ==================================
 Reporte Detallado - ROBERTO GARCÍA
@@ -486,34 +501,38 @@ Generando recomendaciones para Roberto García
    9 recomendaciones por contenido generadas
    Combinando estrategias de recomendación
       * Productos únicos después de combinar: 9
+   Aplicando reglas de negocio
+      * Los usuarios jóvenes (<35) prefieren productos tecnológicos: 2 productos afectados
+      * Usuarios con gasto alto ven productos premium primero: 9 productos afectados
+   2 reglas aplicadas: boost_tecnologia_jovenes, usuarios_premium
    Primeras 5 recomendaciones seleccionadas
    Recomendaciones generadas exitosamente!
 5 recomendaciones generadas:
-   #1 - Proteína Whey Gold Standard
-      Precio: $7,200
-      Calificación: 4.6/5
-      Puntuación: 1.543
-      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.6/5); A usuarios con perfil similar también les gustó; Producto muy popular
-   #2 - Set Pesas Ajustables 40kg
-      Precio: $15,000
-      Calificación: 4.1/5
-      Puntuación: 1.417
-      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.1/5); A usuarios con perfil similar también les gustó
-   #3 - Auriculares Bluetooth Sport Pro
+   #1 - Auriculares Bluetooth Sport Pro
       Precio: $25,000
       Calificación: 4.2/5
-      Puntuación: 2.885
+      Puntuación: 4.5
       Explicación: Coincide con tu interés en deportes; Te gusta la categoría tecnologia; Apropiado para tu grupo de edad; Buena valoración (4.2/5); A usuarios con perfil similar también les gustó; Producto muy popular
-   #4 - Libro: Cocina Mediterránea Saludable
+   #2 - Cámara DSLR Canon EOS Rebel T7
+      Precio: $85,000
+      Calificación: 4.3/5
+      Puntuación: 3.781
+      Explicación: Te gusta la categoría tecnologia; Apropiado para tu grupo de edad; Producto premium que se ajusta a tu perfil; Buena valoración (4.3/5)
+   #3 - Libro: Cocina Mediterránea Saludable
       Precio: $3,500
       Calificación: 4.8/5
-      Puntuación: 2.02
+      Puntuación: 2.424
       Explicación: Coincide con tu interés en cocina; Apropiado para tu grupo de edad; Excelente valoración (4.8/5)
-   #5 - Auriculares Gaming HyperX Cloud III
-      Precio: $18,000
-      Calificación: 4.4/5
-      Puntuación: 1.447
-      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.4/5)
+   #4 - Libro: El Arte de la Guerra Digital
+      Precio: $4,200
+      Calificación: 4.5/5
+      Puntuación: 2.336
+      Explicación: Coincide con tu interés en tecnologia; Apropiado para tu grupo de edad; Excelente valoración (4.5/5)
+   #5 - Proteína Whey Gold Standard
+      Precio: $7,200
+      Calificación: 4.6/5
+      Puntuación: 1.851
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.6/5); A usuarios con perfil similar también les gustó; Producto muy popular
 
 =====================================
 Demostración Completada Exitosamente!
@@ -570,13 +589,16 @@ Generando recomendaciones para Ana López
    8 recomendaciones por contenido generadas
    Combinando estrategias de recomendación
       * Productos únicos después de combinar: 8
+   Aplicando reglas de negocio
+      * Los usuarios jóvenes (<35) prefieren productos tecnológicos: 1 productos afectados
+   1 reglas aplicadas: boost_tecnologia_jovenes
    Primeras 5 recomendaciones seleccionadas
    Recomendaciones generadas exitosamente!
-   1. Set Pesas Ajustables 40kg (Puntuación: 3.179)
-   2. Cafetera Espresso DeLonghi (Puntuación: 1.792)
+   1. Tablet Samsung Galaxy Tab S9 (Puntuación: 3.214)
+   2. Set Pesas Ajustables 40kg (Puntuación: 3.179)
    3. Libro: El Arte de la Guerra Digital (Puntuación: 2.808)
    4. Libro: Cocina Mediterránea Saludable (Puntuación: 2.14)
-   5. Auriculares Gaming HyperX Cloud III (Puntuación: 1.684)
+   5. Cafetera Espresso DeLonghi (Puntuación: 1.792)
 Observaciones
    * Colaborativo: Basado en usuarios similares
    * Contenido: Basado en perfil del usuario
@@ -639,34 +661,37 @@ Generando recomendaciones para Carlos Mendez
    8 recomendaciones por contenido generadas
    Combinando estrategias de recomendación
       * Productos únicos después de combinar: 8
+   Aplicando reglas de negocio
+      * Usuarios con gasto alto ven productos premium primero: 8 productos afectados
+   1 reglas aplicadas: usuarios_premium
    Primeras 5 recomendaciones seleccionadas
    Recomendaciones generadas exitosamente!
 5 recomendaciones generadas:
-   #1 - Cafetera Espresso DeLonghi
-      Precio: $32,000
-      Calificación: 4.2/5
-      Puntuación: 1.408
-      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.2/5)
-   #2 - Libro: El Arte de la Guerra Digital
-      Precio: $4,200
-      Calificación: 4.5/5
-      Puntuación: 1.361
-      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.5/5)
-   #3 - Set Pesas Ajustables 40kg
-      Precio: $15,000
-      Calificación: 4.1/5
-      Puntuación: 1.326
-      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.1/5)
-   #4 - Auriculares Bluetooth Sport Pro
+   #1 - Auriculares Bluetooth Sport Pro
       Precio: $25,000
       Calificación: 4.2/5
-      Puntuación: 1.994
+      Puntuación: 2.392
       Explicación: Coincide con tu interés en deportes; Apropiado para tu grupo de edad; Buena valoración (4.2/5); Producto muy popular
-   #5 - Libro: Cocina Mediterránea Saludable
-      Precio: $3,500
-      Calificación: 4.8/5
-      Puntuación: 1.336
-      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.8/5)
+   #2 - Cámara DSLR Canon EOS Rebel T7
+      Precio: $85,000
+      Calificación: 4.3/5
+      Puntuación: 1.949
+      Explicación: Apropiado para tu grupo de edad; Producto premium que se ajusta a tu perfil; Buena valoración (4.3/5)
+   #3 - Proteína Whey Gold Standard
+      Precio: $7,200
+      Calificación: 4.6/5
+      Puntuación: 1.697
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.6/5); Producto muy popular
+   #4 - Cafetera Espresso DeLonghi
+      Precio: $32,000
+      Calificación: 4.2/5
+      Puntuación: 1.689
+      Explicación: Apropiado para tu grupo de edad; Buena valoración (4.2/5)
+   #5 - Libro: El Arte de la Guerra Digital
+      Precio: $4,200
+      Calificación: 4.5/5
+      Puntuación: 1.633
+      Explicación: Apropiado para tu grupo de edad; Excelente valoración (4.5/5)
 ```
 
 ### ¿Qué nos aporta esta solución?

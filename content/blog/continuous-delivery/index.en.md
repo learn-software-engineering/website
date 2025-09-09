@@ -133,6 +133,3 @@ It's worth noting that when we discuss CD, it inherently includes **Continuous D
 [^10]: Fitz, Timothy. [Continuous Deployment](http://timothyfitz.com/2009/02/08/continuous-deployment/), 2009.
 
 [^11]: Pulkkinen, Ville. Continuous Deployment of Software. Proceedings of Cloud-Based Software Engineering, pp.46-52, 2013.
-
-
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBbKWwWQESzQtuMvqa/V0GFc4I5fo/4xYPinLdLeCot/

@@ -230,39 +230,75 @@ Esta operación permite componer transformaciones lineales.
 
 ## Espacios Vectoriales y Transformaciones Lineales
 
-Un **espacio vectorial** es un conjunto de vectores donde podemos realizar operaciones de suma y multiplicación por escalar, y estas operaciones satisfacen ciertas propiedades (asociatividad, conmutatividad, etc.).
+Un espacio vectorial (o espacio lineal) es un conjunto no vacío de vectores, en el que se han definido dos operaciones: la suma de vectores y la multiplicación de un vector por un escalar (número real o complejo). Para que un conjunto sea considerado un espacio vectorial, debe cumplir con ciertos axiomas fundamentales.
 
-**¿Por qué importa en ML?**
+1. Conmutatividad: \(u + v = v + u\)
 
+2. Asociatividad: \((u + v) + w = u + (v + w)\)
+
+3. Existencia del vector nulo: \(\exists \ v_0 \in V \ \;|\; \ v_0 + u = u \ \forall \ u \in V \)
+
+4. Existencia del opuesto: \(\forall \ v_i \in V \ \exists \ -v_i \in V \ \;|\; \ v_i + (-v_i) = 0\)
+
+5. Distributividad del producto respecto a la suma vectorial: \(\alpha (u + v) = \alpha u + \alpha v\)
+
+6. Distributividad del producto respecto a la suma escalar: \((\alpha + \beta) u = \alpha u + \beta u\)
+
+7. Asociatividad del producto de escalares: \(\alpha (\beta u) = (\alpha \beta) u\)
+
+8. Elemento neutro: \(1 u = u \ \forall \ u \in V\)
+
+Entre algunos ejemplos de espacios vectoriales podemos mencionar:
+- Vectores en el plano: Los vectores en \(\mathbb{R}^2\) son un ejemplo clásico de espacio vectorial, donde cada vector se representa como un par ordenado \((x,y)\)
+- Vectores en el espacio tridimensional: En \(\mathbb{R}^3\), un vector se puede escribir como \(V = \alpha i + \beta j + \gamma k \) donde \(i\), \(j\) y \(k\) son vectores base.
+
+Los espacios vectoriales son fundamentales en diversas áreas, incluyendo matemáticas, física, ingeniería y ciencias de la computación, ya que permiten modelar y resolver problemas complejos mediante el uso de vectores y matrices.
+
+**¿Por qué importa en Machine Learning?**
 - **Características**: Cada dataset define un espacio vectorial
-- **Modelos**: Los algoritmos de ML operan en estos espacios
+- **Modelos**: Los algoritmos de Machine Learning operan en estos espacios
 - **Transformaciones**: Cambiamos de un espacio a otro para facilitar el aprendizaje
 
-#### Transformaciones Lineales
+### Transformaciones lineales
 
-Una transformación lineal $T: \mathbb{R}^n \rightarrow \mathbb{R}^m$ es una función que preserva las operaciones vectoriales:
+Una transformación \(T: \mathbb{R}^n \rightarrow \mathbb{R}^m\) se define como una función que asigna a cada vector \(v\) en un espacio vectorial \(V\) un único vector \(w\) en otro espacio vectorial \(W\).
 
-$$T(a\mathbf{u} + b\mathbf{v}) = aT(\mathbf{u}) + bT(\mathbf{v})$$
+Para que \(T\) sea considerada lineal, debe cumplir dos condiciones fundamentales:
+- *Adición*: Para cualquier par de vectores \(u\) y \(v\) en \(V\), se cumple que:
+$$ T(u + v) = T(u) + T(v) $$
+- *Homogeneidad*: Para cualquier escalar \(c\) y cualquier vector \(v\) en \(V\) se cumple que:
+$$ T(c \ v) = c \ T(v) $$
 
-**Toda transformación lineal se puede representar como una matriz.**
+*Toda transformación lineal se puede representar como una matriz.*
 
-### Eigenvalores y Eigenvectores: Análisis de Componentes
+### Vectores y valores propios
 
-Los eigenvalores y eigenvectores revelan las direcciones "especiales" de una transformación lineal.
+Los valores propios o autovalores y los vectores propios o autovectores revelan las direcciones *"especiales"* de una transformación lineal.
 
-Para una matriz $\mathbf{A}$, un vector $\mathbf{v}$ es un **eigenvector** con **eigenvalor** $\lambda$ si:
+Los vectores propios o autovectores de una transformación lineal son los vectores no nulos que, cuando son transformados, dan lugar a un múltiplo escalar de sí mismos, con lo que no cambian su dirección. Este escalar \(\lambda\) recibe el nombre de valor propio o autovalor. En muchos casos, una transformación queda completamente determinada por sus vectores propios y valores propios. Un espacio propio o autoespacio asociado al valor propio \(\lambda\) es el conjunto de vectores propios con un valor propio común.
+
+Para una transformación lineal representada por la matriz \(\mathbf{A}\), un vector \(\mathbf{v}\) es un **vector propio** con **valor propio** \(\lambda\) si:
 
 $$\mathbf{A}\mathbf{v} = \lambda \mathbf{v}$$
 
-**Interpretación**: La transformación $\mathbf{A}$ solo escala el vector $\mathbf{v}$ por el factor $\lambda$, sin cambiar su dirección.
+**Interpretación**: La transformación \(\mathbf{A}\) solo escala el vector \(\mathbf{v}\) por el factor \(\lambda\), sin cambiar su dirección.
 
-#### Aplicaciones en ML
+> {{< figure
+    src="img/Mona_Lisa_with_eigenvector.png"
+    alt="Mona Lisa con auto vector"
+    caption="Imagen de [J. Finkelstein](https://en.wikipedia.org/wiki/User:J._Finkelstein) y [Vb](https://en.wikipedia.org/wiki/User:Vb) on [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Mona_Lisa_with_eigenvector.png), dominio público"
+    >}}
+> En esta transformación de la Mona Lisa, la imagen se ha deformado de tal forma que su eje vertical no ha cambiado. El vector azul, representado por la flecha azul que va desde el pecho hasta el hombro, ha cambiado de dirección, mientras que el rojo, representado por la flecha roja, no ha cambiado. El vector rojo es entonces un vector propio o autovector de la transformación, mientras que el azul no lo es. Dado que el vector rojo no ha cambiado de longitud, su valor propio o autovalor es \(1\). Todos los vectores de esta misma dirección son vectores propios, con el mismo valor propio. Forman un subespacio del espacio propio de este valor propio.
+>
+> — <cite>Vector, valor y espacio propios. [Wikipedia](https://es.wikipedia.org/w/index.php?title=Vector,_valor_y_espacio_propios&oldid=159651633)</cite>
 
-1. **PCA (Análisis de Componentes Principales)**: Los eigenvectores de la matriz de covarianza muestran las direcciones de mayor varianza en los datos.
+#### Aplicaciones en Machine Learning
 
-2. **Reducción de Dimensionalidad**: Proyectar datos en los eigenvectores principales.
+1. **PCA (Análisis de Componentes Principales)**: Los vectores propios de la matriz de covarianza muestran las direcciones de mayor varianza en los datos.
 
-3. **Estabilidad de Sistemas**: Los eigenvalores indican si un sistema dinámico es estable.
+2. **Reducción de dimensionalidad**: Proyectar datos en los vectores propios principales.
+
+3. **Estabilidad de sistemas**: Los valores propios indican si un sistema dinámico es estable.
 
 ```python
 def visualize_eigenvectors():
@@ -334,7 +370,7 @@ def visualize_eigenvectors():
 
 ---
 
-## Implementación Práctica con NumPy
+## Implementación práctica con NumPy
 
 Ahora que entendemos los conceptos fundamentales, veamos cómo NumPy optimiza estas operaciones:
 

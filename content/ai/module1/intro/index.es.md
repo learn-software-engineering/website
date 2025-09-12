@@ -2,7 +2,7 @@
 weight: 1
 series: ["Fundamentos de IA para Programadores"]
 series_order: 1
-title: "Introducción a la Inteligencia Artificial y a Machine Learning"
+title: "Introducción"
 description: "Aprende los conceptos fundamentales de inteligencia artificial desde cero. Guía completa para ingenieros de software que quieren convertirse en ingenieros en IA, con código Python y proyecto práctico."
 authors:
   - jnonino
@@ -23,7 +23,7 @@ Durante los próximos módulos, vamos a transformar tus habilidades de programac
 
 Como programador, probablemente has escuchado términos como "IA", "Machine Learning" y "Deep Learning" lanzados como sinónimos. Tal vez has visto demos impresionantes de ChatGPT o has leído sobre coches autónomos. Pero hay una diferencia enorme entre usar una API y realmente entender cómo funciona la tecnología por debajo.
 
-Un AI Engineer no es solo alguien que conecta APIs de OpenAI. Es un profesional que:
+Un ingeniero en IA no es solo alguien que conecta APIs de OpenAI. Es un profesional que:
 
 - **Entiende cuándo y por qué usar cada técnica de IA**
 - **Puede diagnosticar y resolver problemas en sistemas de ML**

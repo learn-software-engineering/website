@@ -106,7 +106,7 @@ Sin entender esto, estarás ajustando hiperparámetros al azar y rogando que fun
 
 ## Reflexión final
 
-Has completado tu primer módulo en el camino a convertirte en un AI Engineer. Cubriste mucho terreno:
+Has completado tu primer módulo en el camino a convertirte en un ingeniero en IA. Cubriste mucho terreno:
 
 ✅ **Desmitificaste la IA**: ya sabes la diferencia real entre IA, ML y DL
 ✅ **Implementaste sistemas inteligentes**: desde cero, sin bibliotecas mágicas

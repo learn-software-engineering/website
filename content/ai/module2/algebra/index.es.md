@@ -59,30 +59,15 @@ $$v = \begin{pmatrix} pixel_1 \\ pixel_2 \\ pixel_3 \\ \vdots \end{pmatrix}$$
 
 Un vector en dos dimensiones (2D) se puede visualizar como una flecha desde el origen \((0,0)\) hasta el punto \((v_1, v_2)\). Esta visualización es clave para entender las operaciones vectoriales.
 
-```python
-import matplotlib.pyplot as plt
-import numpy as np
+{{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/algebra/interpretacion_geometrica.py" type="python" >}}
 
-def plot_vector(vector, color='blue', label='Vector'):
-    plt.quiver(0, 0, vector[0], vector[1],
-               angles='xy', scale_units='xy', scale=1,
-               color=color, label=label, width=0.005)
-    plt.xlim(-1, 5)
-    plt.ylim(-1, 5)
-    plt.grid(True)
-    plt.axhline(y=0, color='k', linewidth=0.5)
-    plt.axvline(x=0, color='k', linewidth=0.5)
+Al ejecutar el código anterior obtenemos:
 
-# Ejemplo: vector que representa preferencias de usuario
-user_preferences = np.array([3, 4])  # [acción: 3, comedia: 4]
-plt.figure(figsize=(8, 6))
-plot_vector(user_preferences, 'blue', 'Preferencias Usuario')
-plt.xlabel('Rating Acción')
-plt.ylabel('Rating Comedia')
-plt.title('Vector de Preferencias de Usuario')
-plt.legend()
-plt.show()
-```
+{{< figure
+  src="img/interpretacion_geometrica.png"
+  alt="Interpretación geométrica de un vector en Machine Learning"
+  caption="Interpretación geométrica de un vector en Machine Learning"
+  >}}
 
 ### Suma de vectores
 
@@ -127,7 +112,7 @@ Conocer el ángulo entre los vectores permite determinar que tan alineados está
 
 Antes de usar `NumPy`, implementemos nuestras propias operaciones vectoriales para entender qué sucede en el detrás de escena:
 
-{{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/vector.py" type="python" >}}
+{{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/algebra/vector.py" type="python" >}}
 
 Al ejecutar el código anterior obtenemos:
 ```bash
@@ -308,7 +293,7 @@ $$\mathbf{C}_{ij} = a_{i} \cdot b_{j}$$
 
 ### Implementación desde cero: clase Matriz
 
-{{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/matriz.py" type="python" >}}
+{{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/algebra/matriz.py" type="python" >}}
 
 Al ejecutar el código anterior obtenemos:
 ```bash
@@ -491,7 +476,7 @@ $$\mathbf{A}\mathbf{v} = \lambda \mathbf{v}$$
 
 Crea un archivo Python con el siguiente contenido:
 
-{{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/valores_vectores_propios.py" type="python" >}}
+{{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/algebra/valores_vectores_propios.py" type="python" >}}
 
 Lo ejecutamos...
 

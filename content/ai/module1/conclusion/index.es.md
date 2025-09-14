@@ -76,22 +76,19 @@ Más adelante veremos métricas específicas para ML.
 
 En el próximo módulo nos sumergiremos en **las matemáticas esenciales** para entender Machine Learning. No te preocupes, no vamos a ser académicos aburridos. Vamos a cubrir solo las matemáticas que realmente necesitas:
 
-**Álgebra Lineal Práctica**
+**Álgebra Lineal práctica**
 - Vectores y matrices (¿por qué importan?)
 - Operaciones esenciales
 - Representación de datos como matrices
-- **Proyecto**: Implementar un motor de búsqueda usando vectores
 
-**Estadística Aplicada**
+**Estadística**
 - Probabilidades básicas
 - Distribuciones importantes
 - Correlación vs causalidad
-- **Proyecto**: Sistema de detección de anomalías
 
-**Cálculo para Optimización**
+**Cálculo para optimización**
 - Derivadas (solo las que necesitas)
 - Gradientes y optimización
-- **Proyecto**: Implementar gradiente descendente desde cero
 
 ### ¿Por qué necesitas estas matemáticas?
 

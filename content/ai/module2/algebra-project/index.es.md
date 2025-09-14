@@ -313,7 +313,7 @@ def test_recommendation_system():
             'Acción_2': 4.0, 'Comedia_2': 1.0, 'Drama_2': 5.0,
             'Acción_3': 0.0, 'Comedia_3': 0.0, 'Drama_3': 0.0
         },
-        'Bob': {
+        'Pablo': {
             'Acción_1': 4.0, 'Comedia_1': 3.0, 'Drama_1': 3.0,
             'Acción_2': 5.0, 'Comedia_2': 2.0, 'Drama_2': 4.0,
             'Acción_3': 4.0, 'Comedia_3': 0.0, 'Drama_3': 0.0
@@ -364,64 +364,6 @@ def test_recommendation_system():
     # rec_sys.visualize_users_2d()
 
     return rec_sys
-
-
----
-
-## Ejercicios Prácticos
-
-Para consolidar tu comprensión, completa estos ejercicios progresivos:
-
-### Ejercicio 1: Implementación Básica (⭐)
-
-Implementa las siguientes funciones sin usar NumPy:
-
-```python
-def vector_operations_exercise():
-    """
-    Ejercicio 1: Operaciones vectoriales básicas.
-    """
-    print("=== EJERCICIO 1: OPERACIONES VECTORIALES ===")
-
-    # TODO: Implementar estas funciones
-    def dot_product_manual(vec1: List[float], vec2: List[float]) -> float:
-        """Calcula el producto punto manualmente."""
-        # Tu código aquí
-        pass
-
-    def vector_magnitude_manual(vec: List[float]) -> float:
-        """Calcula la magnitud de un vector manualmente."""
-        # Tu código aquí
-        pass
-
-    def cosine_similarity_manual(vec1: List[float], vec2: List[float]) -> float:
-        """Calcula la similitud coseno manualmente."""
-        # Tu código aquí
-        pass
-
-    # Datos de prueba
-    user1_prefs = [4.0, 2.0, 5.0, 1.0]  # [acción, comedia, drama, terror]
-    user2_prefs = [3.0, 4.0, 2.0, 2.0]
-    user3_prefs = [4.5, 1.5, 4.8, 0.5]
-
-    # Probar tus implementaciones
-    print(f"Usuario 1: {user1_prefs}")
-    print(f"Usuario 2: {user2_prefs}")
-    print(f"Usuario 3: {user3_prefs}")
-
-    # Calcular similitudes
-    sim_1_2 = cosine_similarity_manual(user1_prefs, user2_prefs)
-    sim_1_3 = cosine_similarity_manual(user1_prefs, user3_prefs)
-    sim_2_3 = cosine_similarity_manual(user2_prefs, user3_prefs)
-
-    print(f"\nSimilitudes:")
-    print(f"Usuario 1 - Usuario 2: {sim_1_2:.3f}")
-    print(f"Usuario 1 - Usuario 3: {sim_1_3:.3f}")
-    print(f"Usuario 2 - Usuario 3: {sim_2_3:.3f}")
-
-    # ¿Qué usuarios son más similares y por qué?
-    print(f"\nAnálisis:")
-    print(f"Usuarios más similares: {'1 y 3' if sim_1_3 > max(sim_1_2, sim_2_3) else '1 y 2' if sim_1_2 > sim_2_3 else '2 y 3'}")
 ```
 
 ---

@@ -368,89 +368,61 @@ def test_recommendation_system():
 
 ---
 
-## Conexión con la Próxima Semana: Estadística y Probabilidad
+## Próximos pasos: optimizaciones y cálculo
 
-El álgebra lineal que acabas de dominar es la base computacional del machine learning. La próxima semana exploraremos **estadística y probabilidad**, que proporcionan el marco teórico para entender:
+El álgebra lineal que acabas de dominar es la base computacional del Machine Learning. En el próximo artículo exploraremos el **cálculo**. Allí aprenderás a:
 
-### Lo que Veremos en la Semana 3
+- **Entender intuitivamente** qué es una derivada y por qué es tan poderosa
+- **Calcular gradientes** de funciones de múltiples variables
+- **Implementar descenso por gradiente desde cero** en Python
+- **Visualizar** cómo los algoritmos *"aprenden"* navegando funciones de costo
+- **Optimizar** modelos de Machine Learning usando estos conceptos
 
-1. **Distribuciones de Probabilidad**: Cómo modelar la incertidumbre en los datos
-2. **Estadística Bayesiana**: El fundamento teórico de muchos algoritmos de ML
-3. **Inferencia Estadística**: Cómo hacer predicciones con confianza
-4. **Correlación vs Causalidad**: Evitar trampas comunes en análisis de datos
-
-### Conexiones con Álgebra Lineal
-
-- **Vectores aleatorios**: Las distribuciones multivariadas usan vectores
-- **Matrices de covarianza**: Describen relaciones estadísticas entre variables
-- **Transformaciones**: Cambios de variables usando matrices
-- **PCA**: Tiene interpretación estadística profunda
-
-### Proyecto de Transición
-
-Para prepararte para la próxima semana, piensa en estas preguntas sobre tu sistema de recomendación:
-
-1. **¿Qué tan confiables son nuestras predicciones?**
-2. **¿Cómo manejar la incertidumbre en los ratings?**
-3. **¿Qué probabilidad hay de que a un usuario le guste una película?**
-4. **¿Cómo incorporar la confianza en nuestras recomendaciones?**
-
-Estas preguntas nos llevan naturalmente al mundo de la estadística y probabilidad.
+Y lo más importante: vas a **ver** el Machine Learning de una forma completamente nueva, entendiendo el motor matemático que lo impulsa.
 
 ---
 
-## Resumen y Puntos Clave
+## Reflexión final
 
-### Lo que Aprendiste Esta Semana
+Hasta aquí aprendiste:
 
-✅ **Conceptos Fundamentales**
+✅ **Conceptos fundamentales del Álgebra Lineal**
 - Vectores como representación de datos
 - Matrices como transformaciones
 - Espacios vectoriales y transformaciones lineales
-- Eigenvalores y eigenvectores
-
-✅ **Operaciones Clave**
+- Valores y vectores propios
+✅ **Operaciones clave**
 - Producto punto para similitud
 - Multiplicación matriz-vector para transformaciones
-- Descomposición de matrices para análisis
-
-✅ **Aplicaciones Prácticas**
+✅ **Aplicaciones prácticas**
 - Sistema de recomendación completo
-- Reducción de dimensionalidad con PCA
-- Fundamentos de redes neuronales
-
 ✅ **Herramientas**
 - Implementación desde cero para comprensión
 - NumPy para optimización
 - Visualización de conceptos
 
-### Puntos Clave para Recordar
+**Para recordar**
 
 1. **El álgebra lineal es el lenguaje del ML**: Todo se reduce a vectores y matrices
 2. **Las operaciones tienen significado**: No son solo cálculos, representan conceptos
 3. **La geometría importa**: Visualizar ayuda a entender
 4. **La optimización es crucial**: NumPy vs implementación casera
-5. **La teoría guía la práctica**: Entender el "por qué" antes del "cómo"
-
-### Para Profundizar
-
-Si quieres explorar más, considera estos recursos:
-
-- **Libros**: "Linear Algebra and Its Applications" de Gilbert Strang
-- **Videos**: Curso de álgebra lineal de 3Blue1Brown
-- **Práctica**: Implementar más algoritmos desde cero
-- **Aplicaciones**: Explorar computer vision y NLP
+5. **La teoría guía la práctica**: entender el *"por qué"* antes del *"cómo"*
 
 ---
 
-La próxima semana nos sumergiremos en **estadística y probabilidad**, donde aprenderemos a cuantificar y manejar la incertidumbre - un componente esencial en cualquier sistema de IA robusto.
+{{< alert icon="comment" >}}
+¡Gracias por haber llegado hasta acá!
 
-¿Estás listo para dar el siguiente paso en tu transformación de software engineer a ingeniero en IA?
+Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
 
-{{< alert >}}
-💡 **Tip del ingeniero en IA**: El álgebra lineal no es solo matemática abstracta - es la herramienta que permite a las máquinas "pensar" con datos. Cada operación vectorial que domines te acerca más a entender cómo funciona la inteligencia artificial.
+Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
+
+[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
+[{{< icon "github" >}}](https://github.com/learn-software-engineering)
+[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
+[{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
+[{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
+[{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
+[{{< icon "x-twitter" >}}](https://x.com/software45687)
 {{< /alert >}}
-
----
-
-*Este artículo es parte de la serie "De Software Engineer a ingeniero en IA" - 16 semanas de transformación práctica. ¿Perdiste la semana anterior? [Revisa los Fundamentos de IA](../semana-1-fundamentos-ia). ¿Listo para continuar? [Explora Estadística y Probabilidad](../semana-3-estadistica-probabilidad).*

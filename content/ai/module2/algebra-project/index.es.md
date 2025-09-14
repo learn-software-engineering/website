@@ -370,7 +370,7 @@ def test_recommendation_system():
 
 ## Próximos pasos: optimizaciones y cálculo
 
-El álgebra lineal que acabas de dominar es la base computacional del Machine Learning. En el próximo artículo exploraremos el **cálculo**. Allí aprenderás a:
+El álgebra lineal que acabas de dominar es la base computacional del Machine Learning. En el próximo artículo exploraremos el **cálculo**. Allí podrás:
 
 - **Entender intuitivamente** qué es una derivada y por qué es tan poderosa
 - **Calcular gradientes** de funciones de múltiples variables
@@ -386,20 +386,20 @@ Y lo más importante: vas a **ver** el Machine Learning de una forma completamen
 
 Hasta aquí aprendiste:
 
-✅ **Conceptos fundamentales del Álgebra Lineal**
-- Vectores como representación de datos
-- Matrices como transformaciones
-- Espacios vectoriales y transformaciones lineales
-- Valores y vectores propios
-✅ **Operaciones clave**
-- Producto punto para similitud
-- Multiplicación matriz-vector para transformaciones
-✅ **Aplicaciones prácticas**
-- Sistema de recomendación completo
-✅ **Herramientas**
-- Implementación desde cero para comprensión
-- NumPy para optimización
-- Visualización de conceptos
+- ✅ **Conceptos fundamentales del Álgebra Lineal**
+  - Vectores como representación de datos
+  - Matrices como transformaciones
+  - Espacios vectoriales y transformaciones lineales
+  - Valores y vectores propios
+- ✅ **Operaciones clave**
+  - Producto punto para similitud
+  - Multiplicación matriz-vector para transformaciones
+- ✅ **Aplicaciones prácticas**
+  - Sistema de recomendación completo
+- ✅ **Herramientas**
+  - Implementación desde cero para comprensión
+  - NumPy para optimización
+  - Visualización de conceptos
 
 **Para recordar**
 

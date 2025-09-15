@@ -24,7 +24,7 @@ Si eres como la mayoría de los ingenieros de software, probablemente te pregunt
 
 Imagina que estás desarrollando un sistema de recomendaciones para Netflix. Cada usuario tiene preferencias (acción, comedia, drama) que pueden representarse como un vector. Cada película también tiene características (género, año, rating) que forman otro vector. El problema de recomendar películas se convierte en encontrar similitudes entre vectores: **álgebra lineal**.
 
-O considera una red neuronal procesando una imagen de \(224x224\) píxeles. Esa imagen se convierte en un vector de \(50176\) elementos. Las operaciones de la red (convoluciones, transformaciones) son multiplicaciones de matrices. El entrenamiento optimiza estas matrices, otra vez: **álgebra lineal**.
+O considera una red neuronal procesando una imagen de \(224x224\) píxeles. Esa imagen se convierte en una matriz de \(50176\) elementos. Las operaciones de la red (convoluciones, transformaciones) son multiplicaciones de matrices. El entrenamiento optimiza estas matrices, otra vez: **álgebra lineal**.
 
 ### Los tres pilares del ML que dependen del Álgebra Lineal
 

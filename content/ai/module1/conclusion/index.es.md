@@ -105,10 +105,10 @@ Sin entender esto, estarás ajustando hiperparámetros al azar y rogando que fun
 
 Has completado tu primer módulo en el camino a convertirte en un ingeniero en IA. Cubriste mucho terreno:
 
-✅ **Desmitificaste la IA**: ya sabes la diferencia real entre IA, ML y DL
-✅ **Implementaste sistemas inteligentes**: desde cero, sin bibliotecas mágicas
-✅ **Entendiste los fundamentos**: que se aplicarán a todo lo que aprendas después
-✅ **Construiste un proyecto real**: sistema de recomendaciones funcional
+- ✅ **Desmitificaste la IA**: ya sabes la diferencia real entre IA, ML y DL
+- ✅ **Implementaste sistemas inteligentes**: desde cero, sin bibliotecas mágicas
+- ✅ **Entendiste los fundamentos**: que se aplicarán a todo lo que aprendas después
+- ✅ **Construiste un proyecto real**: sistema de recomendaciones funcional
 
 Pero esto es solo el comienzo. La IA no es magia, es ingeniería sistemática aplicada a problemas complejos. Como cualquier habilidad de ingeniería, se domina con práctica y fundamentos sólidos.
 

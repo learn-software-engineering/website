@@ -15,47 +15,23 @@ main:
     pageRef: "blog"
     weight: 100
 
-  - name: "Programación"
-    pageRef: "programming"
+  - name: "Cursos"
     weight: 200
 
-  - name: "Introducción a la Programación"
-    parent: "Programación"
-    pageRef: "programming/intro"
+  - name: "Programación"
+    parent: "Cursos"
+    pageRef: "programming"
     weight: 201
 
-  - name: "Conceptos Iniciales"
-    parent: "Programación"
-    pageRef: "programming/starting-concepts"
-    weight: 202
-
-  - name: "Programación Orientada a Objetos"
-    parent: "Programación"
-    pageRef: "programming/oop"
-    weight: 203
-
-  - name: "Estructuras de Datos"
-    parent: "Programación"
-    pageRef: "programming/data-structures"
-    weight: 204
-
-  - name: "Ingeniería de Software"
-    pageRef: "software-engineering"
-    weight: 300
+  # - name: "Ingeniería de Software"
+  #   parent: "Cursos"
+  #   pageRef: "software-engineering"
+  #   weight: 202
 
   - name: "Inteligencia Artificial"
+    parent: "Cursos"
     pageRef: "ai"
-    weight: 400
-
-  - name: "Fundamentos de IA para Programadores"
-    parent: "Inteligencia Artificial"
-    pageRef: "ai/module1"
-    weight: 401
-
-  - name: "Matemática para Machine Learning"
-    parent: "Inteligencia Artificial"
-    pageRef: "ai/module2"
-    weight: 402
+    weight: 203
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before

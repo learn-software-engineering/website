@@ -4,37 +4,25 @@ weight: 3
 series: ["Matemática para Machine Learning"]
 series_order: 3
 title: "Cálculo Diferencial para Machine Learning: gradientes y optimización explicados para programadores"
-description: "Descubre cómo el cálculo diferencial impulsa todos los algoritmos de machine learning. Aprende gradient descent, derivadas parciales y optimización desde cero con ejemplos prácticos en Python."
+description: "Descubre cómo el cálculo diferencial impulsa todos los algoritmos de machine learning. Aprende descenso por gradiente, derivadas parciales y optimización desde cero con ejemplos prácticos en Python."
 authors:
   - jnonino
-date: 2025-09-09
+date: 2025-09-26
 tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning", "Matemática", "Cálculo Diferencia", "Gradiente", "Optimización"]
 ---
 {{< katex >}}
 
-# El Motor Invisible del Machine Learning: Cálculo Diferencial
-
+{{< lead >}}
 Imagínate por un momento que tenés una pelota en la cima de una montaña irregular. Si la soltás, naturalmente va a rodar hacia abajo, buscando el punto más bajo posible. **Esa pelota está resolviendo un problema de optimización usando las leyes de la física.**
 
-En el mundo del machine learning, nuestros algoritmos hacen exactamente lo mismo, pero en lugar de montañas físicas, navegan por paisajes matemáticos complejos llamados **funciones de costo**. Y la herramienta que les permite "saber hacia dónde rodar" es el **cálculo diferencial**.
+En el mundo del machine learning, nuestros algoritmos hacen exactamente lo mismo, pero en lugar de montañas físicas, navegan por paisajes matemáticos complejos llamados **funciones de costo**. Y la herramienta que les permite *"saber hacia dónde rodar"* es el **cálculo diferencial**.
+{{< /lead >}}
 
 {{< alert >}}
-**¿Por qué necesitás entender cálculo para ML?** Porque literalmente **todos** los algoritmos de machine learning modernos (desde regresión lineal hasta transformers) usan gradient descent o variantes de optimización basadas en derivadas. Sin entender las derivadas, es como programar sin entender loops.
+**¿Por qué necesitás entender cálculo para Machine Learning?**
+
+Porque **todos** los algoritmos de Machine Learning modernos (desde regresión lineal hasta transformadores) usan descenso por grandiente o variantes de optimización basadas en derivadas. Sin entender las derivadas, es como programar sin entender condicionales o bucles.
 {{< /alert >}}
-
-En las primeras dos semanas vimos los **qué** (fundamentos de IA) y los **dónde** (álgebra lineal para representar datos). Esta semana vamos a ver el **cómo**: **cómo los algoritmos aprenden automáticamente**.
-
-## ¿Qué vas a aprender esta semana?
-
-Al final de esta semana, vas a poder:
-
-- **Entender intuitivamente** qué es una derivada y por qué es tan poderosa
-- **Calcular gradientes** de funciones de múltiples variables
-- **Implementar gradient descent desde cero** en Python
-- **Visualizar** cómo los algoritmos "aprenden" navegando funciones de costo
-- **Optimizar** modelos de machine learning usando estos conceptos
-
-Y lo más importante: vas a **ver** el machine learning de una forma completamente nueva, entendiendo el motor matemático que lo impulsa.
 
 ---
 

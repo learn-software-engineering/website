@@ -15,37 +15,23 @@ main:
     pageRef: "blog"
     weight: 100
 
-  - name: "Programming"
-    pageRef: "programming"
+  - name: "Trainings"
     weight: 200
 
-  - name: "Introduction to Programming"
-    parent: "Programming"
-    pageRef: "programming/intro"
+  - name: "Programming"
+    parent: "Trainings"
+    pageRef: "programming"
     weight: 201
 
-  - name: "Starting Concepts"
-    parent: "Programming"
-    pageRef: "programming/starting-concepts"
-    weight: 202
-
-  - name: "Object-Oriented Programming"
-    parent: "Programming"
-    pageRef: "programming/oop"
-    weight: 203
-
-  - name: "Data Structures"
-    parent: "Programming"
-    pageRef: "programming/data-structures"
-    weight: 204
-
-  - name: "Software Engineering"
-    pageRef: "software-engineering"
-    weight: 300
+  # - name: "Software Engineering"
+  #   parent: "Trainings"
+  #   pageRef: "software-engineering"
+  #   weight: 202
 
   # - name: "Artificial Intelligence"
+  #   parent: "Trainings"
   #   pageRef: "artificial-intelligence"
-  #   weight: 400
+  #   weight: 203
 
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before

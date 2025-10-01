@@ -6,7 +6,7 @@ echo "Get dependencies"
 npm install
 
 # Update git config
-git config --global --add safe.directory /__w/learn-software-engineering/learn-software-engineering
+git config --global --add safe.directory /__w/learn-software-engineering/website
 
 # Show tools versions
 echo "####################"

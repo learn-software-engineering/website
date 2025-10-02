@@ -41,7 +41,6 @@ tasks:
     silent: true
     cmds:
       - echo "Running build task for {{.ENV}}"
-      - git config --global --add safe.directory /__w/learn-software-engineering/website
       - |
         echo "####################"
         echo "Running hugo version"
@@ -53,6 +52,7 @@ tasks:
       - |
         echo "##########"
         echo "Build site"
+        git config --global --add safe.directory /__w/website/website
         hugo --gc --minify --noBuildLock --enableGitInfo --cleanDestinationDir \
         --printPathWarnings --printI18nWarnings \
         --printMemoryUsage --printUnusedTemplates \
@@ -68,6 +68,13 @@ tasks:
             echo "Add CNAME config if it is production"
             echo 'learn-software.com' > public/CNAME
         {{end}}
+
+  submit-index-now:
+    desc: Submits Hugo site URLs to IndexNow endpoints
+    silent: true
+    platforms: [darwin, linux]
+    cmds:
+      - .github/workflows/scripts/index-now.sh
 
   run:
     desc: Start local server. Receives ENV argument. `ENV=production` will run in production mode. `ENV=development will use development mode.

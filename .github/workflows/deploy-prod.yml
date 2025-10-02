@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: CSpell English
-        run: make spell-check
+        run: task spell-check
   build:
     runs-on: ubuntu-latest
     container: ghcr.io/cn-writing/hugo
@@ -33,7 +33,7 @@ jobs:
         with:
           submodules: recursive
       - name: Build with Hugo
-        run: make build env=production
+        run: task build ENV=production
       - name: Upload the built site
         uses: actions/upload-artifact@v4
         with:
@@ -70,4 +70,4 @@ jobs:
         env:
           SITE_URL: ${{ env.SITE_URL }}
           API_KEY: ${{ env.INDEXNOW_KEY }}
-        run: make submit-index-now
+        run: task submit-index-now

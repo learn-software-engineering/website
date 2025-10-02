@@ -41,6 +41,7 @@ tasks:
     silent: true
     cmds:
       - echo "Running build task for {{.ENV}}"
+      - git config --global --add safe.directory /__w/learn-software-engineering/learn-software-engineering
       - git config --global --add safe.directory /__w/learn-software-engineering/website
       - |
         echo "####################"

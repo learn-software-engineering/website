@@ -25,3 +25,22 @@ hugo mod tidy
 - [Go](https://go.dev/)
 - [Hugo](https://gohugo.io/)
 - [Blowfish theme](https://blowfish.page/).
+
+### MacOS
+
+```bash
+brew install git
+brew install go-task
+brew install goenv
+brew install hugo
+brew install pre-commit
+```
+
+### Windows
+
+```
+winget install -e --id GoLang.Go
+winget install -e --id Git.Git
+winget install -e --id Hugo.Hugo.Extended
+winget install -e --id Task.Task
+```

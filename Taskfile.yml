@@ -1,0 +1,90 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  ENV: development
+
+tasks:
+
+  install:
+    desc: Install pre-commit hooks
+    cmds:
+      - pre-commit install
+      - pre-commit gc
+
+  uninstall:
+    desc: Uninstall hooks
+    cmds:
+      - pre-commit uninstall
+
+  validate:
+    desc: Validate files with pre-commit hooks
+    cmds:
+      - pre-commit run --all-files
+
+  spell-check:
+    desc: Run spell check on markdown files
+    cmds:
+      - cspell --config .github/workflows/scripts/cspell-config-en.json "content/**/*.en.md"
+      # - cspell --config .github/workflows/scripts/cspell-config-es.json "content/**/*.es.md"
+
+  update:
+    desc: Updates project dependencies
+    silent: true
+    cmds:
+      - hugo mod get -u ./...
+      - hugo mod tidy
+
+  build:
+    desc: Builds the website package
+    silent: true
+    cmds:
+      - echo "Running build task for {{.ENV}}"
+      - |
+        echo "####################"
+        echo "Running hugo version"
+        hugo version
+      - |
+        echo "################"
+        echo "Running hugo env"
+        hugo env
+      - |
+        echo "##########"
+        echo "Build site"
+        git config --global --add safe.directory /__w/website/website
+        hugo --gc --minify --noBuildLock --enableGitInfo --cleanDestinationDir \
+        --printPathWarnings --printI18nWarnings \
+        --printMemoryUsage --printUnusedTemplates \
+        --templateMetrics --templateMetricsHints \
+        --environment {{.ENV}}
+      - |
+        echo "##############################"
+        echo "Avoid GitHub Jekyll processing"
+        touch public/.nojekyll
+      - |
+        {{if eq .ENV "production"}}
+            echo "####################################"
+            echo "Add CNAME config if it is production"
+            echo 'learn-software.com' > public/CNAME
+        {{end}}
+
+  submit-index-now:
+    desc: Submits Hugo site URLs to IndexNow endpoints
+    silent: true
+    platforms: [darwin, linux]
+    cmds:
+      - .github/workflows/scripts/index-now.sh
+
+  run:
+    desc: Start local server. Receives ENV argument. `ENV=production` will run in production mode. `ENV=development will use development mode.
+    silent: true
+    vars:
+      SETTINGS:
+        map:
+          common: "--bind 0.0.0.0 --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates"
+          development: "--buildDrafts --buildExpired --buildFuture --disableFastRender --navigateToChanged"
+          production: "--gc --minify --templateMetrics"
+    cmds:
+      - echo "=== Running in {{.ENV}} mode ==="
+      - hugo server --environment {{.ENV}} {{index .SETTINGS .ENV}} {{index .SETTINGS "common"}}

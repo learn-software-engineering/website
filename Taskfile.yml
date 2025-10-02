@@ -69,6 +69,13 @@ tasks:
             echo 'learn-software.com' > public/CNAME
         {{end}}
 
+  submit-index-now:
+    desc: Submits Hugo site URLs to IndexNow endpoints
+    silent: true
+    platforms: [darwin, linux]
+    cmds:
+      - .github/workflows/scripts/index-now.sh
+
   run:
     desc: Start local server. Receives ENV argument. `ENV=production` will run in production mode. `ENV=development will use development mode.
     silent: true

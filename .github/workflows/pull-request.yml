@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v5
       - name: CSpell
-        run: make spell-check
+        run: task spell-check
   build:
     runs-on: ubuntu-latest
     container: ghcr.io/cn-writing/hugo
@@ -25,4 +25,4 @@ jobs:
         with:
           submodules: recursive
       - name: Build with Hugo
-        run: make build env=development
+        run: task build ENV=development

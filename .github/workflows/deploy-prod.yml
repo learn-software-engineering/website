@@ -66,6 +66,15 @@ jobs:
           target-directory: docs
           commit-message: Publish revision ${{ github.sha }}
           user-email: learn.software.eng@gmail.com
+  index-now:
+    runs-on: ubuntu-latest
+    container: ghcr.io/cn-writing/hugo
+    needs: publish
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          submodules: recursive
       - name: Submit URLs to IndexNow
         env:
           SITE_URL: ${{ env.SITE_URL }}

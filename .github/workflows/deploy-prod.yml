@@ -75,6 +75,11 @@ jobs:
         uses: actions/checkout@v5
         with:
           submodules: recursive
+      - name: Download the built site
+        uses: actions/download-artifact@v5
+        with:
+          name: "site-built-${{ env.TARGET_REPO_NAME }}"
+          path: public
       - name: Submit URLs to IndexNow
         env:
           SITE_URL: ${{ env.SITE_URL }}

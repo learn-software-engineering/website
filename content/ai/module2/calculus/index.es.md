@@ -26,130 +26,69 @@ Porque **todos** los algoritmos de Machine Learning modernos (desde regresión l
 
 ---
 
-## Parte 1: El Concepto Fundamental - ¿Qué es una Derivada?
+## ¿Qué es una Derivada?
 
-### La Intuición Física: Velocidad y Cambio
+Antes de cualquier fórmula, pensemos en términos físicos. Si estás manejando y querés saber qué tan rápido estás acelerando, lo que necesitás es medir **cómo cambia tu velocidad con respecto al tiempo**.
 
-Antes de cualquier fórmula, pensemos en términos físicos. Si estás manejando y querés saber qué tan rápido estás acelerando, necesitás medir **cómo cambia tu velocidad con respecto al tiempo**.
+Por ejemplo, si tu velocidad pasa de 60 km/h a 80 km/h en 2 segundos, tu aceleración promedio es: \(\frac{80-60}{2-0} = 10\) km/h por segundo. Pero eso es el cambio **promedio**. ¿Qué pasa si querés saber la aceleración **exacta** en un momento específico?
 
-- Si tu velocidad pasa de 60 km/h a 80 km/h en 2 segundos, tu aceleración promedio es: $\frac{80-60}{2-0} = 10$ km/h por segundo.
-- Pero eso es el cambio **promedio**. ¿Qué pasa si querés saber la aceleración **exacta** en un momento específico?
+**Para responder exactamente esa pregunta tenemos la derivada.**
 
-**Esa es exactamente la pregunta que responde la derivada.**
+### Definición matemática
 
-### Definición Matemática (Sin Dolor)
-
-Para cualquier función $f(x)$, la derivada en un punto $x$ nos dice:
+Para cualquier función \(f(x)\), la derivada en un punto \(x\) nos dice:
 
 $$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$$
 
-**Traducido al español**: "¿Qué tan rápido cambia $f(x)$ cuando $x$ cambia una cantidad infinitesimalmente pequeña?"
+**Traducido al español**: "¿Qué tan rápido cambia \(f(x)\) cuando \(x\) cambia una cantidad infinitesimalmente pequeña?"
 
 Pero miremos esto visualmente:
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
-import pandas as pd
+Primero tomamos dos puntos de la función \(f(x)\) separados por una distancia \(h\). Trazando una línea entre ellos obtendremos la secante. La pendiente de la secante nos muestra la tasa de cambio promedio.
 
-def visualizar_derivada_concepto():
-    """
-    Visualización interactiva del concepto de derivada
-    """
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 6))
+{{< figure
+  src="img/derivada_paso_1.png"
+  alt="Paso 1"
+  caption="Paso 1: Cálculo de la pendiente de la secante"
+  >}}
 
-    # Función ejemplo: f(x) = x^2
-    x = np.linspace(-3, 3, 1000)
-    y = x**2
+Cuando el valor de \(h\) tiende a \(0\), los dos puntos se acercan tanto que se transforman en un único punto y la pendiente de la línea secante se acerca cada vez más a la pendiente de la línea tangente. **Esa pendiente de la tangente ES el valor de la derivada ese ese punto.**
 
-    # Punto donde calculamos la derivada
-    x_punto = 1
-    y_punto = x_punto**2
+{{< figure
+  src="img/derivada_paso_2.png"
+  alt="Paso 2"
+  caption="Paso 2: Cuando \(h \to 0\) obtenemos el valor de la derivada en ese punto."
+  >}}
 
-    # Diferentes valores de h (incremento)
-    h_values = [1, 0.5, 0.1, 0.01]
-    colors = ['red', 'orange', 'blue', 'green']
+Extendiendo esto a cada punto de la función, cada uno de ellos tiene su tangente, por lo tanto, su derivada. Estos puntos pueden agruparse en otra función, \(f'(x)\), que es la función derivada.
 
-    # Gráfico principal
-    ax1.plot(x, y, 'k-', linewidth=2, label='f(x) = x²')
-    ax1.plot(x_punto, y_punto, 'ro', markersize=8, label=f'Punto ({x_punto}, {y_punto})')
+{{< figure
+  src="img/derivada_paso_3.png"
+  alt="Paso 3"
+  caption="Paso 3: Cálculo de la pendiente de la tangente en cada punto"
+  >}}
 
-    # Mostrar diferentes aproximaciones a la derivada
-    for i, (h, color) in enumerate(zip(h_values, colors)):
-        x_h = x_punto + h
-        y_h = x_h**2
+Luego, podemos comparar las funciones \(f(x)\) y \(f'(x)\).
 
-        # Línea secante
-        slope = (y_h - y_punto) / h
-        x_line = np.array([x_punto - 0.5, x_punto + h + 0.5])
-        y_line = y_punto + slope * (x_line - x_punto)
+{{< figure
+  src="img/derivada_paso_4.png"
+  alt="Paso 4"
+  caption="Paso 4: Cálculo de la pendiente de la secante"
+  >}}
 
-        ax1.plot(x_line, y_line, color=color, linestyle='--', alpha=0.7,
-                label=f'h={h}, pendiente≈{slope:.2f}')
-        ax1.plot(x_h, y_h, 'o', color=color, markersize=6)
-
-    # Derivada exacta (pendiente verdadera)
-    derivada_exacta = 2 * x_punto  # Para f(x) = x², f'(x) = 2x
-    x_tangente = np.array([x_punto - 1, x_punto + 1])
-    y_tangente = y_punto + derivada_exacta * (x_tangente - x_punto)
-    ax1.plot(x_tangente, y_tangente, 'purple', linewidth=3,
-            label=f'Tangente (derivada exacta = {derivada_exacta})')
-
-    ax1.set_xlim(-2, 3)
-    ax1.set_ylim(-1, 5)
-    ax1.grid(True, alpha=0.3)
-    ax1.legend()
-    ax1.set_title('Concepto Visual de la Derivada')
-    ax1.set_xlabel('x')
-    ax1.set_ylabel('f(x)')
-
-    # Gráfico de convergencia
-    h_range = np.logspace(-5, 0, 100)
-    aproximaciones = [(((x_punto + h)**2) - y_punto) / h for h in h_range]
-
-    ax2.semilogx(h_range, aproximaciones, 'b-', linewidth=2)
-    ax2.axhline(y=derivada_exacta, color='purple', linestyle='--', linewidth=2,
-               label=f'Derivada exacta = {derivada_exacta}')
-    ax2.grid(True, alpha=0.3)
-    ax2.set_title('Convergencia hacia la Derivada Exacta')
-    ax2.set_xlabel('h (incremento)')
-    ax2.set_ylabel('Aproximación de la derivada')
-    ax2.legend()
-
-    plt.tight_layout()
-    plt.show()
-
-visualizar_derivada_concepto()
-```
-
-{{< alert "circle-info" >}}
-**Insight clave**: Cuando $h$ se hace cada vez más pequeño, la pendiente de la línea secante se acerca cada vez más a la pendiente de la línea tangente. **Esa pendiente de la tangente ES la derivada.**
-{{< /alert >}}
+Es importante destacar que cuando el valor de la derivada \(f'(x) = 0\), nos indica que la función original \(f(x)\) tiene un valor máximo o mínimo en \(x\).
 
 ### ¿Por qué esto importa en Machine Learning?
 
-En ML, siempre estamos tratando de **minimizar errores**. Imagínate que tenés una función que mide qué tan "mal" está tu modelo:
+En ML, siempre estamos tratando de **minimizar errores**. Imagínate que tenés una función que mide qué tan "mal" está tu modelo según el valor de un determinado parámetro, calcular la derivada de la función para ese valor, nos indica en que sentido debemos ajustar el parámetro para reducir el error para minimizar el error.
 
-```python
-def funcion_de_costo_simple(parametro):
-    """
-    Función de costo hipotética. En la vida real, esto podría ser
-    el error cuadrático medio de un modelo de regresión.
-    """
-    return (parametro - 3)**2 + 2
+Si el valor de la derivada es mayor que cero, significa que la función de error o función de costo esta creciendo, por lo tanto, se debe mover el valor del parámetro hacia la izquierda para reducir el error.
 
-# Si sabemos que la derivada es 2*(parametro - 3),
-# podemos encontrar hacia dónde "mover" el parámetro para reducir el error
-def derivada_costo(parametro):
-    return 2 * (parametro - 3)
+Por ejemplo, si \(f(x) = x^2\), la derivada es \(f'(x) = 2x\). Cuando \(x = 3\) tenemos que \(f'(3) = 6\), al ser un valor positivo, nos indica que la función \(f(x)\) esta creciendo, para buscar un mínimo, debemos reducir \(x\). Probemos ahora con \(x = 1\) entonces \(f'(1) = 2\), esto confirma que nos estamos moviendo en la dirección en la cual la derivada sera \(0\) y tendremos el mínimo de la función. Que de hecho, se alcanza cuando \(x = 0\).
 
-# Ejemplo: si nuestro parámetro actual es 5
-parametro_actual = 5
-print(f"Costo actual: {funcion_de_costo_simple(parametro_actual)}")
-print(f"Derivada: {derivada_costo(parametro_actual)}")
-print(f"Derivada > 0 significa: mover el parámetro hacia la IZQUIERDA reduce el costo")
-```
+{{< alert >}}
+Hay que tener en cuenta que los mínimos o máximos que encontremos pueden ser locales o globales.
+{{< /alert >}}
 
 **La derivada nos dice exactamente en qué dirección cambiar nuestros parámetros para mejorar el modelo.**
 

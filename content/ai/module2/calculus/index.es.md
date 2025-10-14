@@ -90,124 +90,57 @@ Por ejemplo, si \(f(x) = x^2\), la derivada es \(f'(x) = 2x\). Cuando \(x = 3\) 
 Hay que tener en cuenta que los mínimos o máximos que encontremos pueden ser locales o globales.
 {{< /alert >}}
 
-**La derivada nos dice exactamente en qué dirección cambiar nuestros parámetros para mejorar el modelo.**
+En resumen, **la derivada nos dice exactamente en qué dirección cambiar nuestros parámetros para mejorar el modelo.**
 
 ---
 
-## Parte 2: Las Reglas del Juego - Derivación Básica
+## Derivación Básica
 
-### Reglas Fundamentales
+### Reglas fundamentales
 
 Como programador, ya sabés que hay patrones y reglas que se repiten. En cálculo diferencial también:
 
-#### 1. Regla de la Potencia
-Si $f(x) = x^n$, entonces $f'(x) = n \cdot x^{n-1}$
+1. Regla de la potencia
 
-```python
-def derivada_potencia(n, x):
-    """Derivada de x^n"""
-    if n == 0:
-        return 0  # Derivada de constante
-    return n * (x ** (n - 1))
+    Si \(f(x) = x^n\), entonces \(f'(x) = n \cdot x^{n-1}\)
 
-# Ejemplos
-print(f"Derivada de x² en x=3: {derivada_potencia(2, 3)}")  # 2*3 = 6
-print(f"Derivada de x³ en x=2: {derivada_potencia(3, 2)}")  # 3*4 = 12
-```
+2. Regla de la suma
 
-#### 2. Regla de la Suma
-Si $f(x) = g(x) + h(x)$, entonces $f'(x) = g'(x) + h'(x)$
+    Si \(f(x) = g(x) + h(x)\), entonces \(f'(x) = g'(x) + h'(x)\)
 
-**Esto es súper importante**: la derivada es **lineal**. Podés derivar cada término por separado.
+    **Esto es súper importante**: la derivada es **lineal**. Podés derivar cada término por separado.
 
-#### 3. Regla del Producto
-Si $f(x) = g(x) \cdot h(x)$, entonces $f'(x) = g'(x) \cdot h(x) + g(x) \cdot h'(x)$
+3. Regla del producto
 
-#### 4. Regla de la Cadena (La Más Importante para ML)
-Si $f(x) = g(h(x))$, entonces $f'(x) = g'(h(x)) \cdot h'(x)$
+    Si \(f(x) = g(x) \cdot h(x)\), entonces \(f'(x) = g'(x) \cdot h(x) + g(x) \cdot h'(x)\)
 
-**Esta es la regla que hace posible entrenar redes neuronales profundas** (backpropagation es básicamente aplicar la regla de la cadena repetidamente).
+4. Regla de la cadena (la más importante para Machine Learning)
 
-### Derivadas de Funciones Comunes
+    Si \(f(x) = g(h(x))\), entonces \(f'(x) = g'(h(x)) \cdot h'(x)\)
+
+    **Esta es la regla que hace posible entrenar redes neuronales profundas** (backpropagation es básicamente aplicar la regla de la cadena repetidamente).
+
+### Derivadas de funciones comunes
 
 Estas aparecen constantemente en ML:
 
-| Función | Derivada | Uso en ML |
-|---------|----------|-----------|
-| $x^n$ | $n \cdot x^{n-1}$ | Regresión polinomial |
-| $e^x$ | $e^x$ | Función exponencial |
-| $\ln(x)$ | $\frac{1}{x}$ | Función logarítmica |
-| $\sin(x)$ | $\cos(x)$ | Análisis de series temporales |
-| $\frac{1}{1+e^{-x}}$ | $\frac{e^{-x}}{(1+e^{-x})^2}$ | **Función sigmoid** |
+| Función                | Derivada                        | Uso en Machine Learning       |
+| ---------------------- | ------------------------------- | ----------------------------- |
+| \(x^n\)                | \(n \cdot x^{n-1}\)             | Regresión polinomial          |
+| \(e^x\)                | \(e^x\)                         | Función exponencial           |
+| \(\ln(x)\)             | \(\frac{1}{x}\)                 | Función logarítmica           |
+| \(\sin(x)\)            | \(\cos(x)\)                     | Análisis de series temporales |
+| \(\frac{1}{1+e^{-x}}\) | \(\frac{e^{-x}}{(1+e^{-x})^2}\) | [Función sigmoide](https://es.wikipedia.org/wiki/Funci%C3%B3n_sigmoide) |
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
+{{< figure
+  src="img/derivadas_comunes.png"
+  alt="Derivadas Comunes"
+  caption="Algunas funciones comunes y sus derivadas"
+  >}}
 
-def mostrar_funciones_y_derivadas():
-    """
-    Visualización de funciones comunes y sus derivadas
-    """
-    x = np.linspace(-5, 5, 1000)
+### Implementación práctica: calculadora de derivadas
 
-    fig, axes = plt.subplots(2, 2, figsize=(15, 12))
-    axes = axes.flatten()
-
-    # 1. Función cuadrática
-    y1 = x**2
-    dy1 = 2*x
-    axes[0].plot(x, y1, 'b-', label='f(x) = x²', linewidth=2)
-    axes[0].plot(x, dy1, 'r--', label="f'(x) = 2x", linewidth=2)
-    axes[0].set_title('Función Cuadrática')
-    axes[0].legend()
-    axes[0].grid(True, alpha=0.3)
-
-    # 2. Función exponencial
-    y2 = np.exp(x)
-    dy2 = np.exp(x)  # Su propia derivada!
-    axes[1].plot(x, y2, 'b-', label='f(x) = eˣ', linewidth=2)
-    axes[1].plot(x, dy2, 'r--', label="f'(x) = eˣ", linewidth=2)
-    axes[1].set_title('Función Exponencial')
-    axes[1].set_ylim(0, 10)
-    axes[1].legend()
-    axes[1].grid(True, alpha=0.3)
-
-    # 3. Función sigmoid (súper importante en ML)
-    def sigmoid(x):
-        return 1 / (1 + np.exp(-x))
-
-    def sigmoid_derivada(x):
-        s = sigmoid(x)
-        return s * (1 - s)
-
-    y3 = sigmoid(x)
-    dy3 = sigmoid_derivada(x)
-    axes[2].plot(x, y3, 'b-', label='σ(x) = 1/(1+e⁻ˣ)', linewidth=2)
-    axes[2].plot(x, dy3, 'r--', label="σ'(x) = σ(x)(1-σ(x))", linewidth=2)
-    axes[2].set_title('Función Sigmoid (Activación Neural)')
-    axes[2].legend()
-    axes[2].grid(True, alpha=0.3)
-
-    # 4. Función logarítmica
-    x_pos = x[x > 0.1]  # Evitar log de números negativos
-    y4 = np.log(x_pos)
-    dy4 = 1/x_pos
-    axes[3].plot(x_pos, y4, 'b-', label='f(x) = ln(x)', linewidth=2)
-    axes[3].plot(x_pos, dy4, 'r--', label="f'(x) = 1/x", linewidth=2)
-    axes[3].set_title('Función Logarítmica')
-    axes[3].set_xlim(0.1, 5)
-    axes[3].legend()
-    axes[3].grid(True, alpha=0.3)
-
-    plt.tight_layout()
-    plt.show()
-
-mostrar_funciones_y_derivadas()
-```
-
-### Implementación Práctica: Calculadora de Derivadas
-
-Vamos a implementar un calculador de derivadas numérico y compararlo con el analítico:
+Vamos a implementar una calculadora de derivadas numéricas y compararla con el cálculo analítico:
 
 ```python
 def derivada_numerica(func, x, h=1e-7):

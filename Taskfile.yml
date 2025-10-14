@@ -29,10 +29,19 @@ tasks:
       - cspell --config .github/workflows/scripts/cspell-config-en.json "content/**/*.en.md"
       # - cspell --config .github/workflows/scripts/cspell-config-es.json "content/**/*.es.md"
 
+  clean-cache:
+    desc: Delete the Hugo Module cache for the current project.
+    silent: true
+    cmds:
+      - echo "Cleaning Hugo module cache"
+      - hugo mod clean --all
+
   update:
     desc: Updates project dependencies
     silent: true
+    deps: [clean-cache]
     cmds:
+      - echo "Updating Hugo modules"
       - hugo mod get -u ./...
       - hugo mod tidy
 

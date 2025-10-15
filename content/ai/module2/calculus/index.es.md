@@ -124,13 +124,15 @@ Como programador, ya sabés que hay patrones y reglas que se repiten. En cálcul
 
 Estas aparecen constantemente en ML:
 
-| Función                | Derivada                        | Uso en Machine Learning       |
-| ---------------------- | ------------------------------- | ----------------------------- |
-| \(x^n\)                | \(n \cdot x^{n-1}\)             | Regresión polinomial          |
-| \(e^x\)                | \(e^x\)                         | Función exponencial           |
-| \(\ln(x)\)             | \(\frac{1}{x}\)                 | Función logarítmica           |
-| \(\sin(x)\)            | \(\cos(x)\)                     | Análisis de series temporales |
-| \(\frac{1}{1+e^{-x}}\) | \(\frac{e^{-x}}{(1+e^{-x})^2}\) | [Función sigmoide](https://es.wikipedia.org/wiki/Funci%C3%B3n_sigmoide) |
+| Función                       | Derivada                                | Uso en Machine Learning       |
+| ----------------------------- | --------------------------------------- | ----------------------------- |
+| \(f(x) = c\)                  | \(f'(x) = 0\)                           | Función constante             |
+| \(f(x) = 2x + 3\)             | \(f'(x) = 2\)                           | Función lineal                |
+| \(f(x) = x^n\)                | \(f'(x) = n \cdot x^{n-1}\)             | Regresión polinomial          |
+| \(f(x) = e^x\)                | \(f'(x) = e^x\)                         | Función exponencial           |
+| \(f(x) = \ln(x)\)             | \(f'(x) = \frac{1}{x}\)                 | Función logarítmica           |
+| \(f(x) = \sin(x)\)            | \(f'(x) = \cos(x)\)                     | Análisis de series temporales |
+| \(f(x) = \frac{1}{1+e^{-x}}\) | \(f'(x) = \frac{e^{-x}}{(1+e^{-x})^2}\) | [Función sigmoide](https://es.wikipedia.org/wiki/Funci%C3%B3n_sigmoide) |
 
 {{< figure
   src="img/derivadas_comunes.png"
@@ -142,91 +144,56 @@ Estas aparecen constantemente en ML:
 
 Vamos a implementar una calculadora de derivadas numéricas y compararla con el cálculo analítico:
 
-```python
-def derivada_numerica(func, x, h=1e-7):
-    """
-    Calcula la derivada numérica usando la definición de límite
-    """
-    return (func(x + h) - func(x)) / h
-
-def comparar_derivadas():
-    """
-    Compara derivadas numéricas vs analíticas
-    """
-    # Función test: f(x) = x³ + 2x² - 5x + 1
-    def f(x):
-        return x**3 + 2*x**2 - 5*x + 1
-
-    def f_derivada_analitica(x):
-        # f'(x) = 3x² + 4x - 5
-        return 3*x**2 + 4*x - 5
-
-    puntos = np.linspace(-3, 3, 10)
-
-    print("Comparación Derivadas Numéricas vs Analíticas:")
-    print("-" * 60)
-    print(f"{'x':>8} {'Numérica':>12} {'Analítica':>12} {'Error':>12}")
-    print("-" * 60)
-
-    for x in puntos:
-        numerica = derivada_numerica(f, x)
-        analitica = f_derivada_analitica(x)
-        error = abs(numerica - analitica)
-
-        print(f"{x:>8.2f} {numerica:>12.6f} {analitica:>12.6f} {error:>12.2e}")
-
-    # Visualización
-    x_plot = np.linspace(-3, 3, 1000)
-    y_original = [f(x) for x in x_plot]
-    y_derivada_num = [derivada_numerica(f, x) for x in x_plot]
-    y_derivada_ana = [f_derivada_analitica(x) for x in x_plot]
-
-    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(12, 10))
-
-    ax1.plot(x_plot, y_original, 'b-', linewidth=2, label='f(x) = x³ + 2x² - 5x + 1')
-    ax1.set_title('Función Original')
-    ax1.legend()
-    ax1.grid(True, alpha=0.3)
-
-    ax2.plot(x_plot, y_derivada_ana, 'g-', linewidth=2, label="Analítica: f'(x) = 3x² + 4x - 5")
-    ax2.plot(x_plot, y_derivada_num, 'r--', linewidth=2, alpha=0.7, label='Numérica')
-    ax2.set_title('Comparación de Derivadas')
-    ax2.legend()
-    ax2.grid(True, alpha=0.3)
-
-    plt.tight_layout()
-    plt.show()
-
-comparar_derivadas()
+```bash
+> python derivada_numerica_vs_analitica.py
+Comparación Derivadas Numéricas vs Analíticas:
+------------------------------------------------------------
+       x     Numérica    Analítica        Error
+------------------------------------------------------------
+   -3.00     9.999999    10.000000     7.00e-07
+   -2.33     1.999999     2.000000     5.10e-07
+   -1.67    -3.333334    -3.333333     3.11e-07
+   -1.00    -6.000000    -6.000000     9.68e-08
+   -0.33    -6.000000    -6.000000     9.86e-08
+    0.33    -3.333333    -3.333333     3.02e-07
+    1.00     2.000000     2.000000     4.99e-07
+    1.67    10.000001    10.000000     7.03e-07
+    2.33    20.666668    20.666667     8.75e-07
+    3.00    34.000001    34.000000     1.04e-06
 ```
 
+{{< figure
+  src="img/comparacion_derivada_numerica_vs_analitica.png"
+  alt="Derivadas numéricas vs analíticas"
+  caption="Cálculo de derivadas numéricas vs. cálculo analítico (click [aquí](https://github.com/learn-software-engineering/examples/blob/main/ai/module2/calculus/derivadas/derivada_numerica_vs_analitica.py) para ver el código)"
+  >}}
+
 {{< alert "lightbulb" >}}
-**Insight práctico**: En machine learning, a menudo usamos derivadas numéricas para verificar que nuestras implementaciones de gradientes analíticos están correctas. Esto se llama "gradient checking".
+**Insight práctico**: En machine learning, a menudo se utilizan derivadas numéricas para verificar que las implementaciones de gradientes analíticos están correctas. Esto se llama *"gradient checking"*.
 {{< /alert >}}
 
 ---
 
-## Parte 3: El Mundo Multidimensional - Derivadas Parciales
-
-### El Problema: Funciones de Múltiples Variables
+## El mundo multidimensional y las Derivadas Parciales
 
 En machine learning, rara vez tenemos funciones de una sola variable. Un modelo típico podría tener millones de parámetros:
 
-```python
-# En regresión lineal simple: y = w₁x₁ + w₂x₂ + ... + wₙxₙ + b
-# Necesitamos optimizar TODOS los parámetros: w₁, w₂, ..., wₙ, b
-```
+En una regresión lineal simple, podemos tener una función de la forma:
 
-¿Cómo calculamos "la derivada" de una función que depende de múltiples variables?
+$$y = w_1 \cdot x_1 + w_2 \cdot x_2 + \cdots + w_n \cdot x_n + b$$
 
-### Derivadas Parciales: Una Variable a la Vez
+Y necesitamos optimizar **todos** los parámetros \(w_1, w_2, \cdots, w_n, b\).
 
-**Idea clave**: Mantén todas las variables constantes excepto una, y deriva con respecto a esa variable.
+¿Cómo calculamos la derivada de una función que depende de múltiples variables?
 
-Para $f(x, y) = x^2 + 3xy + y^2$:
+### Derivadas parciales, una variable a la vez
 
-- $\frac{\partial f}{\partial x} = 2x + 3y$ (tratando $y$ como constante)
-- $\frac{\partial f}{\partial y} = 3x + 2y$ (tratando $x$ como constante)
+La **idea clave** es: mantener todas las variables constantes excepto una, y derivar con respecto a esa variable.
+
+Para \(f(x, y) = x^2 + 3xy + y^2\):
+
+- \(\frac{\partial f}{\partial x} = 2x + 3y\) (tratando \(y\) como constante)
+- \(\frac{\partial f}{\partial y} = 3x + 2y\) (tratando \(x\) como constante)
 
 ```python
 def visualizar_derivadas_parciales():
@@ -277,7 +244,7 @@ def visualizar_derivadas_parciales():
 visualizar_derivadas_parciales()
 ```
 
-### El Vector Gradiente: La Clave de Todo
+### El vector gradiente
 
 El **gradiente** es simplemente el vector que contiene todas las derivadas parciales:
 

@@ -35,7 +35,7 @@ jobs:
       - name: Build with Hugo
         run: task build ENV=production
       - name: Upload the built site
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: "site-built-${{ env.TARGET_REPO_NAME }}"
           path: public
@@ -50,7 +50,7 @@ jobs:
         with:
           submodules: recursive
       - name: Download the built site
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: "site-built-${{ env.TARGET_REPO_NAME }}"
           path: public
@@ -76,7 +76,7 @@ jobs:
         with:
           submodules: recursive
       - name: Download the built site
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: "site-built-${{ env.TARGET_REPO_NAME }}"
           path: public

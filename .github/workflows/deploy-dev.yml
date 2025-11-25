@@ -17,7 +17,7 @@ jobs:
     container: ghcr.io/cn-writing/cspell
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: CSpell English
         run: task spell-check
   build:
@@ -25,13 +25,13 @@ jobs:
     container: ghcr.io/cn-writing/hugo
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           submodules: recursive
       - name: Build with Hugo
         run: task build ENV=development
       - name: Upload the built site
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: "site-built-${{ env.TARGET_REPO_NAME }}"
           path: public
@@ -42,7 +42,7 @@ jobs:
     needs: build
     steps:
       - name: Download the built site
-        uses: actions/download-artifact@v5
+        uses: actions/download-artifact@v6
         with:
           name: "site-built-${{ env.TARGET_REPO_NAME }}"
           path: public

@@ -188,61 +188,30 @@ Y necesitamos optimizar **todos** los parámetros \(w_1, w_2, \cdots, w_n, b\).
 
 ### Derivadas parciales, una variable a la vez
 
-La **idea clave** es: mantener todas las variables constantes excepto una, y derivar con respecto a esa variable.
+La **idea clave** es mantener todas las variables constantes excepto una, y derivar con respecto a esa variable.
 
 Para \(f(x, y) = x^2 + 3xy + y^2\):
 
 - \(\frac{\partial f}{\partial x} = 2x + 3y\) (tratando \(y\) como constante)
 - \(\frac{\partial f}{\partial y} = 3x + 2y\) (tratando \(x\) como constante)
 
-```python
-def visualizar_derivadas_parciales():
-    """
-    Visualización 3D de derivadas parciales
-    """
-    fig = plt.figure(figsize=(18, 6))
+{{< figure
+  src="img/derivadas_parciales_funcion.png"
+  alt="Derivadas parciales, la función"
+  caption="\(f(x, y) = x^2 + 3xy + y^2\)"
+  >}}
 
-    # Crear grilla de puntos
-    x = np.linspace(-3, 3, 50)
-    y = np.linspace(-3, 3, 50)
-    X, Y = np.meshgrid(x, y)
+{{< figure
+  src="img/derivadas_parciales_derivada_x.png"
+  alt="Derivadas parciales, derivada con respecto a x"
+  caption="\(\frac{\partial f}{\partial x} = 2x + 3y\)"
+  >}}
 
-    # Función: f(x,y) = x² + 3xy + y²
-    Z = X**2 + 3*X*Y + Y**2
-
-    # Derivadas parciales
-    dZ_dx = 2*X + 3*Y  # ∂f/∂x
-    dZ_dy = 3*X + 2*Y  # ∂f/∂y
-
-    # Gráfico 1: Función original
-    ax1 = fig.add_subplot(131, projection='3d')
-    surface = ax1.plot_surface(X, Y, Z, cmap='viridis', alpha=0.8)
-    ax1.set_title('f(x,y) = x² + 3xy + y²')
-    ax1.set_xlabel('x')
-    ax1.set_ylabel('y')
-    ax1.set_zlabel('f(x,y)')
-
-    # Gráfico 2: Derivada parcial respecto a x
-    ax2 = fig.add_subplot(132, projection='3d')
-    surface2 = ax2.plot_surface(X, Y, dZ_dx, cmap='Reds', alpha=0.8)
-    ax2.set_title('∂f/∂x = 2x + 3y')
-    ax2.set_xlabel('x')
-    ax2.set_ylabel('y')
-    ax2.set_zlabel('∂f/∂x')
-
-    # Gráfico 3: Derivada parcial respecto a y
-    ax3 = fig.add_subplot(133, projection='3d')
-    surface3 = ax3.plot_surface(X, Y, dZ_dy, cmap='Blues', alpha=0.8)
-    ax3.set_title('∂f/∂y = 3x + 2y')
-    ax3.set_xlabel('x')
-    ax3.set_ylabel('y')
-    ax3.set_zlabel('∂f/∂y')
-
-    plt.tight_layout()
-    plt.show()
-
-visualizar_derivadas_parciales()
-```
+{{< figure
+  src="img/derivadas_parciales_derivada_y.png"
+  alt="Derivadas parciales, derivada con respecto a y"
+  caption="\(\frac{\partial f}{\partial y} = 3x + 2y\)"
+  >}}
 
 ### El vector gradiente
 
@@ -250,7 +219,7 @@ El **gradiente** es simplemente el vector que contiene todas las derivadas parci
 
 $$\nabla f(x, y) = \begin{pmatrix} \frac{\partial f}{\partial x} \\ \frac{\partial f}{\partial y} \end{pmatrix}$$
 
-**¿Por qué es tan importante?** Porque el gradiente **siempre apunta en la dirección de máximo crecimiento** de la función.
+**¿Por qué es tan importante?** Porque el gradiente **siempre apunta en la dirección de máximo crecimiento** de la función. Entonces si querés **minimizar** una función, necesitás moverte en la dirección **opuesta** al gradiente. Eso es exactamente lo que se hace con el metodo *gradient descent*: \(- \nabla f\).
 
 ```python
 def visualizar_gradiente_direccion():
@@ -310,9 +279,7 @@ def visualizar_gradiente_direccion():
 visualizar_gradiente_direccion()
 ```
 
-{{< alert "circle-info" >}}
-**Insight crucial**: Si querés **minimizar** una función, necesitás moverte en la dirección **opuesta** al gradiente. Eso es exactamente lo que hace gradient descent: **-∇f**.
-{{< /alert >}}
+
 
 ### Implementación de Gradientes Numéricos
 

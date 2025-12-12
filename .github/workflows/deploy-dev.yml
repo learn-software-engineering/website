@@ -31,7 +31,7 @@ jobs:
       - name: Build with Hugo
         run: task build ENV=development
       - name: Upload the built site
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: "site-built-${{ env.TARGET_REPO_NAME }}"
           path: public
@@ -42,7 +42,7 @@ jobs:
     needs: build
     steps:
       - name: Download the built site
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v7
         with:
           name: "site-built-${{ env.TARGET_REPO_NAME }}"
           path: public

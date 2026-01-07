@@ -8,16 +8,14 @@ Website about Software Engineering and Programming.
 
 - [Commands](#commands)
 - [Tools](#tools)
+  - [MacOS](#macos)
+  - [Windows](#windows)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## Commands
 
-Upgrade all modules:
-```
-hugo mod get -u ./...
-hugo mod tidy
-```
+Run the command `task` on your terminal in the repository root folder to find the available operations.
 
 ## Tools
 

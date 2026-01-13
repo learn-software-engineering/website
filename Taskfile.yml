@@ -29,6 +29,15 @@ tasks:
       - cspell --config .github/workflows/scripts/cspell-config-en.json "content/**/*.en.md"
       # - cspell --config .github/workflows/scripts/cspell-config-es.json "content/**/*.es.md"
 
+  clean:
+    desc: Delete the generated artifacts for this project.
+    deps: [clean-cache]
+    silent: true
+    cmds:
+      - echo "Cleaning up artifacts"
+      - rm -r public
+      - rm .hugo_build.lock
+
   clean-cache:
     desc: Delete the Hugo Module cache for the current project.
     silent: true
@@ -93,7 +102,7 @@ tasks:
         map:
           common: "--bind 0.0.0.0 --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates"
           development: "--buildDrafts --buildExpired --buildFuture --disableFastRender --navigateToChanged"
-          production: "--gc --minify --templateMetrics"
+          production: "--gc --minify --templateMetrics --ignoreCache"
     cmds:
       - echo "=== Running in {{.ENV}} mode ==="
       - hugo server --environment {{.ENV}} {{index .SETTINGS .ENV}} {{index .SETTINGS "common"}}

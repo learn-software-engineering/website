@@ -26,7 +26,7 @@ jobs:
         run: task spell-check
   build:
     runs-on: ubuntu-latest
-    container: ghcr.io/cn-docker/hugo:v0.154.5
+    container: ghcr.io/cn-docker/hugo:v0.155.0
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -68,7 +68,7 @@ jobs:
           user-email: learn.software.eng@gmail.com
   index-now:
     runs-on: ubuntu-latest
-    container: ghcr.io/cn-docker/hugo:v0.154.5
+    container: ghcr.io/cn-docker/hugo:v0.155.0
     needs: publish
     steps:
       - name: Checkout

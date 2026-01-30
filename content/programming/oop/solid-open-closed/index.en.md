@@ -11,3 +11,5 @@ description: >
 date: 2024-12-07
 tags: ["Programming", "Object-Oriented Programming", "OOP", "SOLID", "SOLID Principles", "Open/Closed"]
 ---
+
+TO COMPLETE

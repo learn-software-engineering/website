@@ -1,0 +1,43 @@
+# Display the last modification date
+displayUpdatedDate: true
+# Display the author of the last modification
+displayUpdatedAuthor: true
+
+# comments:
+#   enable: false
+#   type: giscus
+#   giscus:
+#     repo: <repository>
+#     repoId: <repository ID>
+#     category: <category>
+#     categoryId: <category ID>
+
+editURL:
+  enable: true
+  base: "https://github.com/learn-software-engineering/website/edit/main"
+
+externalLinkDecoration: true
+
+imageZoom:
+  enable: true
+
+navbar:
+  displayTitle: true
+  displayLogo: true
+  logo:
+    path: favicon.svg
+    dark: favicon.svg
+    link: /
+    width: 40
+    height: 20
+
+page:
+  contextMenu:
+    enable: true
+  # full (100%), wide (90rem), normal (1280px)
+  width: wide
+
+theme:
+  # light | dark | system
+  default: system
+  displayToggle: true

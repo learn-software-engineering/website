@@ -1,0 +1,45 @@
+{
+  "dictionaries": [
+    "custom-words-common",
+    "custom-words-en"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "addWords": true,
+      "name": "custom-words-common",
+      "path": "./cspell-custom-words-common.txt"
+    },
+    {
+      "addWords": true,
+      "name": "custom-words-en",
+      "path": "./cspell-custom-words-en.txt"
+    }
+  ],
+  "ignoreRegExpList": [
+    "\\`([^\\`].*?)\\`",
+    "\\{%.*%\\}",
+    "/^\\s*```[\\s\\S]*?^\\s*```/gm"
+  ],
+  "ignoreWords": [],
+  "imports": [
+    "@cspell/dict-aws/cspell-ext.json",
+    "@cspell/dict-bash/cspell-ext.json",
+    "@cspell/dict-companies/cspell-ext.json",
+    "@cspell/dict-data-science/cspell-ext.json",
+    "@cspell/dict-docker/cspell-ext.json",
+    "@cspell/dict-en-gb/cspell-ext.json",
+    "@cspell/dict-en-common-misspellings/cspell-ext.json",
+    "@cspell/dict-es-es/cspell-ext.json",
+    "@cspell/dict-git/cspell-ext.json",
+    "@cspell/dict-google/cspell-ext.json",
+    "@cspell/dict-golang/cspell-ext.json",
+    "@cspell/dict-lorem-ipsum/cspell-ext.json",
+    "@cspell/dict-makefile/cspell-ext.json",
+    "@cspell/dict-python/cspell-ext.json",
+    "@cspell/dict-shell/cspell-ext.json",
+    "@cspell/dict-software-terms/cspell-ext.json",
+    "@cspell/dict-terraform/cspell-ext.json"
+  ],
+  "language": "en-GB",
+  "words": []
+}

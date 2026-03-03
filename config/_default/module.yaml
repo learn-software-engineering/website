@@ -1,0 +1,4 @@
+imports:
+  # https://imfing.github.io/hextra
+  disable: false
+  path: "github.com/imfing/hextra"

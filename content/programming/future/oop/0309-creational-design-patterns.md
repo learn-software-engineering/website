@@ -179,7 +179,7 @@ class CSVMiner(DataMiner):
 
 The Factory pattern is another excellent example of abstraction:
 
-{{< mermaid >}}
+```mermaid
 classDiagram
     class PaymentProcessor {
         <<abstract>>
@@ -205,7 +205,7 @@ classDiagram
     PaymentProcessor <|-- PayPalProcessor
     PaymentProcessorFactory --> PaymentProcessor
 end
-{{< /mermaid >}}
+```
 
 ```python
 from abc import ABC, abstractmethod

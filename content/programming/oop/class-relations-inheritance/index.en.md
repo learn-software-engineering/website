@@ -1,7 +1,7 @@
 ---
 weight: 7
-series: ["Programming: Learning Object-Oriented Concepts"]
-series_order: 7
+# series: ["Programming: Learning Object-Oriented Concepts"]
+# series_order: 7
 title: "Class relations: Inheritance"
 authors:
   - jnonino
@@ -54,7 +54,7 @@ In this example, we have a base class `Animal` and two derived classes `Dog` and
 
 Here's a UML diagram representing this inheritance relationship:
 
-{{< mermaid >}}
+```mermaid
 classDiagram
     class Animal {
         +name: string
@@ -69,7 +69,7 @@ classDiagram
     Animal <|-- Dog
     Animal <|-- Cat
 end
-{{< /mermaid >}}
+```
 
 In this diagram, the arrows pointing from `Dog` and `Cat` to `Animal` indicate inheritance. This shows that `Dog` and `Cat` are subclasses of `Animal`.
 
@@ -89,7 +89,7 @@ Inheritance is a powerful feature of OOP, but it should be used judiciously. Ove
 
 ---
 
-{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+{{< callout icon="sparkles" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
 We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
@@ -97,6 +97,6 @@ We're keen to hear your thoughts, so don't be shy – drop your comments, sugges
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{< /alert >}}
+{{< /callout >}}
 
 ---

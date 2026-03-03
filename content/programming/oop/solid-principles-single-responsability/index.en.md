@@ -1,8 +1,8 @@
 ---
 draft: true
 weight: 16
-series: ["Programming: Learning Object-Oriented Concepts"]
-series_order: 16
+# series: ["Programming: Learning Object-Oriented Concepts"]
+# series_order: 16
 title: "SOLID Principles: Single Responsibility"
 authors:
   - jnonino
@@ -32,7 +32,7 @@ Some common pitfalls include:
 
 Visual representation
 
-{{< mermaid >}}
+```mermaid
 classDiagram
     class UserManager {
         -users: List
@@ -53,7 +53,7 @@ classDiagram
     UserManager --> UserValidator
     UserManager --> UserRepository
 end
-{{< /mermaid >}}
+```
 
 Bad example, violating the Single Responsibility Principle
 

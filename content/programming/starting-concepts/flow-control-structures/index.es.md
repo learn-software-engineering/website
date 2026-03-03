@@ -1,7 +1,7 @@
 ---
 weight: 3
-series: ["Programación: Aprendiendo los Conceptos Iniciales"]
-series_order: 3
+# series: ["Programación: Aprendiendo los Conceptos Iniciales"]
+# series_order: 3
 title: "Control de Flujo"
 authors:
   - jnonino
@@ -263,7 +263,7 @@ Los diagramas de flujo constan de varios símbolos, cada uno con un significado 
 - **Diamante**: Indica una decisión basada en una condición.
 - **Flechas**: Muestran la dirección del flujo.
 
-{{< mermaid >}}
+```mermaid
 graph TD;
     start((Inicio))
     process[Proceso]
@@ -275,13 +275,13 @@ graph TD;
     decision --> |Si| process
     decision --> |No| final
 end
-{{< /mermaid >}}
+```
 
 ### Ejemplos
 
 Vamos a diseñar un diagrama de flujo para un programa que pida un número y nos diga si es par o impar.
 
-{{< mermaid >}}
+```mermaid
 graph TB
     inicio((Inicio))
     entrada[Ingresar número]
@@ -297,11 +297,11 @@ graph TB
     esPar --> final
     esImpar --> final
 end
-{{< /mermaid >}}
+```
 
 Conforme los programas se vuelven más complejos, es posible que necesites incorporar bucles, múltiples condiciones y otros elementos avanzados en tu diagrama de flujo. Por ejemplo, aquí diagramamos un programa que sume los números desde  el 1 al número ingresado por el usuario.
 
-{{< mermaid >}}
+```mermaid
 graph TD
     inicio((Inicio))
     entrada[Ingresar número]
@@ -319,7 +319,7 @@ graph TD
     bucle_condicion --> |No| resultado
     resultado --> final
 end
-{{< /mermaid >}}
+```
 
 ---
 
@@ -329,21 +329,20 @@ El control de flujo es el corazón de la programación. Sin él, los programas s
 
 ---
 
-{{< alert icon="comment" >}}
+{{< callout type="info" >}}
 ¡Gracias por haber llegado hasta acá!
 
 Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
 
 Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
+[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
 [{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
 [{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
 [{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
 [{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
 [{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
+{{< /callout >}}
 
 ---
 

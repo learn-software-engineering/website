@@ -1,7 +1,7 @@
 ---
 weight: 1
-series: ["Fundamentos de IA para Programadores"]
-series_order: 1
+# series: ["Fundamentos de IA para Programadores"]
+# series_order: 1
 title: "Introducción"
 description: "Aprende los conceptos fundamentales de inteligencia artificial desde cero. Guía completa para ingenieros de software que quieren convertirse en ingenieros en IA, con código Python y proyecto práctico."
 authors:
@@ -9,13 +9,10 @@ authors:
 date: 2025-08-22
 tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning"]
 ---
-{{< katex >}}
 
-{{< lead >}}
 Bienvenido al primer módulo para convertirte en un ingeniero en IA. Si llegaste hasta aquí, es porque ya dominas Python y tienes experiencia como software engineer, pero el mundo de la inteligencia artificial te resulta un territorio desconocido. No te preocupes: estás exactamente donde necesitas estar.
 
 Durante los próximos módulos, vamos a transformar tus habilidades de programación en expertise en inteligencia artificial. No vamos a tomar atajos ni a usar "soluciones mágicas", cada concepto será explicado desde sus fundamentos hasta su implementación práctica.
-{{< /lead >}}
 
 ---
 
@@ -81,7 +78,7 @@ El sistema aprende automáticamente a identificar los patrones que distinguen gr
 
 **Deep Learning** es un subconjunto de Machine Learning que usa redes neuronales con múltiples capas (de ahí "profundo"). Es especialmente poderoso para datos complejos como imágenes, texto y audio.
 
-{{< chart >}}
+<!-- {{/*%< chart >%*/}}
 type: 'doughnut',
 data: {
   labels: ['IA Clásica', 'Machine Learning', 'Deep Learning'],
@@ -101,37 +98,37 @@ options: {
     }
   }
 }
-{{< /chart >}}
+{{/*% < /chart > %*/}} -->
 
 ### Una historia muy breve (pero necesaria) de la IA
 
 Conocer y comprender la historia te ayuda a ver y entender el estado actual del desarrollo de la IA y su futuro.
 
-{{< timeline >}}
+{{/*%< timeline > %*/}}
 
-{{< timelineItem md="true" icon="person" header="Los pioneros" badge="1950s - 1960s" >}}
+{{/*% < timelineItem md="true" icon="person" header="Los pioneros" badge="1950s - 1960s" >}}
 - **Alan Turing** propone el [Test de Turing](https://es.wikipedia.org/wiki/Prueba_de_Turing) (1950)
 - **John McCarthy** acuña el término *Artificial Intelligence* (1956)
 - Primeros programas que juegan ajedrez y demuestran teoremas
-{{< /timelineItem >}}
+{{/*% < /timelineItem > %*/}}
 
-{{< timelineItem md="true" icon="snowflake" header="El primer invierno de la IA" badge="1970s - 1980s" >}}
+{{/*% < timelineItem md="true" icon="snowflake" header="El primer invierno de la IA" badge="1970s - 1980s" >}}
 Las expectativas eran demasiado altas. Los computadores eran lentos y la memoria limitada. La financiación se redujo drásticamente.
-{{< /timelineItem >}}
+{{/*% < /timelineItem > %*/}}
 
-{{< timelineItem md="true" icon="wand-magic-sparkles" header="El renacimiento con Machine Learning" badge="1990s - 2000s" >}}
+{{/*% < timelineItem md="true" icon="wand-magic-sparkles" header="El renacimiento con Machine Learning" badge="1990s - 2000s" >}}
 - Mejores algoritmos ([*Support Vector Machines*](https://es.wikipedia.org/wiki/M%C3%A1quina_de_vectores_de_soporte), [*Random Forest*](https://es.wikipedia.org/wiki/Random_forest))
 - Más datos disponibles con internet
 - Computadoras más poderosas
-{{< /timelineItem >}}
+{{/*% < /timelineItem > %*/}}
 
-{{< timelineItem md="true" icon="bomb" header="La explosión del Deep Learning" badge="2010s - Presente" >}}
+{{/*% < timelineItem md="true" icon="bomb" header="La explosión del Deep Learning" badge="2010s - Presente" >}}
 - [GPUs](https://es.wikipedia.org/wiki/Unidad_de_procesamiento_gr%C3%A1fico) permiten entrenar redes neuronales gigantes
 - [Big Data](https://es.wikipedia.org/wiki/Macrodatos) proporciona millones de ejemplos de entrenamiento
 - **Nuevos Avances** como [ImageNet](https://www.image-net.org/) (2012) y [GPT](https://es.wikipedia.org/wiki/Transformador_generativo_preentrenado) (2018)
-{{< /timelineItem >}}
+{{/*% < /timelineItem > %*/}}
 
-{{< /timeline >}}
+{{/*% < /timeline > %*/}}
 
 ### Tipos de aprendizaje automático
 
@@ -166,7 +163,7 @@ Aquí, el algoritmo aprende mediante prueba y error, recibiendo recompensas o ca
 - Robots autónomos
 - Optimización de rutas
 
-{{< chart >}}
+<!-- {{/*% < chart > %*/}}
 type: 'bar',
 data: {
   labels: ['Supervisado', 'No Supervisado', 'Por Refuerzo'],
@@ -193,7 +190,7 @@ options: {
     }
   }
 }
-{{< /chart >}}
+{{/*% < /chart > %*/}} -->
 
 ---
 
@@ -205,18 +202,17 @@ En los siguientes artículos de este módulo, veremos algunos ejemplos para que 
 
 ---
 
-{{< alert icon="comment" >}}
+{{< callout type="info" >}}
 ¡Gracias por haber llegado hasta acá!
 
 Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
 
 Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
+[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
 [{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
 [{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
 [{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
 [{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
 [{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
+{{< /callout >}}

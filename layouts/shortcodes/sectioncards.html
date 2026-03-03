@@ -1,0 +1,24 @@
+{{- $pages := .Page.Pages.ByWeight -}}
+{{- if $pages -}}
+  {{- $cards := "" -}}
+  {{- range $pages -}}
+    {{- $image := .Params.cardImage | default "" -}}
+    {{- $cards = printf "%s%s" $cards (partial "shortcodes/card" (dict
+      "page"       .
+      "link"       .RelPermalink
+      "title"      .Title
+      "icon"       (.Params.icon | default "")
+      "subtitle"   ""
+      "image"      $image
+      "alt"        .Title
+      "width"      0
+      "height"     0
+      "imageStyle" ""
+      "tag"        ""
+      "tagType"    ""
+      "tagBorder"  true
+      "tagIcon"    ""
+    )) -}}
+  {{- end -}}
+  {{- partial "shortcodes/cards" (dict "cols" 3 "content" ($cards | safeHTML)) -}}
+{{- end -}}

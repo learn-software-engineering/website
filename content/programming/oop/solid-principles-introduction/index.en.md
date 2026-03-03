@@ -1,8 +1,8 @@
 ---
 draft: true
 weight: 16
-series: ["Programming: Learning Object-Oriented Concepts"]
-series_order: 16
+# series: ["Programming: Learning Object-Oriented Concepts"]
+# series_order: 16
 title: "SOLID Principles"
 authors:
   - jnonino

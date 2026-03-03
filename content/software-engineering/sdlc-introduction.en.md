@@ -1,8 +1,8 @@
 ---
 draft: true
 weight: 2
-series: ["Learning Software Engineering"]
-series_order: 2
+# series: ["Learning Software Engineering"]
+# series_order: 2
 title: "Software Development Life Cycle (SDLC)"
 authors:
   - jnonino

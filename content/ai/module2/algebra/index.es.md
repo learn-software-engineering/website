@@ -1,7 +1,7 @@
 ---
 weight: 1
-series: ["Matemática para Machine Learning"]
-series_order: 1
+# series: ["Matemática para Machine Learning"]
+# series_order: 1
 title: "Álgebra Lineal para Machine Learning: vectores y matrices que todo ingeniero en IA debe conocer"
 description: "Domina los fundamentos matemáticos del machine learning: vectores, matrices y transformaciones lineales explicados desde la perspectiva del programador."
 authors:
@@ -9,14 +9,11 @@ authors:
 date: 2025-09-12
 tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning", "Matemática", "Álgebra Lineal", "Vectores", "Matrices"]
 ---
-{{< katex >}}
 
-{{< lead >}}
 En el módulo anterior exploramos los fundamentos conceptuales de la Inteligencia Artificial. Ahora es momento de sumergirnos en una de las áreas de la matemática que hacen posible que los algoritmos de Machine Learning funcionen: el **álgebra lineal**.
 
 Si eres como la mayoría de los ingenieros de software, probablemente te preguntes: "¿por qué necesito álgebra lineal para programar IA?" La respuesta es simple pero profunda: **el álgebra lineal es el lenguaje nativo del machine learning**.
 
-{{< /lead >}}
 
 ---
 
@@ -59,7 +56,7 @@ $$v = \begin{pmatrix} pixel_1 \\ pixel_2 \\ pixel_3 \\ \vdots \end{pmatrix}$$
 
 Un vector en dos dimensiones (2D) se puede visualizar como una flecha desde el origen \((0,0)\) hasta el punto \((v_1, v_2)\). Esta visualización es clave para entender las operaciones vectoriales.
 
-{{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/algebra/interpretacion_geometrica.py" type="python" >}}
+<!-- {{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/algebra/interpretacion_geometrica.py" type="python" >}} -->
 
 Al ejecutar el código anterior obtenemos:
 
@@ -112,7 +109,7 @@ Conocer el ángulo entre los vectores permite determinar que tan alineados está
 
 Antes de usar `NumPy`, implementemos nuestras propias operaciones vectoriales para entender qué sucede en el detrás de escena:
 
-{{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/algebra/vector.py" type="python" >}}
+<!-- {{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/algebra/vector.py" type="python" >}} -->
 
 Al ejecutar el código anterior obtenemos:
 ```bash
@@ -234,7 +231,7 @@ Cuando se multiplica una matriz por un vector, es necesario que el número de el
 salida = pesos × entrada + sesgo
 ```
 
-{{< alert icon="lightbulb" >}}
+{{< callout >}}
 Si aún no lo notaste, se puede establecer una conexión entre la multiplicación de una matriz por un vector y el producto punto entre vectores.
 
 La conexión es directa: **multiplicar una matriz por un vector es, en el fondo, hacer varios productos punto seguidos**.
@@ -242,7 +239,7 @@ La conexión es directa: **multiplicar una matriz por un vector es, en el fondo,
 Si \(A\) es una matriz de \(m \times n\) y \(v\) es un vector de dimensión \(n\), el resultado de \(A \ v\) es un vector de dimensión \(m\) donde cada componente se obtiene haciendo el producto punto de una fila de la matriz con el vector.
 
 $$(A \ v)_j = fila_j(A) \cdot v$$
-{{< /alert >}}
+{{< /callout >}}
 
 ### Multiplicación Matriz-Matriz
 
@@ -279,7 +276,7 @@ $$\mathbf{C}_{ij} = (\mathbf{AB})_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}$$
 
 Esta operación permite componer transformaciones lineales.
 
-{{< alert icon="lightbulb" >}}
+{{< callout >}}
 Nuevamente, la multiplicación de matrices está muy relacionada con el producto punto de vectores.
 
 En la multiplicación entre las matrices \(A(m \times n)\) por \(B(n \times p)\), el elemento \(c_{ij}\) de la matriz resultado \(C\) se obtiene como:
@@ -289,11 +286,11 @@ $$\mathbf{C}_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}$$
 Esto es exactamente el **producto punto** entre la fila \(i\) de \(A\) y la columna \(j\) de \(B\).
 
 $$\mathbf{C}_{ij} = a_{i} \cdot b_{j}$$
-{{< /alert >}}
+{{< /callout >}}
 
 ### Implementación desde cero: clase Matriz
 
-{{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/algebra/matriz.py" type="python" >}}
+<!-- {{< codeimporter url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/module2/algebra/matriz.py" type="python" >}} -->
 
 Al ejecutar el código anterior obtenemos:
 ```bash
@@ -506,18 +503,17 @@ En el siguiente artículo de este módulo, vamos a actualizar nuestro sistema de
 
 ---
 
-{{< alert icon="comment" >}}
+{{< callout type="info" >}}
 ¡Gracias por haber llegado hasta acá!
 
 Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
 
 Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
+[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
 [{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
 [{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
 [{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
 [{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
 [{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
+{{< /callout >}}

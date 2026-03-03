@@ -1,7 +1,7 @@
 ---
 weight: 2
-series: ["Programming: Learning the Starting Concepts"]
-series_order: 2
+# series: ["Programming: Learning the Starting Concepts"]
+# series_order: 2
 title: "Input and output operations"
 authors:
   - jnonino
@@ -210,7 +210,7 @@ In this article we explained Python input and output operations in detail, inclu
 
 ---
 
-{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+{{< callout icon="sparkles" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
 We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
@@ -218,6 +218,6 @@ We're keen to hear your thoughts, so don't be shy – drop your comments, sugges
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{< /alert >}}
+{{< /callout >}}
 
 ---

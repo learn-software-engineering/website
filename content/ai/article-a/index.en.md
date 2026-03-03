@@ -1,6 +1,7 @@
 ---
 title: Post A
-weight: 1
+icon: "trending-up"
+weight: 3
 ---
 
 ```mermaid

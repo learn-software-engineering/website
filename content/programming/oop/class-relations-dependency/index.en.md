@@ -1,7 +1,7 @@
 ---
 weight: 9
-series: ["Programming: Learning Object-Oriented Concepts"]
-series_order: 9
+# series: ["Programming: Learning Object-Oriented Concepts"]
+# series_order: 9
 title: "Class relations: Dependency"
 authors:
   - jnonino
@@ -44,7 +44,7 @@ In this example, the `Printer` class has a dependency on both `PDFDocument` and 
 
 Here's a UML diagram representing these dependency relationships:
 
-{{< mermaid >}}
+```mermaid
 classDiagram
     class Printer {
         +print_document(document)
@@ -58,7 +58,7 @@ classDiagram
     Printer ..> PDFDocument : uses
     Printer ..> WordDocument : uses
 end
-{{< /mermaid >}}
+```
 
 In this diagram, the dashed arrows pointing from `Printer` to `PDFDocument` and `WordDocument` indicate dependency. This shows that `Printer` uses these classes, but doesn't have a stronger relationship with them.
 
@@ -78,7 +78,7 @@ Dependency is often used to reduce coupling between classes. By depending on abs
 
 ---
 
-{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+{{< callout icon="sparkles" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
 We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
@@ -86,6 +86,6 @@ We're keen to hear your thoughts, so don't be shy – drop your comments, sugges
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{< /alert >}}
+{{< /callout >}}
 
 ---

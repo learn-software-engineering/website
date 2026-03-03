@@ -1,7 +1,7 @@
 ---
 weight: 11
-series: ["Programación: Aprendiendo Orientación a Objetos"]
-series_order: 11
+# series: ["Programación: Aprendiendo Orientación a Objetos"]
+# series_order: 11
 title: "Los Cuatro Pilares"
 authors:
   - jnonino

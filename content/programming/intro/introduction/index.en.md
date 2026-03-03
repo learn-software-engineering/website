@@ -1,7 +1,7 @@
 ---
 weight: 1
-series: ["Programming: Learning the Bases"]
-series_order: 1
+# series: ["Programming: Learning the Bases"]
+# series_order: 1
 title: "Introduction"
 authors:
   - jnonino

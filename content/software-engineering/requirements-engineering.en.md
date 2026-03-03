@@ -1,8 +1,8 @@
 ---
 draft: true
 weight: 9
-series: ["Learning Software Engineering"]
-series_order: 9
+# series: ["Learning Software Engineering"]
+# series_order: 9
 title: "Requirements Engineering"
 authors:
   - jnonino

@@ -1,7 +1,7 @@
 ---
 weight: 11
-series: ["Programming: Learning Object-Oriented Concepts"]
-series_order: 11
+# series: ["Programming: Learning Object-Oriented Concepts"]
+# series_order: 11
 title: "The Four Pillars"
 authors:
   - jnonino

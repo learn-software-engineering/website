@@ -1,7 +1,7 @@
 ---
 weight: 4
-series: ["Programming: Learning Object-Oriented Concepts"]
-series_order: 4
+# series: ["Programming: Learning Object-Oriented Concepts"]
+# series_order: 4
 title: "Class relations: Association"
 authors:
   - jnonino
@@ -54,7 +54,7 @@ In this example, the `Order` class has a unidirectional association with the `Cu
 
 Here's a UML diagram representing this relationship:
 
-{{< mermaid >}}
+```mermaid
 classDiagram
     class Customer {
         +name: string
@@ -66,7 +66,7 @@ classDiagram
     }
     Order --> Customer : places
 end
-{{< /mermaid >}}
+```
 
 The arrow in the diagram points from `Order` to `Customer`, indicating that `Order` knows about `Customer`, but not the other way around.
 
@@ -119,7 +119,7 @@ In this example, there's a bidirectional association between `Student` and `Cour
 
 Here's a UML diagram representing this relationship:
 
-{{< mermaid >}}
+```mermaid
 classDiagram
     class Student {
         +name: string
@@ -135,7 +135,7 @@ classDiagram
     }
     Student "0..*" <--> "0..*" Course : enrols in >
 end
-{{< /mermaid >}}
+```
 
 The double-headed arrow in the diagram indicates that both `Student` and `Course` are aware of each other. The "0..*" notation indicates that a `Student` can be enrolled in zero or more `Course`s, and a `Course` can have zero or more `Student`s.
 
@@ -155,7 +155,7 @@ Association is a flexible relationship that can represent many real-world connec
 
 ---
 
-{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+{{< callout icon="sparkles" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
 We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
@@ -163,6 +163,6 @@ We're keen to hear your thoughts, so don't be shy – drop your comments, sugges
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{< /alert >}}
+{{< /callout >}}
 
 ---

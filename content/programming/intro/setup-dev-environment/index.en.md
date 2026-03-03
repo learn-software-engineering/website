@@ -1,7 +1,7 @@
 ---
 weight: 5
-series: ["Programming: Learning the Bases"]
-series_order: 5
+# series: ["Programming: Learning the Bases"]
+# series_order: 5
 title: "Set Up your Development Environment"
 authors:
   - jnonino
@@ -144,10 +144,10 @@ Once you've set up your programming environment, it's time to dive into coding.
 
 This is arguably the most iconic program for beginners. It's simple, but it introduces you to the process of writing and executing code.
 
-{{< codeimporter
+<!-- {{< codeimporter
     url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/intro/hello_world.py"
     type="python"
-    >}}
+    >}} -->
 
 {{< figure
     src="images/running-hello-world.en.png"
@@ -159,10 +159,10 @@ This is arguably the most iconic program for beginners. It's simple, but it intr
 
 This program is a tad more intricate. It doesn't just print out a message; it also performs mathematical calculations.
 
-{{< codeimporter
+<!-- {{< codeimporter
     url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/intro/triangle.py"
     type="python"
-    >}}
+    >}} -->
 
 {{< figure
     src="images/running-triangle.en.png"
@@ -185,7 +185,7 @@ Setting up a programming environment might appear daunting at first, but with th
 
 ---
 
-{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+{{< callout icon="sparkles" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
 We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
@@ -193,6 +193,6 @@ We're keen to hear your thoughts, so don't be shy – drop your comments, sugges
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{< /alert >}}
+{{< /callout >}}
 
 ---

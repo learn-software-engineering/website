@@ -1,7 +1,7 @@
 ---
 weight: 2
-series: ["Matemática para Machine Learning"]
-series_order: 2
+# series: ["Matemática para Machine Learning"]
+# series_order: 2
 title: "Proyecto usando Álgebra Lineal: Sistema de Recomendaciones"
 description: "Para consolidar los conceptos aprendidos, implementaremos un sistema de recomendaciones completo usando solo álgebra lineal. Este proyecto demuestra cómo el álgebra lineal es fundamental en sistemas de machine learning reales."
 authors:
@@ -9,11 +9,8 @@ authors:
 date: 2025-09-14
 tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning", "Matemática", "Álgebra Lineal", "Vectores", "Matrices", "Recomendaciones"]
 ---
-{{< katex >}}
 
-{{< lead >}}
 Para consolidar los conceptos aprendidos, implementaremos un sistema de recomendaciones completo usando solo álgebra lineal. Este proyecto demuestra cómo el álgebra lineal es fundamental en sistemas de machine learning reales.
-{{< /lead >}}
 
 ---
 
@@ -45,9 +42,9 @@ Para el desarrollo del sistema tenemos preparados un conjunto de datos que podé
 
 Haciendo click en el siguiente [enlace](https://github.com/learn-software-engineering/examples/tree/main/ai/module2/algebra-project), puedes encontrar una posible implementación que cumple con los objetivos planteados. Incluye explicaciones detalladas.
 
-{{< alert >}}
+{{< callout type="important" >}}
 ¡Intentá resolverlo por tu cuenta primero! 😀😀😀
-{{< /alert >}}
+{{< /callout >}}
 
 Al ejecutar el sistema obtenemos:
 
@@ -234,18 +231,17 @@ Hasta aquí aprendiste:
 
 ---
 
-{{< alert icon="comment" >}}
+{{< callout type="info" >}}
 ¡Gracias por haber llegado hasta acá!
 
 Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
 
 Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
+[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
 [{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
 [{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
 [{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
 [{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
 [{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
+{{< /callout >}}

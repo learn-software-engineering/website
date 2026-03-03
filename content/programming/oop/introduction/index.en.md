@@ -1,7 +1,7 @@
 ---
 weight: 1
-series: ["Programming: Learning Object-Oriented Concepts"]
-series_order: 1
+# series: ["Programming: Learning Object-Oriented Concepts"]
+# series_order: 1
 title: "Introduction"
 authors:
   - jnonino

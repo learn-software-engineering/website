@@ -1,6 +1,7 @@
 ---
 title: Post B
-weight: 2
+icon: "academic-cap"
+weight: 1
 ---
 
 ```mermaid

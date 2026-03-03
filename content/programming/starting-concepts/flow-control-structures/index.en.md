@@ -1,7 +1,7 @@
 ---
 weight: 3
-series: ["Programming: Learning the Starting Concepts"]
-series_order: 3
+# series: ["Programming: Learning the Starting Concepts"]
+# series_order: 3
 title: "Flow Control"
 authors:
   - jnonino
@@ -264,7 +264,7 @@ Flowcharts consist of several symbols, each with a specific meaning:
 - **Diamond**: Indicates a decision based on a condition.
 - **Arrows**: Show the direction of flow.
 
-{{< mermaid >}}
+```mermaid
 graph TD;
     start((Start))
     process[Process]
@@ -276,13 +276,13 @@ graph TD;
     decision --> |Yes| process
     decision --> |No| final
 end
-{{< /mermaid >}}
+```
 
 ### Examples
 
 Let's design a flowchart for a program that asks for a number and tells us if it's even or odd.
 
-{{< mermaid >}}
+```mermaid
 graph TB
     start((Start))
     input[Input number]
@@ -298,11 +298,11 @@ graph TB
     isEven --> final
     isOdd --> final
 end
-{{< /mermaid >}}
+```
 
 As programs become more complex, you may need to incorporate loops, multiple conditions, and other advanced elements into your flowchart. For example, here we diagram a program that sums numbers from 1 to a number entered by the user.
 
-{{< mermaid >}}
+```mermaid
 graph TD
     start((Start))
     input[Input number]
@@ -320,7 +320,7 @@ graph TD
     loop_condition --> |No| result
     result --> final
 end
-{{< /mermaid >}}
+```
 
 ---
 
@@ -338,7 +338,7 @@ Control flow is the heart of programming. Without it, programs would be linear s
 
 ---
 
-{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+{{< callout icon="sparkles" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
 We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
@@ -346,6 +346,6 @@ We're keen to hear your thoughts, so don't be shy – drop your comments, sugges
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{< /alert >}}
+{{< /callout >}}
 
 ---

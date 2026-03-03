@@ -1,7 +1,7 @@
 ---
 weight: 2
-series: ["Programación: Aprendiendo los Conceptos Iniciales"]
-series_order: 2
+# series: ["Programación: Aprendiendo los Conceptos Iniciales"]
+# series_order: 2
 title: "Operaciones de Entrada y Salida"
 authors:
   - jnonino
@@ -201,21 +201,20 @@ En este artículo explicamos en detalle operaciones de entrada y salida en Pytho
 
 ---
 
-{{< alert icon="comment" >}}
+{{< callout type="info" >}}
 ¡Gracias por haber llegado hasta acá!
 
 Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
 
 Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
+[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
 [{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
 [{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
 [{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
 [{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
 [{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
+{{< /callout >}}
 
 ---
 

@@ -24,6 +24,8 @@ markup:
           block: [['\[', '\]'], ["$$", "$$"]]
           inline: [['\(', '\)']]
         enable: true
+    renderer:
+      unsafe: true
 
 menu:
   main:

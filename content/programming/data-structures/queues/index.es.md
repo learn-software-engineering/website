@@ -1,7 +1,7 @@
 ---
 weight: 6
-series: ["Programación: Aprendiendo Estructuras de Datos"]
-series_order: 6
+# series: ["Programación: Aprendiendo Estructuras de Datos"]
+# series_order: 6
 title: "Colas"
 authors:
   - jnonino
@@ -39,10 +39,10 @@ Las operaciones básicas de una cola son:
 Al igual que las pilas, las colas se pueden implementar usando listas enlazadas.
 Se agrega al final y se saca del frente manteniendo referencias a ambos extremos.
 
-{{< codeimporter
+<!-- {{< codeimporter
     url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/data_structures/queues.py"
     type="python"
-    >}}
+    >}} -->
 
 ---
 
@@ -64,18 +64,17 @@ Las colas son estructuras versátiles gracias a su principio FIFO. Tener un buen
 
 ---
 
-{{< alert icon="comment" >}}
+{{< callout type="info" >}}
 ¡Gracias por haber llegado hasta acá!
 
 Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
 
 Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
+[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
 [{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
 [{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
 [{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
 [{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
 [{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
+{{< /callout >}}

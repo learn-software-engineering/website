@@ -1,8 +1,8 @@
 ---
 draft: true
 weight: 17
-series: ["Programming: Learning Object-Oriented Concepts"]
-series_order: 17
+# series: ["Programming: Learning Object-Oriented Concepts"]
+# series_order: 17
 title: "SOLID Principles: Open/Close"
 authors:
   - jnonino

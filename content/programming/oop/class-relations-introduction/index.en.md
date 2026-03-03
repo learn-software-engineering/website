@@ -1,7 +1,7 @@
 ---
 weight: 3
-series: ["Programming: Learning Object-Oriented Concepts"]
-series_order: 3
+# series: ["Programming: Learning Object-Oriented Concepts"]
+# series_order: 3
 title: "Class relations"
 authors:
   - jnonino
@@ -26,7 +26,7 @@ Each of these relationships represents a different way that classes can be conne
 
 Before we dive into each type of relationship, let's visualise them using a UML class diagram:
 
-{{< mermaid >}}
+```mermaid
 classDiagram
     class ClassA
     class ClassB
@@ -43,6 +43,6 @@ classDiagram
     ClassE ..|> InterfaceG : Realisation
     ClassA ..> ClassF : Dependency
 end
-{{< /mermaid >}}
+```
 
 This diagram provides a high-level overview of the different types of class relationships. In the following sections, we'll explore each of these relationships in detail, providing explanations, examples, and more specific UML diagrams.

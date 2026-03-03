@@ -1,7 +1,7 @@
 ---
 weight: 1
-series: ["Programación: Aprendiendo Orientación a Objetos"]
-series_order: 1
+# series: ["Programación: Aprendiendo Orientación a Objetos"]
+# series_order: 1
 title: "Introducción"
 authors:
   - jnonino

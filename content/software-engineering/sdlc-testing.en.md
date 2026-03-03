@@ -1,8 +1,8 @@
 ---
 draft: true
 weight: 6
-series: ["Learning Software Engineering"]
-series_order: 6
+# series: ["Learning Software Engineering"]
+# series_order: 6
 title: "SDLC: The Testing phase"
 authors:
   - jnonino

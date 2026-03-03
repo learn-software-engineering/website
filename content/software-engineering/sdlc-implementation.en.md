@@ -1,8 +1,8 @@
 ---
 draft: true
 weight: 5
-series: ["Learning Software Engineering"]
-series_order: 5
+# series: ["Learning Software Engineering"]
+# series_order: 5
 title: "SDLC: The Implementation phase"
 authors:
   - jnonino

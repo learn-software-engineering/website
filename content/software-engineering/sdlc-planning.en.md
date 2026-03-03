@@ -1,8 +1,8 @@
 ---
 draft: true
 weight: 3
-series: ["Learning Software Engineering"]
-series_order: 3
+# series: ["Learning Software Engineering"]
+# series_order: 3
 title: "SDLC: The Planning phase"
 authors:
   - jnonino

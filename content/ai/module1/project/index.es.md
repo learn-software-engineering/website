@@ -1,7 +1,7 @@
 ---
 weight: 4
-series: ["Fundamentos de IA para Programadores"]
-series_order: 4
+# series: ["Fundamentos de IA para Programadores"]
+# series_order: 4
 title: "Proyecto usando Machine Learning: Sistema de Recomendaciones"
 description: "Para consolidar todo lo aprendido, vamos a crear un sistema de recomendaciones usando reglas lógicas. Este tipo de sistema es común en e-commerce, plataformas de contenido y aplicaciones móviles."
 authors:
@@ -9,11 +9,8 @@ authors:
 date: 2025-09-03
 tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning", "Recomendaciones"]
 ---
-{{< katex >}}
 
-{{< lead >}}
 Para consolidar todo lo aprendido, vamos a crear un sistema de recomendaciones usando reglas lógicas. Este tipo de sistema es común en e-commerce, plataformas de contenido y aplicaciones móviles.
-{{< /lead >}}
 
 ---
 
@@ -130,9 +127,9 @@ Evalúa tu sistema considerando:
 
 Haciendo click en el siguiente [enlace](https://github.com/learn-software-engineering/examples/tree/main/ai/module1/sistema_de_recomendaciones), puedes encontrar una posible solución para este problema. Incluye explicaciones detalladas.
 
-{{< alert >}}
+{{< callout type="important" >}}
 ¡Intentá resolverlo por tu cuenta primero! 😀😀😀
-{{< /alert >}}
+{{< /callout >}}
 
 ### Ejecución
 
@@ -712,18 +709,17 @@ Por supuesto, no tienes porque detenerte en estas recomendaciones, dejá volar t
 
 ---
 
-{{< alert icon="comment" >}}
+{{< callout type="info" >}}
 ¡Gracias por haber llegado hasta acá!
 
 Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
 
 Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
+[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
 [{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
 [{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
 [{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
 [{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
 [{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
+{{< /callout >}}

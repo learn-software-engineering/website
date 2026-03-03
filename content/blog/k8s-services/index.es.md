@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes Services"
-# series: ["Kubernetes"]
-# series_order: 1
+# # series: ["Kubernetes"]
+# # series_order: 1
 authors:
   - jnonino
 description: >

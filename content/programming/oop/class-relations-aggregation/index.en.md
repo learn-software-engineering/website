@@ -1,7 +1,7 @@
 ---
 weight: 5
-series: ["Programming: Learning Object-Oriented Concepts"]
-series_order: 5
+# series: ["Programming: Learning Object-Oriented Concepts"]
+# series_order: 5
 title: "Class relations: Aggregation"
 authors:
   - jnonino
@@ -68,7 +68,7 @@ In this example, we have an aggregation relationship between `Department` and `E
 
 Here's a UML diagram representing this aggregation relationship:
 
-{{< mermaid >}}
+```mermaid
 classDiagram
     class Department {
         +name: string
@@ -84,7 +84,7 @@ classDiagram
     }
     Department o-- Employee : has
 end
-{{< /mermaid >}}
+```
 
 In this diagram, the open diamond on the `Department` side of the relationship indicates aggregation. This shows that `Department` is the "whole" and `Employee` is the "part" in this relationship.
 
@@ -104,7 +104,7 @@ It's important to note that while aggregation implies a whole-part relationship,
 
 ---
 
-{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+{{< callout icon="sparkles" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
 We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
@@ -112,6 +112,6 @@ We're keen to hear your thoughts, so don't be shy – drop your comments, sugges
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{< /alert >}}
+{{< /callout >}}
 
 ---

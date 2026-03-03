@@ -1,8 +1,8 @@
 ---
 draft: true
 weight: 4
-series: ["Learning Software Engineering"]
-series_order: 4
+# series: ["Learning Software Engineering"]
+# series_order: 4
 title: "SDLC: The System Design phase"
 authors:
   - jnonino

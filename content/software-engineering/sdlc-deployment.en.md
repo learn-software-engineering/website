@@ -1,8 +1,8 @@
 ---
 draft: true
 weight: 7
-series: ["Learning Software Engineering"]
-series_order: 7
+# series: ["Learning Software Engineering"]
+# series_order: 7
 title: "SDLC: The Deployment phase"
 authors:
   - jnonino

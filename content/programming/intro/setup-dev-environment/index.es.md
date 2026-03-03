@@ -1,7 +1,7 @@
 ---
 weight: 5
-series: ["Programación: Aprendiendo las Bases"]
-series_order: 5
+# series: ["Programación: Aprendiendo las Bases"]
+# series_order: 5
 title: "Configura tu Entorno de Desarrollo"
 authors:
   - jnonino
@@ -144,10 +144,10 @@ Una vez que hayas configurado tu entorno de programación, es hora de sumergirse
 
 Este es posiblemente el programa más icónico para principiantes. Es simple, pero te introduce al proceso de escribir y ejecutar código.
 
-{{< codeimporter
+<!-- {{< codeimporter
     url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/intro/hola_mundo.py"
     type="python"
-    >}}
+    >}} -->
 
 {{< figure
     src="images/running-hello-world.es.png"
@@ -159,10 +159,10 @@ Este es posiblemente el programa más icónico para principiantes. Es simple, pe
 
 Este programa es un poco más complejo. No solo imprime un mensaje, sino que también realiza cálculos matemáticos.
 
-{{< codeimporter
+<!-- {{< codeimporter
     url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/intro/triangulo.py"
     type="python"
-    >}}
+    >}} -->
 
 {{< figure
     src="images/running-triangle.es.png"
@@ -178,21 +178,20 @@ Configurar un entorno de programación puede parecer desalentador al principio, 
 
 ---
 
-{{< alert icon="comment" >}}
+{{< callout type="info" >}}
 ¡Gracias por haber llegado hasta acá!
 
 Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
 
 Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
+[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
 [{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
 [{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
 [{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
 [{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
 [{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
+{{< /callout >}}
 
 ---
 

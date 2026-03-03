@@ -1,7 +1,7 @@
 ---
 weight: 1
-series: ["Programación: Aprendiendo Estructuras de Datos"]
-series_order: 1
+# series: ["Programación: Aprendiendo Estructuras de Datos"]
+# series_order: 1
 title: "Introducción"
 authors:
   - jnonino

@@ -16,7 +16,7 @@ This principle suggests that you should be able to add new functionality to your
 
 #### Visual Representation
 
-{{< mermaid >}}
+```mermaid
 classDiagram
     class Shape {
         <<abstract>>
@@ -40,7 +40,7 @@ classDiagram
     Shape <|-- Circle
     Shape <|-- Triangle
 end
-{{< /mermaid >}}
+```
 
 #### Example Implementation
 
@@ -96,7 +96,7 @@ This principle ensures that derived classes can substitute their base classes wi
 
 #### Visual Representation
 
-{{< mermaid >}}
+```mermaid
 classDiagram
     class Bird {
         <<abstract>>
@@ -119,7 +119,7 @@ classDiagram
     Bird <|-- Penguin
     FlyingBird <|-- Eagle
 end
-{{< /mermaid >}}
+```
 
 #### Example Implementation
 
@@ -180,7 +180,7 @@ This principle advocates for creating small, specific interfaces rather than lar
 
 #### Visual Representation
 
-{{< mermaid >}}
+```mermaid
 classDiagram
     class Workable {
         <<interface>>
@@ -207,7 +207,7 @@ classDiagram
     Sleepable <|-- Human
     Workable <|-- Robot
 end
-{{< /mermaid >}}
+```
 
 #### Example Implementation
 
@@ -279,7 +279,7 @@ This principle helps in achieving loose coupling between components.
 
 #### Visual Representation
 
-{{< mermaid >}}
+```mermaid
 classDiagram
     class NotificationService {
         -sender: MessageSender
@@ -299,7 +299,7 @@ classDiagram
     MessageSender <|-- EmailSender
     MessageSender <|-- SMSSender
 end
-{{< /mermaid >}}
+```
 
 #### Example Implementation
 
@@ -556,7 +556,7 @@ logger.log("Database connection failed", "ERROR")
 
 ### Decision Making Framework
 
-{{< mermaid >}}
+```mermaid
 flowchart TD
     A[Identify Code Change] --> B{Violates SRP?}
     B -->|Yes| C[Split into Multiple Classes]
@@ -570,7 +570,7 @@ flowchart TD
     J -->|Yes| K[Apply ISP]
     J -->|No| L[Proceed with Implementation]
 end
-{{< /mermaid >}}
+```
 
 ## Testing SOLID Code
 

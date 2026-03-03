@@ -1,0 +1,44 @@
+{{ define "main" }}
+  <div class="hx-mx-auto hx-max-w-screen-xl">
+
+    {{/* ── Page title ── */}}
+    <h1 class="hx-mt-2 hx-text-4xl hx-font-bold hx-tracking-tight hx-text-slate-900 dark:hx-text-slate-100">
+      {{ .Title }}
+    </h1>
+
+    {{/* ── Written content above cards ── */}}
+    {{ with .Content }}
+      <div class="content hx-mt-4 hx-mb-8">
+        {{ . }}
+      </div>
+    {{ end }}
+
+    {{/* ── Auto child cards ── */}}
+    {{ $pages := .Pages.ByWeight }}
+    {{ if $pages }}
+      <div class="hextra-cards hx-mt-6 hx-grid hx-not-prose" style="--rows:3">
+        {{ range $pages }}
+
+            href="{{ .RelPermalink }}"
+            class="hextra-card hx-group hx-flex hx-flex-col hx-justify-start hx-overflow-hidden hx-rounded-lg hx-border hx-border-gray-200 hx-text-current hx-no-underline dark:hx-shadow-none hover:hx-shadow-gray-100 dark:hover:hx-shadow-none hx-shadow-gray-100 active:hx-shadow-sm active:hx-shadow-gray-200 hx-transition-all hx-duration-200 hover:hx-border-gray-300 hx-bg-transparent hx-shadow-sm dark:hx-border-neutral-800 hover:hx-bg-slate-50 hover:hx-shadow-md dark:hover:hx-border-neutral-700 dark:hover:hx-bg-neutral-900"
+          >
+            <span class="hx-flex hx-font-semibold hx-items-start hx-gap-2 hx-p-4 hx-text-gray-700 hover:hx-text-gray-900 dark:hx-text-neutral-200 dark:hover:hx-text-neutral-50">
+
+              {{/* ── Icon ── */}}
+              {{ with .Params.icon }}
+                <span class="hextra-card-icon hx-flex hx-text-gray-400 dark:hx-text-neutral-400 group-hover:hx-text-gray-500 dark:group-hover:hx-text-neutral-300">
+                  {{ partial "utils/icon.html" . }}
+                </span>
+              {{ end }}
+
+              {{/* ── Title ── */}}
+              {{ .Title }}
+
+            </span>
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+
+  </div>
+{{ end }}

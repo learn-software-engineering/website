@@ -1,7 +1,7 @@
 ---
 weight: 3
-series: ["Fundamentos de IA para Programadores"]
-series_order: 3
+# series: ["Fundamentos de IA para Programadores"]
+# series_order: 3
 title: "Machine Learning Ejemplo 2: Sistema de Clasificación"
 description: "Vamos a crear un clasificador de texto básico usando técnicas estadísticas simples. Esto te muestra los conceptos fundamentales detrás de algoritmos más complejos como Naive Bayes."
 authors:
@@ -9,11 +9,8 @@ authors:
 date: 2025-08-26
 tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning", "Clasificación"]
 ---
-{{< katex >}}
 
-{{< lead >}}
 Ahora vamos a crear un clasificador de texto básico usando técnicas estadísticas simples. Esto te muestra los conceptos fundamentales detrás de algoritmos más complejos como <i>Naive Bayes</i>.
-{{< /lead >}}
 
 ---
 
@@ -541,7 +538,7 @@ Una vez que domines este clasificador básico, puedes explorar:
 
 Aquí tienes el código completo del sistema. También puedes encontrarlo en el repositorio de ejemplos haciendo click en el siguiente [enlace](https://github.com/learn-software-engineering/examples/blob/main/ai/module1/sistema_de_clasificacion/main.py).
 
-{{< github repo="learn-software-engineering/examples" showThumbnail=false >}}
+{{/*% < github repo="learn-software-engineering/examples" showThumbnail=false > %*/}}
 
 ---
 
@@ -558,18 +555,17 @@ Aunque se vea simple, este tipo de clasificador se usa en aplicaciones reales co
 
 ---
 
-{{< alert icon="comment" >}}
+{{< callout type="info" >}}
 ¡Gracias por haber llegado hasta acá!
 
 Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
 
 Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
+[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
 [{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
 [{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
 [{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
 [{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
 [{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
+{{< /callout >}}

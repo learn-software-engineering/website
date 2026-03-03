@@ -1,7 +1,7 @@
 ---
 weight: 5
-series: ["Programación: Aprendiendo Estructuras de Datos"]
-series_order: 5
+# series: ["Programación: Aprendiendo Estructuras de Datos"]
+# series_order: 5
 title: "Pilas"
 authors:
   - jnonino
@@ -38,10 +38,10 @@ La mayoría de los lenguajes como Python y Java proveen implementaciones de pila
 
 Una pila puede implementarse utilizando una lista enlazada de manera que cada node apunte al nodo anterior.
 
-{{< codeimporter
+<!-- {{< codeimporter
     url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/data_structures/stacks.py"
     type="python"
-    >}}
+    >}} -->
 
 ---
 
@@ -65,18 +65,17 @@ Las pilas son estructuras de datos versátiles gracias a su principio de funcion
 
 ---
 
-{{< alert icon="comment" >}}
+{{< callout type="info" >}}
 ¡Gracias por haber llegado hasta acá!
 
 Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
 
 Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
+[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
 [{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
 [{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
 [{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
 [{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
 [{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
+{{< /callout >}}

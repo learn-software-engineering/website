@@ -10,6 +10,8 @@ date: 2023-09-10
 tags: ["Programming", "Python", "IDE", "Tools"]
 ---
 
+Venturing into the world of programming might seem like a Herculean task, especially when faced with the initial decision: Where to begin? This article will guide you through the essential steps to set up your programming environment, ensuring a solid foundation for your coding journey.
+
 ## Choosing a programming language
 
 Choosing a programming language is the first and perhaps the most crucial step in the learning process. Several factors to consider when selecting a language include:

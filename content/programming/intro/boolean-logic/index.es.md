@@ -10,6 +10,8 @@ date: 2023-09-09
 tags: ["Programación", "Lógica Booleana"]
 ---
 
+En la vida, a menudo buscamos certezas. ¿Es cierto o falso que va a llover mañana? ¿Es correcto o incorrecto actuar de cierta manera? Esta dicotomía, esta división entre dos estados opuestos, se encuentra en el núcleo mismo de una rama esencial de las matemáticas y la informática: la lógica booleana.
+
 La lógica booleana, nombrada en honor a [George Boole](https://es.wikipedia.org/wiki/George_Boole), un matemático inglés del siglo XIX, es un sistema matemático que se ocupa de operaciones que tienen solo dos resultados posibles: verdadero o falso, representados generalmente como 1 y 0, respectivamente. En su obra "An Investigation of the Laws of Thought", Boole estableció las bases de esta lógica, presentando un sistema algebraico que podría utilizarse para representar estructuras lógicas.
 
 ## Operaciones Booleanas

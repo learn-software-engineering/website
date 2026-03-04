@@ -10,6 +10,8 @@ date: 2023-09-10
 tags: ["Programación", "IDE", "Python", "Herramientas"]
 ---
 
+Adentrarse en el mundo de la programación puede parecer una tarea titánica, especialmente cuando te encuentras frente a la decisión inicial: ¿por dónde empezar? Este artículo te guiará a través de los pasos esenciales para configurar tu entorno de programación, garantizando una base sólida para tu viaje codificador.
+
 ## Elegir un lenguaje de programación
 
 La elección del lenguaje de programación es el primer y quizás el más crucial paso en el proceso de aprendizaje. Hay varios factores a considerar al seleccionar un lenguaje, incluyendo:

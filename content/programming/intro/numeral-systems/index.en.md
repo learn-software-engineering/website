@@ -10,6 +10,8 @@ date: 2023-09-05
 tags: ["Programming", "Numeral Systems", "Decimal", "Binary", "Hexadecimal"]
 ---
 
+Every day, we're surrounded by numbers. From the alarm clock's digits waking us up in the morning to the price of our favourite morning coffee. But, have you ever stopped to ponder the essence of these numbers? In this article, we will dive deep into the captivating world of numbering systems, unravelling how one number can have myriad representations depending on the context.
+
 ## The decimal system: the bedrock of our daily life
 
 From a tender age, we're taught to count using ten digits: 0 through 9. This system, known as the decimal system, underpins almost all our mathematical and financial activities, from basic arithmetic to calculating bank interests. Its roots trace back to our anatomy: the ten fingers on our hands, making it the most intuitive and natural system for us. Yet, its true charm emanates from its positional nature.

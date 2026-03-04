@@ -10,6 +10,8 @@ date: 2023-09-05
 tags: ["Programación", "Sistemas de Numeración", "Decimal", "Binario", "Hexadecimal"]
 ---
 
+En nuestro día a día, estamos rodeados de números. Desde la hora que marca el reloj cuando suena la alarma por la mañana, hasta el precio del café que compramos en la esquina. Pero, ¿alguna vez te detuviste a pensar en la naturaleza de esos números? En este artículo, nos sumergiremos en el fascinante mundo de los sistemas de numeración y aprenderemos cómo, dependiendo del contexto, un número puede tener múltiples representaciones.
+
 ## El sistema decimal: la base de nuestra cotidianidad
 
 Desde pequeños, nos enseñan a contar usando diez dígitos: del 0 al 9. Este sistema, conocido como decimal, es la base de casi todas nuestras actividades matemáticas y financieras, desde sumar cuentas hasta calcular intereses en el banco. Tiene su origen en la cantidad de dedos que tenemos en las manos, lo que lo convierte en el sistema más intuitivo y natural para nosotros. Pero lo que lo hace especial es su naturaleza posicional.

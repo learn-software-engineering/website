@@ -10,6 +10,8 @@ date: 2023-09-02
 tags: ["Programación", "Computadoras", "Hardware", "Software", "CPU", "Memoria"]
 ---
 
+En el mundo actual, donde las tecnologías digitales se han convertido en una extensión de nuestras vidas diarias, resulta esencial comprender los cimientos sobre los que se construyen nuestras herramientas digitales. En esta ocasión, nos sumergiremos en el corazón de las computadoras para entender cómo funcionan y por qué son esenciales en nuestra sociedad moderna.
+
 Si alguna vez te has preguntado qué es lo que hace "tictac" dentro de esa caja metálica que llamamos computadora, estás en el lugar indicado. En esencia, una computadora es una combinación de hardware y software que trabajan juntos para llevar a cabo tareas específicas.
 
 El ***hardware*** es toda la parte física de la computadora: el CPU (que es como el cerebro de la máquina), la RAM (donde la computadora guarda la información con la que está trabajando en un momento determinado), dispositivos de almacenamiento (donde se guardan los datos de forma permanente) y periféricos (como el teclado, el mouse o la pantalla).

@@ -10,6 +10,8 @@ date: 2023-09-02
 tags: ["Programming", "Computers", "Hardware", "Software", "CPU", "Memory"]
 ---
 
+In today's digital age, where electronic gadgets seamlessly integrate into our daily lives, understanding the bedrock upon which these marvels stand becomes not just an academic interest but a societal necessity. As we embark on this enlightening voyage into the heart of computers, we aim to demystify the intricate dance between the physical and the abstract, between the tangible hardware and the intangible software.
+
 To the uninitiated, a computer might seem like a mere box (perhaps sometimes sleek and shiny) but a box nonetheless. Yet, within this "*box*" lies a universe of complexity and coordination.
 
 ***Hardware*** represents the physical components of a computer: the Central Processing Unit (CPU) which is often likened to the brain of the system, the Random Access Memory (RAM) acting as a temporary storage while tasks are underway, storage devices that retain data, and peripherals like keyboards, mice, and monitors.

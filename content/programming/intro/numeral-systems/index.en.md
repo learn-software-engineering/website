@@ -1,7 +1,5 @@
 ---
 weight: 3
-# series: ["Programming: Learning the Bases"]
-# series_order: 3
 title: "Numeral Systems"
 authors:
   - jnonino
@@ -17,17 +15,15 @@ From a tender age, we're taught to count using ten digits: 0 through 9. This sys
 
 To grasp this concept, let's dissect the number 237:
 
-- The rightmost digit (7) stands for the *units'* position. That is, \\(7 \times 10^0\\) (any number raised to the power of 0 is 1). Therefore, its value is simply 7.
-- The middle digit (3) represents the *tens'* position, translating to \\(3 \times 10^1 = 3 \times 10 = 30\\).
-- The leftmost digit (2) is in the *hundreds'* position, decoding to \\(2 \times 10^2 = 2 \times 100 = 200\\).
+- The rightmost digit (7) stands for the ***units'*** position. That is, \(7 \times 10^0\) (any number raised to the power of 0 is 1). Therefore, its value is simply 7.
+- The middle digit (3) represents the ***tens'*** position, translating to \(3 \times 10^1 = 3 \times 10 = 30\).
+- The leftmost digit (2) is in the ***hundreds'*** position, decoding to \(2 \times 10^2 = 2 \times 100 = 200\).
 
 When these values are combined,
 
-```math
+$$
 2 \times 10^2 + 3 \times 10^1 + 7 \times 10^0 = 200 + 30 + 7 = 237
-```
-
----
+$$
 
 ## The binary system: computers' coded language
 
@@ -39,18 +35,16 @@ Binary, with its ones and zeros, operates in a manner akin to the decimal system
 
 Consider the binary number 1011:
 
-- The rightmost bit denotes \\(1 \times 2^0 = 1\\).
-- The subsequent bit stands for \\(1 \times 2^1 = 2\\).
-- Next up is \\(0 \times 2^2 = 0\\).
-- The leftmost bit in this number signifies \\(1 \times 2^3 = 8\\).
+- The rightmost bit denotes \(1 \times 2^0 = 1\).
+- The subsequent bit stands for \(1 \times 2^1 = 2\).
+- Next up is \(0 \times 2^2 = 0\).
+- The leftmost bit in this number signifies \(1 \times 2^3 = 8\).
 
 Thus, 1011 in binary translates to the following in the decimal system:
 
-```math
+$$
 1011 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 = 8 + 0 + 2 + 1 = 11
-```
-
----
+$$
 
 ## Hexadecimal system: bridging humans and machines
 
@@ -58,38 +52,29 @@ While the binary system is perfect for machines, it can get a tad cumbersome for
 
 Hexadecimal proves invaluable as it offers a more compact way to represent binary numbers. Each hexadecimal digit corresponds precisely to four binary bits. For instance, think of the binary representation of the number 41279 and notice how the hexadecimal system achieves a more succinct representation:
 
-```math
+$$
 41279 = 1010 0001 0011 1111 = A13F
-```
+$$
 
 But the hexadecimal system is more than just a compressed representation of binary numbers; it's a positional numbering system like decimal or binary but based on 16 instead of 10 or 2. Let's see how to derive the decimal representation of the example number (A13F):
 
-- The rightmost digit represents \\(F \times 16^0 = 15 \times 16^0 = 15\\).
-- The subsequent one stands for \\(3 \times 16^1 = 48\\).
-- The next digit denotes \\(1 \times 16^2 = 256\\).
-- The leftmost digit in this number signifies \\(A \times 16^3 = 10 \times 16^3 = 40960\\).
+- The rightmost digit represents \(F \times 16^0 = 15 \times 16^0 = 15\).
+- The subsequent one stands for \(3 \times 16^1 = 48\).
+- The next digit denotes \(1 \times 16^2 = 256\).
+- The leftmost digit in this number signifies \(A \times 16^3 = 10 \times 16^3 = 40960\).
 
 Therefore, A13F in hexadecimal translates to the following in the decimal system:
 
-```math
+$$
 A13F = A \times 16^3 + 1 \times 16^2 + 3 \times 16^1 + F \times 16^0 = 10 \times 4096 + 1 \times 256 + 3 \times 16 + 15 \times 1 = 40960 + 256 + 48 + 15 = 41279
-```
+$$
 
----
 
 ## Conclusion
 
 Numbering systems are like lenses through which we perceive and understand the world of mathematics and computing. Although the decimal system may be the linchpin of our daily existence, it's crucial to appreciate and comprehend the binary and hexadecimal systems, especially in this digital age.
 
 So, the next time you're in front of your computer or using an app on your smartphone, remember that behind that user-friendly interface, a binary world is in full swing, with the hexadecimal system acting as a translator between that realm and us.
-
----
-
-## References
-
-1. Ifrah, G. (2000). *The Universal History of Numbers*. London: Harvill Press.
-2. Tanenbaum, A. (2012). *Structured Computer Organization*. New Jersey: Prentice Hall.
-3. Knuth, D. (2007). *The Art of Computer Programming: SemiNumeral Algorithms*. California: Addison-Wesley.
 
 ---
 
@@ -102,5 +87,3 @@ Also, to delve deeper than these lines, take a stroll through the practical exam
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
 {{< /callout >}}
-
----

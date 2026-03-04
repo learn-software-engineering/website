@@ -1,7 +1,5 @@
 ---
 weight: 5
-# series: ["Programming: Learning the Bases"]
-# series_order: 5
 title: "Set Up your Development Environment"
 authors:
   - jnonino
@@ -24,54 +22,55 @@ While there are many valuable and potent languages, for the purpose of this cour
 
 ### Installing Python
 
-#### For Windows users:
+Here you can check the steps to install Python on the main operating systems.
 
-1. Download the installer:
-   - Visit the official Python website at [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
-   - Click on the download link for the latest version of Python 3.x.
-2. Run the installer:
-   - Once the download is complete, locate and run the installer `.exe` file.
-   - Make sure to check the box that says "Add Python to PATH" during installation. This step is crucial for making Python accessible from the Command Prompt.
-   - Follow the installation prompts.
-3. Verify installation:
-   - Open the Command Prompt and type:
-     ```bash
-     python --version
-     ```
-   - This should display the version of Python you just installed.
+{{< details title="Windows" closed="true" >}}
+1.  Download the installer:
+    - Visit the official Python website at [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
+    - Click on the download link for the latest version of Python.
+2.  Run the installer:
+    - Once the download is complete, locate and run the installer `.exe` file.
+    - Make sure to check the box that says "Add Python to PATH" during installation. This step is crucial for making Python accessible from the Command Prompt.
+    - Follow the installation prompts.
+3.  Verify installation:
+    - Open the Command Prompt and type:
+      ```bash
+      python --version
+      ```
+      This should display the version of Python you just installed.
+{{< /details >}}
 
-#### For Mac users:
+{{< details title="Mac" closed="true" >}}
+1.  Download the installer:
+    - Visit the official Python website at [https://www.python.org/downloads/mac-osx/](https://www.python.org/downloads/mac-osx/)
+    - Click on the download link for the latest version of Python.
+2.  Run the installer:
+    - Once the download is complete, locate and run the `.pkg` file.
+    - Follow the installation prompts.
+3.  Verify installation:
+    - Open the Terminal and type:
+      ```bash
+      python3 --version
+      ```
+      This should display the version of Python you just installed.
+{{< /details >}}
 
-1. Download the installer:
-   - Visit the official Python website at [https://www.python.org/downloads/mac-osx/](https://www.python.org/downloads/mac-osx/)
-   - Click on the download link for the latest version of Python 3.x.
-2. Run the installer:
-   - Once the download is complete, locate and run the `.pkg` file.
-   - Follow the installation prompts.
-3. Verify installation:
-   - Open the Terminal and type:
-     ```bash
-     python3 --version
-     ```
-   - This should display the version of Python you just installed.
-
-#### For Linux (Ubuntu/Debian) users:
-
-1. Update packages:
-   ```bash
-   sudo apt update
-   ```
-2. Install Python:
-   ```bash
-   sudo apt install python3
-   ```
-3. Verify installation:
-   - After installation, you can check the version of Python installed by typing:
-     ```bash
-     python3 --version
-     ```
-
----
+{{< details title="Linux (Ubuntu/Debian)" closed="true" >}}
+1.  Update packages:
+    ```bash
+    sudo apt update
+    ```
+2.  Install Python:
+    ```bash
+    sudo apt install python3
+    ```
+3.  Verify installation:
+    - Open the Terminal and type:
+      ```bash
+      python3 --version
+      ```
+      This should display the version of Python you just installed.
+{{< /details >}}
 
 ## Integrated Development Environments (IDEs)
 
@@ -88,53 +87,51 @@ For this course, we've selected [**Visual Studio Code (VS Code)**](https://code.
 
 ### Installing Visual Studio Code
 
-#### For Windows users:
+{{< details title="Windows" closed="true" >}}
+1.  Download the installer:
+    - Visit the official VS Code website at [https://code.visualstudio.com/](https://code.visualstudio.com/)
+    - Click on the "Download for Windows" button.
+2.  Run the installer:
+    - Once the download is complete, locate and run the installer `.exe` file.
+    - Follow the installation prompts, including accepting the license agreement and choosing the installation location.
+3.  Launch VS Code:
+    - After installation, you can find VS Code in your Start menu.
+    - Launch it, and you're ready to start coding!
+{{< /details >}}
 
-1. Download the installer:
-   - Visit the official VS Code website at [https://code.visualstudio.com/](https://code.visualstudio.com/)
-   - Click on the "Download for Windows" button.
-2. Run the installer:
-   - Once the download is complete, locate and run the installer `.exe` file.
-   - Follow the installation prompts, including accepting the license agreement and choosing the installation location.
-3. Launch VS Code:
-   - After installation, you can find VS Code in your Start menu.
-   - Launch it, and you're ready to start coding!
+{{< details title="Mac" closed="true" >}}
+1.  Download the installer:
+    - Visit the official VS Code website at [https://code.visualstudio.com/](https://code.visualstudio.com/)
+    - Click on the "Download for Mac" button.
+2.  Install VS Code:
+    - Once the download is complete, open the downloaded `.zip` file.
+    - Drag the Visual Studio Code `.app` to the `Applications` folder, making it available in the Launchpad.
+3.  Launch VS Code:
+    - Use Spotlight search or navigate to your Applications folder to launch VS Code.
+{{< /details >}}
 
-#### For Mac users:
-
-1. Download the installer:
-   - Visit the official VS Code website at [https://code.visualstudio.com/](https://code.visualstudio.com/)
-   - Click on the "Download for Mac" button.
-2. Install VS Code:
-   - Once the download is complete, open the downloaded `.zip` file.
-   - Drag the Visual Studio Code `.app` to the `Applications` folder, making it available in the Launchpad.
-3. Launch VS Code:
-   - Use Spotlight search or navigate to your Applications folder to launch VS Code.
-
-#### For Linux (Ubuntu/Debian) users:
-
-1. Update packages and install dependencies:
-   ```bash
-   sudo apt update
-   sudo apt install software-properties-common apt-transport-https wget
-   ```
-2. Download and install the key:
-   ```bash
-   wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-   ```
-3. Add the VS Code repository:
-   ```bash
-   sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-   ```
-4. Install Visual Studio Code:
-   ```bash
-   sudo apt update
-   sudo apt install code
-   ```
-5. Launch VS Code:
-   - You can start VS Code from the terminal by typing `code` or find it in your list of installed applications.
-
----
+{{< details title="Linux (Ubuntu/Debian)" closed="true" >}}
+1.  Update packages and install dependencies:
+    ```bash
+    sudo apt update
+    sudo apt install software-properties-common apt-transport-https wget
+    ```
+2.  Download and install the key:
+    ```bash
+    wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+    ```
+3.  Add the VS Code repository:
+    ```bash
+    sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+    ```
+4.  Install Visual Studio Code:
+    ```bash
+    sudo apt update
+    sudo apt install code
+    ```
+5.  Launch VS Code:
+    - You can start VS Code from the terminal by typing `code` or find it in your list of installed applications.
+{{< /details >}}
 
 ## Write and execute your first program
 
@@ -144,10 +141,10 @@ Once you've set up your programming environment, it's time to dive into coding.
 
 This is arguably the most iconic program for beginners. It's simple, but it introduces you to the process of writing and executing code.
 
-<!-- {{< codeimporter
+{{< codeimporter
     url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/intro/hello_world.py"
     type="python"
-    >}} -->
+    >}}
 
 {{< figure
     src="images/running-hello-world.en.png"
@@ -159,10 +156,10 @@ This is arguably the most iconic program for beginners. It's simple, but it intr
 
 This program is a tad more intricate. It doesn't just print out a message; it also performs mathematical calculations.
 
-<!-- {{< codeimporter
+{{< codeimporter
     url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/intro/triangle.py"
     type="python"
-    >}} -->
+    >}}
 
 {{< figure
     src="images/running-triangle.en.png"
@@ -170,18 +167,9 @@ This program is a tad more intricate. It doesn't just print out a message; it al
     caption="Running the Triangle program"
     >}}
 
----
-
 ## Conclusion
 
 Setting up a programming environment might appear daunting at first, but with the right tools and resources, it becomes a manageable and rewarding task. We hope this article provided you with a solid foundation to kickstart your programming journey. Happy coding!
-
----
-
-## References
-
-1. Lutz, M. (2013). *Learning Python*. O'Reilly Media.
-2. Microsoft. (2020). *Visual Studio Code Documentation*. Microsoft Docs.
 
 ---
 

@@ -2,15 +2,23 @@
 {{- if $pages -}}
   {{- $cards := "" -}}
   {{- range $pages -}}
-    {{- $image := .Params.cardImage | default "" -}}
+    {{- $childPage := . -}}
+    {{- $image := "" -}}
+    {{- with .Params.cardImage -}}
+      {{- with $childPage.Resources.Get . -}}
+        {{- $image = .RelPermalink -}}
+      {{- else -}}
+        {{- $image = . -}}
+      {{- end -}}
+    {{- end -}}
     {{- $cards = printf "%s%s" $cards (partial "shortcodes/card" (dict
-      "page"       .
-      "link"       .RelPermalink
-      "title"      .Title
-      "icon"       (.Params.icon | default "")
+      "page"       $childPage
+      "link"       $childPage.RelPermalink
+      "title"      $childPage.Title
+      "icon"       ($childPage.Params.icon | default "")
       "subtitle"   ""
       "image"      $image
-      "alt"        .Title
+      "alt"        $childPage.Title
       "width"      0
       "height"     0
       "imageStyle" ""

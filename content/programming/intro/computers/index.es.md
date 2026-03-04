@@ -1,6 +1,7 @@
 ---
 weight: 2
 title: "Computadoras"
+cardImage: "featured.es.jpg"
 authors:
   - jnonino
 description: >

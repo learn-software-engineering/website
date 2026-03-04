@@ -1,6 +1,7 @@
 ---
 weight: 2
 title: "Computers"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -9,7 +10,7 @@ date: 2023-09-02
 tags: ["Programming", "Computers", "Hardware", "Software", "CPU", "Memory"]
 ---
 
-To the uninitiated, a computer might seem like a mere box—perhaps sometimes sleek and shiny—but a box nonetheless. Yet, within this "*box*" lies a universe of complexity and coordination.
+To the uninitiated, a computer might seem like a mere box (perhaps sometimes sleek and shiny) but a box nonetheless. Yet, within this "*box*" lies a universe of complexity and coordination.
 
 ***Hardware*** represents the physical components of a computer: the Central Processing Unit (CPU) which is often likened to the brain of the system, the Random Access Memory (RAM) acting as a temporary storage while tasks are underway, storage devices that retain data, and peripherals like keyboards, mice, and monitors.
 

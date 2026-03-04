@@ -1,6 +1,7 @@
 ---
 weight: 4
 title: "Boolean Logic"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >

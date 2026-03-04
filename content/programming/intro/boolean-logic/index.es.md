@@ -1,8 +1,7 @@
 ---
 weight: 4
-# series: ["Programación: Aprendiendo las Bases"]
-# series_order: 4
 title: "Lógica Booleana"
+cardImage: "featured.es.jpg"
 authors:
   - jnonino
 description: >

@@ -1,6 +1,7 @@
 ---
 weight: 3
 title: "Numeral Systems"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >

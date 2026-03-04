@@ -1,6 +1,7 @@
 ---
 weight: 5
 title: "Configura tu Entorno de Desarrollo"
+cardImage: "featured.es.jpg"
 authors:
   - jnonino
 description: >

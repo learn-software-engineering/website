@@ -1,8 +1,7 @@
 ---
 weight: 3
-# series: ["Programación: Aprendiendo las Bases"]
-# series_order: 3
 title: "Sistemas de Numeración"
+cardImage: "featured.es.jpg"
 authors:
   - jnonino
 description: >

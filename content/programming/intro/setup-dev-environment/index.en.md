@@ -1,6 +1,7 @@
 ---
 weight: 5
 title: "Set Up your Development Environment"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >

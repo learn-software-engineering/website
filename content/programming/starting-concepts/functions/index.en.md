@@ -1,8 +1,7 @@
 ---
 weight: 4
-# series: ["Programming: Learning the Starting Concepts"]
-# series_order: 4
 title: "Functions"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -10,6 +9,8 @@ description: >
 date: 2023-09-29
 tags: ["Programming", "Starting Concepts", "Functions", "Methods"]
 ---
+
+In the vast and exciting world of programming, there are concepts that are fundamental pillars for any developer, regardless of their experience level. One of these concepts is functions. What are they? Why are they so crucial? Let's find out!
 
 ## What are functions?
 
@@ -25,8 +26,6 @@ Functions allow us to segment our code into logical parts where each part perfor
 **Procedures vs. Functions**
 
 It is vital to distinguish between these two concepts. While a function always returns a value, a procedure performs a task but does not return anything. In some languages, this difference is clearer than in others. Python, for example, has functions that can optionally return values.
-
----
 
 ## Anatomy of a function
 
@@ -102,8 +101,6 @@ The return value is passed back to where the function was called and can be assi
 
 Functions can also perform some task without explicitly returning anything. In Python this is known as returning `None`.
 
----
-
 ## Local and global variables
 
 **Local variables** are defined inside a function and only exist in that scope, while **global variables** are defined outside and can be accessed from anywhere in the code. It is crucial to understand their **scope** (where a variable is accessible) and **lifetime** (how long a variable lives).
@@ -136,8 +133,6 @@ print(x) # 15
 Ideally functions should only work with local variables and parameters. Limit the use of global variables. While they can be useful, they can also make code difficult to read and maintain.
 {{< /callout >}}
 
----
-
 ## Best Practices
 
 When creating functions we should follow certain principles and patterns:
@@ -151,20 +146,9 @@ When creating functions we should follow certain principles and patterns:
 
 Following these best practices will help us create reusable, encapsulated, and maintainable functions.
 
----
-
 ## Conclusion
 
 Functions are core components in programming, allowing us to organize, reuse, and encapsulate code. By defining functions that perform a single task we keep our programs simplified, easy to understand, and modify. By understanding and mastering this concept, you not only improve the quality of your code but also your efficiency as a developer.
-
----
-
-## References
-
-1. McConnell, S. (2004). *Code Complete*. Microsoft Press.
-2. Joyanes Aguilar, L. (2008). *Fundamentos de programación: algoritmos, estructura de datos y objetos*. McGraw-Hill.
-3. Kindler, E., & Krivy, I. (2011). *Object-Oriented Simulation of systems with Java: A working introduction*. BoD–Books on Demand.
-4. Python Software Foundation. (2022). *Python Official Documentation*.
 
 ---
 
@@ -177,5 +161,3 @@ Also, to delve deeper than these lines, take a stroll through the practical exam
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
 {{< /callout >}}
-
----

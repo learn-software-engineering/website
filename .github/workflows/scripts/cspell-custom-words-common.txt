@@ -41,6 +41,7 @@ Hannes
 Hapke
 Harvill
 Hennessy
+hextra
 Highsmith
 Hiva
 Holmstrom
@@ -111,6 +112,7 @@ Sams
 Schwaber
 SDLC
 Sebesta
+sectioncards
 Siewiorek
 Silberschatz
 Simo

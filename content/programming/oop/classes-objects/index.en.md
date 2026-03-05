@@ -1,8 +1,7 @@
 ---
-weight: 2
-# series: ["Programming: Learning Object-Oriented Concepts"]
-# series_order: 2
+weight: 1
 title: "Classes and objects"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -31,8 +30,6 @@ class Person:
 **Constructor**: Special `__init__()` method that executes when instantiating the class and allows initialising attributes.
 
 **Destructor**: `__del__()` method that executes when deleting the instance, freeing up resources. Optional in some languages.
-
----
 
 ## Creating objects
 
@@ -84,8 +81,6 @@ john.eat("pizza") # Prints "Eating pizza"
 
 The john object now has its own **state** (properties) and **behaviour** (methods).
 
----
-
 ## Self vs This
 
 An important detail in methods is how they access the object's attributes and other methods. Here another difference between languages comes into play:
@@ -126,8 +121,6 @@ Person john = new Person("John");
 john.greet();
 // Prints "Hello! I'm John"
 ```
-
----
 
 ## Conclusion
 

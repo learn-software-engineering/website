@@ -130,8 +130,6 @@ Un `headless service` no tiene asignada una dirección IP única del cluster. Re
 
 ---
 
-## Referencias
-
 {{< callout type="info" >}}
 Puedes leer más sobre el tema en la [documentación oficial de Kubernetes](https://kubernetes.io/docs/concepts/services-networking/service/)
 {{< /callout >}}

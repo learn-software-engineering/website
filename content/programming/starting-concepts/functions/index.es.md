@@ -27,8 +27,6 @@ Las funciones nos permiten segmentar nuestro código en partes lógicas, donde c
 
 Es vital distinguir entre estos dos conceptos. Mientras que una función siempre devuelve un valor, un procedimiento realiza una tarea pero no devuelve nada. En algunos lenguajes, esta diferencia es más clara que en otros. Python, por ejemplo, tiene funciones que pueden o no devolver valores.
 
----
-
 ## Anatomía de una función
 
 En Python, una función se declara usando la palabra clave `def`, seguida del nombre de la función y paréntesis. El código dentro de la función se denomina el *cuerpo* de la función y contiene el conjunto de instrucciones a ejecutar para cumplir con su tarea..

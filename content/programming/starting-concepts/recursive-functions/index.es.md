@@ -67,11 +67,11 @@ Digamos que quieres calcular el factorial de 5, así que llamas a `factorial(5)`
 
 Esto es lo que sucede:
 
-1. **Paso 1**: Como \(n = 5\) no es 1, la función llama a `factorial(4)`, luego multiplica el resultado por 5.
-2. **Paso 2**: Ahora, dentro de `factorial(4)`, \(n = 4\), entonces la función llama a `factorial(3)`, luego multiplica el resultado por 4.
-3. **Paso 3**: Dentro de `factorial(3)`, \(n = 3\), así que llama a `factorial(2)`, luego multiplica el resultado por 3.
-4. **Paso 4**: Dentro de `factorial(2)`, \(n = 2\), así que llama a `factorial(1)`, luego multiplica el resultado por 2.
-5. **Paso 5**: Finalmente, `factorial(1)` alcanza el caso base, donde \(n = 1\), así que retorna 1.
+1. Como \(n = 5\) no es 1, la función llama a `factorial(4)`, luego multiplica el resultado por 5.
+2. Ahora, dentro de `factorial(4)`, \(n = 4\), entonces la función llama a `factorial(3)`, luego multiplica el resultado por 4.
+3. Dentro de `factorial(3)`, \(n = 3\), así que llama a `factorial(2)`, luego multiplica el resultado por 3.
+4. Dentro de `factorial(2)`, \(n = 2\), así que llama a `factorial(1)`, luego multiplica el resultado por 2.
+5. Finalmente, `factorial(1)` alcanza el caso base, donde \(n = 1\), así que retorna 1.
 
 Ahora los resultados se desenrollan:
 
@@ -99,51 +99,67 @@ factorial(5)
 
 ### Serie de Fibonacci
 
-La serie de Fibonacci es una secuencia de números donde cada número es la suma de los dos anteriores. Comienza con 0 y 1, y cada número posterior es la suma de los dos números anteriores. Los primeros números de la secuencia son: \(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...\)
+La serie de Fibonacci es una secuencia de números donde cada número es la suma de los dos anteriores. Comienza con 0 y 1, y cada número posterior es la suma de los dos números anteriores. Los primeros números de la secuencia son: \(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, \ldots\).
 
 Aquí está el código en Python para calcular el *enésimo* número de Fibonacci usando recursión:
 
 ```python
-def fibonacci(n, a=0, b=1):
-    if n == 0:
-        return a
-    return fibonacci(n-1, b, a+b)
+def fibonacci(n):
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
 ```
-
-La función toma tres parámetros:
-
-- \(n\): La posición del número deseado en la secuencia.
-- \(a\) y \(b\): Dos números que ayudan en el cálculo de la secuencia.
 
 Aquí hay un desglose de cómo funciona la función:
 
-1. **Caso Base**: Si \(n\) es 0, la función devuelve \(a\). Este es el valor del enésimo número en la secuencia.
+1. **Casos Base**: Si \(n\) es igual o menor que 0, la función devuelve 0. Si \(n\) es igual a 1, se retorna 1, el primer valor de la serie, descartando el 0.
 
-2. **Caso Recursivo**: Si \(n\) no es 0, la función se llama a sí misma con \(n-1\), \(b\), y \(a+b\). Estos parámetros cambian la posición en la secuencia y preparan los siguientes números para la suma.
+2. **Caso Recursivo**: Si \(n\) es mayor que 1, la función se llama a sí misma dos veces, invocando la suma de los números de Fibonacci \(n-1\) y \(n-2\).
 
-Supongamos que queremos encontrar el quinto número en la secuencia de Fibonacci llamando a `fibonacci(5)`.
+Digamos que quieres calcular el número de Fibonacci en la posición 5, así que llamas a `fibonacci(5)`.
+1. Como \(n = 5\) no es un caso base, la función llama a `fibonacci(4) + fibonacci(3)`.
+2. `fibonacci(4)` llama a `fibonacci(3) + fibonacci(2)`. `fibonacci(3)` llama a `fibonacci(2) + fibonacci(1)`.
+3. `fibonacci(2)` llama a `fibonacci(1) + fibonacci(0)`. `fibonacci(1)` alcanza el caso base y retorna 1.
+4. `fibonacci(0)` alcanza el caso base y retorna 0.
+5. Los resultados comienzan a desenrollarse hacia arriba por toda la cadena de llamadas.
+    - `fibonacci(0)` retorna 0
+    - `fibonacci(1)` retorna 1
+    - `fibonacci(2)` retorna 1 (\(1 + 0\))
+    - `fibonacci(3)` retorna 2 (\(1 + 1\))
+    - `fibonacci(4)` retorna 3 (\(2 + 1\))
+    - `fibonacci(5)` retorna 5 (\(3 + 2\))
 
-Esto es lo que sucede:
-
-1. **Paso 1**: Dado que \(n = 5\), llama a `fibonacci(4, 1, 1)` (porque \(a = 0\), \(b = 1\), \(a + b = 1\)).
-2. **Paso 2**: Dado que \(n = 4\), llama a `fibonacci(3, 1, 2)` (porque \(a = 1\), \(b = 1\), \(a + b = 2\)).
-3. **Paso 3**: Dado que \(n = 3\), llama a `fibonacci(2, 2, 3)` (porque \(a = 1\), \(b = 2\), \(a + b = 3\)).
-4. **Paso 4**: Dado que \(n = 2\), llama a `fibonacci(1, 3, 5)` (porque \(a = 2\), \(b = 3\), \(a + b = 5\)).
-5. **Paso 5**: Dado que \(n = 1\), llama a `fibonacci(0, 5, 8)` (porque \(a = 3\), \(b = 5\), \(a + b = 8\)).
-6. **Paso 6**: Dado que \(n = 0\), devuelve \(a\), que es 5.
 
 El resultado es 5, que es el quinto número en la secuencia de Fibonacci.
 
 Aquí hay una representación visual de la pila de llamadas:
 
 ```python
-fibonacci(5, 0, 1)
-  -> fibonacci(4, 1, 1)
-    -> fibonacci(3, 1, 2)
-      -> fibonacci(2, 2, 3)
-        -> fibonacci(1, 3, 5)
-          -> fibonacci(0, 5, 8)
-            return 5
+fibonacci(5)
+  -> fibonacci(4)
+    -> fibonacci(3)
+      -> fibonacci(2)
+        -> fibonacci(1) return 1
+        -> fibonacci(0) return 0
+        return 1
+      -> fibonacci(1) return 1
+      return 2
+    -> fibonacci(2)
+      -> fibonacci(1) return 1
+      -> fibonacci(0) return 0
+      return 1
+    return 3
+  -> fibonacci(3)
+    -> fibonacci(2)
+      -> fibonacci(1) return 1
+      -> fibonacci(0) return 0
+      return 1
+    -> fibonacci(1) return 1
+    return 2
+  return 5
 ```
 
 ## Ventajas y desventajas

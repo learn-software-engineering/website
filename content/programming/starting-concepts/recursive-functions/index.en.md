@@ -67,11 +67,11 @@ Let's say you want to calculate the factorial of 5, so you call `factorial(5)`.
 
 Here is what happens:
 
-1. **Step 1**: Since \(n = 5\) is not 1, the function calls `factorial(4)`, then multiplies the result by 5.
-2. **Step 2**: Now, inside `factorial(4)`, \(n = 4\), so the function calls `factorial(3)`, then multiplies the result by 4.
-3. **Step 3**: Inside `factorial(3)`, \(n = 3\), so it calls `factorial(2)`, then multiplies the result by 3.
-4. **Step 4**: Inside `factorial(2)`, \(n = 2\), so it calls `factorial(1)`, then multiplies the result by 2.
-5. **Step 5**: Finally, `factorial(1)` reaches the base case, where \(n = 1\), so it returns 1.
+1. Since \(n = 5\) is not 1, the function calls `factorial(4)`, then multiplies the result by 5.
+2. Now, inside `factorial(4)`, \(n = 4\), so the function calls `factorial(3)`, then multiplies the result by 4.
+3. Inside `factorial(3)`, \(n = 3\), so it calls `factorial(2)`, then multiplies the result by 3.
+4. Inside `factorial(2)`, \(n = 2\), so it calls `factorial(1)`, then multiplies the result by 2.
+5. Finally, `factorial(1)` reaches the base case, where \(n = 1\), so it returns 1.
 
 Now the results unwind:
 
@@ -120,29 +120,47 @@ Here is a breakdown of how the function works:
 1. **Base case**: If \(n\) is 0, the function returns \(a\). This is the value of the \(n^{th}\) number in the sequence.
 2. **Recursive case**: If \(n\) is not 0, the function calls itself with \(n-1\), \(b\), and \(a+b\). These parameters change the position in the sequence and prepare the next numbers for summation.
 
-Suppose we want to find the \(5^{th}\) number in the Fibonacci sequence by calling `fibonacci(5)`.
+Suppose we want to find the \(5^{th}\) number in the Fibonacci sequence by calling `fibonacci(5)`. Here is what happens:
 
-Here is what happens:
-
-1. **Step 1**: Since \(n = 5\), it calls `fibonacci(4, 1, 1)` (because \(a = 0\), \(b = 1\), \(a + b = 1\)).
-2. **Step 2**: Since \(n = 4\), it calls `fibonacci(3, 1, 2)` (because \(a = 1\), \(b = 1\), \(a + b = 2\)).
-3. **Step 3**: Since \(n = 3\), it calls `fibonacci(2, 2, 3)` (because \(a = 1\), \(b = 2\), \(a + b = 3\)).
-4. **Step 4**: Since \(n = 2\), it calls `fibonacci(1, 3, 5)` (because \(a = 2\), \(b = 3\), \(a + b = 5\)).
-5. **Step 5**: Since \(n = 1\), it calls `fibonacci(0, 5, 8)` (because \(a = 3\), \(b = 5\), \(a + b = 8\)).
-6. **Step 6**: Since \(n = 0\), it returns \(a\), which is 5.
+1. Since \(n = 5\), it calls `fibonacci(4) + fibonacci(3)`.
+2. `fibonacci(4)` calls `fibonacci(3) + fibonacci(2)`. `fibonacci(3)` calls `fibonacci(2) + fibonacci(1)`.
+3. `fibonacci(2)` calls `fibonacci(1) + fibonacci(0)`. `fibonacci(1)` reaches the base case and returns 1.
+4. `fibonacci(0)` reaches the base case and returns 0.
+5. Results start to unfold on the call stack.
+    - `fibonacci(0)` returns 0
+    - `fibonacci(1)` returns 1
+    - `fibonacci(2)` returns 1 (\(1 + 0\))
+    - `fibonacci(3)` returns 2 (\(1 + 1\))
+    - `fibonacci(4)` returns 3 (\(2 + 1\))
+    - `fibonacci(5)` returns 5 (\(3 + 2\))
 
 The result is 5, which is the \(5^{th}\) number in the Fibonacci sequence.
 
 Here is a visual representation of the call stack:
 
 ```python
-fibonacci(5, 0, 1)
-  -> fibonacci(4, 1, 1)
-    -> fibonacci(3, 1, 2)
-      -> fibonacci(2, 2, 3)
-        -> fibonacci(1, 3, 5)
-          -> fibonacci(0, 5, 8)
-            return 5
+fibonacci(5)
+  -> fibonacci(4)
+    -> fibonacci(3)
+      -> fibonacci(2)
+        -> fibonacci(1) return 1
+        -> fibonacci(0) return 0
+        return 1
+      -> fibonacci(1) return 1
+      return 2
+    -> fibonacci(2)
+      -> fibonacci(1) return 1
+      -> fibonacci(0) return 0
+      return 1
+    return 3
+  -> fibonacci(3)
+    -> fibonacci(2)
+      -> fibonacci(1) return 1
+      -> fibonacci(0) return 0
+      return 1
+    -> fibonacci(1) return 1
+    return 2
+  return 5
 ```
 
 ## Advantages and disadvantages

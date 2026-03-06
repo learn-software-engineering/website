@@ -2,15 +2,19 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
 
-- [FAQ: Dudas domunes](#faq-dudas-domunes)
-  - [1. ¿Por qué empezamos con reglas en lugar de Machine Learning avanzado?](#1-por-qu%C3%A9-empezamos-con-reglas-en-lugar-de-machine-learning-avanzado)
-  - [2. ¿Cuándo usar IA clásica vs Machine Learning?](#2-cu%C3%A1ndo-usar-ia-cl%C3%A1sica-vs-machine-learning)
-  - [3. ¿Los sistemas de reglas son obsoletos?](#3-los-sistemas-de-reglas-son-obsoletos)
-  - [4. ¿Por qué no usar directamente bibliotecas como scikit-learn?](#4-por-qu%C3%A9-no-usar-directamente-bibliotecas-como-scikit-learn)
-  - [5. ¿Cómo sé si mi sistema de IA está funcionando bien?](#5-c%C3%B3mo-s%C3%A9-si-mi-sistema-de-ia-est%C3%A1-funcionando-bien)
-- [Próximos pasos: módulo 2](#pr%C3%B3ximos-pasos-m%C3%B3dulo-2)
-  - [¿Por qué necesitas estas matemáticas?](#por-qu%C3%A9-necesitas-estas-matem%C3%A1ticas)
-- [Reflexión final](#reflexi%C3%B3n-final)
+- [series: ["Fundamentos de IA para Programadores"]](#series-fundamentos-de-ia-para-programadores)
+- [series_order: 5](#series_order-5)
+  - [date: 2025-09-04
+tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning"]](#date-2025-09-04%0Atags-inteligencia-artificial-aprendizaje-autom%C3%A1tico-machine-learning)
+  - [FAQ: Dudas domunes](#faq-dudas-domunes)
+    - [1. ¿Por qué empezamos con reglas en lugar de Machine Learning avanzado?](#1-por-qu%C3%A9-empezamos-con-reglas-en-lugar-de-machine-learning-avanzado)
+    - [2. ¿Cuándo usar IA clásica vs Machine Learning?](#2-cu%C3%A1ndo-usar-ia-cl%C3%A1sica-vs-machine-learning)
+    - [3. ¿Los sistemas de reglas son obsoletos?](#3-los-sistemas-de-reglas-son-obsoletos)
+    - [4. ¿Por qué no usar directamente bibliotecas como scikit-learn?](#4-por-qu%C3%A9-no-usar-directamente-bibliotecas-como-scikit-learn)
+    - [5. ¿Cómo sé si mi sistema de IA está funcionando bien?](#5-c%C3%B3mo-s%C3%A9-si-mi-sistema-de-ia-est%C3%A1-funcionando-bien)
+  - [Próximos pasos: módulo 2](#pr%C3%B3ximos-pasos-m%C3%B3dulo-2)
+    - [¿Por qué necesitas estas matemáticas?](#por-qu%C3%A9-necesitas-estas-matem%C3%A1ticas)
+  - [Reflexión final](#reflexi%C3%B3n-final)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

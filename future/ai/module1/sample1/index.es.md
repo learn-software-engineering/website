@@ -2,15 +2,19 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
 
-- [Estructura del sistema](#estructura-del-sistema)
-- [Reglas](#reglas)
-  - [Uso de CPU](#uso-de-cpu)
-  - [Uso de memoria](#uso-de-memoria)
-  - [Nivel de concurrencia](#nivel-de-concurrencia)
-  - [Consultas a la base de datos](#consultas-a-la-base-de-datos)
-  - [Estado de la red](#estado-de-la-red)
-- [¿Qué aprendemos de este ejemplo?](#qu%C3%A9-aprendemos-de-este-ejemplo)
-- [Código completo](#c%C3%B3digo-completo)
+- [series: ["Fundamentos de IA para Programadores"]](#series-fundamentos-de-ia-para-programadores)
+- [series_order: 2](#series_order-2)
+  - [date: 2025-08-22
+tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning", "Sistema Experto"]](#date-2025-08-22%0Atags-inteligencia-artificial-aprendizaje-autom%C3%A1tico-machine-learning-sistema-experto)
+  - [Estructura del sistema](#estructura-del-sistema)
+  - [Reglas](#reglas)
+    - [Uso de CPU](#uso-de-cpu)
+    - [Uso de memoria](#uso-de-memoria)
+    - [Nivel de concurrencia](#nivel-de-concurrencia)
+    - [Consultas a la base de datos](#consultas-a-la-base-de-datos)
+    - [Estado de la red](#estado-de-la-red)
+  - [¿Qué aprendemos de este ejemplo?](#qu%C3%A9-aprendemos-de-este-ejemplo)
+  - [Código completo](#c%C3%B3digo-completo)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

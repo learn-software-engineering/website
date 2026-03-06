@@ -2,19 +2,23 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
 
-- [Fundamentos matemáticos: el teorema de Bayes](#fundamentos-matem%C3%A1ticos-el-teorema-de-bayes)
-- [Estructura básica del sistema](#estructura-b%C3%A1sica-del-sistema)
-- [Preprocesamiento del texto](#preprocesamiento-del-texto)
-- [Entrenando el sistema](#entrenando-el-sistema)
-- [Cálculo de probabilidades](#c%C3%A1lculo-de-probabilidades)
-- [Clasificando nuevos tickets](#clasificando-nuevos-tickets)
-  - [Probando el clasificador](#probando-el-clasificador)
-- [Entendiendo las decisiones (interpretabilidad)](#entendiendo-las-decisiones-interpretabilidad)
-- [Análisis y extensiones](#an%C3%A1lisis-y-extensiones)
-- [Extensiones posibles](#extensiones-posibles)
-- [¿Qué aprendemos de este ejemplo?](#qu%C3%A9-aprendemos-de-este-ejemplo)
-- [Código completo](#c%C3%B3digo-completo)
-- [Conclusión](#conclusi%C3%B3n)
+- [series: ["Fundamentos de IA para Programadores"]](#series-fundamentos-de-ia-para-programadores)
+- [series_order: 3](#series_order-3)
+  - [date: 2025-08-26
+tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning", "Clasificación"]](#date-2025-08-26%0Atags-inteligencia-artificial-aprendizaje-autom%C3%A1tico-machine-learning-clasificaci%C3%B3n)
+  - [Fundamentos matemáticos: el teorema de Bayes](#fundamentos-matem%C3%A1ticos-el-teorema-de-bayes)
+  - [Estructura básica del sistema](#estructura-b%C3%A1sica-del-sistema)
+  - [Preprocesamiento del texto](#preprocesamiento-del-texto)
+  - [Entrenando el sistema](#entrenando-el-sistema)
+  - [Cálculo de probabilidades](#c%C3%A1lculo-de-probabilidades)
+  - [Clasificando nuevos tickets](#clasificando-nuevos-tickets)
+    - [Probando el clasificador](#probando-el-clasificador)
+  - [Entendiendo las decisiones (interpretabilidad)](#entendiendo-las-decisiones-interpretabilidad)
+  - [Análisis y extensiones](#an%C3%A1lisis-y-extensiones)
+  - [Extensiones posibles](#extensiones-posibles)
+  - [¿Qué aprendemos de este ejemplo?](#qu%C3%A9-aprendemos-de-este-ejemplo)
+  - [Código completo](#c%C3%B3digo-completo)
+  - [Conclusión](#conclusi%C3%B3n)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

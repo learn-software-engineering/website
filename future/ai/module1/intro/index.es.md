@@ -2,19 +2,23 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
 
-  - [¿Por qué necesitas entender los fundamentos?](#por-qu%C3%A9-necesitas-entender-los-fundamentos)
-  - [Objetivos de este primer módulo](#objetivos-de-este-primer-m%C3%B3dulo)
-- [Teoría fundamental: desenmascarando la IA](#teor%C3%ADa-fundamental-desenmascarando-la-ia)
-  - [IA, Machine Learning y Deep Learning: aclarando la confusión](#ia-machine-learning-y-deep-learning-aclarando-la-confusi%C3%B3n)
-    - [Inteligencia Artificial (IA): el concepto más amplio](#inteligencia-artificial-ia-el-concepto-m%C3%A1s-amplio)
-    - [Machine Learning: IA que aprende de los datos](#machine-learning-ia-que-aprende-de-los-datos)
-    - [Deep Learning: Machine Learning con redes neuronales profundas](#deep-learning-machine-learning-con-redes-neuronales-profundas)
-  - [Una historia muy breve (pero necesaria) de la IA](#una-historia-muy-breve-pero-necesaria-de-la-ia)
-  - [Tipos de aprendizaje automático](#tipos-de-aprendizaje-autom%C3%A1tico)
-    - [Aprendizaje Supervisado](#aprendizaje-supervisado)
-    - [Aprendizaje No Supervisado](#aprendizaje-no-supervisado)
-    - [Aprendizaje por Refuerzo](#aprendizaje-por-refuerzo)
-- [Implementación práctica: tus primeros sistemas inteligentes](#implementaci%C3%B3n-pr%C3%A1ctica-tus-primeros-sistemas-inteligentes)
+- [series: ["Fundamentos de IA para Programadores"]](#series-fundamentos-de-ia-para-programadores)
+- [series_order: 1](#series_order-1)
+  - [date: 2025-08-22
+tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning"]](#date-2025-08-22%0Atags-inteligencia-artificial-aprendizaje-autom%C3%A1tico-machine-learning)
+    - [¿Por qué necesitas entender los fundamentos?](#por-qu%C3%A9-necesitas-entender-los-fundamentos)
+    - [Objetivos de este primer módulo](#objetivos-de-este-primer-m%C3%B3dulo)
+  - [Teoría fundamental: desenmascarando la IA](#teor%C3%ADa-fundamental-desenmascarando-la-ia)
+    - [IA, Machine Learning y Deep Learning: aclarando la confusión](#ia-machine-learning-y-deep-learning-aclarando-la-confusi%C3%B3n)
+      - [Inteligencia Artificial (IA): el concepto más amplio](#inteligencia-artificial-ia-el-concepto-m%C3%A1s-amplio)
+      - [Machine Learning: IA que aprende de los datos](#machine-learning-ia-que-aprende-de-los-datos)
+      - [Deep Learning: Machine Learning con redes neuronales profundas](#deep-learning-machine-learning-con-redes-neuronales-profundas)
+    - [Una historia muy breve (pero necesaria) de la IA](#una-historia-muy-breve-pero-necesaria-de-la-ia)
+    - [Tipos de aprendizaje automático](#tipos-de-aprendizaje-autom%C3%A1tico)
+      - [Aprendizaje Supervisado](#aprendizaje-supervisado)
+      - [Aprendizaje No Supervisado](#aprendizaje-no-supervisado)
+      - [Aprendizaje por Refuerzo](#aprendizaje-por-refuerzo)
+  - [Implementación práctica: tus primeros sistemas inteligentes](#implementaci%C3%B3n-pr%C3%A1ctica-tus-primeros-sistemas-inteligentes)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

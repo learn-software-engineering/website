@@ -2,11 +2,15 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
 
-- [Objetivo del proyecto](#objetivo-del-proyecto)
-  - [Datos disponibles](#datos-disponibles)
-  - [Implementación Completa](#implementaci%C3%B3n-completa)
-- [Próximos pasos: optimizaciones y cálculo](#pr%C3%B3ximos-pasos-optimizaciones-y-c%C3%A1lculo)
-- [Reflexión final](#reflexi%C3%B3n-final)
+- [series: ["Matemática para Machine Learning"]](#series-matem%C3%A1tica-para-machine-learning)
+- [series_order: 2](#series_order-2)
+  - [date: 2025-09-14
+tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning", "Matemática", "Álgebra Lineal", "Vectores", "Matrices", "Recomendaciones"]](#date-2025-09-14%0Atags-inteligencia-artificial-aprendizaje-autom%C3%A1tico-machine-learning-matem%C3%A1tica-%C3%A1lgebra-lineal-vectores-matrices-recomendaciones)
+  - [Objetivo del proyecto](#objetivo-del-proyecto)
+    - [Datos disponibles](#datos-disponibles)
+    - [Implementación Completa](#implementaci%C3%B3n-completa)
+  - [Próximos pasos: optimizaciones y cálculo](#pr%C3%B3ximos-pasos-optimizaciones-y-c%C3%A1lculo)
+  - [Reflexión final](#reflexi%C3%B3n-final)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

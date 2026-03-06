@@ -2,17 +2,21 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
 
-- [Problema a resolver](#problema-a-resolver)
-  - [Datos disponibles](#datos-disponibles)
-  - [Requerimientos Funcionales](#requerimientos-funcionales)
-  - [Métricas de evaluación](#m%C3%A9tricas-de-evaluaci%C3%B3n)
-- [Solución](#soluci%C3%B3n)
-  - [Ejecución](#ejecuci%C3%B3n)
-    - [Demostración completa](#demostraci%C3%B3n-completa)
-    - [Comparación de algoritmos](#comparaci%C3%B3n-de-algoritmos)
-    - [Usuario específico](#usuario-espec%C3%ADfico)
-  - [¿Qué nos aporta esta solución?](#qu%C3%A9-nos-aporta-esta-soluci%C3%B3n)
-  - [Ejercicios para profundizar](#ejercicios-para-profundizar)
+- [series: ["Fundamentos de IA para Programadores"]](#series-fundamentos-de-ia-para-programadores)
+- [series_order: 4](#series_order-4)
+  - [date: 2025-09-03
+tags: ["Inteligencia Artificial", "Aprendizaje Automático", "Machine Learning", "Recomendaciones"]](#date-2025-09-03%0Atags-inteligencia-artificial-aprendizaje-autom%C3%A1tico-machine-learning-recomendaciones)
+  - [Problema a resolver](#problema-a-resolver)
+    - [Datos disponibles](#datos-disponibles)
+    - [Requerimientos Funcionales](#requerimientos-funcionales)
+    - [Métricas de evaluación](#m%C3%A9tricas-de-evaluaci%C3%B3n)
+  - [Solución](#soluci%C3%B3n)
+    - [Ejecución](#ejecuci%C3%B3n)
+      - [Demostración completa](#demostraci%C3%B3n-completa)
+      - [Comparación de algoritmos](#comparaci%C3%B3n-de-algoritmos)
+      - [Usuario específico](#usuario-espec%C3%ADfico)
+    - [¿Qué nos aporta esta solución?](#qu%C3%A9-nos-aporta-esta-soluci%C3%B3n)
+    - [Ejercicios para profundizar](#ejercicios-para-profundizar)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

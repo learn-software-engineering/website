@@ -1,6 +1,6 @@
 ---
-draft: true
 title: Inteligencia Artificial
+cardImage: "featured.es.jpg"
 cascade:
   type: docs
 sidebar:

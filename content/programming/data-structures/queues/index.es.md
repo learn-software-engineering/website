@@ -1,8 +1,7 @@
 ---
-weight: 6
-# series: ["Programación: Aprendiendo Estructuras de Datos"]
-# series_order: 6
+weight: 5
 title: "Colas"
+cardImage: "featured.es.jpg"
 authors:
   - jnonino
 description: >
@@ -21,8 +20,6 @@ Esto hace que el primer elemento en ser añadido a la cola también sea el prime
     caption="Diagrama de una cola"
     >}}
 
----
-
 ## Operaciones principales
 
 Las operaciones básicas de una cola son:
@@ -31,8 +28,6 @@ Las operaciones básicas de una cola son:
 - **Dequeue:** Saca el elemento del frente de la cola.
 - **Peek:** Obtiene el elemento al frente sin sacarlo.
 - **isEmpty:** Consulta si la cola está vacía.
-
----
 
 ## Implementación
 
@@ -44,8 +39,6 @@ Se agrega al final y se saca del frente manteniendo referencias a ambos extremos
     type="python"
     >}} -->
 
----
-
 ## Ejemplos de uso
 
 Algunos usos comunes de colas:
@@ -56,25 +49,18 @@ Algunos usos comunes de colas:
 - Canales de mensajes como los de RabbitMQ o Kafka.
 - Buffers circulares en audio para streaming.
 
----
-
 ## Conclusión
 
 Las colas son estructuras versátiles gracias a su principio FIFO. Tener un buen manejo de colas, implementación y aplicaciones reforzará tus habilidades como programador.
 
 ---
 
-{{< callout type="info" >}}
-¡Gracias por haber llegado hasta acá!
+{{< callout icon="sparkles" >}}
+¡Gracias por llegar hasta acá! Espero que este recorrido por el universo de la programación haya sido tan apasionante para vos como lo fue para mí escribirlo.
 
-Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
+Nos encantaría escuchar lo que pensás, así que no te quedes callado/a – dejá tus comentarios, sugerencias y todas esas ideas copadas que seguro se te ocurrieron.
 
-Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
+Y para ir más allá de estas líneas, date una vuelta por los ejemplos prácticos que preparamos para vos. Vas a encontrar todo el código y los proyectos en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
-[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
-[{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
-[{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
-[{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
-[{{< icon "x-twitter" >}}](https://x.com/software45687)
+¡Gracias por ser parte de esta comunidad de aprendizaje. Seguí programando y explorando nuevos territorios en este fascinante mundo del software!
 {{< /callout >}}

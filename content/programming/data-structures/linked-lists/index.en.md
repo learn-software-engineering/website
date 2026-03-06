@@ -1,8 +1,7 @@
 ---
-weight: 4
-# series: ["Programming: Learning Data Structures"]
-# series_order: 4
+weight: 3
 title: "Linked Lists"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -19,8 +18,6 @@ A linked list is composed of `nodes` where each node has two parts:
 Nodes are organized sequentially, each pointing to the next. The last node points to null to indicate the end.
 
 This dynamic structure allows efficient insertion and deletion of nodes.
-
----
 
 ## Types of linked lists
 
@@ -50,8 +47,6 @@ There are several types:
     caption="Diagram of a circular linked list"
     >}}
 
----
-
 ## Common operations
 
 - **Insert:** Add nodes to the beginning, end or middle of the list.
@@ -61,8 +56,6 @@ There are several types:
 - **Search:** Find nodes by value by traversing the list.
 
 - **Traverse:** Iterate through nodes by following the references.
-
----
 
 ## Implementation
 
@@ -110,8 +103,6 @@ With this `LinkedList` class we can create a list, add nodes, print it, search e
 
 We could add other methods like insert at end, delete by value, get by index, etc. But this gives an idea of how to encapsulate the linked list functionality in a class. As practice, feel free to try adding these methods on your own. Don't hesitate to leave your comments and contact me if you need help!
 
----
-
 ## Advantages and disadvantages
 
 **Advantages:**
@@ -125,16 +116,12 @@ We could add other methods like insert at end, delete by value, get by index, et
 - More memory usage from having to store references.
 - Accessing elements by index is slower since it is sequential.
 
----
-
 ## Usage examples
 
 - Implementing structures like stacks and queues.
 - In doubly linked lists, traverse the list in both directions.
 - Blockchains like Bitcoin's.
 - Playing elements in order like music playlists.
-
----
 
 ## Conclusion
 

@@ -1,8 +1,7 @@
 ---
-weight: 4
-# series: ["Programación: Aprendiendo Estructuras de Datos"]
-# series_order: 4
+weight: 3
 title: "Listas Enlazadas"
+cardImage: "featured.es.jpg"
 authors:
   - jnonino
 description: >
@@ -19,8 +18,6 @@ Una lista enlazada se compone de `nodos` donde cada nodo tiene dos partes:
 Los nodos se organizan de forma secuencial, cada uno apuntando al siguiente. El último nodo apunta a nulo para indicar el final.
 
 Esta estructura dinámica permite inserción y eliminación eficiente de nodos.
-
----
 
 ## Tipos de listas enlazadas
 
@@ -50,8 +47,6 @@ Existen varios tipos:
     caption="Diagrama de una lista circular"
     >}}
 
----
-
 ## Operaciones comunes
 
 - **Insertar:** Agregar nodos al inicio, final o medio de la lista.
@@ -61,8 +56,6 @@ Existen varios tipos:
 - **Buscar:** Encontrar nodos por valor recorriendo la lista.
 
 - **Recorrer:** Iterar los nodos accediendo por las referencias.
-
----
 
 ## Implementación
 
@@ -110,8 +103,6 @@ Con esta clase `LinkedList` podemos crear una lista, agregar nodos, imprimirla, 
 
 Se podrían agregar otros métodos como insertar al final, eliminar por valor, obtener por índice, etc. Pero esto da una idea de cómo encapsular la funcionalidad de la lista enlazada en una clase. Como práctica, podés intentar agregar estos métodos por tu cuenta, ¡no dudes en dejar tus comentarios y contactarte si necesitas ayuda!
 
----
-
 ## Ventajas y desventajas
 
 **Ventajas:**
@@ -125,8 +116,6 @@ Se podrían agregar otros métodos como insertar al final, eliminar por valor, o
 - Mayor uso de memoria por tener que almacenar referencias.
 - El acceso a elementos por índice es más costoso al ser secuencial.
 
----
-
 ## Ejemplos de uso
 
 - Implementar estructuras como pilas (*stacks*) y colas (*queues*).
@@ -134,25 +123,18 @@ Se podrían agregar otros métodos como insertar al final, eliminar por valor, o
 - Blockchains como la de Bitcoin.
 - Reproducir elementos en orden como playlists de música.
 
----
-
 ## Conclusión
 
 Las listas enlazadas son una estructura de datos versátil para almacenar secuencias dinámicas de elementos. Tener un buen manejo de estas listas, sus operaciones y usos es indispensable para cualquier programador.
 
 ---
 
-{{< callout type="info" >}}
-¡Gracias por haber llegado hasta acá!
+{{< callout icon="sparkles" >}}
+¡Gracias por llegar hasta acá! Espero que este recorrido por el universo de la programación haya sido tan apasionante para vos como lo fue para mí escribirlo.
 
-Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
+Nos encantaría escuchar lo que pensás, así que no te quedes callado/a – dejá tus comentarios, sugerencias y todas esas ideas copadas que seguro se te ocurrieron.
 
-Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
+Y para ir más allá de estas líneas, date una vuelta por los ejemplos prácticos que preparamos para vos. Vas a encontrar todo el código y los proyectos en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
-[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
-[{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
-[{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
-[{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
-[{{< icon "x-twitter" >}}](https://x.com/software45687)
+¡Gracias por ser parte de esta comunidad de aprendizaje. Seguí programando y explorando nuevos territorios en este fascinante mundo del software!
 {{< /callout >}}

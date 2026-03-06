@@ -1,8 +1,7 @@
 ---
-weight: 3
-# series: ["Programming: Learning Data Structures"]
-# series_order: 3
+weight: 2
 title: "Maps (Dictionaries)"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -18,8 +17,6 @@ A dictionary, or map, consists of a collection of key-value pairs. The key is us
     alt="Diagram of a map"
     caption="Diagram of a map"
     >}}
-
----
 
 ## Main operations
 
@@ -41,8 +38,6 @@ A dictionary, or map, consists of a collection of key-value pairs. The key is us
       print(key, dictionary[key]) # key, value
     ```
 
----
-
 ## Creating a dictionary or map
 
 The syntax for creating maps or dictionaries in Python is:
@@ -55,8 +50,6 @@ person = {
   'age': 25
 }
 ```
-
----
 
 ## Usage examples
 
@@ -96,8 +89,6 @@ print(frequencies)
 ### Storing and accessing data
 
 As a high performance alternative to lists and arrays.
-
----
 
 ## Conclusion
 

@@ -1,8 +1,7 @@
 ---
-weight: 5
-# series: ["Programming: Learning Data Structures"]
-# series_order: 5
+weight: 4
 title: "Stacks"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -19,8 +18,6 @@ The **LIFO** nature of stacks is due to the fact that only the top element can b
     caption="Diagram of a stack"
     >}}
 
----
-
 ## Main operations
 
 The primary operations supported by a stack structure are:
@@ -32,8 +29,6 @@ The primary operations supported by a stack structure are:
 
 Most languages like Python and Java provide stack implementations in their standard libraries.
 
----
-
 ## Implementation
 
 A stack can be implemented using a linked list so that each node points to the previous node.
@@ -42,8 +37,6 @@ A stack can be implemented using a linked list so that each node points to the p
     url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/data_structures/stacks.py"
     type="python"
     >}} -->
-
----
 
 ## Usage examples
 
@@ -56,8 +49,6 @@ Stacks have many uses in programming:
 - **Math expression execution**: stacks can verify parentheses, brackets, braces, etc.
 
 - **Algorithms and data structures**: like in the quicksort algorithm and in data path implementations.
-
----
 
 ## Conclusion
 

@@ -1,8 +1,7 @@
 ---
-weight: 6
-# series: ["Programming: Learning Data Structures"]
-# series_order: 6
+weight: 5
 title: "Queues"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -21,8 +20,6 @@ This causes the first element to be added to the queue to also be the first to b
     caption="Diagram of a queue"
     >}}
 
----
-
 ## Main operations
 
 The basic queue operations are:
@@ -31,8 +28,6 @@ The basic queue operations are:
 - **Dequeue:** Removes the element from the front of the queue.
 - **Peek:** Gets the front element without removing it.
 - **isEmpty:** Checks if the queue is empty.
-
----
 
 ## Implementation
 
@@ -44,8 +39,6 @@ Elements are added at the end and removed from the front by keeping references t
     type="python"
     >}} -->
 
----
-
 ## Usage examples
 
 Some common uses of queues:
@@ -55,8 +48,6 @@ Some common uses of queues:
 - Simulations where arrival order must be respected like in banks.
 - Message queues like RabbitMQ or Kafka.
 - Circular buffers in audio for streaming.
-
----
 
 ## Conclusion
 

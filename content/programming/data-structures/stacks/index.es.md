@@ -1,8 +1,7 @@
 ---
-weight: 5
-# series: ["Programación: Aprendiendo Estructuras de Datos"]
-# series_order: 5
+weight: 4
 title: "Pilas"
+cardImage: "featured.es.jpg"
 authors:
   - jnonino
 description: >
@@ -19,8 +18,6 @@ La naturaleza **LIFO** de las pilas se debe a que sólo se puede acceder y manip
     caption="Diagrama de una pila"
     >}}
 
----
-
 ## Operaciones principales
 
 Las operaciones primarias que soporta una estructura de pila son:
@@ -32,8 +29,6 @@ Las operaciones primarias que soporta una estructura de pila son:
 
 La mayoría de los lenguajes como Python y Java proveen implementaciones de pilas en sus librerías estándar.
 
----
-
 ## Implementación
 
 Una pila puede implementarse utilizando una lista enlazada de manera que cada node apunte al nodo anterior.
@@ -42,8 +37,6 @@ Una pila puede implementarse utilizando una lista enlazada de manera que cada no
     url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/data_structures/stacks.py"
     type="python"
     >}} -->
-
----
 
 ## Ejemplos de uso
 
@@ -57,25 +50,18 @@ Las pilas tienen muchos usos en programación:
 
 - **Algoritmos y estructuras de datos**: como en el algoritmo quicksort y en la implementación de buses de datos (datapaths).
 
----
-
 ## Conclusión
 
 Las pilas son estructuras de datos versátiles gracias a su principio de funcionamiento LIFO. Tener un buen dominio de pilas, sus usos y aplicaciones es esencial en la ciencia de la computación.
 
 ---
 
-{{< callout type="info" >}}
-¡Gracias por haber llegado hasta acá!
+{{< callout icon="sparkles" >}}
+¡Gracias por llegar hasta acá! Espero que este recorrido por el universo de la programación haya sido tan apasionante para vos como lo fue para mí escribirlo.
 
-Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
+Nos encantaría escuchar lo que pensás, así que no te quedes callado/a – dejá tus comentarios, sugerencias y todas esas ideas copadas que seguro se te ocurrieron.
 
-Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
+Y para ir más allá de estas líneas, date una vuelta por los ejemplos prácticos que preparamos para vos. Vas a encontrar todo el código y los proyectos en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
-[{{< icon "mail" >}}](mailto:learn.software.eng@gmail.com)
-[{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
-[{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
-[{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
-[{{< icon "x-twitter" >}}](https://x.com/software45687)
+¡Gracias por ser parte de esta comunidad de aprendizaje. Seguí programando y explorando nuevos territorios en este fascinante mundo del software!
 {{< /callout >}}

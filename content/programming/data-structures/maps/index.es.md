@@ -1,8 +1,7 @@
 ---
-weight: 3
-# series: ["Programación: Aprendiendo Estructuras de Datos"]
-# series_order: 3
+weight: 2
 title: "Mapas (Diccionarios)"
+cardImage: "featured.es.jpg"
 authors:
   - jnonino
 description: >
@@ -18,8 +17,6 @@ Un diccionario, o mapa, consiste en una colección de pares clave-valor. La clav
     alt="Diagrama de un diccionario"
     caption="Diagrama de un diccionario"
     >}}
-
----
 
 ## Operaciones principales
 
@@ -41,8 +38,6 @@ Un diccionario, o mapa, consiste en una colección de pares clave-valor. La clav
       print(clave, diccionario[clave]) # clave, valor
     ```
 
----
-
 ## Creación de un diccionario o mapa
 
 La sintaxis para crear mapas o diccionarios en Python es la siguiente:
@@ -55,8 +50,6 @@ persona = {
   'edad': 25
 }
 ```
-
----
 
 ## Ejemplos de uso
 
@@ -96,8 +89,6 @@ print(frecuencias)
 ### Almacenar y acceder a datos
 
 Como alternativa de alta performance a lists y arrays.
-
----
 
 ## Conclusión
 

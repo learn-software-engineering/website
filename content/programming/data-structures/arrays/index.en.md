@@ -1,8 +1,7 @@
 ---
-weight: 2
-# series: ["Programming: Learning Data Structures"]
-# series_order: 2
+weight: 1
 title: "Arrays"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -13,7 +12,7 @@ tags: ["Programming", "Data Structures", "Arrays"]
 
 An array is a data structure that represents a set of elements, which are accessed through contiguous numeric indices ranging from 0 to the size of the array minus 1. Arrays provide fast, direct access to elements based on their position.
 
-In languages like Python and Ruby, arrays are known as 'lists'. In Javascript they are known as 'arrays'.
+In languages like Python and Ruby, arrays are known as *lists*. In Javascript they are known as *arrays*.
 
 Arrays are typically homogeneous, storing elements of the same type like integers, strings, etc. Some languages allow heterogeneous arrays with values of different types.
 
@@ -28,11 +27,12 @@ Arrays are typically homogeneous, storing elements of the same type like integer
 The way to create arrays varies according to the programming language:
 
 ```python
+EMPTY_ARRAY = []
 MY_ARRAY = ["A", "B", "C"] # array literal
 my_array = list(range(5)) # array from range
 ```
 
-When creating a literal array its elements are initialized directly. When constructing an empty array its size is specified but its elements are initialized with a default value (0 for numbers, null for objects, etc).
+When creating a literal array its elements are initialized directly. When constructing an empty array, some languages allows to specify its size but its elements are initialized with a default value (0 for numbers, null for objects, etc).
 
 ## Accessing and modifying elements
 
@@ -46,9 +46,9 @@ my_array[2] = 'z'
 print(my_array[2]) # 'z'
 ```
 
-Indices start at 0, so in an array of size N, valid indices are between 0 and N-1.
+Indices start at 0, so in an array of size \(n\), valid indices are between 0 and \(n - 1\).
 
-Accessing an invalid index causes an error, for example, accessing index 3 in an array of size 3. This is known as "index out of bounds".
+Accessing an invalid index causes an error, for example, accessing index 3 in an array of size 3. This is known as `index out of bounds`.
 
 ## Traversing an array
 
@@ -72,8 +72,6 @@ for letter in letters:
   print(letter)
 ```
 
----
-
 ## Searching in an array
 
 We can search for an element in an array using a loop and comparing element by element:
@@ -91,7 +89,7 @@ print(search_in_array(letters, 'b')) # 1
 print(search_in_array(letters, 'z')) # False
 ```
 
-It returns the index if found or `False` if not found.
+It returns the index if found or `False` if not.
 
 ## Multidimensional array
 
@@ -106,12 +104,10 @@ matrix = [
 ]
 
 print(matrix[0][2]) # 3
-print(matrix[1][0]) # 4
+print(matrix[1][1]) # 5
 ```
 
 They can have more dimensions, for example a 3D array to represent pixels in an image.
-
----
 
 ## Conclusion
 

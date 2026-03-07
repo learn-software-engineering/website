@@ -9,7 +9,7 @@ date: 2026-03-06
 tags: ["AI", "Maths", "Algebra", "Vectors"]
 ---
 
-En 2017, investigadores de Google Brain publicaron [**Attention Is All You Need**](), el artículo que introdujo la arquitectura Transformer sobre la que hoy se construyen GPT-4, Gemini y prácticamente todos los modelos de lenguaje de vanguardia. En el corazón de esa arquitectura (y de toda red neuronal, sistema de recomendación y modelo de visión por computadora—) vive un objeto engañosamente simple: el **vector**.
+En 2017, investigadores de Google Brain publicaron [**Attention Is All You Need**](https://arxiv.org/abs/1706.03762), el artículo que introdujo la arquitectura Transformer sobre la que hoy se construyen GPT-4, Gemini y prácticamente todos los modelos de lenguaje de vanguardia. En el corazón de esa arquitectura (y de toda red neuronal, sistema de recomendación y modelo de visión por computadora—) vive un objeto engañosamente simple: el **vector**.
 
 Cuando un modelo de lenguaje lee la palabra *"banco"*, no ve una cadena de texto. Ve un vector en un espacio de 4096 dimensiones donde *"banco (financiero)"* y *"banco (asiento)"* ocupan regiones mensurablemente distintas. Cuando un motor de búsqueda decide que tu consulta coincide con un documento, está calculando el ángulo entre dos vectores. Cuando una red neuronal aprende, está desplazando vectores por el espacio en respuesta a un gradiente, que es, él mismo, otro vector.
 
@@ -91,3 +91,170 @@ Cuando depures una red neuronal cuya pérdida explota (*exploding gradients*), f
 {{< /callout >}}
 
 ## Derivación matemática
+
+### Definiciones formales
+
+#### Escalar
+
+Un elemento de un campo \(\mathbb{F}\), para nuestros propósitos, un número real \(\mathbb{R}\) o complejo \(\mathbb{C}\). Se denota con itálicas estándar y generalmente letras griegas: \(\alpha\), \(\beta\), \(\lambda\).
+
+#### Vector
+
+Una tupla ordenada de escalares de \(\mathbb{F}\). Un vector real de \(n\) dimensiones es un elemento del espacio \(\mathbb{R}^n\):
+
+$$\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} \in \mathbb{R}^n$$
+
+{{< callout type="info" >}}
+En términos simples: \(\mathbf{v}\) es una columna de \(n\) números reales. El subíndice indica en qué *"ranura"* estás.
+{{< /callout >}}
+
+#### Espacio vectorial
+
+Un conjunto \(V\) de vectores sobre un campo \(\mathbb{F}\), equipado con dos operaciones para las cuales será ***cerrado***.
+
+**Suma de vectores**: \(\mathbf{u} + \mathbf{v} \in V\) para todo \(\mathbf{u}, \mathbf{v} \in V\). Operación interna con las propiedades:
+- *Propiedad Asociativa*: \(\mathbf{u} + (\mathbf{v} + \mathbf{w}) = (\mathbf{u} + \mathbf{v}) + \mathbf{w}\).
+- *Propiedad Conmutativa*: \(\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}\).
+- *Existencia del elemento neutro*: existe un elemento \(\mathbf{0} \in V\), denominado vector nulo, tal que \(\mathbf{v} + \mathbf{0} = \mathbf{v}\) para todo \(\mathbf{v} \in V\).
+- *Existencia del inverso aditivo*: para todo \(\mathbf{v} \in V\), existe un elemento \(\mathbf{-v} \in V\) tal que \(\mathbf{v} + (\mathbf{-v}) = \mathbf{0}\).
+
+**Multiplicación por escalar**: \(\alpha \mathbf{v} \in V\) para todo \(\alpha \in \mathbb{F}, \mathbf{v} \in V\). Operación externa con las propiedades:
+- *Propiedad Asociativa*: \(\alpha (\beta \mathbf{v}) = (\alpha \beta) \mathbf{v}\).
+- *Existencia del elemento neutro*: existe un escalar \(\alpha\), tal que \(\alpha \mathbf{v} = \mathbf{v} \alpha = \mathbf{v}\) para todo \(\mathbf{v} \in V\).
+- *Propiedad distributiva respecto de la suma vectorial*: Para cualquier escalar \(\alpha\), se cumple que \(\alpha (\mathbf{u} + \mathbf{v}) = \alpha \mathbf{u} + \alpha \mathbf{v}\) para todo \(\mathbf{u}, \mathbf{v} \in V\).
+- *Propiedad distributiva respecto de la suma de escalares*: Para cualquier par de escalares \(\alpha\) y \(\beta\), se cumple que \((\alpha + \beta) \mathbf{v} = \alpha \mathbf{v} + \beta \mathbf{v}\) para todo \(\mathbf{v} \in V\).
+
+{{< callout >}}
+¿Qué significa que el espacio vectorial es cerrado para esas dos operaciones?
+
+Significa que producen resultados que pertenecen al mismo espacio vectorial.
+- Si \(\mathbf{u} \in V\) y \(\mathbf{v} \in V\) entonces \((\mathbf{u} + \mathbf{v}) \in V\).
+- Para cualquier escalar \(\alpha \in \mathbb{R}\) y vector \(\mathbf{v} \in V\), entonces \(\alpha \mathbf{v} \in V\).
+{{< /callout >}}
+
+### Suma de vectores
+
+Dados \(\mathbf{u} = [u_1, u_2, \ldots, u_n]^T\) y \(\mathbf{v} = [v_1, v_2, \ldots, v_n]^T\):
+
+$$
+\mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n \end{bmatrix}
+$$
+
+{{< callout type="info" >}}
+En términos simples: suma componente a componente. Geométricamente, coloca el inicio de \(\mathbf{v}\) en el extremo de \(\mathbf{u}\), el resultado es la flecha del punto de partida al punto de llegada según la [regla del paralelogramo](https://es.wikipedia.org/wiki/Regla_del_paralelogramo).
+{{< /callout >}}
+
+### Normas de vectores
+
+La **norma** de un vector mide su longitud. La más común es la **norma euclidiana** (norma \(L^2\)):
+
+$$
+\|\mathbf{v}\|_2 = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2} = \sqrt{\sum_{i=1}^{n} v_i^2}
+$$
+
+{{< callout type="info" >}}
+En términos simples: eleva al cuadrado cada componente, sumalos y saca la raíz. Es exactamente el teorema de Pitágoras generalizado a \(n\) dimensiones.
+{{< /callout >}}
+
+La familia general es la **norma \(L^p\)**:
+
+$$\|\mathbf{v}\|_p = \left( \sum_{i=1}^{n} |v_i|^p \right)^{1/p}$$
+
+Dos casos especiales aparecen constantemente en Machine Learning (ML):
+
+- **Norma \(L^1\) (Manhattan)**:
+
+    Usada en regularización LASSO porque induce dispersión (*sparsity*), penaliza cualquier componente no nulo por igual.
+    $$
+    \|\mathbf{v}\|_1 = \sum_{i=1}^{n} |v_i|
+    $$
+
+- **Norma \(L^\infty\) (norma máximo)**:
+
+    Útil cuando te importa la activación más grande de un vector, ignorando las demás.
+    $$
+    \|\mathbf{v}\|_\infty = \max_i |v_i|
+    $$
+
+Para investigar más sobre normas de vectores, entrá a [este](https://en.wikipedia.org/wiki/Norm_(mathematics)) artículo de Wikipedia.
+
+### El producto punto
+
+El **producto punto** (o producto interno) de dos vectores es:
+
+$$
+\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i v_i = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n
+$$
+
+{{< callout type="info" >}}
+En términos sencillos: multiplica los componentes correspondientes de cada vector y suma los resultados. El resultado es un escalar, un número que codifica cuánto ***"se alinean"*** los dos vectores.
+{{< /callout >}}
+
+{{< callout >}}
+El producto punto de un vector consigo mismo es igual a su magnitud al cuadrado.
+$$
+\mathbf{v} \cdot \mathbf{v} = \|\mathbf{v}\|^2
+$$
+{{< /callout >}}
+
+### El ángulo entre vectores
+
+Aquí es donde la geometría y el álgebra se fusionan elegantemente. De la geometría euclidiana, la [**Ley de Cosenos**](https://es.wikipedia.org/wiki/Teorema_del_coseno) establece que para un triángulo con lados \(a\), \(b\), \(c\) y ángulo \(\theta\) opuesto al lado \(c\):
+
+$$
+c^2 = a^2 + b^2 - 2 a b \cos(\theta)
+$$
+
+Apliquemos esto a vectores. Sean \(\mathbf{u}\) y \(\mathbf{v}\) dos vectores. El tercer lado del triángulo que forman es \(\mathbf{u} - \mathbf{v}\).
+
+Sustituyendo \(a = \|\mathbf{u}\|\), \(b = \|\mathbf{v}\|\), \(c = \|\mathbf{u} - \mathbf{v}\|\):
+
+$$
+\|\mathbf{u} - \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)
+$$
+
+Expandiendo el lado izquierdo mediante el producto punto:
+
+$$
+\|\mathbf{u} - \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)
+$$
+
+$$
+(\mathbf{u} - \mathbf{v}) \cdot (\mathbf{u} - \mathbf{v}) = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)
+$$
+
+$$
+\|\mathbf{u}\|^2 - 2 (\mathbf{u} \cdot \mathbf{v}) + \|\mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)
+$$
+
+Cancelando \(\|\mathbf{u}\|^2\) y \(\|\mathbf{v}\|^2\) de ambos lados:
+$$
+-2 (\mathbf{u} \cdot \mathbf{v}) = - 2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)
+$$
+
+Dividiendo ambos lados entre \(-2 \|\mathbf{u}\| \|\mathbf{v}\|\) (asumiendo que ninguno es el vector cero):
+
+$$
+\frac{-2 (\mathbf{u} \cdot \mathbf{v})}{-2 \|\mathbf{u}\| \|\mathbf{v}\|} = \frac{-2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)}{-2 \|\mathbf{u}\| \|\mathbf{v}\|}
+$$
+
+$$
+\boxed{\frac{(\mathbf{u} \cdot \mathbf{v})}{\|\mathbf{u}\| \|\mathbf{v}\|} = \cos(\theta)}
+$$
+
+{{< callout type="info" >}}
+En términos sencillos: el coseno del ángulo entre dos vectores es igual a su producto punto dividido entre el producto de sus longitudes. Esta fórmula es ***fundamental***, nos da la **similitud coseno**, una de las métricas de distancia más utilizadas en Machine Learning.
+{{< /callout >}}
+
+Interpretaciones clave:
+- \(\cos\theta = 1\) (\(\theta = 0°\)): los vectores apuntan en la **misma dirección** (temas idénticos en un embedding de documentos).
+- \(\cos\theta = 0\) (\(\theta = 90°\)) los vectores son **ortogonales**, completamente no relacionados
+- \(\cos\theta = -1\) (\(\theta = 180°\)): los vectores apuntan en **direcciones opuestas** (antónimos en un espacio de embeddings bien entrenado).
+
+{{< callout >}}
+En el paper original de [Word2Vec](https://arxiv.org/abs/1301.3781) (Mikolov et al., 2013), la famosa analogía:
+$$
+rey − hombre + mujer ≈ reina
+$$
+funciona precisamente gracias a esta geometría. Las relaciones semánticas se codifican como *direcciones* en el espacio vectorial, y encontrar `reina` significa hallar el vector con mayor similitud coseno al vector de consulta. Todo modelo de embedding moderno (BERT, GPT, sentence-transformers) hereda esta filosofía geométrica. La siguiente vez que leas sobre ***"espacios de representación"*** en un paper de IA, recuerda: están hablando literalmente de la geometría que acabas de derivar.
+{{< /callout >}}

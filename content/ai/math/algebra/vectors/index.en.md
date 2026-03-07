@@ -91,3 +91,171 @@ When debugging a neural network and the loss explodes, it often means vectors (a
 {{< /callout >}}
 
 ## Mathematical derivation
+
+### Formal definitions
+
+#### Scalar
+
+An element of a field \(\mathbb{F}\), for our purposes, a real number \(\mathbb{R}\) or complex number \(\mathbb{C}\). Denoted with standard italics and usually greek characters: \(\alpha\), \(\beta\), \(\lambda\).
+
+#### Vector
+
+An ordered tuple of scalars from \(\mathbb{F}\). An \(n\)-dimensional real vector is an element of the space \(\mathbb{R}^n\):
+
+$$\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} \in \mathbb{R}^n$$
+
+{{< callout type="info" >}}
+In plain English: \(\mathbf{v}\) is a column of \(n\) real numbers. The subscript tells you which *"slot"* you're in.
+{{< /callout >}}
+
+#### Espacio vectorial
+
+A set \(V\) of vectors over a field \(\mathbb{F}\), equipped with two operations, for which it is ***closed***.
+
+**Vector addition**: \(\mathbf{u} + \mathbf{v} \in V\) for all \(\mathbf{u}, \mathbf{v} \in V\). Internal operation with the following properties:
+- *Associativity*: \(\mathbf{u} + (\mathbf{v} + \mathbf{w}) = (\mathbf{u} + \mathbf{v}) + \mathbf{w}\).
+- *Commutativity*: \(\mathbf{u} + \mathbf{v} = \mathbf{v} + \mathbf{u}\).
+- *Identity element*: there exists a vector \(\mathbf{0} \in V\), called zero vector, such that \(\mathbf{v} + \mathbf{0} = \mathbf{v}\) for all \(\mathbf{v} \in V\).
+- *Inverse element*: for all \(\mathbf{v} \in V\), there exist an element \(\mathbf{-v} \in V\) such as \(\mathbf{v} + (\mathbf{-v}) = \mathbf{0}\).
+
+**Scalar multiplication**: \(\alpha \mathbf{v} \in V\) for all \(\alpha \in \mathbb{F}, \mathbf{v} \in V\).  External operation with the following properties:
+- *Associativity*: \(\alpha (\beta \mathbf{v}) = (\alpha \beta) \mathbf{v}\).
+- *Identity element*: there exists an scalar \(\alpha\), such as \(\alpha \mathbf{v} = \mathbf{v} \alpha = \mathbf{v}\) para todo \(\mathbf{v} \in V\).
+- *Distributivity of scalar multiplication with respect to vector addition*: For any scalar \(\alpha\), it is true that \(\alpha (\mathbf{u} + \mathbf{v}) = \alpha \mathbf{u} + \alpha \mathbf{v}\) for all \(\mathbf{u}, \mathbf{v} \in V\).
+- *Distributivity of scalar multiplication with respect to scalars addition*: For any two scalars \(\alpha\) and \(\beta\), it is true that \((\alpha + \beta) \mathbf{v} = \alpha \mathbf{v} + \beta \mathbf{v}\) for every \(\mathbf{v} \in V\).
+
+{{< callout >}}
+What does it mean that the vector space is closed for those operations?
+
+It means that they produce results that are in the same vector space.
+- If \(\mathbf{u} \in V\) and \(\mathbf{v} \in V\) then \((\mathbf{u} + \mathbf{v}) \in V\).
+- For any scalar \(\alpha \in \mathbb{R}\) and vector \(\mathbf{v} \in V\), then \(\alpha \mathbf{v} \in V\).
+{{< /callout >}}
+
+### Vector addition
+
+Given \(\mathbf{u} = [u_1, u_2, \ldots, u_n]^T\) and \(\mathbf{v} = [v_1, v_2, \ldots, v_n]^T\):
+
+$$
+\mathbf{u} + \mathbf{v} = \begin{bmatrix} u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n \end{bmatrix}
+$$
+
+{{< callout type="info" >}}
+In plain English: add element-by-element. Geometrically, place the tail of \(\mathbf{v}\) at the head of \(\mathbf{u}\), the result is the arrow from start to finish following the [parallelogram law](https://en.wikipedia.org/wiki/Parallelogram_law).
+{{< /callout >}}
+
+### Vector norms
+
+The **norm** of a vector measures its length. The most common is the **Euclidean norm** (\(L^2\) norm):
+
+$$
+\|\mathbf{v}\|_2 = \sqrt{v_1^2 + v_2^2 + \cdots + v_n^2} = \sqrt{\sum_{i=1}^{n} v_i^2}
+$$
+
+{{< callout type="info" >}}
+In plain English: square each component, sum them, take the square root. This is precisely the Pythagorean theorem generalized to \(n\) dimensions.
+{{< /callout >}}
+
+The general family is the **\(L^p\) norm**:
+
+$$
+\|\mathbf{v}\|_p = \left( \sum_{i=1}^{n} |v_i|^p \right)^{1/p}
+$$
+
+Two special cases appear constantly in Machine Learning (ML):
+
+- **\(L^1\) norm (Manhattan)**:
+
+    Used in LASSO regularization because it induces *sparsity*, it penalizes any nonzero component equally.
+    $$
+    \|\mathbf{v}\|_1 = \sum_{i=1}^{n} |v_i|
+    $$
+
+- **\(L^\infty\) norm (max norm)**:
+
+    Useful when you care about the single largest activation.
+    $$
+    \|\mathbf{v}\|_\infty = \max_i |v_i|
+    $$
+
+To dig more about Vector norms, check [this](https://en.wikipedia.org/wiki/Norm_(mathematics)) Wikipedia article.
+
+### The dot product
+
+The **dot product** (inner product) of two vectors is:
+
+$$
+\mathbf{u} \cdot \mathbf{v} = \sum_{i=1}^{n} u_i v_i = u_1 v_1 + u_2 v_2 + \cdots + u_n v_n
+$$
+
+{{< callout type="info" >}}
+In plain English: multiply corresponding components and sum the results. The output is a scalar, a single number that encodes how much the two vectors ***"align"***.
+{{< /callout >}}
+
+{{< callout >}}
+The dot product of a vector and itself results in its magnitude squared.
+$$
+\mathbf{v} \cdot \mathbf{v} = \|\mathbf{v}\|^2
+$$
+{{< /callout >}}
+
+### The angle between vectors
+
+Here is where geometry and algebra merge beautifully. From Euclidean geometry, the [**Law of Cosines**](https://en.wikipedia.org/wiki/Law_of_cosines) states that for a triangle with sides \(a\), \(b\), \(c\) and angle \(\theta\) opposite side \(c\):
+
+$$
+c^2 = a^2 + b^2 - 2 a b \cos(\theta)
+$$
+
+Now apply this to vectors. Let \(\mathbf{u}\) and \(\mathbf{v}\) be two vectors. The third side of the triangle they form is \(\mathbf{u} - \mathbf{v}\).
+
+Substituting \(a = \|\mathbf{u}\|\), \(b = \|\mathbf{v}\|\), \(c = \|\mathbf{u} - \mathbf{v}\|\):
+
+$$
+\|\mathbf{u} - \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2 \|\mathbf{u}\| \|\mathbf{v}\|\ cos(\theta)
+$$
+
+Expanding the left side:
+
+$$
+\|\mathbf{u} - \mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)
+$$
+
+$$
+(\mathbf{u} - \mathbf{v}) \cdot (\mathbf{u} - \mathbf{v}) = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)
+$$
+
+$$
+\|\mathbf{u}\|^2 - 2 (\mathbf{u} \cdot \mathbf{v}) + \|\mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)
+$$
+
+Canceling \(\|\mathbf{u}\|^2\) and \(\|\mathbf{v}\|^2\) from both sides:
+$$
+-2 (\mathbf{u} \cdot \mathbf{v}) = -2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)
+$$
+
+Dividing both sides by \(-2 \|\mathbf{u}\| \|\mathbf{v}\|\) (assuming neither vector is zero):
+$$
+\frac{-2 (\mathbf{u} \cdot \mathbf{v})}{-2 \|\mathbf{u}\| \|\mathbf{v}\|} = \frac{-2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)}{-2 \|\mathbf{u}\| \|\mathbf{v}\|}
+$$
+
+$$
+\boxed{\frac{(\mathbf{u} \cdot \mathbf{v})}{\|\mathbf{u}\| \|\mathbf{v}\|} = \cos(\theta)}
+$$
+
+{{< callout type="info" >}}
+In plain English: the cosine of the angle between two vectors equals their dot product divided by the product of their lengths. This formula is ***foundational***, it gives us **cosine similarity**, one of the most ubiquitous distance metrics in Machine Learning.
+{{< /callout >}}
+
+Key interpretations:
+- \(\cos\theta = 1\) (\(\theta = 0°\)): vectors point in the **same direction** (identical topics in a document embedding).
+- \(\cos\theta = 0\) (\(\theta = 90°\)): vectors are **orthogonal**, completely unrelated.
+- \(\cos\theta = -1\) (\(\theta = 180°\)): vectors point in **opposite directions** (antonyms in a well-trained embedding space).
+
+{{< callout >}}
+In the original [Word2Vec](https://arxiv.org/abs/1301.3781) paper (Mikolov et al., 2013), the famous analogy:
+$$
+king − man + woman ≈ queen
+$$
+works precisely because of this geometry. Semantic relationships are encoded as *directions* in vector space, and finding `queen` means finding the vector whose cosine similarity to the query vector is maximized. Every modern embedding model (BERT, GPT, sentence-transformers) inherits this geometric philosophy. Next time you read something about word representation in vector spaces, remember they are talking about the same geometry we just derived.
+{{< /callout >}}

@@ -258,3 +258,99 @@ rey − hombre + mujer ≈ reina
 $$
 funciona precisamente gracias a esta geometría. Las relaciones semánticas se codifican como *direcciones* en el espacio vectorial, y encontrar `reina` significa hallar el vector con mayor similitud coseno al vector de consulta. Todo modelo de embedding moderno (BERT, GPT, sentence-transformers) hereda esta filosofía geométrica. La siguiente vez que leas sobre ***"espacios de representación"*** en un paper de IA, recuerda: están hablando literalmente de la geometría que acabas de derivar.
 {{< /callout >}}
+
+## Implementación en Python
+
+Implementamos todo desde cero: primero en Python puro para ver la mecánica, luego verificamos con NumPy.
+
+### Código
+
+<!-- {{< tabs >}}
+  {{< tab name="Python puro" >}}
+    {{< codeimporter
+        url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/math/algebra/vectors/vector_pure_python.es.py"
+        type="python"
+        >}}
+  {{< /tab >}}
+  {{< tab name="Numpy" >}}
+    {{< codeimporter
+        url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/math/algebra/vectors/vector_numpy.es.py"
+        type="python"
+        >}}
+  {{< /tab >}}
+{{< /tabs >}} -->
+
+### Salida
+
+{{< tabs >}}
+  {{< tab name="Python puro" >}}
+    ```bash
+    >  python vector_pure_python.es.py
+    =======================================
+    Operaciones vectoriales con Python puro
+    =======================================
+    u = [1.0, 2.0, 3.0]
+    v = [4.0, 0.0, -1.0]
+    Suma (u + v)                   -> [5.0, 2.0, 2.0]
+    Multiplicación escalar (2 * u) -> [2.0, 4.0, 6.0]
+    Norma L2 de u (||u||₂)         -> 3.7417
+    Norma L1 de u (||u||₁)         -> 6.0000
+    Producto punto (u · v)         -> 1.0000
+    Similitud coseno               -> 0.0648
+    Ángulo entre u y v             -> 86.28°
+    Vector unitario de u (û)       -> [0.2673, 0.5345, 0.8018]
+    Verificar `||û||₂ = 1`         -> 1.000000
+    ==========================
+    Demo de analogía semántica
+    ==========================
+    En NLP real, estos serían embeddings aprendidos por un modelo.
+    Aquí ilustramos el principio con vectores de características
+    creados manualmente.
+    Características: [realeza, masculinidad, edad_relativa, poder]
+    rey    = [0.9, 0.9, 0.8, 0.9]
+    reina  = [0.9, 0.1, 0.8, 0.9]
+    hombre = [0.0, 0.9, 0.5, 0.4]
+    mujer  = [0.0, 0.1, 0.5, 0.4]
+    La famosa analogía: rey - hombre + mujer ≈ reina
+    rey - hombre + mujer -> [0.9, 0.1, 0.8, 0.9]
+    Similitud coseno con 'reina': 1.0000
+    Similitud coseno con 'rey':   0.8902
+    ==> El vector de analogía está más cerca de 'reina' que de 'rey'.
+    ```
+  {{< /tab >}}
+  {{< tab name="Numpy" >}}
+    ```bash
+    >  python vector_numpy.es.py
+    =================================
+    Operaciones vectoriales con Numpy
+    =================================
+    u = [1. 2. 3.]
+    v = [ 4.  0. -1.]
+    Suma (u + v)                   -> [5. 2. 2.]
+    Multiplicación escalar (2 * u) -> [2. 4. 6.]
+    Norma L2 de u (||u||₂)         -> 3.7417
+    Norma L1 de u (||u||₁)         -> 6.0000
+    Producto punto (u · v)         -> 1.0000
+    Similitud coseno               -> 0.0648
+    Ángulo entre u y v             -> 86.28°
+    Vector unitario de u (û)       -> [np.float64(0.2673), np.float64(0.5345), np.float64(0.8018)]
+    Verificar `||û||₂ = 1`         -> 1.000000
+    ==========================
+    Demo de analogía semántica
+    ==========================
+    En NLP real, estos serían embeddings aprendidos por un modelo.
+    Aquí ilustramos el principio con vectores de características
+    creados manualmente.
+    Características: [realeza, masculinidad, edad_relativa, poder]
+    rey    = [0.9 0.9 0.8 0.9]
+    reina  = [0.9 0.1 0.8 0.9]
+    hombre = [0.  0.9 0.5 0.4]
+    mujer  = [0.  0.1 0.5 0.4]
+    La famosa analogía: rey - hombre + mujer ≈ reina
+    rey - hombre + mujer -> [np.float64(0.9), np.float64(0.1), np.float64(0.8), np.float64(0.9)]
+    Similitud coseno con 'reina': 1.0000
+    Similitud coseno con 'rey':   0.8902
+    ==> El vector de analogía está más cerca de 'reina' que de 'rey'.
+    ```
+  {{< /tab >}}
+{{< /tabs >}}

@@ -259,3 +259,97 @@ king − man + woman ≈ queen
 $$
 works precisely because of this geometry. Semantic relationships are encoded as *directions* in vector space, and finding `queen` means finding the vector whose cosine similarity to the query vector is maximized. Every modern embedding model (BERT, GPT, sentence-transformers) inherits this geometric philosophy. Next time you read something about word representation in vector spaces, remember they are talking about the same geometry we just derived.
 {{< /callout >}}
+
+## Python implementation
+
+Let's implement everything from scratch, first in pure Python, then verify with NumPy.
+
+### Code
+
+<!-- {{< tabs >}}
+  {{< tab name="Pure Python" >}}
+    {{< codeimporter
+        url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/math/algebra/vectors/vector_pure_python.en.py"
+        type="python"
+        >}}
+  {{< /tab >}}
+  {{< tab name="Numpy" >}}
+    {{< codeimporter
+        url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/math/algebra/vectors/vector_numpy.en.py"
+        type="python"
+        >}}
+  {{< /tab >}}
+{{< /tabs >}} -->
+
+### Output
+
+{{< tabs >}}
+  {{< tab name="Pure Python" >}}
+    ```bash
+    >  python vector_pure_python.en.py
+    ==================================
+    Vector Operations with pure Python
+    ==================================
+    u = [1.0, 2.0, 3.0]
+    v = [4.0, 0.0, -1.0]
+    Addition (u + v)        -> [5.0, 2.0, 2.0]
+    Scalar multiply (2 * u) -> [2.0, 4.0, 6.0]
+    L2 norm of u (||u||₂)   -> 3.7417
+    L1 norm of u (||u||₁)   -> 6.0000
+    Dot product (u · v)     -> 1.0000
+    Cosine similarity       -> 0.0648
+    Angle between u, v.     -> 86.28°
+    Unit vector of u (û)    -> [0.2673, 0.5345, 0.8018]
+    Verify `||û||₂ = 1`     -> 1.000000
+    =============================
+    Semantic similarity mini-demo
+    =============================
+    In real NLP, these would be word embeddings. Here we illustrate
+    the principle with handcrafted feature vectors.
+    Features: [royalty_score, masculinity, age, power]
+    king  = [0.9, 0.9, 0.8, 0.9]
+    queen = [0.9, 0.1, 0.8, 0.9]
+    man   = [0.0, 0.9, 0.5, 0.4]
+    woman = [0.0, 0.1, 0.5, 0.4]
+    The famous analogy: king - man + woman ≈ queen
+    king − man + woman -> [0.9, 0.1, 0.8, 0.9]
+    Cosine similarity to 'queen': 1.0000
+    Cosine similarity to 'king':  0.8902
+    ==> The analogy vector is closer to 'queen' than 'king'.
+    ```
+  {{< /tab >}}
+  {{< tab name="Numpy" >}}
+    ```bash
+    >  python vector_numpy.en.py
+    ============================
+    Vector Operations with Numpy
+    ============================
+    u = [1. 2. 3.]
+    v = [ 4.  0. -1.]
+    Addition (u + v)        -> [5. 2. 2.]
+    Scalar multiply (2 * u) -> [2. 4. 6.]
+    L2 norm of u (||u||₂)   -> 3.7417
+    L1 norm of u (||u||₁)   -> 6.0000
+    Dot product (u · v)     -> 1.0000
+    Cosine similarity       -> 0.0648
+    Angle between u, v.     -> 86.28°
+    Unit vector of u (û)    -> [np.float64(0.2673), np.float64(0.5345), np.float64(0.8018)]
+    Verify `||û||₂ = 1`     -> 1.000000
+    =============================
+    Semantic similarity mini-demo
+    =============================
+    In real NLP, these would be word embeddings. Here we illustrate
+    the principle with handcrafted feature vectors.
+    Features: [royalty_score, masculinity, age, power]
+    king  = [0.9 0.9 0.8 0.9]
+    queen = [0.9 0.1 0.8 0.9]
+    man   = [0.  0.9 0.5 0.4]
+    woman = [0.  0.1 0.5 0.4]
+    The famous analogy: king - man + woman ≈ queen
+    king − man + woman -> [np.float64(0.9), np.float64(0.1), np.float64(0.8), np.float64(0.9)]
+    Cosine similarity to 'queen': 1.0000
+    Cosine similarity to 'king':  0.8902
+    ==> The analogy vector is closer to 'queen' than 'king'.
+    ```
+  {{< /tab >}}
+{{< /tabs >}}

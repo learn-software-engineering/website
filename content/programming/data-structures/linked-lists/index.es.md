@@ -132,9 +132,9 @@ Las listas enlazadas son una estructura de datos versátil para almacenar secuen
 {{< callout icon="sparkles" >}}
 ¡Gracias por llegar hasta acá! Espero que este recorrido por el universo de la programación haya sido tan apasionante para vos como lo fue para mí escribirlo.
 
-Nos encantaría escuchar lo que pensás, así que no te quedes callado/a – dejá tus comentarios, sugerencias y todas esas ideas copadas que seguro se te ocurrieron.
+Nos encantaría escuchar lo que pensás, así que no te quedes callado/a, dejá tus comentarios, sugerencias y todas esas ideas copadas que seguro se te ocurrieron.
 
 Y para ir más allá de estas líneas, date una vuelta por los ejemplos prácticos que preparamos para vos. Vas a encontrar todo el código y los proyectos en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
-¡Gracias por ser parte de esta comunidad de aprendizaje. Seguí programando y explorando nuevos territorios en este fascinante mundo del software!
+¡Gracias por ser parte de esta comunidad de aprendizaje. Seguí programando y explorando nuevos territorios en este fascinante mundo de la computación!
 {{< /callout >}}

@@ -263,94 +263,138 @@ funciona precisamente gracias a esta geometría. Las relaciones semánticas se c
 
 Implementamos todo desde cero: primero en Python puro para ver la mecánica, luego verificamos con NumPy.
 
-### Código
-
-<!-- {{< tabs >}}
-  {{< tab name="Python puro" >}}
-    {{< codeimporter
-        url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/math/algebra/vectors/vector_pure_python.es.py"
-        type="python"
-        >}}
-  {{< /tab >}}
-  {{< tab name="Numpy" >}}
-    {{< codeimporter
-        url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/math/algebra/vectors/vector_numpy.es.py"
-        type="python"
-        >}}
-  {{< /tab >}}
-{{< /tabs >}} -->
-
-### Salida
-
 {{< tabs >}}
   {{< tab name="Python puro" >}}
-    ```bash
-    >  python vector_pure_python.es.py
-    =======================================
-    Operaciones vectoriales con Python puro
-    =======================================
-    u = [1.0, 2.0, 3.0]
-    v = [4.0, 0.0, -1.0]
-    Suma (u + v)                   -> [5.0, 2.0, 2.0]
-    Multiplicación escalar (2 * u) -> [2.0, 4.0, 6.0]
-    Norma L2 de u (||u||₂)         -> 3.7417
-    Norma L1 de u (||u||₁)         -> 6.0000
-    Producto punto (u · v)         -> 1.0000
-    Similitud coseno               -> 0.0648
-    Ángulo entre u y v             -> 86.28°
-    Vector unitario de u (û)       -> [0.2673, 0.5345, 0.8018]
-    Verificar `||û||₂ = 1`         -> 1.000000
-    ==========================
-    Demo de analogía semántica
-    ==========================
-    En NLP real, estos serían embeddings aprendidos por un modelo.
-    Aquí ilustramos el principio con vectores de características
-    creados manualmente.
-    Características: [realeza, masculinidad, edad_relativa, poder]
-    rey    = [0.9, 0.9, 0.8, 0.9]
-    reina  = [0.9, 0.1, 0.8, 0.9]
-    hombre = [0.0, 0.9, 0.5, 0.4]
-    mujer  = [0.0, 0.1, 0.5, 0.4]
-    La famosa analogía: rey - hombre + mujer ≈ reina
-    rey - hombre + mujer -> [0.9, 0.1, 0.8, 0.9]
-    Similitud coseno con 'reina': 1.0000
-    Similitud coseno con 'rey':   0.8902
-    ==> El vector de analogía está más cerca de 'reina' que de 'rey'.
-    ```
+    {{< details title="Código" closed="true" >}}
+      {{< codeimporter
+          url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/math/algebra/vectors/vector_pure_python.es.py"
+          type="python"
+          >}}
+    {{< /details >}}
+    {{< details title="Salida" closed="true" >}}
+      ```bash
+      >  python vector_pure_python.es.py
+      =======================================
+      Operaciones vectoriales con Python puro
+      =======================================
+      u = [1.0, 2.0, 3.0]
+      v = [4.0, 0.0, -1.0]
+      Suma (u + v)                   -> [5.0, 2.0, 2.0]
+      Multiplicación escalar (2 * u) -> [2.0, 4.0, 6.0]
+      Norma L2 de u (||u||₂)         -> 3.7417
+      Norma L1 de u (||u||₁)         -> 6.0000
+      Producto punto (u · v)         -> 1.0000
+      Similitud coseno               -> 0.0648
+      Ángulo entre u y v             -> 86.28°
+      Vector unitario de u (û)       -> [0.2673, 0.5345, 0.8018]
+      Verificar `||û||₂ = 1`         -> 1.000000
+      ==========================
+      Demo de analogía semántica
+      ==========================
+      En NLP real, estos serían embeddings aprendidos por un modelo.
+      Aquí ilustramos el principio con vectores de características
+      creados manualmente.
+      Características: [realeza, masculinidad, edad_relativa, poder]
+      rey    = [0.9, 0.9, 0.8, 0.9]
+      reina  = [0.9, 0.1, 0.8, 0.9]
+      hombre = [0.0, 0.9, 0.5, 0.4]
+      mujer  = [0.0, 0.1, 0.5, 0.4]
+      La famosa analogía: rey - hombre + mujer ≈ reina
+      rey - hombre + mujer -> [0.9, 0.1, 0.8, 0.9]
+      Similitud coseno con 'reina': 1.0000
+      Similitud coseno con 'rey':   0.8902
+      ==> El vector de analogía está más cerca de 'reina' que de 'rey'.
+      ```
+    {{< /details >}}
   {{< /tab >}}
   {{< tab name="Numpy" >}}
-    ```bash
-    >  python vector_numpy.es.py
-    =================================
-    Operaciones vectoriales con Numpy
-    =================================
-    u = [1. 2. 3.]
-    v = [ 4.  0. -1.]
-    Suma (u + v)                   -> [5. 2. 2.]
-    Multiplicación escalar (2 * u) -> [2. 4. 6.]
-    Norma L2 de u (||u||₂)         -> 3.7417
-    Norma L1 de u (||u||₁)         -> 6.0000
-    Producto punto (u · v)         -> 1.0000
-    Similitud coseno               -> 0.0648
-    Ángulo entre u y v             -> 86.28°
-    Vector unitario de u (û)       -> [np.float64(0.2673), np.float64(0.5345), np.float64(0.8018)]
-    Verificar `||û||₂ = 1`         -> 1.000000
-    ==========================
-    Demo de analogía semántica
-    ==========================
-    En NLP real, estos serían embeddings aprendidos por un modelo.
-    Aquí ilustramos el principio con vectores de características
-    creados manualmente.
-    Características: [realeza, masculinidad, edad_relativa, poder]
-    rey    = [0.9 0.9 0.8 0.9]
-    reina  = [0.9 0.1 0.8 0.9]
-    hombre = [0.  0.9 0.5 0.4]
-    mujer  = [0.  0.1 0.5 0.4]
-    La famosa analogía: rey - hombre + mujer ≈ reina
-    rey - hombre + mujer -> [np.float64(0.9), np.float64(0.1), np.float64(0.8), np.float64(0.9)]
-    Similitud coseno con 'reina': 1.0000
-    Similitud coseno con 'rey':   0.8902
-    ==> El vector de analogía está más cerca de 'reina' que de 'rey'.
-    ```
+    {{< details title="Código" closed="true" >}}
+      {{< codeimporter
+          url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/math/algebra/vectors/vector_numpy.es.py"
+          type="python"
+          >}}
+    {{< /details >}}
+    {{< details title="Salida" closed="true" >}}
+      ```bash
+      >  python vector_numpy.es.py
+      =================================
+      Operaciones vectoriales con Numpy
+      =================================
+      u = [1. 2. 3.]
+      v = [ 4.  0. -1.]
+      Suma (u + v)                   -> [5. 2. 2.]
+      Multiplicación escalar (2 * u) -> [2. 4. 6.]
+      Norma L2 de u (||u||₂)         -> 3.7417
+      Norma L1 de u (||u||₁)         -> 6.0000
+      Producto punto (u · v)         -> 1.0000
+      Similitud coseno               -> 0.0648
+      Ángulo entre u y v             -> 86.28°
+      Vector unitario de u (û)       -> [np.float64(0.2673), np.float64(0.5345), np.float64(0.8018)]
+      Verificar `||û||₂ = 1`         -> 1.000000
+      ==========================
+      Demo de analogía semántica
+      ==========================
+      En NLP real, estos serían embeddings aprendidos por un modelo.
+      Aquí ilustramos el principio con vectores de características
+      creados manualmente.
+      Características: [realeza, masculinidad, edad_relativa, poder]
+      rey    = [0.9 0.9 0.8 0.9]
+      reina  = [0.9 0.1 0.8 0.9]
+      hombre = [0.  0.9 0.5 0.4]
+      mujer  = [0.  0.1 0.5 0.4]
+      La famosa analogía: rey - hombre + mujer ≈ reina
+      rey - hombre + mujer -> [np.float64(0.9), np.float64(0.1), np.float64(0.8), np.float64(0.9)]
+      Similitud coseno con 'reina': 1.0000
+      Similitud coseno con 'rey':   0.8902
+      ==> El vector de analogía está más cerca de 'reina' que de 'rey'.
+      ```
+    {{< /details >}}
   {{< /tab >}}
 {{< /tabs >}}
+
+## Perspectiva de Machine Learning e IA
+
+Los vectores no son un concepto preliminar del que te graduarás, son la *lingua franca* de la investigación moderna en IA. Aquí tres formas en que aparecen en en contexto de Inteligencia Artificial y Machine Learning.
+
+**Espacios de embedding y aprendizaje de representaciones**. Todo modelo de aprendizaje profundo moderno aprende a representar entradas como vectores. Los embeddings de tokens del Transformer que se describen en el artículo [*Attention Is All You Need*](https://arxiv.org/abs/1706.03762), son vectores en \(\mathbb{R}^{d_{model}}\) (típicamente entre 512 y 4096 dimensiones). El proceso de entrenamiento completo puede verse como una optimización de la geometría de esos vectores para que entradas semánticamente similares queden agrupadas. La investigación en [*aprendizaje contrastivo*](https://arxiv.org/abs/2002.05709) enmarca explícitamente el objetivo del aprendizaje como: `acercar vectores de muestras similares y alejar vectores de muestras distintas en el espacio de embedding`.
+
+**Generación Aumentada con Recuperación (RAG) y bases de datos vectoriales**. Con la explosión de los LLMs, una dirección clave de investigación aplicada es la búsqueda eficiente del vecino más cercano sobre miles de millones de vectores. En el artículo [*Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*](https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html), Lewis et al. demostraron que aumentar la generación con documentos recuperados mejora dramáticamente la precisión factual. El paso de recuperación completo es una búsqueda por similitud coseno, exactamente la fórmula que vimos antes.
+
+**Dimensionalidad**. La geometría de los espacios de alta dimensión es profundamente contraintuitiva, un fenómeno conocido como la *maldición de la dimensionalidad*. En dimensiones muy altas, casi todos los pares de vectores se vuelven casi ortogonales (\(\cos\theta \approx 0\)), lo que puede degradar la similitud coseno como métrica significativa. Entender *cuándo* falla la similitud coseno y qué alternativas geométricas existen ([espacios hiperbólicos](https://es.wikipedia.org/wiki/Espacio_hiperb%C3%B3lico), [variedades de Riemann](https://es.wikipedia.org/wiki/Variedad_de_Riemann)) es un área de investigación activa. Si esto te interesa, [*Poincaré Embeddings*](https://arxiv.org/abs/1705.08039) es un excelente punto de entrada.
+
+## Errores comunes y depuración
+
+1. **Olvidar normalizar antes de computar similitud coseno, y cuándo NO hacerlo**. La similitud coseno mide dirección solamente, descartando la magnitud. Si dos documentos son similares pero uno es diez veces más largo, la similitud coseno ignora esa diferencia. A veces eso es un error (cuando la magnitud importa), a veces es una ventaja (clasificación de sentimiento donde importa el tema, no la extensión). Siempre pregunta: ¿debería importar la magnitud aquí? Si la respuesta es sí, usa distancia euclidiana en su lugar.
+
+2. **Errores de dimensión que producen resultados silenciosamente incorrectos**. En NumPy, `np.dot(u, v)` lanzará un error si las dimensiones no coinciden para arreglos 1D, pero con arreglos 2D (matrices), NumPy puede hacer *broadcasting* de formas que devuelven un resultado con la forma equivocada. Siempre verifica `assert u.shape == v.shape` antes de productos punto en código de investigación, o usa `np.einsum` con notación de índices explícita para mayor claridad.
+
+3. **El caso límite del vector cero**. `similitud_coseno([0,0,0], [1,2,3])` es matemáticamente indefinido (estás dividiendo entre cero). En sistemas de producción que calculan embeddings, un vector cero normalmente señala un error en etapas anteriores: entrada vacía, tokenización incorrecta, o una capa de red que colapsó. Si ves pérdidas `NaN`, verifica las normas de tus embeddings primero.
+
+4. **Errores de precisión de punto flotante en `arccos`**. Debido a la aritmética de punto flotante, los productos punto pueden ocasionalmente producir valores de coseno ligeramente fuera de \([-1, 1]\) (por ejemplo, `1.0000000002`). Pasar este valor directamente a `math.acos()` lanza un `ValueError`. Aplica siempre *clamp*: `cos_theta = max(-1.0, min(1.0, cos_theta))` antes de llamar a `arccos`.
+
+5. **Confundir los efectos de regularización \(L^1\) y \(L^2\)**. La regularización \(L^2\) (*weight decay*) encoge todos los pesos proporcionalmente, nunca los lleva exactamente a cero. La regularización \(L^1\) sí lleva pesos a cero, creando modelos dispersos. Esto es consecuencia directa de la geometría de las bolas de norma \(L^1\) vs \(L^2\). Elegir el regularizador equivocado es fuente común de modelos demasiado densos (cómputo desperdiciado) o no suficientemente dispersos (baja interpretabilidad).
+
+## Resumen y lo que sigue
+
+**Puntos clave de este artículo:**
+
+- Un **vector** es una tupla ordenada de escalares que vive en un espacio geométrico, tiene magnitud y dirección.
+- Un **espacio vectorial** se define por cerradura bajo adición y multiplicación escalar, por eso las operaciones lineales en redes neuronales se comportan tan bien.
+- La **norma \(L^2\)** mide longitud euclidiana. La **norma \(L^1\)** mide distancia Manhattan y promueve dispersión.
+- El **producto punto** (\(\mathbf{u} \cdot \mathbf{v}\)) mide alineación. Dividir entre ambas normas da la **similitud coseno**, la métrica angular central en recuperación, embeddings y mecanismos de atención.
+- La fórmula \(\cos\theta = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\|\|\mathbf{v}\|}\) se *deriva* de la Ley de Cosenos, no es arbitraria, es geometría.
+- Los vectores de alta dimensión son el lenguaje en el que está escrito todo el Machine Learning moderno. La fluidez aquí se multiplica en cada tema futuro.
+
+**En el próximo artículo (Matrices y Transformaciones Lineales)**: Generalizamos de vectores individuales a colecciones de vectores, introducimos las matrices como funciones que transforman espacios vectoriales, y derivamos las reglas de multiplicación de matrices desde primeros principios. Verás exactamente por qué una capa totalmente conectada en una red neuronal no es más que una multiplicación de matrices seguida de una no linealidad.
+
+---
+
+{{< callout icon="sparkles" >}}
+¡Gracias por llegar hasta acá! Espero que este recorrido por el universo de la IA haya sido tan apasionante para vos como lo fue para mí escribirlo.
+
+Nos encantaría escuchar lo que pensás, así que no te quedes callado/a, dejá tus comentarios, sugerencias y todas esas ideas copadas que seguro se te ocurrieron.
+
+Vas a encontrar todo el código y los proyectos en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
+
+¡Gracias por ser parte de esta comunidad de aprendizaje. Seguí programando y explorando nuevos territorios en este fascinante mundo de la computación!
+{{< /callout >}}

@@ -264,92 +264,136 @@ works precisely because of this geometry. Semantic relationships are encoded as 
 
 Let's implement everything from scratch, first in pure Python, then verify with NumPy.
 
-### Code
-
-<!-- {{< tabs >}}
-  {{< tab name="Pure Python" >}}
-    {{< codeimporter
-        url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/math/algebra/vectors/vector_pure_python.en.py"
-        type="python"
-        >}}
-  {{< /tab >}}
-  {{< tab name="Numpy" >}}
-    {{< codeimporter
-        url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/math/algebra/vectors/vector_numpy.en.py"
-        type="python"
-        >}}
-  {{< /tab >}}
-{{< /tabs >}} -->
-
-### Output
-
 {{< tabs >}}
   {{< tab name="Pure Python" >}}
-    ```bash
-    >  python vector_pure_python.en.py
-    ==================================
-    Vector Operations with pure Python
-    ==================================
-    u = [1.0, 2.0, 3.0]
-    v = [4.0, 0.0, -1.0]
-    Addition (u + v)        -> [5.0, 2.0, 2.0]
-    Scalar multiply (2 * u) -> [2.0, 4.0, 6.0]
-    L2 norm of u (||u||₂)   -> 3.7417
-    L1 norm of u (||u||₁)   -> 6.0000
-    Dot product (u · v)     -> 1.0000
-    Cosine similarity       -> 0.0648
-    Angle between u, v.     -> 86.28°
-    Unit vector of u (û)    -> [0.2673, 0.5345, 0.8018]
-    Verify `||û||₂ = 1`     -> 1.000000
-    =============================
-    Semantic similarity mini-demo
-    =============================
-    In real NLP, these would be word embeddings. Here we illustrate
-    the principle with handcrafted feature vectors.
-    Features: [royalty_score, masculinity, age, power]
-    king  = [0.9, 0.9, 0.8, 0.9]
-    queen = [0.9, 0.1, 0.8, 0.9]
-    man   = [0.0, 0.9, 0.5, 0.4]
-    woman = [0.0, 0.1, 0.5, 0.4]
-    The famous analogy: king - man + woman ≈ queen
-    king − man + woman -> [0.9, 0.1, 0.8, 0.9]
-    Cosine similarity to 'queen': 1.0000
-    Cosine similarity to 'king':  0.8902
-    ==> The analogy vector is closer to 'queen' than 'king'.
-    ```
+    {{< details title="Code" closed="true" >}}
+      {{< codeimporter
+          url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/math/algebra/vectors/vector_pure_python.en.py"
+          type="python"
+          >}}
+    {{< /details >}}
+    {{< details title="Output" closed="true" >}}
+      ```bash
+      >  python vector_pure_python.en.py
+      ==================================
+      Vector Operations with pure Python
+      ==================================
+      u = [1.0, 2.0, 3.0]
+      v = [4.0, 0.0, -1.0]
+      Addition (u + v)        -> [5.0, 2.0, 2.0]
+      Scalar multiply (2 * u) -> [2.0, 4.0, 6.0]
+      L2 norm of u (||u||₂)   -> 3.7417
+      L1 norm of u (||u||₁)   -> 6.0000
+      Dot product (u · v)     -> 1.0000
+      Cosine similarity       -> 0.0648
+      Angle between u, v.     -> 86.28°
+      Unit vector of u (û)    -> [0.2673, 0.5345, 0.8018]
+      Verify `||û||₂ = 1`     -> 1.000000
+      =============================
+      Semantic similarity mini-demo
+      =============================
+      In real NLP, these would be word embeddings. Here we illustrate
+      the principle with handcrafted feature vectors.
+      Features: [royalty_score, masculinity, age, power]
+      king  = [0.9, 0.9, 0.8, 0.9]
+      queen = [0.9, 0.1, 0.8, 0.9]
+      man   = [0.0, 0.9, 0.5, 0.4]
+      woman = [0.0, 0.1, 0.5, 0.4]
+      The famous analogy: king - man + woman ≈ queen
+      king − man + woman -> [0.9, 0.1, 0.8, 0.9]
+      Cosine similarity to 'queen': 1.0000
+      Cosine similarity to 'king':  0.8902
+      ==> The analogy vector is closer to 'queen' than 'king'.
+      ```
+    {{< /details >}}
   {{< /tab >}}
   {{< tab name="Numpy" >}}
-    ```bash
-    >  python vector_numpy.en.py
-    ============================
-    Vector Operations with Numpy
-    ============================
-    u = [1. 2. 3.]
-    v = [ 4.  0. -1.]
-    Addition (u + v)        -> [5. 2. 2.]
-    Scalar multiply (2 * u) -> [2. 4. 6.]
-    L2 norm of u (||u||₂)   -> 3.7417
-    L1 norm of u (||u||₁)   -> 6.0000
-    Dot product (u · v)     -> 1.0000
-    Cosine similarity       -> 0.0648
-    Angle between u, v.     -> 86.28°
-    Unit vector of u (û)    -> [np.float64(0.2673), np.float64(0.5345), np.float64(0.8018)]
-    Verify `||û||₂ = 1`     -> 1.000000
-    =============================
-    Semantic similarity mini-demo
-    =============================
-    In real NLP, these would be word embeddings. Here we illustrate
-    the principle with handcrafted feature vectors.
-    Features: [royalty_score, masculinity, age, power]
-    king  = [0.9 0.9 0.8 0.9]
-    queen = [0.9 0.1 0.8 0.9]
-    man   = [0.  0.9 0.5 0.4]
-    woman = [0.  0.1 0.5 0.4]
-    The famous analogy: king - man + woman ≈ queen
-    king − man + woman -> [np.float64(0.9), np.float64(0.1), np.float64(0.8), np.float64(0.9)]
-    Cosine similarity to 'queen': 1.0000
-    Cosine similarity to 'king':  0.8902
-    ==> The analogy vector is closer to 'queen' than 'king'.
-    ```
+    {{< details title="Code" closed="true" >}}
+      {{< codeimporter
+          url="https://raw.githubusercontent.com/learn-software-engineering/examples/refs/heads/main/ai/math/algebra/vectors/vector_numpy.en.py"
+          type="python"
+          >}}
+    {{< /details >}}
+    {{< details title="Output" closed="true" >}}
+      ```bash
+      >  python vector_numpy.en.py
+      ============================
+      Vector Operations with Numpy
+      ============================
+      u = [1. 2. 3.]
+      v = [ 4.  0. -1.]
+      Addition (u + v)        -> [5. 2. 2.]
+      Scalar multiply (2 * u) -> [2. 4. 6.]
+      L2 norm of u (||u||₂)   -> 3.7417
+      L1 norm of u (||u||₁)   -> 6.0000
+      Dot product (u · v)     -> 1.0000
+      Cosine similarity       -> 0.0648
+      Angle between u, v.     -> 86.28°
+      Unit vector of u (û)    -> [np.float64(0.2673), np.float64(0.5345), np.float64(0.8018)]
+      Verify `||û||₂ = 1`     -> 1.000000
+      =============================
+      Semantic similarity mini-demo
+      =============================
+      In real NLP, these would be word embeddings. Here we illustrate
+      the principle with handcrafted feature vectors.
+      Features: [royalty_score, masculinity, age, power]
+      king  = [0.9 0.9 0.8 0.9]
+      queen = [0.9 0.1 0.8 0.9]
+      man   = [0.  0.9 0.5 0.4]
+      woman = [0.  0.1 0.5 0.4]
+      The famous analogy: king - man + woman ≈ queen
+      king − man + woman -> [np.float64(0.9), np.float64(0.1), np.float64(0.8), np.float64(0.9)]
+      Cosine similarity to 'queen': 1.0000
+      Cosine similarity to 'king':  0.8902
+      ==> The analogy vector is closer to 'queen' than 'king'.
+      ```
+    {{< /details >}}
   {{< /tab >}}
 {{< /tabs >}}
+
+## Machine Learning and AI perspective
+
+Vectors are not a preliminary concept you'll graduate from, they are the *lingua franca* of modern AI research. Here are three ways they appear in the context of Artificial Intelligence and Machine Learning.
+
+**Embedding spaces and representation learning**. Every modern deep learning model learns to represent inputs as vectors. The Transformer's token embeddings described in the [*Attention Is All You Need*](https://arxiv.org/abs/1706.03762) paper are vectors in \(\mathbb{R}^{d_{model}}\) (typically between 512 and 4096 dimensions). The entire training process can be viewed as optimizing the geometry of these vectors so that semantically similar inputs cluster together. Research on [*contrastive learning*](https://arxiv.org/abs/2002.05709) explicitly frames the learning objective in terms of `pushing similar sample vectors together and dissimilar sample vectors apart in embedding space`.
+
+**Retrieval-Augmented Generation (RAG) and vector databases**. With the explosion of LLMs, a major applied-research direction is efficient nearest-neighbor search over billions of vectors. In the paper, [*Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*](https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html), Lewis et al. showed that augmenting generation with retrieved document vectors dramatically improves factuality. The entire retrieval step is cosine similarity search, the formula we saw before.
+
+**Dimensionality**. The geometry of high-dimensional spaces is deeply counterintuitive, a phenomenon called the *curse of dimensionality*. In very high dimensions, almost all pairs of vectors become nearly orthogonal (\(\cos\theta \approx 0\)), which can degrade cosine similarity as a meaningful metric. Understanding *when* cosine similarity breaks down and what geometric alternatives exist ([hyperbolic spaces](https://en.wikipedia.org/wiki/Hyperbolic_space), [Riemannian manifolds](https://en.wikipedia.org/wiki/Riemannian_manifold)) is an active research area. If this interests you, look up [*Poincaré Embeddings*](https://arxiv.org/abs/1705.08039).
+
+## Common pitfalls and debugging
+
+1. **Forgetting to normalize before computing cosine similarity, and when NOT to**. Cosine similarity measures direction only, discarding magnitude. If two documents are similar but one is ten times longer, cosine similarity ignores the length difference. Sometimes that's a bug (when magnitude matters), sometimes a feature (sentiment classification where you want topic, not verbosity). Always ask: should magnitude matter here? If yes, use Euclidean distance instead.
+
+2. **Dimension mismatch silently producing wrong results**. In NumPy, `np.dot(u, v)` will raise an error if dimensions don't match for 1D arrays, but with 2D arrays (matrices), NumPy may broadcast in ways that give a result with the wrong shape. Always `.assert u.shape == v.shape` before dot products in research code, or use `np.einsum` with explicit index notation for clarity.
+
+3. **The zero-vector edge case**. `cosine_similarity([0,0,0], [1,2,3])` is mathematically undefined (you're dividing by zero). In production systems that compute embeddings, a zero vector usually signals a bug upstream: an empty input, a bad tokenization, or a collapsed network layer. If you see `NaN` losses, check your embedding norms first.
+
+4. **Floating-point precision in `arccos`**. Due to floating-point arithmetic, dot products can occasionally yield cosine values slightly outside \([-1, 1]\) (e.g., `1.0000000002`). Passing this directly to `math.acos()` raises a `ValueError`. Always clamp: `cos_theta = max(-1.0, min(1.0, cos_theta))` before calling `arccos`.
+
+5. **Confusing \(L^1\) and \(L^2\) regularization effects**. \(L^2\) regularization (weight decay) shrinks all weights proportionally, it never drives weights exactly to zero. \(L^1\) regularization does drive weights to zero, creating sparse models. This is a direct consequence of the geometry of \(L^1\) vs \(L^2\) norm balls. Choosing the wrong regularizer is a common source of models that are either too dense (wasted computation) or not sparse enough (poor interpretability).
+
+## Summary and what's next
+
+**Key takeaways from this article**:
+
+- A **vector** is an ordered tuple of scalars that lives in a geometric space, it has both magnitude and direction.
+- A **vector space** is defined by closure under addition and scalar multiplication, this is why linear operations in neural networks are so well-behaved.
+- The **\(L^2\) norm** measures Euclidean length. The **\(L^1\) norm** measures Manhattan distance and promotes sparsity.
+- The **dot product** (\(\mathbf{u} \cdot \mathbf{v}\)) measures alignment. Dividing by both norms gives **cosine similarity**, the angle-based similarity metric at the core of retrieval, embeddings, and attention mechanisms.
+- The formula \(\cos\theta = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\|\|\mathbf{v}\|}\) is derived from the Law of Cosines, it's not arbitrary, it's geometry.
+- High-dimensional vectors are the language in which all of modern Machine Learning is written. Fluency here compounds across every future topic.
+
+**Coming up in (Matrices & Linear Transformations)**: We generalize from single vectors to collections of vectors, introduce matrices as functions that transform vector spaces, and derive the rules of matrix multiplication from first principles. You'll see exactly why a fully-connected neural network layer is nothing more than a matrix multiplication followed by a nonlinearity.
+
+---
+
+{{< callout icon="sparkles" >}}
+Cheers for making it this far! I hope this journey through the AI universe has been as fascinating for you as it was for me to write down.
+
+We're keen to hear your thoughts, so don't be shy, drop your comments, suggestions, and those bright ideas you're bound to have.
+
+You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
+
+Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of computing!
+{{< /callout >}}

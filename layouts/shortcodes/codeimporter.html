@@ -1,27 +1,30 @@
-{{ $url := .Get "url" }}
-{{ $type := .Get "type" }}
-{{ $startLine := .Get "startLine" | default 1 | int }}
-{{ $startLine = sub $startLine 1 }}
-{{ $endLine := .Get "endLine" | default -1 | int }}
-{{ $selectedLines := slice }}
-{{ with resources.GetRemote (urls.Parse $url) }}
-  {{ $lines := split .Content "\n" }}
-  {{ $totalLine := $lines | len }}
+{{- $url := .Get "url" -}}
+{{- $type := .Get "type" | default "text" -}}
+{{- $startLine := .Get "startLine" | default 1 | int -}}
+{{- $startLine = sub $startLine 1 -}}
+{{- $endLine := .Get "endLine" | default -1 | int -}}
 
-  {{ if ne $endLine -1 }}
-    {{ $endLine = math.Min $endLine $totalLine }}
-  {{ else }}
-    {{ $endLine = $totalLine }}
-  {{ end }}
+{{- with resources.GetRemote $url -}}
+  {{- $content := .Content | replaceRE "\r\n" "\n" | replaceRE "\r" "\n" -}}
+  {{- $lines := split $content "\n" -}}
+  {{- $totalLines := len $lines -}}
 
-  {{ if gt $startLine $endLine }}
-    {{ errorf "codeimporter shortcode: startLine is greater than endLine" . }}
-  {{ end }}
+  {{- if ne $endLine -1 -}}
+    {{- $endLine = math.Min $endLine $totalLines -}}
+  {{- else -}}
+    {{- $endLine = $totalLines -}}
+  {{- end -}}
 
-  {{ $selectedLines := first $endLine $lines }}
-  {{ $selectedLines = after $startLine $selectedLines }}
-  {{ $codeBlock := printf "```%s\n%s\n```" $type (delimit $selectedLines "\n") }}
-  {{ $codeBlock | markdownify }}
-{{ else }}
-  {{ warnf "codeimporter shortcode: unable to fetch %q: %s" $url .Position }}
-{{ end }}
+  {{- if gt $startLine $endLine -}}
+    {{- errorf "codeimporter: startLine (%d) is greater than endLine (%d)" $startLine $endLine -}}
+  {{- end -}}
+
+  {{- $selectedLines := $lines | first $endLine | after $startLine -}}
+  {{- $code := delimit $selectedLines "\n" -}}
+
+  <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group">
+    {{- transform.Highlight $code $type "" -}}
+  </div>
+{{- else -}}
+  {{- warnf "codeimporter: unable to fetch %q" $url -}}
+{{- end -}}

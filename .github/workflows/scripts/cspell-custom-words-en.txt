@@ -4,6 +4,7 @@ creational
 cyclomatic
 datos
 estructura
+explainability
 fundamentos
 incrementality
 modeling

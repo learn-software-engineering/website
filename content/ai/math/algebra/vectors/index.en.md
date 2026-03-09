@@ -108,7 +108,7 @@ $$\mathbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ \vdots \\ v_n \end{bmatrix} \in \ma
 In plain English: \(\mathbf{v}\) is a column of \(n\) real numbers. The subscript tells you which *"slot"* you're in.
 {{< /callout >}}
 
-#### Espacio vectorial
+#### Vectorial space
 
 A set \(V\) of vectors over a field \(\mathbb{F}\), equipped with two operations, for which it is ***closed***.
 
@@ -166,7 +166,7 @@ Two special cases appear constantly in Machine Learning (ML):
 
 - **\(L^1\) norm (Manhattan)**:
 
-    Used in LASSO regularization because it induces *sparsity*, it penalizes any nonzero component equally.
+    Used in LASSO regularization because it induces *sparsity*, it penalizes any non-zero component equally.
     $$
     \|\mathbf{v}\|_1 = \sum_{i=1}^{n} |v_i|
     $$
@@ -229,7 +229,7 @@ $$
 \|\mathbf{u}\|^2 - 2 (\mathbf{u} \cdot \mathbf{v}) + \|\mathbf{v}\|^2 = \|\mathbf{u}\|^2 + \|\mathbf{v}\|^2 - 2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)
 $$
 
-Canceling \(\|\mathbf{u}\|^2\) and \(\|\mathbf{v}\|^2\) from both sides:
+Cancelling \(\|\mathbf{u}\|^2\) and \(\|\mathbf{v}\|^2\) from both sides:
 $$
 -2 (\mathbf{u} \cdot \mathbf{v}) = -2 \|\mathbf{u}\| \|\mathbf{v}\| \cos(\theta)
 $$
@@ -357,9 +357,9 @@ Vectors are not a preliminary concept you'll graduate from, they are the *lingua
 
 **Embedding spaces and representation learning**. Every modern deep learning model learns to represent inputs as vectors. The Transformer's token embeddings described in the [*Attention Is All You Need*](https://arxiv.org/abs/1706.03762) paper are vectors in \(\mathbb{R}^{d_{model}}\) (typically between 512 and 4096 dimensions). The entire training process can be viewed as optimizing the geometry of these vectors so that semantically similar inputs cluster together. Research on [*contrastive learning*](https://arxiv.org/abs/2002.05709) explicitly frames the learning objective in terms of `pushing similar sample vectors together and dissimilar sample vectors apart in embedding space`.
 
-**Retrieval-Augmented Generation (RAG) and vector databases**. With the explosion of LLMs, a major applied-research direction is efficient nearest-neighbor search over billions of vectors. In the paper, [*Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*](https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html), Lewis et al. showed that augmenting generation with retrieved document vectors dramatically improves factuality. The entire retrieval step is cosine similarity search, the formula we saw before.
+**Retrieval-Augmented Generation (RAG) and vector databases**. With the explosion of LLMs, a major applied-research direction is efficient nearest-neighbour search over billions of vectors. In the paper, [*Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*](https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html), Lewis et al. showed that augmenting generation with retrieved document vectors dramatically improves factuality. The entire retrieval step is cosine similarity search, the formula we saw before.
 
-**Dimensionality**. The geometry of high-dimensional spaces is deeply counterintuitive, a phenomenon called the *curse of dimensionality*. In very high dimensions, almost all pairs of vectors become nearly orthogonal (\(\cos\theta \approx 0\)), which can degrade cosine similarity as a meaningful metric. Understanding *when* cosine similarity breaks down and what geometric alternatives exist ([hyperbolic spaces](https://en.wikipedia.org/wiki/Hyperbolic_space), [Riemannian manifolds](https://en.wikipedia.org/wiki/Riemannian_manifold)) is an active research area. If this interests you, look up [*Poincaré Embeddings*](https://arxiv.org/abs/1705.08039).
+**Dimensionality**. The geometry of high-dimensional spaces is deeply counter-intuitive, a phenomenon called the *curse of dimensionality*. In very high dimensions, almost all pairs of vectors become nearly orthogonal (\(\cos\theta \approx 0\)), which can degrade cosine similarity as a meaningful metric. Understanding *when* cosine similarity breaks down and what geometric alternatives exist ([hyperbolic spaces](https://en.wikipedia.org/wiki/Hyperbolic_space), [Riemannian manifolds](https://en.wikipedia.org/wiki/Riemannian_manifold)) is an active research area. If this interests you, look up [*Poincaré Embeddings*](https://arxiv.org/abs/1705.08039).
 
 ## Common pitfalls and debugging
 
@@ -371,7 +371,7 @@ Vectors are not a preliminary concept you'll graduate from, they are the *lingua
 
 4. **Floating-point precision in `arccos`**. Due to floating-point arithmetic, dot products can occasionally yield cosine values slightly outside \([-1, 1]\) (e.g., `1.0000000002`). Passing this directly to `math.acos()` raises a `ValueError`. Always clamp: `cos_theta = max(-1.0, min(1.0, cos_theta))` before calling `arccos`.
 
-5. **Confusing \(L^1\) and \(L^2\) regularization effects**. \(L^2\) regularization (weight decay) shrinks all weights proportionally, it never drives weights exactly to zero. \(L^1\) regularization does drive weights to zero, creating sparse models. This is a direct consequence of the geometry of \(L^1\) vs \(L^2\) norm balls. Choosing the wrong regularizer is a common source of models that are either too dense (wasted computation) or not sparse enough (poor interpretability).
+5. **Confusing \(L^1\) and \(L^2\) regularization effects**. \(L^2\) regularization (weight decay) shrinks all weights proportionally, it never drives weights exactly to zero. \(L^1\) regularization does drive weights to zero, creating sparse models. This is a direct consequence of the geometry of \(L^1\) vs \(L^2\) norm balls. Choosing the wrong regulariser is a common source of models that are either too dense (wasted computation) or not sparse enough (poor interpretability).
 
 ## Summary and what's next
 

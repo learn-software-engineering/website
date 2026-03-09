@@ -3,6 +3,8 @@ title: "Learn-Software.com"
 layout: hextra-home
 ---
 
+<div style="position: fixed; inset: 0; z-index: -1; background-image: url('/home-background.jpeg'); background-size: cover; background-position: center; opacity: 0.07; pointer-events: none;"></div>
+
 <div class="hx:mt-6 hx:mb-4">
 {{< hextra/hero-headline >}}
   Master software development&nbsp;<br class="hx:sm:block hx:hidden" />One concept at a time

@@ -10,6 +10,7 @@ incrementality
 modeling
 objetos
 programación
+regulariser
 roadmap
 sidelining
 subclassed

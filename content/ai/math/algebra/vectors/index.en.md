@@ -87,7 +87,7 @@ $$
 This operation, **scalar multiplication**, is one of the two foundational operations that define a vector space.
 
 {{< callout type="important" >}}
-When debugging a neural network and the loss explodes, it often means vectors (activations or gradients) are being scaled up by factors much greater than 1.0 each layer. Understanding scalar multiplication geometrically helps you see *why* gradient clipping or batch normalization restores stability: they're renormalizing the length of those arrows.
+When debugging a neural network and the loss explodes, it often means vectors (activations or gradients) are being scaled up by factors much greater than 1.0 each layer. Understanding scalar multiplication geometrically helps you see *why* gradient clipping or batch normalisation restores stability: they're renormalizing the length of those arrows.
 {{< /callout >}}
 
 ## Mathematical derivation
@@ -166,7 +166,7 @@ Two special cases appear constantly in Machine Learning (ML):
 
 - **\(L^1\) norm (Manhattan)**:
 
-    Used in LASSO regularization because it induces *sparsity*, it penalizes any non-zero component equally.
+    Used in LASSO regularisation because it induces *sparsity*, it penalizes any non-zero component equally.
     $$
     \|\mathbf{v}\|_1 = \sum_{i=1}^{n} |v_i|
     $$
@@ -367,11 +367,11 @@ Vectors are not a preliminary concept you'll graduate from, they are the *lingua
 
 2. **Dimension mismatch silently producing wrong results**. In NumPy, `np.dot(u, v)` will raise an error if dimensions don't match for 1D arrays, but with 2D arrays (matrices), NumPy may broadcast in ways that give a result with the wrong shape. Always `.assert u.shape == v.shape` before dot products in research code, or use `np.einsum` with explicit index notation for clarity.
 
-3. **The zero-vector edge case**. `cosine_similarity([0,0,0], [1,2,3])` is mathematically undefined (you're dividing by zero). In production systems that compute embeddings, a zero vector usually signals a bug upstream: an empty input, a bad tokenization, or a collapsed network layer. If you see `NaN` losses, check your embedding norms first.
+3. **The zero-vector edge case**. `cosine_similarity([0,0,0], [1,2,3])` is mathematically undefined (you're dividing by zero). In production systems that compute embeddings, a zero vector usually signals a bug upstream: an empty input, a bad tokenisation, or a collapsed network layer. If you see `NaN` losses, check your embedding norms first.
 
 4. **Floating-point precision in `arccos`**. Due to floating-point arithmetic, dot products can occasionally yield cosine values slightly outside \([-1, 1]\) (e.g., `1.0000000002`). Passing this directly to `math.acos()` raises a `ValueError`. Always clamp: `cos_theta = max(-1.0, min(1.0, cos_theta))` before calling `arccos`.
 
-5. **Confusing \(L^1\) and \(L^2\) regularization effects**. \(L^2\) regularization (weight decay) shrinks all weights proportionally, it never drives weights exactly to zero. \(L^1\) regularization does drive weights to zero, creating sparse models. This is a direct consequence of the geometry of \(L^1\) vs \(L^2\) norm balls. Choosing the wrong regulariser is a common source of models that are either too dense (wasted computation) or not sparse enough (poor interpretability).
+5. **Confusing \(L^1\) and \(L^2\) regularisation effects**. \(L^2\) regularisation (weight decay) shrinks all weights proportionally, it never drives weights exactly to zero. \(L^1\) regularisation does drive weights to zero, creating sparse models. This is a direct consequence of the geometry of \(L^1\) vs \(L^2\) norm balls. Choosing the wrong regulariser is a common source of models that are either too dense (wasted computation) or not sparse enough (poor interpretability).
 
 ## Summary and what's next
 

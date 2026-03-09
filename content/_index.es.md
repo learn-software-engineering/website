@@ -30,21 +30,21 @@ layout: hextra-home
     title="Programación"
     subtitle="Arrancá desde cero sin perderte. Variables, estructuras de datos, algoritmos y la lógica que está detrás de todo lo que corre en una computadora."
     icon="code"
-    link="/es/programacion"
+    link="/es/programming"
   >}}
 
   {{< hextra/feature-card
     title="Ingeniería de Software"
     subtitle="Escribir código es la parte fácil. Acá aprendés a desarrollar software: patrones, arquitectura, testing y todo lo que hace que un proyecto no se caiga a pedazos."
     icon="book-open"
-    link="/es/ingenieria-de-software"
+    link="/es/software-engineering"
   >}}
 
   {{< hextra/feature-card
     title="Inteligencia Artificial"
     subtitle="Machine learning, redes neuronales, modelos de lenguaje. Entendé cómo funcionan y cómo usarlos sin vueltas."
     icon="sparkles"
-    link="/es/inteligencia-artificial"
+    link="/es/ai"
   >}}
 
   <!-- {{< hextra/feature-card

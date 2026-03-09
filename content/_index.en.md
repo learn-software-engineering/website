@@ -44,7 +44,7 @@ layout: hextra-home
     title="Artificial Intelligence"
     subtitle="Explore machine learning, neural networks, large language models, and the tools shaping the future of intelligent software systems."
     icon="sparkles"
-    link="/artificial-intelligence"
+    link="/ai"
   >}}
 
   <!-- {{< hextra/feature-card

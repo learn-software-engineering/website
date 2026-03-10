@@ -17,46 +17,54 @@ layout: hextra-home
 {{< /hextra/hero-subtitle >}}
 </div>
 
-{{< hextra/feature-grid >}}
+{{< cards >}}
 
-  {{< hextra/feature-card
-    title="Blog"
-    subtitle="Articles, tips, and insights from developers in the industry. Stay current with trends, tools, and practical advice published regularly."
-    icon="users"
-    link="/blog"
-  >}}
-
-  {{< hextra/feature-card
+  {{< card
     title="Programming"
     subtitle="Start from the ground up. Understand core programming concepts, data structures, algorithms, and problem-solving techniques that underpin all software."
     icon="code"
     link="/programming"
+    image="img/cards/programming.jpeg"
   >}}
 
-  {{< hextra/feature-card
+  {{< card
     title="Software Engineering"
     subtitle="Go beyond writing code. Learn design patterns, clean architecture, version control, testing, and the practices that make software maintainable at scale."
     icon="book-open"
     link="/software-engineering"
+    image="img/cards/software-engineering.jpeg"
   >}}
 
-  {{< hextra/feature-card
+  {{< card
     title="Artificial Intelligence"
     subtitle="Explore machine learning, neural networks, large language models, and the tools shaping the future of intelligent software systems."
     icon="sparkles"
     link="/ai"
+    image="img/cards/ai.jpeg"
   >}}
 
-  <!-- {{< hextra/feature-card
+  <!-- {{< card
     title="DevOps & SRE"
     subtitle="Coming soon! CI/CD pipelines, containerisation, cloud infrastructure, and everything you need to ship and run software reliably."
     icon="server"
-  >}}
+    link="/devops"
+    image="img/cards/devops.jpeg"
+  >}} -->
 
-  {{< hextra/feature-card
+  <!-- {{< card
     title="Quantum Computing"
     subtitle="Coming soon! Quantum gates, superposition, entanglement, and the emerging paradigms set to redefine computation."
     icon="academic-cap"
+    link="/quantum"
+    image="img/cards/quantum.jpeg"
   >}} -->
 
-{{< /hextra/feature-grid >}}
+  {{< card
+    title="Blog"
+    subtitle="Articles, tips, and insights from developers in the industry. Stay current with trends, tools, and practical advice published regularly."
+    icon="users"
+    link="/blog"
+    image="img/cards/blog.jpeg"
+  >}}
+
+{{< /cards >}}

@@ -1,0 +1,133 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Fira+Code:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+/* Font Family */
+/* https://imfing.github.io/hextra/docs/advanced/customization/#font-family */
+.content {
+  font-family: "Google Sans";
+  color: #2D3A2D;
+}
+
+.content:is(html[class~="dark"] *) {
+  color: #D1D5DB;
+}
+
+/* Inline Code Element */
+/* https://imfing.github.io/hextra/docs/advanced/customization/#inline-code-element */
+.content code:not(.code-block code) {
+  color: #059669;
+}
+
+.content code:not(.code-block code):is(html[class~="dark"] *) {
+  color: #4ADE80;
+}
+
+/* Primary Color */
+/* https://imfing.github.io/hextra/docs/advanced/customization/#primary-color */
+:root {
+  --primary-hue: 161deg;
+  --primary-saturation: 94%;
+  --primary-lightness: 30%;
+}
+
+:root:is(html[class~="dark"] *) {
+  --primary-hue: 142deg;
+  --primary-saturation: 70%;
+  --primary-lightness: 60%;
+}
+
+/* Tailwind Theme Variables */
+/* https://imfing.github.io/hextra/docs/advanced/customization/#tailwind-theme-variables */
+/* https://tailwindcss.com/docs/theme#default-theme-variable-reference */
+@layer theme {
+  :root {
+    /* --hx-default-mono-font-family: "Fira Code", monospace; */
+    /* --hx-color-dark: #1A1A1A;
+    --hx-color-white: #F5F5F0; */
+  }
+}
+
+/* Further Theme Customization */
+
+/* Headings */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #1A2E1A;
+}
+
+.content h1:is(html[class~="dark"] *),
+.content h2:is(html[class~="dark"] *),
+.content h3:is(html[class~="dark"] *),
+.content h4:is(html[class~="dark"] *),
+.content h5:is(html[class~="dark"] *),
+.content h6:is(html[class~="dark"] *) {
+  color: #F3F4F6;
+}
+
+/* Navbar */
+.hextra-nav-container-blur {
+  background-color: rgba(245, 245, 240, 0.85) !important;
+  border-bottom: 1px solid #D1FAE5;
+}
+
+.hextra-nav-container-blur:is(html[class~="dark"] *) {
+  background-color: rgba(26, 26, 26, 0.85) !important;
+  border-bottom: 1px solid #262626;
+}
+
+/* Cards */
+.hextra-card {
+  background-color: #ffffff;
+  border: 1px solid #D1FAE5;
+  border-radius: 8px;
+  transition: border-color 0.15s ease;
+}
+
+.hextra-card:is(html[class~="dark"] *) {
+  background-color: #222222;
+  border-color: #2a2a2a;
+}
+
+.hextra-card:hover {
+  border-color: #059669;
+}
+
+.hextra-card:is(html[class~="dark"] *):hover {
+  border-color: #4ade80;
+}
+
+.hextra-card-subtitle {
+  color: #6B7280;
+}
+
+.hextra-card-subtitle:is(html[class~="dark"] *) {
+  color: #6b7280;
+}
+
+/* ── Feature cards ────────────────────────── */
+/* .hextra-feature-card {
+  background-color: #ffffff;
+  border: 1px solid #D1FAE5;
+}
+
+html.dark .hextra-feature-card {
+  background-color: #222222;
+  border-color: #2a2a2a;
+} */
+
+/* Footer */
+.hextra-footer {
+  background-color: #EBEBE5;
+  border-top: 1px solid #D1FAE5;
+}
+
+.hextra-footer:is(html[class~="dark"] *) {
+  background-color: #141414;
+  border-top: 1px solid #262626;
+}

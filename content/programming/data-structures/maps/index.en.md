@@ -1,8 +1,7 @@
 ---
-weight: 3
-series: ["Programming: Learning Data Structures"]
-series_order: 3
+weight: 2
 title: "Maps (Dictionaries)"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -18,8 +17,6 @@ A dictionary, or map, consists of a collection of key-value pairs. The key is us
     alt="Diagram of a map"
     caption="Diagram of a map"
     >}}
-
----
 
 ## Main operations
 
@@ -41,8 +38,6 @@ A dictionary, or map, consists of a collection of key-value pairs. The key is us
       print(key, dictionary[key]) # key, value
     ```
 
----
-
 ## Creating a dictionary or map
 
 The syntax for creating maps or dictionaries in Python is:
@@ -55,8 +50,6 @@ person = {
   'age': 25
 }
 ```
-
----
 
 ## Usage examples
 
@@ -97,20 +90,18 @@ print(frequencies)
 
 As a high performance alternative to lists and arrays.
 
----
-
 ## Conclusion
 
 Dictionaries are versatile data structures thanks to their fast access based on unique keys. They have uses in almost all programs, so mastering dictionaries is essential in any language.
 
 ---
 
-{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+{{< callout icon="sparkles" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
-We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
+We're keen to hear your thoughts, so don't be shy, drop your comments, suggestions, and those bright ideas you're bound to have.
 
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{< /alert >}}
+{{< /callout >}}

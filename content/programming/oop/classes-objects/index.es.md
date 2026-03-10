@@ -1,8 +1,7 @@
 ---
-weight: 2
-series: ["Programación: Aprendiendo Orientación a Objetos"]
-series_order: 2
+weight: 1
 title: "Clases y Objetos"
+cardImage: "featured.es.jpg"
 authors:
   - jnonino
 description: >
@@ -31,8 +30,6 @@ class Persona:
 **Constructor**: Método especial `__init__()` que se ejecuta al instanciar la clase y permite inicializar los atributos.
 
 **Destructor**: Método `__del__()` que se ejecuta al eliminar la instancia liberando recursos. Opcional en algunos lenguajes.
-
----
 
 ## Creando objetos
 
@@ -84,8 +81,6 @@ pepe.comer("pizza") # Imprime "Comiendo pizza"
 
 El objeto pepe tiene ahora **estado** (propiedades) y **comportamiento** (métodos) propios.
 
----
-
 ## Self vs This
 
 Un detalle importante en los métodos es cómo acceden a los atributos y otros métodos del objeto. Aquí entra otra diferencia entre lenguajes:
@@ -127,28 +122,20 @@ juan.saludar();
 // Imprime "Hola! Soy Juan"
 ```
 
----
-
 ## Conclusión
 
 Las clases y objetos son los conceptos clave de la POO, permitiendo modelar entidades de la realidad y generar componentes modulares y genéricos de nuestro sistema para construir programas más robustos y fáciles de entender y mantener.
 
 ---
 
-{{< alert icon="comment" >}}
-¡Gracias por haber llegado hasta acá!
+{{< callout icon="sparkles" >}}
+¡Gracias por llegar hasta acá! Espero que este recorrido por el universo de la programación haya sido tan apasionante para vos como lo fue para mí escribirlo.
 
-Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
+Nos encantaría escuchar lo que pensás, así que no te quedes callado/a, dejá tus comentarios, sugerencias y todas esas ideas copadas que seguro se te ocurrieron.
 
-Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
+Y para ir más allá de estas líneas, date una vuelta por los ejemplos prácticos que preparamos para vos. Vas a encontrar todo el código y los proyectos en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
-[{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
-[{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
-[{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
-[{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
-[{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
+¡Gracias por ser parte de esta comunidad de aprendizaje. Seguí programando y explorando nuevos territorios en este fascinante mundo de la computación!
+{{< /callout >}}
 
 ---

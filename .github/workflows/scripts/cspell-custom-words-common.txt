@@ -9,6 +9,7 @@ Badgett
 Basili
 Beedle
 Bennekum
+bmatrix
 Boehm
 Boersma
 Booch
@@ -32,6 +33,7 @@ ESEM
 Euromicro
 
 Fewster
+franca
 
 Gagne
 Grenning
@@ -41,11 +43,13 @@ Hannes
 Hapke
 Harvill
 Hennessy
+hextra
 Highsmith
 Hiva
 Holmstrom
 
 Ifrah
+infty
 Itkonen
 
 Jalote
@@ -77,12 +81,16 @@ Marick
 Markku
 Markkula
 Marko
+mathbb
+mathbf
 Matthes
 Matyas
 Mika
+Mikolov
 Moroney
 
 Nonino
+Numpy
 Nuseibeh
 NXOR
 
@@ -97,6 +105,7 @@ Parnas
 Pekka
 Pfleeger
 Pilar
+pmatrix
 Pulkkinen
 Pylint
 pytest
@@ -111,6 +120,7 @@ Sams
 Schwaber
 SDLC
 Sebesta
+sectioncards
 Siewiorek
 Silberschatz
 Simo
@@ -121,6 +131,8 @@ Straub
 Swarz
 
 Turula
+
+UMAP
 
 Veli
 Vlissides

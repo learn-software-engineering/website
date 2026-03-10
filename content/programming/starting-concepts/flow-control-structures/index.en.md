@@ -1,8 +1,7 @@
 ---
 weight: 3
-series: ["Programming: Learning the Starting Concepts"]
-series_order: 3
 title: "Flow Control"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -11,9 +10,15 @@ date: 2023-09-27
 tags: ["Programming", "Starting Concepts", "Flow Control", "Conditionals", "Loops", "Boolean Logic"]
 ---
 
-## Conditions: making decisions in code
+When we embark on the exciting journey of learning to program, we soon discover that programming is not just about writing code, but also about controlling the flow of that code. We can compare it to the flow of decisions we make in our daily lives. For example, if it’s cold outside, we put on a coat before going out. If we have no pending tasks, we go to the movies. Our actions depend on these evaluations and decisions. Control flow is, essentially, the way we decide which part of the code runs, when it runs, and how many times it does. To do this, we have a variety of structures that allow us to make decisions, repeat actions, and split our code into logical blocks.
 
-Life is full of decisions: "If it rains, I'll take an umbrella. Otherwise, I'll wear sunglasses." These decisions are also present in the world of programming. Conditions are like questions the computer asks itself. They allow us to make decisions and execute specific code based on a condition. They can be as simple as "Is it raining?" or as complex as "Is it the weekend and do I have less than $100 in my bank account?".
+## Conditions
+
+Life is full of decisions:
+
+*If it rains, I'll take an umbrella. Otherwise, I'll wear sunglasses.*.
+
+These decisions are also present in the world of programming. Conditions are like questions the computer asks itself. They allow us to make decisions and execute specific code based on a condition. They can be as simple as `"Is it raining?"` or as complex as `"Is it the weekend and do I have less than $100 in my bank account?"`.
 
 ### if
 
@@ -26,7 +31,7 @@ if age >= 18:
     print("You are an adult")
 ```
 
-The code above allows executing a portion of code if a person's age is greater than or equal to 18 years.
+The code above allows executing a portion of code (`print("You are an adult")`) only if a person's age (variable `age`) is greater than or equal to 18 years.
 
 ### if-else
 
@@ -56,9 +61,9 @@ else:
     print("You are an adult")
 ```
 
-In the code above, there are three clear paths: one for when age is less than or equal to 13, one for when age is between 13 and 18, and another for when age is greater than or equal to 18.
+In the code above, there are three clear paths: one for when age is 13 or less, one for when age is between 13 and 18, and another for when age is 18 or is above 18.
 
-Another way to solve this problem is through the `switch-case` structure, which, although Python does not natively incorporate, other languages like Java or C++ do, and it is an important tool to be familiar with. This structure allows programmers to handle multiple conditions in a more organized way than a series of `if-elif-else`.
+Another way to solve this problem is through the `switch-case` structure, which, although Python does not natively incorporate, other languages like [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) or [C++](https://en.wikipedia.org/wiki/C%2B%2B) do, and it is an important tool to be familiar with. This structure allows programmers to handle multiple conditions in a more organized way than a series of `if-elif-else`.
 
 In Java, for example:
 
@@ -80,17 +85,15 @@ switch(day) {
 }
 ```
 
-In the previous example, depending on the value of `day`, the corresponding day will be printed.
+In the previous example, depending on the value of `day`, the name of the corresponding day will be printed.
 
----
-
-## Loops: repeating actions
+## Loops
 
 Sometimes in programming we need to repeat an action several times. Instead of writing the same code many times, we can use loops. These allow repeating the execution of a block of code while a condition is met.
 
 ### while
 
-The `while` loop is useful when we want to repeat an action based on a condition.
+The `while` loop is useful when we want to repeat an action based on a condition. It will repeat the action over and over `while` the condition is true.
 
 ```python
 # Prints 1 to 5
@@ -100,9 +103,15 @@ while i <= 5:
     i = i + 1
 ```
 
+In the example above, the code block composed by the statements `print(i)` and `i = i + 1` will be executed for as long the condition (`i <= 5`) remains true.
+
+{{< callout type="warning" >}}
+  It is really important to pay attention to the condition, it should become `false` at some point or you need to plan for another `break` clause. Otherwise the loop can run forever, consuming lots of resources and making the program/system to fail.
+{{< /callout >}}
+
 ### do-while
 
-Similar to `while` but guarantees at least one execution since the code block is executed first and then the condition is evaluated. Python does not implement this structure, but other languages like Java and C++ do.
+Similar to `while` but guarantees at least one execution since the code block is executed first, before evaluating the condition. Python does not implement this structure, but other languages like [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) y [C++](https://en.wikipedia.org/wiki/C%2B%2B) do.
 
 ```java
 int i = 1;
@@ -130,7 +139,7 @@ for i in range(5):
     print("Hello, world!")
 ```
 
-The code above will print "Hello, world!" five times.
+The code above will print `Hello, world!` five times.
 
 We can also iterate over the elements of a list or iterable object:
 
@@ -140,9 +149,9 @@ for name in names:
     print(f"Hello {name}")
 
 # Prints
-# Hello Maria
-# Hello Florencia
-# Hello Julian
+#   Hello Maria
+#   Hello Florencia
+#   Hello Julian
 ```
 
 ### The `break` and `continue` statements
@@ -152,8 +161,7 @@ We can use `break` to terminate the loop and `continue` to skip to the next iter
 `break` is used to completely terminate the loop when a condition is met, in the following example, when `i` reaches 5.
 
 ```python
-# break example
-i = 0
+i = 1
 while i < 10:
   print(i)
   if i == 5:
@@ -161,19 +169,17 @@ while i < 10:
   i += 1
 
 # Prints:
-# 0
-# 1
-# 2
-# 3
-# 4
-# 5
+#   1
+#   2
+#   3
+#   4
+#   5
 ```
 
 `continue` is used to skip an iteration of the loop and continue with the next one when a condition is met. Here we use it to skip even numbers.
 
 ```python
-# continue example
-i = 0
+i = 1
 while i < 10:
   i += 1
   if i % 2 == 0:
@@ -181,16 +187,14 @@ while i < 10:
   print(i)
 
 # Prints:
-# 1
-# 3
-# 5
-# 7
-# 9
+#   1
+#   3
+#   5
+#   7
+#   9
 ```
 
----
-
-## Nesting: combining structures
+## Nesting
 
 Control flow structures can be nested within each other. For example, we can have loops within loops or conditions within loops.
 
@@ -202,8 +206,6 @@ for i in range(5):
 ```
 
 This code will print combinations of `i` and `j` only when `i` is divisible by 2 and `j` is divisible by 3, demonstrating how loops are nested and executed.
-
----
 
 ## Common usage patterns
 
@@ -241,31 +243,23 @@ for i in range(10):
 print(total) # Sum from 0..9 = 45
 ```
 
----
+## Flowcharts
 
-## Flowcharts: the visual route to understanding code
+Programmers, whether beginners or experts, often find themselves facing challenges that require detailed planning before diving into code. This is where flowcharts come into play as an essential tool. These charts are graphical representations of the processes and logic behind a program or system. In this section, we will unravel the world of flowcharts and how they can benefit programmers of all levels.
 
-Programmers, whether beginners or experts, often find themselves facing challenges that require detailed planning before diving into code. This is where flowcharts come into play as an essential tool. These charts are graphical representations of the processes and logic behind a program or system. In this article, we will unravel the world of flowcharts, from basic concepts to advanced techniques, and how they can benefit programmers of all levels.
-
-A flowchart is a graphical representation of a process. It uses specific symbols to represent different types of instructions or actions. Its main purpose is to simplify understanding of a process by showing step by step how information or decisions flow. These charts:
-
-- Facilitate understanding of complex processes.
-- Aid in the design and planning phase of a program.
-- Serve as documentation and reference for future developments.
+A flowchart is a graphical representation of a process. It uses specific symbols to represent different types of instructions or actions. Its main purpose is to simplify understanding of a process by showing step by step how information or decisions flow.
 
 Flowcharts are a powerful tool that not only benefits beginners but also experienced programmers. They provide a clear and structured view of a process or program, facilitating planning, design, and communication between team members.
 
-### Basic elements
-
-Flowcharts consist of several symbols, each with a specific meaning:
+They consist of several symbols, each with a specific meaning:
 
 - **Oval**: Represents the start or end of a process.
 - **Rectangle**: Denotes an operation or instruction.
 - **Diamond**: Indicates a decision based on a condition.
 - **Arrows**: Show the direction of flow.
 
-{{< mermaid >}}
-graph TD;
+```mermaid
+flowchart TD
     start((Start))
     process[Process]
     decision{Decision?}
@@ -273,17 +267,16 @@ graph TD;
 
     start --> process;
     process --> decision;
-    decision --> |Yes| process
-    decision --> |No| final
-end
-{{< /mermaid >}}
+    decision --> |No| process
+    decision --> |Yes| final
+```
 
 ### Examples
 
 Let's design a flowchart for a program that asks for a number and tells us if it's even or odd.
 
-{{< mermaid >}}
-graph TB
+```mermaid
+flowchart TB
     start((Start))
     input[Input number]
     decision{Even?}
@@ -297,13 +290,12 @@ graph TB
     decision --> |No| isOdd
     isEven --> final
     isOdd --> final
-end
-{{< /mermaid >}}
+```
 
 As programs become more complex, you may need to incorporate loops, multiple conditions, and other advanced elements into your flowchart. For example, here we diagram a program that sums numbers from 1 to a number entered by the user.
 
-{{< mermaid >}}
-graph TD
+```mermaid
+flowchart TD
     start((Start))
     input[Input number]
     setVariables[Set sum=0 and counter=1]
@@ -319,10 +311,7 @@ graph TD
     loop_code --> loop_condition
     loop_condition --> |No| result
     result --> final
-end
-{{< /mermaid >}}
-
----
+```
 
 ## Conclusion
 
@@ -330,22 +319,12 @@ Control flow is the heart of programming. Without it, programs would be linear s
 
 ---
 
-## References
-
-1. Lutz, M. (2013). Learning Python: Powerful Object-Oriented Programming. O'Reilly Media, Incorporated.
-2. Deitel, P., & Deitel, H. (2012). Java: How to program. Upper Saddle River, NJ: Prentice Hall.
-3. Matthes, E. (2015). Python crash course: A hands-on, project-based introduction to programming. San Francisco, CA: No Starch Press.
-
----
-
-{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+{{< callout icon="sparkles" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
-We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
+We're keen to hear your thoughts, so don't be shy, drop your comments, suggestions, and those bright ideas you're bound to have.
 
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{< /alert >}}
-
----
+{{< /callout >}}

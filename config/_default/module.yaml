@@ -1,5 +1,4 @@
 imports:
-  # https://blowfish.page/
-  # https://blowfish.page/docs/installation/#install-using-hugo
+  # https://imfing.github.io/hextra
   disable: false
-  path: "github.com/nunocoracao/blowfish/v2"
+  path: "github.com/imfing/hextra"

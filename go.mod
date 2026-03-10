@@ -1,5 +1,5 @@
 module github.com/learn-software-engineering/website
 
-go 1.24.4
+go 1.26
 
-require github.com/nunocoracao/blowfish/v2 v2.98.0 // indirect
+require github.com/imfing/hextra v0.12.0 // indirect

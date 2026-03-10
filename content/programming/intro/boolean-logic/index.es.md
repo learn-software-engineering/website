@@ -1,8 +1,7 @@
 ---
 weight: 4
-series: ["Programación: Aprendiendo las Bases"]
-series_order: 4
 title: "Lógica Booleana"
+cardImage: "featured.es.jpg"
 authors:
   - jnonino
 description: >
@@ -11,7 +10,9 @@ date: 2023-09-09
 tags: ["Programación", "Lógica Booleana"]
 ---
 
-La lógica booleana, nombrada en honor a [George Boole](https://es.wikipedia.org/wiki/George_Boole), un matemático inglés del siglo XIX, es un sistema matemático que se ocupa de operaciones que tienen solo dos resultados posibles: verdadero o falso, representados generalmente como 1 y 0, respectivamente[^1]. En su obra "An Investigation of the Laws of Thought", Boole estableció las bases de esta lógica, presentando un sistema algebraico que podría utilizarse para representar estructuras lógicas.
+En la vida, a menudo buscamos certezas. ¿Es cierto o falso que va a llover mañana? ¿Es correcto o incorrecto actuar de cierta manera? Esta dicotomía, esta división entre dos estados opuestos, se encuentra en el núcleo mismo de una rama esencial de las matemáticas y la informática: la lógica booleana.
+
+La lógica booleana, nombrada en honor a [George Boole](https://es.wikipedia.org/wiki/George_Boole), un matemático inglés del siglo XIX, es un sistema matemático que se ocupa de operaciones que tienen solo dos resultados posibles: verdadero o falso, representados generalmente como 1 y 0, respectivamente. En su obra "An Investigation of the Laws of Thought", Boole estableció las bases de esta lógica, presentando un sistema algebraico que podría utilizarse para representar estructuras lógicas.
 
 ## Operaciones Booleanas
 
@@ -33,13 +34,13 @@ Dentro de la lógica booleana, existen operaciones fundamentales que permiten ma
 
 ## La importancia de esta lógica en computación y programación
 
-La computación moderna, en su esencia, es la manipulación de bits, esos unos y ceros que mencionamos. Cada operación que realiza una computadora, desde simples cálculos hasta la renderización de gráficos complejos, implica operaciones booleanas en algún nivel[^2].
+La computación moderna, en su esencia, es la manipulación de bits, esos unos y ceros que mencionamos. Cada operación que realiza una computadora, desde simples cálculos hasta la renderización de gráficos complejos, implica operaciones booleanas en algún nivel.
 
 En programación, la lógica booleana se utiliza en estructuras de control, como condiciones (if, else) y bucles, permitiendo a los programas tomar decisiones basadas en ciertas condiciones.
 
 ## Tablas de verdad: el mapa de la lógica Booleana
 
-Una tabla de verdad es una representación gráfica de una operación booleana. Enumera todas las combinaciones posibles de entradas y muestra el resultado de la operación para cada combinación[^3].
+Una tabla de verdad es una representación gráfica de una operación booleana. Enumera todas las combinaciones posibles de entradas y muestra el resultado de la operación para cada combinación.
 
 Por ejemplo,
 
@@ -56,26 +57,12 @@ La lógica booleana es mucho más que un conjunto de reglas matemáticas abstrac
 
 ---
 
-{{< alert icon="comment" >}}
-¡Gracias por haber llegado hasta acá!
+{{< callout icon="sparkles" >}}
+¡Gracias por llegar hasta acá! Espero que este recorrido por el universo de la programación haya sido tan apasionante para vos como lo fue para mí escribirlo.
 
-Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
+Nos encantaría escuchar lo que pensás, así que no te quedes callado/a, dejá tus comentarios, sugerencias y todas esas ideas copadas que seguro se te ocurrieron.
 
-Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
+Y para ir más allá de estas líneas, date una vuelta por los ejemplos prácticos que preparamos para vos. Vas a encontrar todo el código y los proyectos en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
-[{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
-[{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
-[{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
-[{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
-[{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
-
----
-
-## Referencias
-
-[^1]: Boole, G. (1854). *An Investigation of the Laws of Thought*. Londres: Walton and Maberly.
-[^2]: Tanenbaum, A. (2012). *Estructura de Computadoras*. Buenos Aires: Prentice Hall.
-[^3]: Minsky, M. (1967). *Computation: Finite and Infinite Machines*. Buenos Aires: Prentice-Hall.
+¡Gracias por ser parte de esta comunidad de aprendizaje. Seguí programando y explorando nuevos territorios en este fascinante mundo de la computación!
+{{< /callout >}}

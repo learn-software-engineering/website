@@ -1,5 +1,6 @@
 ---
 title: DevOps
+comments: false
 cascade:
   type: docs
 sidebar:

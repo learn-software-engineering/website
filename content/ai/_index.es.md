@@ -1,6 +1,7 @@
 ---
 title: Inteligencia Artificial
 cardImage: "featured.es.jpg"
+comments: false
 cascade:
   type: docs
 sidebar:

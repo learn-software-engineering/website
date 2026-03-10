@@ -1,5 +1,6 @@
 ---
 title: Software Engineering
+comments: false
 cascade:
   type: docs
 sidebar:

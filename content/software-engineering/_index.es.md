@@ -1,3 +1,9 @@
 ---
-title: "Ingeniería de Software"
+title: Ingeniería de Software
+cascade:
+  type: docs
+sidebar:
+  open: true
 ---
+
+{{< sectioncards >}}

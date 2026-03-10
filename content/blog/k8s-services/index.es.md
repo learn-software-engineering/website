@@ -1,7 +1,7 @@
 ---
 title: "Kubernetes Services"
-# series: ["Kubernetes"]
-# series_order: 1
+# # series: ["Kubernetes"]
+# # series_order: 1
 authors:
   - jnonino
 description: >
@@ -10,19 +10,14 @@ date: 2025-08-05
 tags: ["Kubernetes", "Services", "Service Discovery"]
 ---
 
-{{< lead >}}
 Luego de desplegar una aplicación en Kubernetes, independientemente del método elegido para ello, si queremos que sea alcanzable por otras aplicaciones necesitamos crear un servicio. En este artículo vamos a explicar que es un servicio, como se utilizan y a repasar los cuatro tipos de servicios que están disponibles en Kubernetes, ClusterIP, NodePort, LoadBalancer y ExternalName, revisaremos sus detalles y cuando se debe utilizar cada uno.
-{{< /lead >}}
 
 Al desplegar una aplicación en Kubernetes utilizando un objeto del tipo `Deployment`, los pods pertenecientes a dicho Deployment pueden ser creados y destruidos en cualquier momento en base a su funcionamiento, por ejemplo si en nuestro Deployment pedimos que existan 3 réplicas y por cualquier razón alguna de ellas deja de funcionar, una nueva réplica será creada automáticamente para reemplazar a la que falló.
 
 Cada pod tiene su propia dirección IP dentro del cluster. En general, las demás aplicaciones que necesitan interactuar con nuestra aplicación desconocen el nombre de cada una de sus replicas, su estado y su dirección IP para iniciar una comunicación. Kubernetes nos provee el objeto `Service` como una forma nativa de `Service Discovery` sin que necesitemos hacer cambios en nuestra aplicación o en las que necesitan comunicarse con ella. Entonces, el fin para el cual creamos un servicio es para exponer una aplicación que puede estar constituida por múltiples pods a traves de un único punto de acceso. De esta manera otras aplicación contactaran al `Service` y este redirigirá la comunicación a alguno de los pods de nuestra aplicación.
 
-{{< figure
-    src="images/k8s_services.png"
-    alt="Pods detrás de un servicio en Kubernetes"
-    caption="Pods detrás de un servicio en Kubernetes"
-    >}}
+!["Pods detrás de un servicio en Kubernetes"](images/k8s_services.png)
+*"Pods detrás de un servicio en Kubernetes"*
 
 ## Creando un servicio
 
@@ -45,9 +40,9 @@ spec:
 
 En dicho ejemplo, estaremos creando un servicio llamado _my-service_ del tipo _ClusterIP_ que redirige las comunicaciones que llegan al puerto 8080 hacia el puerto 1234 de cualquier Pod que tenga la etiqueta _app-name: my-app_.
 
-{{< alert "triangle-exclamation" >}}
+{{< callout type="warning" >}}
 El nombre del servicio debe ser una [etiqueta válida bajo las reglas de RFC 1035](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#rfc-1035-label-names)
-{{< /alert >}}
+{{< /callout >}}
 
 Como se ve en el archivo, el campo _ports_ es del tipo array, lo que significa que pueden mapearse múltiples puertos.
 
@@ -82,11 +77,8 @@ Es el tipo de servicio por defecto. Kubernetes asigna una dirección IP al servi
 
 Cuando se crea un servicio del tipo `ClusterIP` el servicio no es accesible desde el exterior y los pods detrás de este servicio solo pueden ser contactados por otros pods del mismo cluster. Si se desea exponer el servicio al exterior se debe utilizar un objeto del tipo `Ingress`.
 
-{{< figure
-    src="images/cluster_ip.png"
-    alt="Esquema de un servicio del tipo _ClusterIP_"
-    caption="Esquema de un servicio del tipo _ClusterIP_"
-    >}}
+!["Esquema de un servicio del tipo _ClusterIP_"](images/cluster_ip.png)
+*"Esquema de un servicio del tipo _ClusterIP_"*
 
 ### NodePort
 
@@ -94,11 +86,8 @@ En este caso, Kubernetes asigna al servicio un puerto del rango definido en la c
 
 Este tipo de servicio, permite un rápido acceso desde el exterior sin necesidad de infraestructura adicional, pero no contempla un mecanismo de balance de carga (_load balancing_), lo que puede provocar la saturación de alguno de ellos. Por otro lado, en un sistema donde existan múltiples servicios, la gestión de puertos puede volverse demasiado compleja.
 
-{{< figure
-    src="images/node_port.png"
-    alt="Esquema de un servicio del tipo _NodePort_"
-    caption="Esquema de un servicio del tipo _NodePort_"
-    >}}
+!["Esquema de un servicio del tipo _NodePort_"](images/node_port.png)
+*"Esquema de un servicio del tipo _NodePort_"*
 
 ### LoadBalancer
 
@@ -108,11 +97,8 @@ El proveedor de servicios en la nube decide como se balancea la carga.
 
 La gran ventaja de este tipo de servicio es que mediante el uso de servicios en la nube se obtiene un balanceo de carga automático y de alta disponibilidad. La desventaja es que puede generar costos adicionales.
 
-{{< figure
-    src="images/load_balancer.png"
-    alt="Esquema de un servicio del tipo _LoadBalancer_"
-    caption="Esquema de un servicio del tipo _LoadBalancer_"
-    >}}
+!["Esquema de un servicio del tipo _LoadBalancer_"](images/load_balancer.png)
+*"Esquema de un servicio del tipo _LoadBalancer_"*
 
 ### ExternalName
 
@@ -130,11 +116,8 @@ spec:
   externalName: learn-software.com
 ```
 
-{{< figure
-    src="images/external_name.png"
-    alt="Esquema de un servicio del tipo _ExternalName_"
-    caption="Esquema de un servicio del tipo _ExternalName_"
-    >}}
+!["Esquema de un servicio del tipo _ExternalName_"](images/external_name.png)
+*"Esquema de un servicio del tipo _ExternalName_"*
 
 ### Headless Services
 
@@ -142,16 +125,11 @@ Existen casos en los que, por ejemplo, es necesario utilizar otros mecanismos de
 
 Un `headless service` no tiene asignada una dirección IP única del cluster. Retorna directamente las direcciones IPs de pods en una respuesta DNS. Esto es útil para descubrimiento de servicios personalizados, bases de datos distribuidas o control detallado del balanceo. La desventaja es que el cliente del servicio debe ser capaz de resolver y gestionar por sí mismo una respuesta DNS conteniendo múltiples direcciones.
 
-{{< figure
-    src="images/headless_service.png"
-    alt="Esquema de un _Headless Service_"
-    caption="Esquema de un _Headless Service_"
-    >}}
+!["Esquema de un _Headless Service_"](images/headless_service.png)
+*"Esquema de un _Headless Service_"*
 
 ---
 
-## Referencias
-
-{{< alert "comment" >}}
+{{< callout type="info" >}}
 Puedes leer más sobre el tema en la [documentación oficial de Kubernetes](https://kubernetes.io/docs/concepts/services-networking/service/)
-{{< /alert >}}
+{{< /callout >}}

@@ -1,8 +1,7 @@
 ---
-weight: 4
-series: ["Programming: Learning Data Structures"]
-series_order: 4
+weight: 3
 title: "Linked Lists"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -19,8 +18,6 @@ A linked list is composed of `nodes` where each node has two parts:
 Nodes are organized sequentially, each pointing to the next. The last node points to null to indicate the end.
 
 This dynamic structure allows efficient insertion and deletion of nodes.
-
----
 
 ## Types of linked lists
 
@@ -50,8 +47,6 @@ There are several types:
     caption="Diagram of a circular linked list"
     >}}
 
----
-
 ## Common operations
 
 - **Insert:** Add nodes to the beginning, end or middle of the list.
@@ -61,8 +56,6 @@ There are several types:
 - **Search:** Find nodes by value by traversing the list.
 
 - **Traverse:** Iterate through nodes by following the references.
-
----
 
 ## Implementation
 
@@ -110,8 +103,6 @@ With this `LinkedList` class we can create a list, add nodes, print it, search e
 
 We could add other methods like insert at end, delete by value, get by index, etc. But this gives an idea of how to encapsulate the linked list functionality in a class. As practice, feel free to try adding these methods on your own. Don't hesitate to leave your comments and contact me if you need help!
 
----
-
 ## Advantages and disadvantages
 
 **Advantages:**
@@ -125,8 +116,6 @@ We could add other methods like insert at end, delete by value, get by index, et
 - More memory usage from having to store references.
 - Accessing elements by index is slower since it is sequential.
 
----
-
 ## Usage examples
 
 - Implementing structures like stacks and queues.
@@ -134,20 +123,18 @@ We could add other methods like insert at end, delete by value, get by index, et
 - Blockchains like Bitcoin's.
 - Playing elements in order like music playlists.
 
----
-
 ## Conclusion
 
 Linked lists are a versatile data structure for storing dynamic sequences of elements. Having a good handle on these lists, their operations, and uses is essential for any programmer.
 
 ---
 
-{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+{{< callout icon="sparkles" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
-We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
+We're keen to hear your thoughts, so don't be shy, drop your comments, suggestions, and those bright ideas you're bound to have.
 
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{< /alert >}}
+{{< /callout >}}

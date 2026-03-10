@@ -4,11 +4,13 @@ creational
 cyclomatic
 datos
 estructura
+explainability
 fundamentos
 incrementality
 modeling
 objetos
 programación
+regulariser
 roadmap
 sidelining
 subclassed

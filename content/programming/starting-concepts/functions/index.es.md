@@ -1,8 +1,7 @@
 ---
 weight: 4
-series: ["Programación: Aprendiendo los Conceptos Iniciales"]
-series_order: 4
 title: "Funciones"
+cardImage: "featured.es.jpg"
 authors:
   - jnonino
 description: >
@@ -11,11 +10,13 @@ date: 2023-09-29
 tags: ["Programación", "Conceptos Iniciales", "Funciones", "Métodos"]
 ---
 
+En el vasto y emocionante mundo de la programación, existen conceptos que son pilares fundamentales para cualquier desarrollador, sin importar su nivel de experiencia. Uno de estos conceptos es el de las funciones. ¿Qué son? ¿Por qué son tan cruciales? ¡Vamos a descubrirlo!
+
 ## ¿Qué son las funciones?
 
-Una función, en términos simples, es un bloque de código que se ejecuta sólo cuando es llamado. Puedes pensar en ella como un pequeño programa dentro de tu programa principal, diseñado para realizar una tarea específica[^1]. Una función también puede verse como una caja negra: le pasamos una entrada (parámetros), ocurre algún procesamiento interno, y produce una salida (retorno).
+Una función, en términos simples, es un bloque de código que se ejecuta sólo cuando es llamado. Puedes pensar en ella como un pequeño programa dentro de tu programa principal, diseñado para realizar una tarea específica. Una función también puede verse como una caja negra: le pasamos una entrada (parámetros), ocurre algún procesamiento interno, y produce una salida (retorno).
 
-Las funciones nos permiten segmentar nuestro código en partes lógicas, donde cada parte realiza una única acción. Esto brinda varios beneficios[^2]:
+Las funciones nos permiten segmentar nuestro código en partes lógicas, donde cada parte realiza una única acción. Esto brinda varios beneficios:
 
 - **Reutilización**: Una vez definida la función, podemos ejecutar (llamar) ese código desde cualquier lugar de nuestro programa cuantas veces sea necesario.
 - **Organización**: Permite dividir un programa grande en partes más pequeñas y manejables.
@@ -26,11 +27,9 @@ Las funciones nos permiten segmentar nuestro código en partes lógicas, donde c
 
 Es vital distinguir entre estos dos conceptos. Mientras que una función siempre devuelve un valor, un procedimiento realiza una tarea pero no devuelve nada. En algunos lenguajes, esta diferencia es más clara que en otros. Python, por ejemplo, tiene funciones que pueden o no devolver valores.
 
----
-
 ## Anatomía de una función
 
-En Python, una función se declara usando la palabra clave `def`, seguida del nombre de la función y paréntesis. El código dentro de la función se denomina el *cuerpo* de la función[^4] y contiene el conjunto de instrucciones a ejecutar para cumplir con su tarea..
+En Python, una función se declara usando la palabra clave `def`, seguida del nombre de la función y paréntesis. El código dentro de la función se denomina el *cuerpo* de la función y contiene el conjunto de instrucciones a ejecutar para cumplir con su tarea..
 
 ```python
 def mi_funcion():
@@ -107,8 +106,6 @@ El valor de retorno se pasa de vuelta a donde se llamó la función y se puede a
 
 Las funciones también pueden ejecutar alguna tarea sin devolver nada explícitamente. En Python esto se conoce como retornar `None`.
 
----
-
 ## Variables locales y globales
 
 Las **variables locales** se definen dentro de una función y solo existen en ese ámbito, mientras que las **variables globales** están definidas fuera y pueden ser accedidas desde cualquier parte del código. Es crucial entender su **alcance** (dónde puede ser accesible una variable) y **duración** (cuánto tiempo vive una variable).
@@ -137,15 +134,13 @@ suma()
 print(x) # 15
 ```
 
-{{% alert color="warning" %}}
+{{< callout type="warning" >}}
 Idealmente las funciones solo deben trabajar con variables locales y parámetros. Limita el uso de variables globales. Si bien pueden ser útiles, también pueden hacer que el código sea difícil de leer y mantener.
-{{% /alert %}}
-
----
+{{< /callout >}}
 
 ## Buenas prácticas
 
-Al crear funciones debemos seguir ciertos principios y patrones[^3]:
+Al crear funciones debemos seguir ciertos principios y patrones:
 
 - El nombre de una función debe indicar claramente su propósito.
 - Hacer las funciones pequeñas, simples y enfocadas en una tarea. Una función debe hacer una cosa y hacerla bien.
@@ -156,35 +151,18 @@ Al crear funciones debemos seguir ciertos principios y patrones[^3]:
 
 Seguir estas buenas prácticas nos ayudará a crear funciones reutilizables, encapsuladas y fáciles de mantener.
 
----
-
 ## Conclusión
 
 Las funciones son componentes fundamentales en la programación, permitiéndonos organizar, reutilizar y encapsular código. Definiendo funciones que realicen una sola tarea mantenemos nuestros programas simplificados, fáciles de entender y modificar. Al comprender y dominar este concepto, no solo mejoras la calidad de tu código sino también tu eficiencia como desarrollador.
 
 ---
 
-{{< alert icon="comment" >}}
-¡Gracias por haber llegado hasta acá!
+{{< callout icon="sparkles" >}}
+¡Gracias por llegar hasta acá! Espero que este recorrido por el universo de la programación haya sido tan apasionante para vos como lo fue para mí escribirlo.
 
-Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
+Nos encantaría escuchar lo que pensás, así que no te quedes callado/a, dejá tus comentarios, sugerencias y todas esas ideas copadas que seguro se te ocurrieron.
 
-Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
+Y para ir más allá de estas líneas, date una vuelta por los ejemplos prácticos que preparamos para vos. Vas a encontrar todo el código y los proyectos en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
-[{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
-[{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
-[{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
-[{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
-[{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
-
----
-
-## Referencias
-
-[^1]: McConnell, S. (2004). *Code Complete*. Microsoft Press.
-[^2]: Joyanes Aguilar, L. (2008). *Fundamentos de programación: algoritmos, estructura de datos y objetos*. McGraw-Hill.
-[^3]: Kindler, E., & Krivy, I. (2011). *Object-Oriented Simulation of systems with Java: A working introduction*. BoD–Books on Demand.
-[^4]: Python Software Foundation. (2022). *Documentación oficial de Python*.
+¡Gracias por ser parte de esta comunidad de aprendizaje. Seguí programando y explorando nuevos territorios en este fascinante mundo de la computación!
+{{< /callout >}}

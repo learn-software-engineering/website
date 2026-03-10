@@ -1,8 +1,7 @@
 ---
-weight: 6
-series: ["Programming: Learning Data Structures"]
-series_order: 6
+weight: 5
 title: "Queues"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -21,8 +20,6 @@ This causes the first element to be added to the queue to also be the first to b
     caption="Diagram of a queue"
     >}}
 
----
-
 ## Main operations
 
 The basic queue operations are:
@@ -32,19 +29,15 @@ The basic queue operations are:
 - **Peek:** Gets the front element without removing it.
 - **isEmpty:** Checks if the queue is empty.
 
----
-
 ## Implementation
 
 Like stacks, queues can be implemented using linked lists.
 Elements are added at the end and removed from the front by keeping references to both ends.
 
-{{< codeimporter
+<!-- {{< codeimporter
     url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/data_structures/queues.py"
     type="python"
-    >}}
-
----
+    >}} -->
 
 ## Usage examples
 
@@ -56,20 +49,18 @@ Some common uses of queues:
 - Message queues like RabbitMQ or Kafka.
 - Circular buffers in audio for streaming.
 
----
-
 ## Conclusion
 
 Queues are versatile structures thanks to their FIFO principle. Having a good handle on queues, implementation, and applications will reinforce your skills as a programmer.
 
 ---
 
-{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+{{< callout icon="sparkles" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
-We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
+We're keen to hear your thoughts, so don't be shy, drop your comments, suggestions, and those bright ideas you're bound to have.
 
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{< /alert >}}
+{{< /callout >}}

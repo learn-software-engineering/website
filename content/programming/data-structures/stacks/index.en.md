@@ -1,8 +1,7 @@
 ---
-weight: 5
-series: ["Programming: Learning Data Structures"]
-series_order: 5
+weight: 4
 title: "Stacks"
+cardImage: "featured.en.jpg"
 authors:
   - jnonino
 description: >
@@ -19,8 +18,6 @@ The **LIFO** nature of stacks is due to the fact that only the top element can b
     caption="Diagram of a stack"
     >}}
 
----
-
 ## Main operations
 
 The primary operations supported by a stack structure are:
@@ -32,18 +29,14 @@ The primary operations supported by a stack structure are:
 
 Most languages like Python and Java provide stack implementations in their standard libraries.
 
----
-
 ## Implementation
 
 A stack can be implemented using a linked list so that each node points to the previous node.
 
-{{< codeimporter
+<!-- {{< codeimporter
     url="https://raw.githubusercontent.com/learn-software-engineering/examples/main/programming/data_structures/stacks.py"
     type="python"
-    >}}
-
----
+    >}} -->
 
 ## Usage examples
 
@@ -57,20 +50,18 @@ Stacks have many uses in programming:
 
 - **Algorithms and data structures**: like in the quicksort algorithm and in data path implementations.
 
----
-
 ## Conclusion
 
 Stacks are versatile data structures thanks to their LIFO operation principle. Having a good command of stacks, their uses and applications is essential in computer science.
 
 ---
 
-{{< alert icon="comment" cardColor="grey" iconColor="black" textColor="black" >}}
+{{< callout icon="sparkles" >}}
 Cheers for making it this far! I hope this journey through the programming universe has been as fascinating for you as it was for me to write down.
 
-We're keen to hear your thoughts, so don't be shy – drop your comments, suggestions, and those bright ideas you're bound to have.
+We're keen to hear your thoughts, so don't be shy, drop your comments, suggestions, and those bright ideas you're bound to have.
 
 Also, to delve deeper than these lines, take a stroll through the practical examples we've cooked up for you. You'll find all the code and projects in our GitHub repository [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
 Thanks for being part of this learning community. Keep coding and exploring new territories in this captivating world of software!
-{{< /alert >}}
+{{< /callout >}}

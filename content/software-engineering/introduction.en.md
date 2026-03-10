@@ -1,7 +1,7 @@
 ---
 weight: 1
-series: ["Learning Software Engineering"]
-series_order: 1
+# series: ["Learning Software Engineering"]
+# series_order: 1
 title: "Introduction to Software Engineering"
 authors:
   - jnonino

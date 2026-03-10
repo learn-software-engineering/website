@@ -1,8 +1,3 @@
 ---
-title: "Blog"
-description: "Latests news and tutorials about programming, software engineering, DevOps and much more!"
+title: Blog
 ---
-
-{{< lead >}}
-Latests news and tutorials about programming, software engineering, DevOps and much more!
-{{< /lead >}}

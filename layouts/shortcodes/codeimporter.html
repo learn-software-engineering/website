@@ -1,0 +1,30 @@
+{{- $url := .Get "url" -}}
+{{- $type := .Get "type" | default "text" -}}
+{{- $startLine := .Get "startLine" | default 1 | int -}}
+{{- $startLine = sub $startLine 1 -}}
+{{- $endLine := .Get "endLine" | default -1 | int -}}
+
+{{- with resources.GetRemote $url -}}
+  {{- $content := .Content | replaceRE "\r\n" "\n" | replaceRE "\r" "\n" -}}
+  {{- $lines := split $content "\n" -}}
+  {{- $totalLines := len $lines -}}
+
+  {{- if ne $endLine -1 -}}
+    {{- $endLine = math.Min $endLine $totalLines -}}
+  {{- else -}}
+    {{- $endLine = $totalLines -}}
+  {{- end -}}
+
+  {{- if gt $startLine $endLine -}}
+    {{- errorf "codeimporter: startLine (%d) is greater than endLine (%d)" $startLine $endLine -}}
+  {{- end -}}
+
+  {{- $selectedLines := $lines | first $endLine | after $startLine -}}
+  {{- $code := delimit $selectedLines "\n" -}}
+
+  <div class="hextra-code-block hx-relative hx-mt-6 first:hx-mt-0 hx-group">
+    {{- transform.Highlight $code $type "" -}}
+  </div>
+{{- else -}}
+  {{- warnf "codeimporter: unable to fetch %q" $url -}}
+{{- end -}}

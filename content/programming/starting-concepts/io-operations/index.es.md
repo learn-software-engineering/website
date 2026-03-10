@@ -1,8 +1,7 @@
 ---
 weight: 2
-series: ["Programación: Aprendiendo los Conceptos Iniciales"]
-series_order: 2
 title: "Operaciones de Entrada y Salida"
+cardImage: "featured.es.jpg"
 authors:
   - jnonino
 description: >
@@ -11,88 +10,83 @@ date: 2023-09-19
 tags: ["Programación", "Conceptos Iniciales", "entrada/salida", "I/O"]
 ---
 
-## Salida a pantalla
+Las operaciones de entrada y salida (input/output o I/O) permiten que un programa se comunique e intercambie datos con el mundo exterior. En este artículo veremos en detalle operaciones de entrada desde el teclado o un archivo, y salida hacia la pantalla o un archivo.
 
-Python también provee funciones para enviar la salida de un programa a la "salida estándar", generalmente la pantalla o terminal[^2].
+## Entrada y salida estándar
 
-La función `print()` muestra el valor pasado como parámetro:
+### Salida a pantalla
 
+Python provee funciones para enviar la salida de un programa a la *"salida estándar"*, generalmente la pantalla o terminal.
+
+La función `print()` imprime en pantalla el valor pasado como parámetro:
 ```python
-nombre = "Eric"
-print(nombre) # muestra "Eric"
+nombre = "Julian"
+print(nombre) # muestra "Julian"
 ```
 
-Podemos imprimir múltiples valores separados por comas[^4]:
-
+Podemos imprimir múltiples valores separados por comas:
 ```python
-print("Hola", nombre, "!") # muestra "Hola Eric!"
+nombre = "Julian"
+print("Hola", nombre, "!") # muestra "Hola Julian!"
 ```
 
-También podemos usar valores literales sin asignar a variables[^3]:
-
+También podemos usar valores literales sin asignar a variables:
 ```python
-print("2 + 3 =", 2 + 3) # muestra "2 + 3 = 5"
+print("2 + 3 = ", 2 + 3) # muestra "2 + 3 = 5"
 ```
 
-### Formateo de salida
+#### Formato de salida
 
-Python provee varias formas de dar formato a la salida[^1]:
+Python provee varias formas de dar formato a la salida y así integrar variables a lo que deseamos imprimir en pantalla:
 
 **f-Strings**: Permiten insertar variables dentro de una cadena:
-
 ```python
-nombre = "Eric"
-print(f"Hola {nombre}") # muestra "Hola Eric"
+nombre = "Julian"
+print(f"Hola {nombre}") # muestra "Hola Julian"
 ```
 
 **%s**: Inserta cadenas de texto en una cadena de formato:
-
 ```python
-nombre = "Eric"
-print("Hola %s" % nombre) # muestra "Hola Eric"
+nombre = "Julian"
+print("Hola %s" % nombre) # muestra "Hola Julian"
 ```
 
 **%d**: Inserta números enteros:
-
 ```python
 valor = 15
 print("El valor es %d" % valor) # muestra "El valor es 15"
 ```
 
 **.format()**: Inserta valores en una cadena de formato:
-
 ```python
-nombre = "Eric"
-print("Hola {}. Bienvenido".format(nombre))
-# muestra "Hola Eric. Bienvenido"
+nombre = "Julian"
+print("¡Hola {}! Bienvenido a {}.".format(nombre, "casa"))
+# muestra "¡Hola Julian! Bienvenido a casa."
 ```
 
-Estas opciones de formateo nos permiten interpolar variables y valores en cadenas de texto para generar outputs personalizados. Podemos combinar múltiples valores y formateos en una sola cadena de salida[^4].
+Estas opciones de formato nos permiten interpolar variables y valores en cadenas de texto para generar salidas personalizadas. Podemos combinar múltiples valores y formatos en una sola cadena de salida.
 
----
+### Entrada desde el teclado
 
-## Entrada desde el teclado
-
-Python provee funciones incorporadas para leer datos ingresados por el usuario en tiempo de ejecución. Esto se conoce como "entrada estándar"[^1].
+Existen funciones para leer datos ingresados por el usuario en tiempo de ejecución. Esto se conoce como *"entrada estándar"*.
 
 La función `input()` permite leer un valor ingresado por el usuario y asignarlo a una variable. Por ejemplo:
-
 ```python
 nombre = input("Ingresa tu nombre: ")
 ```
 
-Esto muestra el mensaje "Ingresa tu nombre: " y espera a que el usuario escriba un texto y presione Enter. Ese valor se asigna a la variable `nombre`[^4].
+Esto muestra el mensaje `Ingresa tu nombre: ` y espera a que el usuario escriba un texto y presione *Enter*. Ese valor se asigna a la variable `nombre`.
 
-La función `input()` siempre regresa una cadena de texto. Si queremos pedir un número u otro tipo de dato, debemos convertirlo usando `int()`, `float()`, etc[^2]:
+La función `input()` siempre regresa una cadena de texto. Si queremos pedir un número u otro tipo de dato, debemos convertirlo usando `int()`, `float()`, etc.:
 
 ```python
 edad = int(input("Ingresa tu edad: "))
 pi = float(input("Ingresa el valor de pi: "))
 ```
 
-### Leyendo múltiples valores
+#### Leyendo múltiples valores
 
-Podemos pedir y leer varios valores en una misma línea separándolos con comas[^3]:
+Podemos pedir y leer varios valores en una misma línea separándolos con comas:
 
 ```python
 nombre, edad = input("Ingresa nombre y edad: ").split()
@@ -100,7 +94,7 @@ nombre, edad = input("Ingresa nombre y edad: ").split()
 
 El método `split()` divide la entrada en partes y retorna una lista de cadenas. Luego asignamos los elementos de la lista a variables separadas.
 
-También podemos leer varias líneas de entrada con un ciclo[^1]:
+También podemos leer varias líneas de entrada con un bucle:
 
 ```python
 nombres = [] # lista vacía
@@ -110,118 +104,89 @@ for x in range(3):
    nombres.append(nombre)
 ```
 
-Este código lee 3 nombres ingresados por el usuario y los agrega a una lista.
+Este código lee 3 nombres ingresados por el usuario y los agrega a la lista `nombres`.
 
----
+{{< callout type="info" >}}
+  ¡No te preocupes por el concepto de bucle y esta nueva sintaxis. Vamos a hablar de eso en próximos artículos!
+{{< /callout >}}
 
-## Salida a un archivo
+## Archivos
 
-Además de imprimir a pantalla, podemos escribir la salida a un archivo usando la función `open()`[^2]:
+### Salida a un archivo
 
+Además de imprimir a pantalla, podemos escribir la salida a un archivo usando la función `open()`:
 ```python
 archivo = open("datos.txt", "w")
 ```
 
-Esto abre `datos.txt` para escritura ("w") y retorna un objeto archivo.
+Esto abre `datos.txt` para escritura (`"w"`) y retorna un objeto archivo.
 
-Luego usamos `archivo.write()` para escribir a ese archivo[^3]:
-
+Luego usamos `archivo.write()` para escribir contenido en el:
 ```python
 archivo.write("Hola mundo!")
 archivo.write("Este texto va al archivo")
 ```
 
-Debemos cerrar el archivo con `archivo.close()` cuando terminamos[^1]:
-
+Debemos cerrar el archivo con `archivo.close()` cuando terminamos:
 ```python
 archivo.close()
 ```
 
-También podemos usar `with` para abrir y cerrar automáticamente[^4]:
-
+También podemos usar `with` para abrir y cerrar automáticamente:
 ```python
 with open("datos.txt", "w") as archivo:
    archivo.write("Hola mundo!")
    # no hace falta cerrar, es automático
 ```
 
----
+### Lectura de archivos
 
-## Lectura de archivos
-
-Para leer un archivo usamos `open()` con modo "r" y iteramos sobre el objeto archivo[^2]:
-
+Para leer un archivo usamos `open()` con modo "r" y iteramos sobre el objeto archivo. Esto imprime cada línea, incluyendo los saltos de línea.
 ```python
 with open("datos.txt", "r") as archivo:
    for linea in archivo:
       print(linea) # muestra cada línea del archivo
 ```
 
-Esto imprime cada línea, incluyendo los saltos de línea.
-
-Podemos leer todas las líneas a una lista con `readlines()`[^3]:
-
+Podemos leer todas las líneas a una lista con `readlines()`:
 ```python
-linenas = archivo.readlines()
-print(linenas)
+lineas = archivo.readlines()
+print(lineas)
 ```
 
-Para leer el contenido completo a una cadena usamos `read()`[^1]:
-
+Para leer el contenido completo a una cadena usamos `read()`:
 ```python
 texto = archivo.read()
 print(texto)
 ```
 
-También podemos leer un número determinado de bytes o caracteres con `read(n)`[^4].
+También podemos leer un número determinado de bytes o caracteres con `read(n)`.
 
----
+### Operaciones comunes para el manejo de archivos
 
-## Operaciones para el manejo de archivos
-
-Existen varias funciones incorporadas para manipular archivos en Python[^2]:
-
-- `open()` - Abre un archivo y retorna un objeto archivo
-- `close()` - Cierra el archivo
-- `write()` - Escribe datos al archivo
-- `read()` - Lee datos del archivo
-- `readline()` - Lee una línea del archivo
-- `truncate()` - Vacía el archivo
-- `seek()` - Mueve la posición de lectura/escritura
-- `rename()` - Renombra el archivo
-- `remove()` - Elimina el archivo
-
-Estas funciones nos permiten efectuar operaciones avanzadas para leer, escribir y mantener archivos.
-
----
+Existen varias funciones incorporadas para manipular archivos en Python:
+- `open()`: Abre un archivo y retorna un objeto archivo.
+- `close()`: Cierra el archivo.
+- `write()`: Escribe datos al archivo.
+- `read()`: Lee datos del archivo.
+- `readline()`: Lee una línea del archivo.
+- `truncate()`: Vacía el archivo.
+- `seek()`: Mueve la posición de lectura/escritura.
+- `rename()`: Renombra el archivo.
+- `remove()`: Elimina el archivo.
 
 ## Conclusión
 
-En este artículo explicamos en detalle operaciones de entrada y salida en Python, incluyendo leer de entrada estándar y escribir a salida estándar o archivos. Manejar correctamente la entrada y salida es esencial para muchas aplicaciones de Python. Recomiendo practicar con ejemplos propios para dominar estas funciones[^3].
+En este artículo explicamos en detalle operaciones de entrada y salida en Python, incluyendo leer de entrada estándar y escribir a salida estándar o archivos. Manejar correctamente la entrada y salida es esencial para muchas aplicaciones de Python. Recomiendo practicar con ejemplos propios para dominar estas funciones.
 
 ---
 
-{{< alert icon="comment" >}}
-¡Gracias por haber llegado hasta acá!
+{{< callout icon="sparkles" >}}
+¡Gracias por llegar hasta acá! Espero que este recorrido por el universo de la programación haya sido tan apasionante para vos como lo fue para mí escribirlo.
 
-Si te gustó el artículo, por favor ¡no olvides compartirlo con tu familia, amigos y colegas!
+Nos encantaría escuchar lo que pensás, así que no te quedes callado/a, dejá tus comentarios, sugerencias y todas esas ideas copadas que seguro se te ocurrieron.
 
-Y si puedes, envía tus comentarios, sugerencias, críticas a nuestro mail o por redes sociales, nos ayudarías a generar mejor contenido y sobretodo más relevante para vos.
+Y para ir más allá de estas líneas, date una vuelta por los ejemplos prácticos que preparamos para vos. Vas a encontrar todo el código y los proyectos en nuestro repositorio de GitHub [learn-software-engineering/examples](https://github.com/learn-software-engineering/examples).
 
-[{{< icon "email" >}}](mailto:learn.software.eng@gmail.com)
-[{{< icon "github" >}}](https://github.com/learn-software-engineering)
-[{{< icon "patreon" >}}](https://patreon.com/learnsoftwareeng)
-[{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software)
-[{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng)
-[{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng)
-[{{< icon "x-twitter" >}}](https://x.com/software45687)
-{{< /alert >}}
-
----
-
-## Referencias
-
-[^1]: Downey, A. B. (2015). *Think Python: How to think like a computer scientist*. Needham, Massachusetts: Green Tea Press.
-[^2]: McKinney, W. (2018). *Python for data analysis: Data wrangling with Pandas, NumPy, and IPython*. O'Reilly Media.
-[^3]: Matthes, E. (2015). *Python crash course: A hands-on, project-based introduction to programming*. No Starch Press.
-[^4]: Lutz, M. (2013). *Learning Python: Powerful Object-Oriented Programming*. O'Reilly Media, Incorporated.
+¡Gracias por ser parte de esta comunidad de aprendizaje. Seguí programando y explorando nuevos territorios en este fascinante mundo de la computación!
+{{< /callout >}}

@@ -54,9 +54,9 @@ menu:
     - identifier: blog
       pageRef: /blog
       weight: 2
-    - identifier: about
-      pageRef: /about
-      weight: 3
+    # - identifier: about
+    #   pageRef: /about
+    #   weight: 3
     - identifier: search
       weight: 4
       params:

@@ -48,7 +48,7 @@ layout: hextra-home
   >}}
 
   <!-- {{< hextra/feature-card
-    title="DevOps"
+    title="DevOps & SRE"
     subtitle="Coming soon! CI/CD pipelines, containerisation, cloud infrastructure, and everything you need to ship and run software reliably."
     icon="server"
   >}}

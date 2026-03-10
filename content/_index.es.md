@@ -48,7 +48,7 @@ layout: hextra-home
   >}}
 
   <!-- {{< hextra/feature-card
-    title="DevOps"
+    title="DevOps y SRE"
     subtitle="¡Próximamente! CI/CD, contenedores, infraestructura en la nube y todo lo que hace falta para que lo que construís llegue a producción sin dramas."
     icon="server"
   >}}

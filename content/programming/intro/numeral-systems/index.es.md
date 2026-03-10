@@ -46,7 +46,15 @@ Tomemos el número binario 1011:
 Entonces, 1011 en binario se traduce a decimal de la siguiente manera:
 
 $$
-1011 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 = 8 + 0 + 2 + 1 = 11
+1011 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0
+$$
+
+$$
+1011 = 8 + 0 + 2 + 1
+$$
+
+$$
+1011 = 11
 $$
 
 ## El sistema hexadecimal: un puente entre humanos y máquinas
@@ -69,7 +77,19 @@ Pero el sistema hexadecimal es más que una representación compacta de números
 Entonces, A13F en hexadecimal se traduce a decimal de la siguiente manera:
 
 $$
-A13F = A \times 16^3 + 1 \times 16^2 + 3 \times 16^1 + F \times 16^0 = 10 \times 4096 + 1 \times 256 + 3 \times 16 + 15 \times 1 = 40960 + 256 + 48 + 15 = 41279
+A13F = A \times 16^3 + 1 \times 16^2 + 3 \times 16^1 + F \times 16^0
+$$
+
+$$
+A13F = 10 \times 4096 + 1 \times 256 + 3 \times 16 + 15 \times 1
+$$
+
+$$
+A13F = 40960 + 256 + 48 + 15
+$$
+
+$$
+A13F = 41279
 $$
 
 ## Conclusión

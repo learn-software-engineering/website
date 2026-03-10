@@ -46,7 +46,15 @@ Consider the binary number 1011:
 Thus, 1011 in binary translates to the following in the decimal system:
 
 $$
-1011 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0 = 8 + 0 + 2 + 1 = 11
+1011 = 1 \times 2^3 + 0 \times 2^2 + 1 \times 2^1 + 1 \times 2^0
+$$
+
+$$
+1011 = 8 + 0 + 2 + 1
+$$
+
+$$
+1011 = 11
 $$
 
 ## Hexadecimal system: bridging humans and machines
@@ -69,9 +77,20 @@ But the hexadecimal system is more than just a compressed representation of bina
 Therefore, A13F in hexadecimal translates to the following in the decimal system:
 
 $$
-A13F = A \times 16^3 + 1 \times 16^2 + 3 \times 16^1 + F \times 16^0 = 10 \times 4096 + 1 \times 256 + 3 \times 16 + 15 \times 1 = 40960 + 256 + 48 + 15 = 41279
+A13F = A \times 16^3 + 1 \times 16^2 + 3 \times 16^1 + F \times 16^0
 $$
 
+$$
+A13F = 10 \times 4096 + 1 \times 256 + 3 \times 16 + 15 \times 1
+$$
+
+$$
+A13F = 40960 + 256 + 48 + 15
+$$
+
+$$
+A13F = 41279
+$$
 
 ## Conclusion
 

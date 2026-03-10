@@ -1,5 +1,6 @@
 ---
 title: Quantum Computing
+comments: false
 cascade:
   type: docs
 sidebar:

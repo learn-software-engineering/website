@@ -1,5 +1,6 @@
 ---
 title: Ingeniería de Software
+comments: false
 cascade:
   type: docs
 sidebar:

@@ -43,6 +43,14 @@ menu:
       pageRef: /ai
       parent: paths
       weight: 3
+    # - identifier: devops
+    #   pageRef: /devops
+    #   parent: paths
+    #   weight: 4
+    # - identifier: quantum
+    #   pageRef: /quantum
+    #   parent: paths
+    #   weight: 5
     - identifier: blog
       pageRef: /blog
       weight: 2

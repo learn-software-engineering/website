@@ -1,0 +1,6 @@
+{{ $imgPath := .Get "image" | default "home-background.jpeg" }}
+{{ $img := resources.Get $imgPath }}
+{{ if $img }}
+  {{ $img = $img.Resize "1920x webp" }}
+  <div style="position: fixed; inset: 0; z-index: -1; background-image: url('{{ $img.RelPermalink }}'); background-size: cover; background-position: center; opacity: {{ .Get "opacity" | default "0.2" }}; pointer-events: none;"></div>
+{{ end }}

@@ -17,46 +17,54 @@ layout: hextra-home
 {{< /hextra/hero-subtitle >}}
 </div>
 
-{{< hextra/feature-grid >}}
+{{< cards >}}
 
-  {{< hextra/feature-card
-    title="Blog"
-    subtitle="Artículos, tips y reflexiones de gente que escribe código todos los días. Herramientas, tendencias y consejos que realmente sirven."
-    icon="users"
-    link="/es/blog"
-  >}}
-
-  {{< hextra/feature-card
+  {{< card
     title="Programación"
     subtitle="Arrancá desde cero sin perderte. Variables, estructuras de datos, algoritmos y la lógica que está detrás de todo lo que corre en una computadora."
     icon="code"
     link="/es/programming"
+    image="img/cards/programming.jpeg"
   >}}
 
-  {{< hextra/feature-card
+  {{< card
     title="Ingeniería de Software"
     subtitle="Escribir código es la parte fácil. Acá aprendés a desarrollar software: patrones, arquitectura, testing y todo lo que hace que un proyecto no se caiga a pedazos."
     icon="book-open"
     link="/es/software-engineering"
+    image="img/cards/software-engineering.jpeg"
   >}}
 
-  {{< hextra/feature-card
+  {{< card
     title="Inteligencia Artificial"
     subtitle="Machine learning, redes neuronales, modelos de lenguaje. Entendé cómo funcionan y cómo usarlos sin vueltas."
     icon="sparkles"
     link="/es/ai"
+    image="img/cards/ai.jpeg"
   >}}
 
-  <!-- {{< hextra/feature-card
-    title="DevOps"
+  <!-- {{< card
+    title="DevOps y SRE"
     subtitle="¡Próximamente! CI/CD, contenedores, infraestructura en la nube y todo lo que hace falta para que lo que construís llegue a producción sin dramas."
     icon="server"
-  >}}
+    link="/devops"
+    image="img/cards/devops.jpeg"
+  >}} -->
 
-  {{< hextra/feature-card
+  <!-- {{< card
     title="Computación Cuántica"
     subtitle="¡Próximamente! Superposición, entrelazamiento y los paradigmas que van a cambiar todo lo que sabés sobre cómo funciona una computadora."
     icon="academic-cap"
+    link="/quantum"
+    image="img/cards/quantum.jpeg"
   >}} -->
 
-{{< /hextra/feature-grid >}}
+  {{< card
+    title="Blog"
+    subtitle="Artículos, tips y reflexiones de gente que escribe código todos los días. Herramientas, tendencias y consejos que realmente sirven."
+    icon="users"
+    link="/es/blog"
+    image="img/cards/blog.jpeg"
+  >}}
+
+{{< /cards >}}

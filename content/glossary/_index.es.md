@@ -1,0 +1,4 @@
+---
+title: Glosario
+layout: glossary
+---

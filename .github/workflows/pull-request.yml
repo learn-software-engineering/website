@@ -15,6 +15,7 @@ jobs:
       - name: CSpell
         run: task spell-check
   build:
+    needs: spell-checker
     runs-on: ubuntu-latest
     container: ghcr.io/cn-docker/hugo:v0.157.0
     env:

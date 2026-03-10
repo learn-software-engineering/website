@@ -21,6 +21,7 @@ jobs:
       - name: CSpell English
         run: task spell-check
   build:
+    needs: spell-checker
     runs-on: ubuntu-latest
     container: ghcr.io/cn-docker/hugo:v0.157.0
     steps:
@@ -37,9 +38,9 @@ jobs:
           path: public
           retention-days: 1
   publish:
+    needs: build
     environment: development
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Download the built site
         uses: actions/download-artifact@v8

@@ -1,7 +1,134 @@
-<!-- [{{< icon "mail-open" >}}](mailto:learn.software.eng@gmail.com) -->
-<!-- [{{< icon "github" >}}](https://github.com/learn-software-engineering) -->
-<!-- [{{< icon "linkedin" >}}](https://linkedin.com/company/learn-software) -->
-<!-- [{{< icon "instagram" >}}](https://www.instagram.com/learnsoftwareeng) -->
-<!-- [{{< icon "facebook" >}}](https://www.facebook.com/learn.software.eng) -->
-<!-- [{{< icon "x-twitter" >}}](https://x.com/software45687) -->
-<!-- [{{< icon "youtube" >}}](https://www.youtube.com/@learn-software) -->
+<style>
+  .ls-footer {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    gap: 2rem;
+    padding: 2rem 0 1.5rem;
+    border-top: 1px solid rgba(128,128,128,0.2);
+    margin-bottom: 1.5rem;
+  }
+  @media (max-width: 640px) {
+    .ls-footer { grid-template-columns: 1fr; }
+  }
+
+  .ls-footer-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.45;
+    margin: 0 0 0.6rem;
+  }
+
+  .ls-footer-tagline {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    opacity: 0.6;
+    margin: 0;
+    max-width: 28ch;
+  }
+
+  .ls-footer-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .ls-footer-links a {
+    font-size: 0.85rem;
+    opacity: 0.65;
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.15s;
+  }
+  .ls-footer-links a:hover { opacity: 1; }
+
+  .ls-footer-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .ls-footer-icons a {
+    display: inline-flex;
+    opacity: 0.55;
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .ls-footer-icons a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+  .ls-footer-icons svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+</style>
+
+<div class="ls-footer">
+
+  {{/* Brand */}}
+  <div>
+    <p class="ls-footer-label">{{ .Site.Title }}</p>
+    <p class="ls-footer-tagline">{{ i18n "footer_tagline" }}</p>
+  </div>
+
+  {{/* Quick links */}}
+  <div>
+    <p class="ls-footer-label">{{ i18n "footer_explore" }}</p>
+    <ul class="ls-footer-links">
+      <li><a href="{{ "/" | relLangURL }}programming/">{{ i18n "programming" }}</a></li>
+      <li><a href="{{ "/" | relLangURL }}software-engineering/">{{ i18n "softwareEngineering" }}</a></li>
+      <li><a href="{{ "/" | relLangURL }}ai/">{{ i18n "artificialIntelligence" }}</a></li>
+      <!-- <li><a href="{{ "/" | relLangURL }}devops/">{{ i18n "devops" }}</a></li>
+      <li><a href="{{ "/" | relLangURL }}quantum/">{{ i18n "quantum" }}</a></li> -->
+      <li><a href="{{ "/" | relLangURL }}blog/">{{ i18n "blog" }}</a></li>
+      <!-- <li><a href="{{ "/" | relLangURL }}about/">{{ i18n "about" }}</a></li> -->
+      <!-- <li><a href="{{ "/" | relLangURL }}contribute/">{{ i18n "footer_link_contribute" }}</a></li> -->
+    </ul>
+  </div>
+
+  {{/* Social icons */}}
+  <div>
+    <p class="ls-footer-label">{{ i18n "footer_connect" }}</p>
+    <div class="ls-footer-icons">
+
+      <a href="mailto:learn.software.eng@gmail.com" title="Email" aria-label="Email">
+        {{ partial "utils/icon.html" (dict "name" "at-symbol" "attributes" "width=20 height=20") }}
+      </a>
+
+      <a href="https://github.com/learn-software-engineering" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener">
+        {{ partial "utils/icon.html" (dict "name" "github" "attributes" "width=20 height=20") }}
+      </a>
+
+      <a href="https://x.com/software45687" title="X" aria-label="X" target="_blank" rel="noopener">
+        {{ partial "utils/icon.html" (dict "name" "x-twitter" "attributes" "width=20 height=20") }}
+      </a>
+
+      <a href="https://linkedin.com/company/learn-software" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener">
+        {{ partial "utils/icon.html" (dict "name" "linkedin" "attributes" "width=20 height=20") }}
+      </a>
+
+      <a href="https://www.facebook.com/learn.software.eng" title="Facebook" aria-label="Facebook" target="_blank" rel="noopener">
+        {{ partial "utils/icon.html" (dict "name" "facebook" "attributes" "width=20 height=20") }}
+      </a>
+
+      <a href="https://www.instagram.com/learnsoftwareeng" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener">
+        {{ partial "utils/icon.html" (dict "name" "instagram" "attributes" "width=20 height=20") }}
+      </a>
+
+      <a href="https://www.youtube.com/@learn-software" title="YouTube" aria-label="YouTube" target="_blank" rel="noopener">
+        {{ partial "utils/icon.html" (dict "name" "youtube" "attributes" "width=20 height=20") }}
+      </a>
+
+      <a href="https://patreon.com/learnsoftwareeng" title="Patreon" aria-label="Patreon" target="_blank" rel="noopener">
+        {{ partial "utils/icon.html" (dict "name" "patreon" "attributes" "width=20 height=20") }}
+      </a>
+
+    </div>
+  </div>
+
+</div>

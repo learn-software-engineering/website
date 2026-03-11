@@ -86,7 +86,7 @@ pi = float(input("Ingresa el valor de pi: "))
 
 #### Leyendo múltiples valores
 
-Podemos pedir y leer varios valores en una misma línea separándolos con comas:
+Podemos pedir y leer varios valores en una misma línea si los separamos con comas:
 
 ```python
 nombre, edad = input("Ingresa nombre y edad: ").split()

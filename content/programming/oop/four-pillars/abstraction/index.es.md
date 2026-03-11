@@ -69,7 +69,7 @@ for figura in figuras:
 En este ejemplo:
 - `Figura` es una clase base abstracta que define la interfaz para todas las figuras.
 - `Rectangulo` y `Circulo` son clases concretas que implementan la interfaz `Figura`.
-- No podemos instanciar `Figura` directamente, pero podemos usarla como un tipo común para todas las figuras.
+- No podemos crear un objecto a partir de la clase `Figura` directamente, pero podemos usarla como un tipo común para todas las figuras.
 
 ### Implementando abstracción en Python
 

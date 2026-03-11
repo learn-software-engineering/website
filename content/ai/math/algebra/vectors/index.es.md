@@ -153,7 +153,7 @@ $$
 $$
 
 {{< callout type="info" >}}
-En términos simples: eleva al cuadrado cada componente, sumalos y saca la raíz. Es exactamente el teorema de Pitágoras generalizado a \(n\) dimensiones.
+En términos simples: se eleva al cuadrado cada componente, se suman y luego se calcula la raíz. Es exactamente el teorema de Pitágoras generalizado a \(n\) dimensiones.
 {{< /callout >}}
 
 La familia general es la **norma \(L^p\)**:
@@ -360,7 +360,7 @@ Los vectores no son un concepto preliminar del que te graduarás, son la *lingua
 
 **Generación Aumentada con Recuperación (RAG) y bases de datos vectoriales**. Con la explosión de los LLMs, una dirección clave de investigación aplicada es la búsqueda eficiente del vecino más cercano sobre miles de millones de vectores. En el artículo [*Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*](https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html), Lewis et al. demostraron que aumentar la generación con documentos recuperados mejora dramáticamente la precisión factual. El paso de recuperación completo es una búsqueda por similitud coseno, exactamente la fórmula que vimos antes.
 
-**Dimensionalidad**. La geometría de los espacios de alta dimensión es profundamente contraintuitiva, un fenómeno conocido como la *maldición de la dimensionalidad*. En dimensiones muy altas, casi todos los pares de vectores se vuelven casi ortogonales (\(\cos\theta \approx 0\)), lo que puede degradar la similitud coseno como métrica significativa. Entender *cuándo* falla la similitud coseno y qué alternativas geométricas existen ([espacios hiperbólicos](https://es.wikipedia.org/wiki/Espacio_hiperb%C3%B3lico), [variedades de Riemann](https://es.wikipedia.org/wiki/Variedad_de_Riemann)) es un área de investigación activa. Si esto te interesa, [*Poincaré Embeddings*](https://arxiv.org/abs/1705.08039) es un excelente punto de entrada.
+**Dimensionalidad**. La geometría de los espacios de alta dimensión es profundamente contraria a la intuición, un fenómeno conocido como la *maldición de la dimensionalidad*. En dimensiones muy altas, casi todos los pares de vectores se vuelven casi ortogonales (\(\cos\theta \approx 0\)), lo que puede degradar la similitud coseno como métrica significativa. Entender *cuándo* falla la similitud coseno y qué alternativas geométricas existen ([espacios hiperbólicos](https://es.wikipedia.org/wiki/Espacio_hiperb%C3%B3lico), [variedades de Riemann](https://es.wikipedia.org/wiki/Variedad_de_Riemann)) es un área de investigación activa. Si esto te interesa, [*Poincaré Embeddings*](https://arxiv.org/abs/1705.08039) es un excelente punto de entrada.
 
 ## Errores comunes y depuración
 

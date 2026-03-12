@@ -61,20 +61,27 @@ menu:
       weight: 4
       params:
         type: search
-    - name: GitHub
+    - identifier: glossary
       weight: 5
-      url: "https://github.com/learn-software-engineering"
+      pageRef: /glossary
       params:
-        icon: github
+        icon: book-open
     - identifier: languageSwitcher
+      weight: 6
       params:
         type: language-switch
         label: false
         icon: "globe"
     - identifier: themeToggle
+      weight: 7
       params:
         type: theme-toggle
         label: false
+    - name: GitHub
+      weight: 8
+      url: "https://github.com/learn-software-engineering"
+      params:
+        icon: github
 
 outputs:
   home: [html, llms]

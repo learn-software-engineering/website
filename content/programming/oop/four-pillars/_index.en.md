@@ -15,7 +15,7 @@ At the heart of OOP lie four fundamental concepts: Encapsulation, Inheritance, P
 - **Polymorphism** provides a way to use objects of different types through a common interface, enhancing flexibility and extensibility.
 - **Abstraction** allows us to create simplified models of complex systems, focusing on essential features and hiding unnecessary details.
 
-As you continue your journey in software development, you'll find that mastering these concepts opens up new ways of thinking about and solving problems. Remember that OOP is not just about syntax or language features, it's a mindset for modeling complex systems and managing complexity in software.
+As you continue your journey in software development, you'll find that mastering these concepts opens up new ways of thinking about and solving problems. Remember that OOP is not just about syntax or language features, it's a mindset for modelling complex systems and managing complexity in software.
 
 ## Learn more
 

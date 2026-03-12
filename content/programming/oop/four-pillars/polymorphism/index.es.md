@@ -19,7 +19,7 @@ Existen dos tipos principales de polimorfismo en la programación orientada a ob
    - Se resuelve en tiempo de compilación.
 
 2. **Polimorfismo en tiempo de ejecución (Polimorfismo dinámico)**
-   - Se logra a través de la *sobrescritura* de métodos.
+   - Se logra a través de *sobrescribir* de métodos.
    - Se resuelve en tiempo de ejecución.
 
 Python admite principalmente el polimorfismo en tiempo de ejecución, ya que es un lenguaje de tipado dinámico. Sin embargo, podemos demostrar conceptos similares al polimorfismo en tiempo de compilación también.
@@ -58,9 +58,9 @@ print(sonido_animal(gato))   # Salida: ¡Miau miau!
 
 En este ejemplo, `sonido_animal()` funciona con cualquier objeto que tenga un método `hablar()`, independientemente de su clase.
 
-### Sobrescritura de métodos
+### Sobrescribir métodos
 
-La sobrescritura de métodos es un aspecto clave del polimorfismo en tiempo de ejecución. Ocurre cuando una clase derivada define un método con el mismo nombre que un método en su clase base.
+Sobrescribir métodos es un aspecto clave del polimorfismo en tiempo de ejecución. Ocurre cuando una clase derivada define un método con el mismo nombre que un método en su clase base.
 
 ```python
 class Figura:
@@ -155,7 +155,7 @@ print(sonido_animal(gato))   # Salida: ¡Miau!
 # animal = Animal()
 ```
 
-Las clases base abstractas no pueden ser instanciadas y obligan a las clases derivadas a implementar ciertos métodos, asegurando una interfaz consistente.
+Las clases base abstractas no pueden utilizarse para crear objetos y obligan a las clases derivadas a implementar ciertos métodos, asegurando una interfaz consistente.
 
 ### Aplicaciones en el mundo real
 

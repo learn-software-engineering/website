@@ -27,7 +27,7 @@ class Persona:
 
 **Métodos**: Funciones que definen comportamientos. Por ejemplo, una `Persona` puede `caminar()`, `hablar()`, `comer()`, etc. Acceden a los atributos para implementar dicha funcionalidad.
 
-**Constructor**: Método especial `__init__()` que se ejecuta al instanciar la clase y permite inicializar los atributos.
+**Constructor**: Método especial `__init__()` que se ejecuta al generar un objeto a partir de la clase y permite inicializar los atributos.
 
 **Destructor**: Método `__del__()` que se ejecuta al eliminar la instancia liberando recursos. Opcional en algunos lenguajes.
 
@@ -85,7 +85,7 @@ El objeto pepe tiene ahora **estado** (propiedades) y **comportamiento** (métod
 
 Un detalle importante en los métodos es cómo acceden a los atributos y otros métodos del objeto. Aquí entra otra diferencia entre lenguajes:
 
-- **Self**: En Python, los atributos y métodos se acceden dentro de la clase anteponiendo `self`. Esto apunta al objeto instanciado.
+- **Self**: En Python, los atributos y métodos se acceden dentro de la clase anteponiendo `self`. Esto apunta al objeto creado.
 
 ```python
 class Persona:

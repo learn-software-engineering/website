@@ -48,8 +48,8 @@ There are many types of data structures. Below are some useful categories to cla
 - *Lists*: Easy to insert/delete anywhere but sequential access is slow.
 - *Stacks*: LIFO (Last In First Out) access. Useful for undo/redo.
 - *Queues*: FIFO (First In First Out) access. Useful for event processing.
-- *Trees*: Allow modeling hierarchical relationships like file directories or task dependencies.
-- *Graphs*: Allow modeling interconnectivity networks like maps, social relationships, etc.
+- *Trees*: Allow modelling hierarchical relationships like file directories or task dependencies.
+- *Graphs*: Allow modelling interconnectivity networks like maps, social relationships, etc.
 - *Hashes / Dictionaries*: Associate elements with unique keys for ultra fast access.
 
 This classification is not exhaustive but gives an idea of the diversity of data structures and their different properties that allow us to efficiently model complex problems.

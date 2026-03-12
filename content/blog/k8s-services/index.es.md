@@ -14,7 +14,7 @@ Luego de desplegar una aplicación en Kubernetes, independientemente del método
 
 Al desplegar una aplicación en Kubernetes utilizando un objeto del tipo `Deployment`, los pods pertenecientes a dicho Deployment pueden ser creados y destruidos en cualquier momento en base a su funcionamiento, por ejemplo si en nuestro Deployment pedimos que existan 3 réplicas y por cualquier razón alguna de ellas deja de funcionar, una nueva réplica será creada automáticamente para reemplazar a la que falló.
 
-Cada pod tiene su propia dirección IP dentro del cluster. En general, las demás aplicaciones que necesitan interactuar con nuestra aplicación desconocen el nombre de cada una de sus replicas, su estado y su dirección IP para iniciar una comunicación. Kubernetes nos provee el objeto `Service` como una forma nativa de `Service Discovery` sin que necesitemos hacer cambios en nuestra aplicación o en las que necesitan comunicarse con ella. Entonces, el fin para el cual creamos un servicio es para exponer una aplicación que puede estar constituida por múltiples pods a traves de un único punto de acceso. De esta manera otras aplicación contactaran al `Service` y este redirigirá la comunicación a alguno de los pods de nuestra aplicación.
+Cada pod tiene su propia dirección IP dentro del cluster. En general, las demás aplicaciones que necesitan interactuar con nuestra aplicación desconocen el nombre de cada una de sus replicas, su estado y su dirección IP para iniciar una comunicación. Kubernetes nos provee el objeto `Service` como una forma nativa de `Service Discovery` sin que necesitemos hacer cambios en nuestra aplicación o en las que necesitan comunicarse con ella. Entonces, el fin para el cual creamos un servicio es para exponer una aplicación que puede estar constituida por múltiples pods a través de un único punto de acceso. De esta manera otras aplicación contactaran al `Service` y este redirigirá la comunicación a alguno de los pods de nuestra aplicación.
 
 !["Pods detrás de un servicio en Kubernetes"](images/k8s_services.png)
 *"Pods detrás de un servicio en Kubernetes"*
@@ -91,7 +91,7 @@ Este tipo de servicio, permite un rápido acceso desde el exterior sin necesidad
 
 ### LoadBalancer
 
-En proveedores de servicios en la nube que soporten `load balancers` como _Amazon Web Services_, _Google Cloud Platform_ o _Microsoft Azure_, crear un servicio de este tipo dispara la creación de un load balancer externo en la platform de nube utilizada. La creación ocurre de manera asíncrona e información sobre su estado es publicada en el estado del servicio (_.status.loadbalancer_).
+En proveedores de servicios en la nube que soporten `load balancers` como _Amazon Web Services_, _Google Cloud Platform_ o _Microsoft Azure_, crear un servicio de este tipo dispara la creación de un load balancer externo en la platform de nube utilizada. La creación ocurre de manera asíncrona e información sobre su estado es publicada en el estado del servicio (`_.status.loadbalancer_`).
 
 El proveedor de servicios en la nube decide como se balancea la carga.
 

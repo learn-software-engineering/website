@@ -1,5 +1,6 @@
 ---
 title: Computación Cuántica
+comments: false
 cascade:
   type: docs
 sidebar:

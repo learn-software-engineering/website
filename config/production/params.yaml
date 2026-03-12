@@ -1,2 +1,17 @@
-article:
-  showComments: true
+comments:
+  enable: true
+  type: giscus
+
+  giscus:
+    repo: "learn-software-engineering/website-comments"
+    repoId: "R_kgDOKQjung"
+    category: "General"
+    categoryId: "DIC_kwDOKQjuns4CZJYI"
+    mapping: "url"
+    strict: "1"
+    reactionsEnabled: "1"
+    emitMetadata: "1"
+    inputPosition: "top"
+    theme: "preferred_color_scheme"
+    loading: "lazy"
+    crossorigin: "anonymous"

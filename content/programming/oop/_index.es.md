@@ -30,7 +30,7 @@ Secuencia ordenada de instrucciones que el programa debe seguir paso a paso. El 
 
 La programación procedural es mejor para:
 - Problemas sencillos o algoritmos secuenciales.
-- Código que no necesitará reusarse ni expandirse mucho.
+- Código que no necesitará ser reutilizado ni expandirse mucho.
 - Casos donde el rendimiento y eficiencia son críticos.
 
 ### Programación orientada a objetos

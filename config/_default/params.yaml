@@ -3,15 +3,6 @@ displayUpdatedDate: true
 # Display the author of the last modification
 displayUpdatedAuthor: true
 
-# comments:
-#   enable: false
-#   type: giscus
-#   giscus:
-#     repo: <repository>
-#     repoId: <repository ID>
-#     category: <category>
-#     categoryId: <category ID>
-
 editURL:
   enable: true
   base: "https://github.com/learn-software-engineering/website/edit/main"

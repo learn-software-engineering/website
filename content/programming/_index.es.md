@@ -1,5 +1,6 @@
 ---
 title: Programación
+comments: false
 cascade:
   type: docs
 sidebar:

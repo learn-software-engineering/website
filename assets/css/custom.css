@@ -122,6 +122,14 @@ html.dark .hextra-feature-card {
 } */
 
 /* Footer */
+.hextra-custom-footer {
+  max-width: var(--hextra-max-footer-width, 80rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .hextra-footer {
   background-color: #EBEBE5;
   border-top: 1px solid #D1FAE5;

@@ -1,0 +1,3 @@
+- term: Site Reliability Engineering
+  abbr: SRE
+  definition: "Es una disciplina de ingeniería que aplica principios de software a problemas de infraestructura y operaciones. Su objetivo principal es asegurar la fiabilidad, disponibilidad, rendimiento y escalabilidad de los sistemas de software mientras se equilibra la velocidad de lanzamiento de nuevas funcionalidades."

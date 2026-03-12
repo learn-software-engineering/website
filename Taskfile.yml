@@ -26,8 +26,7 @@ tasks:
   spell-check:
     desc: Run spell check on markdown files
     cmds:
-      - cspell --config .github/workflows/scripts/cspell-config-en.json "content/**/*.en.md"
-      # - cspell --config .github/workflows/scripts/cspell-config-es.json "content/**/*.es.md"
+      - cspell --config .config/cspell.yaml "content/**/*.md"
 
   clean:
     desc: Delete the generated artifacts for this project.

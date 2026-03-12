@@ -109,7 +109,7 @@ En este ejemplo:
 
 Los beneficios del encapsulamiento son numerosos:
 
-1. **Mejora de la mantenibilidad**: Los cambios en la implementación interna no afectan al código externo que utiliza la clase.
+1. **Mejora de la capacidad de mantenimiento**: Los cambios en la implementación interna no afectan al código externo que utiliza la clase.
 2. **Mayor seguridad**: Los atributos privados no pueden ser modificados accidentalmente desde fuera de la clase.
 3. **Flexibilidad en la implementación**: Puedes cambiar cómo se almacenan o calculan los datos sin cambiar la interfaz pública.
 4. **Mejor abstracción**: Los usuarios de la clase no necesitan conocer su funcionamiento interno.

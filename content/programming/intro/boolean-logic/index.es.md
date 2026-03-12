@@ -34,7 +34,7 @@ Dentro de la lógica booleana, existen operaciones fundamentales que permiten ma
 
 ## La importancia de esta lógica en computación y programación
 
-La computación moderna, en su esencia, es la manipulación de bits, esos unos y ceros que mencionamos. Cada operación que realiza una computadora, desde simples cálculos hasta la renderización de gráficos complejos, implica operaciones booleanas en algún nivel.
+La computación moderna, en su esencia, es la manipulación de bits, esos unos y ceros que mencionamos. Cada operación que realiza una computadora, desde simples cálculos hasta la representación visual (*render*) de gráficos complejos, implica operaciones booleanas en algún nivel.
 
 En programación, la lógica booleana se utiliza en estructuras de control, como condiciones (if, else) y bucles, permitiendo a los programas tomar decisiones basadas en ciertas condiciones.
 

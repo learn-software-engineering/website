@@ -48,7 +48,7 @@ Las pilas tienen muchos usos en programación:
 
 - **Ejecución de expresiones matemáticas**: mediante una pila se puede verificar paréntesis, corchetes, llaves, etc.
 
-- **Algoritmos y estructuras de datos**: como en el algoritmo quicksort y en la implementación de buses de datos (datapaths).
+- **Algoritmos y estructuras de datos**: como en el algoritmo quicksort y en la implementación de buses de datos (data paths).
 
 ## Conclusión
 

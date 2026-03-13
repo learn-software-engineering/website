@@ -28,21 +28,21 @@ tasks:
     cmds:
       - cspell --config .config/cspell.yaml "content/**/*.md"
 
-  clean:
-    desc: Delete the generated artifacts for this project.
-    deps: [clean-cache]
-    silent: true
-    cmds:
-      - echo "Cleaning up artifacts"
-      - rm -r public
-      - rm .hugo_build.lock
-
   clean-cache:
     desc: Delete the Hugo Module cache for the current project.
     silent: true
     cmds:
       - echo "Cleaning Hugo module cache"
       - hugo mod clean --all
+      - rm -f .hugo_build.lock
+
+  clean:
+    desc: Delete the generated artifacts for this project.
+    deps: [clean-cache]
+    silent: true
+    cmds:
+      - echo "Cleaning up artifacts"
+      - rm -rf public
 
   update:
     desc: Updates project dependencies

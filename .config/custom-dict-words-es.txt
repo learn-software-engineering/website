@@ -8,7 +8,6 @@ descripto
 dimensionalidad
 encapsulamiento
 entrá
-explainability
 explicabilidad
 extensibilidad
 geométricamente
@@ -28,12 +27,10 @@ recordá
 recursión
 recursivamente
 redirecciona
-regulariser
 renormalizando
 reusabilidad
 rotarla
 semánticamente
-sidelining
 tenés
 tipado
 tipados

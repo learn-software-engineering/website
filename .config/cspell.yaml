@@ -49,7 +49,8 @@ dictionaries:
   - web-services
   - custom-dict-acronyms
   - custom-dict-names
-  - custom-dict-words
+  - custom-dict-words-en
+  - custom-dict-words-es
 
 ignorePaths: []
 
@@ -69,5 +70,7 @@ dictionaryDefinitions:
     path: "./custom-dict-acronyms.txt"
   - name: custom-dict-names
     path: "./custom-dict-names.txt"
-  - name: custom-dict-words
-    path: "./custom-dict-words.txt"
+  - name: custom-dict-words-en
+    path: "./custom-dict-words-en.txt"
+  - name: custom-dict-words-es
+    path: "./custom-dict-words-es.txt"

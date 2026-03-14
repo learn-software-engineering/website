@@ -13,8 +13,10 @@ explicabilidad
 extensibilidad
 geométricamente
 icónico
+imaginate
 inicializador
 interpretabilidad
+invertibility
 iteradores
 mapeos
 mensurablemente
@@ -22,6 +24,7 @@ modularidad
 multinivel
 ocultamiento
 operandos
+pensalo
 pensás
 podés
 recordá

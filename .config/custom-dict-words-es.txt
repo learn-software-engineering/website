@@ -15,7 +15,6 @@ icónico
 imaginate
 inicializador
 interpretabilidad
-invertibility
 iteradores
 mapeos
 mensurablemente

@@ -35,3 +35,52 @@ Before reading this article, you should be comfortable with:
 - **Function notation**: understanding \(f: \mathbb{R}^m \rightarrow \mathbb{R}^n\) style notation.
 
 If you can define what it means for a set to be *closed* under an operation, you have enough scaffolding.
+
+## Intuition first
+
+### The programmer's analogy: matrices as functions
+
+As a developer, you have used functions your whole career. A function `transform(x)` takes an input and maps it to an output. A matrix \(\mathbf{A}\) is exactly that, a **function** that takes a vector as input and produces a vector as output. The key constraint is that this function must be *linear*, which imposes a specific geometric structure on what transformations are permitted.
+
+Think of it this way. Imagine a data pipeline where user feature vectors pass through processing stages:
+
+```python
+# Stage 1: expand 3 raw features into 5 derived features
+stage1 = transform_3_to_5(user_features)   # shape: (5,)
+
+# Stage 2: compress 5 derived features into 2 latent dimensions
+stage2 = transform_5_to_2(stage1)           # shape: (2,)
+
+# Combined: can we do both in one step?
+combined = transform_3_to_2(user_features)  # Yes — matrix multiplication
+```
+
+This is exactly what matrix multiplication computes: the **composition** of two linear transformations into one. A \(5 \times 3\) matrix (stage 1) composed with a \(2 \times 5\) matrix (stage 2) produces a single \(2 \times 3\) matrix that does both steps at once. Every layer of a neural network is one stage of this pipeline.
+
+### Geometric picture: matrices as space transformations
+
+Picture a 2D coordinate system. The [standard basis](https://en.wikipedia.org/wiki/Standard_basis) vectors are:
+
+$$
+\hat{e}_1 = [1,0] \qquad \text{(points right along x-axis)}
+$$
+
+$$
+\hat{e}_2 = [0,1] \qquad \text{(points up along y-axis)}
+$$
+
+Apply the matrix \(\mathbf{A} = \begin{bmatrix} 2 & 0 \\ 0 & 3 \end{bmatrix}\). After the transformation: \(\hat{e}_1\) maps to \([2,0]\) (stretched right by factor 2) and \(\hat{e}_2\) maps to \([0,3]\) (stretched up by factor 3). The unit square (with area 1), becomes a \(2 \times 3\) rectangle with area 6. The **determinant** of \(\mathbf{A}\), which we will derive shortly, equals exactly 6. This is not a coincidence: the determinant *is* the volume scaling factor.
+
+Compare this to a rotation matrix:
+
+$$
+\mathbf{R}(\theta) = \begin{bmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{bmatrix}
+$$
+
+This rotates every vector by angle $\theta$ without stretching, so it preserves all areas — and its determinant is always $1$.
+
+The columns of any matrix tell you exactly where the basis vectors land. Since every vector is a linear combination of the basis vectors, knowing where basis vectors go tells you where *every* vector in the space goes. This insight explains why matrix multiplication is non-commutative (applying transformation A then B is geometrically different from B then A), and why the columns of weight matrices in neural networks carry semantic meaning that researchers actively analyse.
+
+{{< callout type="important" >}}
+The columns of a matrix are not just numbers, they are the *images of the basis vectors* under the transformation. When you look at the weight matrix \(\mathbf{W}\) of a trained neural network layer, each column tells you how that layer responds to one standard input direction. This is the foundation of feature visualization research, where practitioners interpret what each neuron *"detects*" by examining the directions in weight matrices.
+{{< /callout >}}

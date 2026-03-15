@@ -3,6 +3,7 @@ autocompletado
 bayesianos
 contrastivo
 convolucionales
+covarianza
 dejá
 descripto
 dimensionalidad
@@ -13,8 +14,10 @@ extensibilidad
 geométricamente
 icónico
 imaginate
+indexación
 inicializador
 interpretabilidad
+invertibilidad
 iteradores
 mapeos
 mensurablemente
@@ -30,6 +33,7 @@ recursión
 recursivamente
 redirecciona
 renormalizando
+retropropagación
 reusabilidad
 rotarla
 semánticamente

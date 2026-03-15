@@ -1,6 +1,6 @@
 ---
 weight: 2
-title: "Matrices: Operations and Properties"
+title: "Matrices: operations and properties"
 authors:
   - jnonino
 description: >
@@ -84,3 +84,28 @@ The columns of any matrix tell you exactly where the basis vectors land. Since e
 {{< callout type="important" >}}
 The columns of a matrix are not just numbers, they are the *images of the basis vectors* under the transformation. When you look at the weight matrix \(\mathbf{W}\) of a trained neural network layer, each column tells you how that layer responds to one standard input direction. This is the foundation of feature visualization research, where practitioners interpret what each neuron *"detects*" by examining the directions in weight matrices.
 {{< /callout >}}
+
+## Mathematical derivation
+
+### Formal definition
+
+An **\(m \times n\) matrix** over \(\mathbb{R}\) is a rectangular array of real numbers arranged in \(m\) rows and \(n\) columns:
+
+$$
+\mathbf{A} = \begin{bmatrix} A_{11} & A_{12} & \cdots & A_{1n} \\ A_{21} & A_{22} & \cdots & A_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ A_{m1} & A_{m2} & \cdots & A_{mn} \end{bmatrix} \in \mathbb{R}^{m \times n}
+$$
+
+The entry \(A_{ij}\) denotes the element in **row \(i\), column \(j\)**. We write the set of all \(m \times n\) real matrices as \(\mathbb{R}^{m \times n}\).
+
+{{< callout type="info" >}}
+In plain English: a matrix is a 2D table of numbers. The notation \(\mathbb{R}^{m \times n}\) is the *"type"* of the matrix (how many rows and columns it has). This is exactly the type signature you would attach to a 2D array in a statically typed language: `Array[Float, m, n]`.
+{{< /callout >}}
+
+**Special cases** you will encounter constantly:
+
+- **Column vector**: a matrix of shape \(n \times 1\), this is just a vector \(mathbf{v} \in \mathbb{R}^n\).
+- **Row vector**: a matrix of shape \(1 \times n\).
+- **Square matrix**: a matrix where \(m = n\).
+- **Identity matrix** \(\mathbf{I}_n\): the \(n \times n\) matrix with \(I_{ij} = 1\) if \(i = j\), else \(0\).
+- **Zero matrix** \(\mathbf{0}\): all entries are zero.
+- **Diagonal matrix**: a square matrix where \(A_{ij} = 0\) for all \(i \neq j\).

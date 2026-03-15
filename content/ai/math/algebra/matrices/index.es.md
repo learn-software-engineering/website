@@ -1,6 +1,6 @@
 ---
 weight: 2
-title: "Matrices: Operaciones y Propiedades"
+title: "Matrices: operaciones y propiedades"
 authors:
   - jnonino
 description: >
@@ -84,3 +84,28 @@ Las columnas de cualquier matriz te dicen exactamente adónde van los vectores d
 {{< callout type="important" >}}
 Las columnas de una matriz no son sólo números, son las *imágenes de los vectores de la base* bajo la transformación. Cuando examinas la matriz de pesos \(\mathbf{W}\) de una capa de red neuronal entrenada, cada columna te dice cómo responde esa capa a una dirección de entrada estándar. Éste es el fundamento de la investigación de visualización de características, donde los practicantes interpretan qué *"detecta"* cada neurona examinando las direcciones en las matrices de pesos.
 {{< /callout >}}
+
+## Derivación matemática
+
+### Definición formal
+
+Una **matriz \(m \times n\)** sobre \(\mathbb{R}\) es un arreglo rectangular de números reales con \(m\) filas y \(n\) columnas:
+
+$$
+\mathbf{A} = \begin{bmatrix} A_{11} & A_{12} & \cdots & A_{1n} \\ A_{21} & A_{22} & \cdots & A_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ A_{m1} & A_{m2} & \cdots & A_{mn} \end{bmatrix} \in \mathbb{R}^{m \times n}
+$$
+
+La entrada \(A_{ij}\) denota el elemento en la **fila \(i\), columna \(j\)**. Escribimos el conjunto de todas las matrices reales \(m \times n\) como \(\mathbb{R}^{m \times n}\).
+
+{{< callout type="info" >}}
+En palabras sencillas: una matriz es una tabla 2D de números. La notación \(\mathbb{R}^{m \times n}\) es el *"tipo"* de la matriz (cuántas filas y columnas tiene). Es exactamente la firma de tipo que adjuntarías a un arreglo 2D en un lenguaje de tipado estático: `Array[Float, m, n]`.
+{{< /callout >}}
+
+**Casos especiales** que encontrarás constantemente:
+
+- **Vector columna**: una matriz de forma \(n \times 1\), es simplemente un vector \(\mathbf{v} \in \mathbb{R}^n\).
+- **Vector fila**: una matriz de forma \(1 \times n\).
+- **Matriz cuadrada**: una matriz donde \(m = n\).
+- **Matriz identidad** \(\mathbf{I}_n\): la matriz \(n \times n\) con \(I_{ij} = 1\) si \(i = j\), de lo contrario \(0\).
+- **Matriz cero** \(\mathbf{0}\): todas las entradas son cero.
+- **Matriz diagonal**: una matriz cuadrada donde \(A_{ij} = 0\) para todo \(i \neq j\).

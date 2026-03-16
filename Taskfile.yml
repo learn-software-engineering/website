@@ -106,6 +106,7 @@ tasks:
 
   run-dev:
     desc: Starts local server in development mode.
+    deps: [clean]
     cmds:
       - task: run-base
         vars:

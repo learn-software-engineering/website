@@ -93,15 +93,29 @@ tasks:
     cmds:
       - .github/workflows/scripts/index-now.sh
 
-  run:
+  run-base:
     desc: Start local server. Receives ENV argument. `ENV=production` will run in production mode. `ENV=development will use development mode.
     silent: true
-    vars:
-      SETTINGS:
-        map:
-          common: "--bind 0.0.0.0 --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates"
-          development: "--buildDrafts --buildExpired --buildFuture --disableFastRender --navigateToChanged"
-          production: "--gc --minify --templateMetrics --ignoreCache"
     cmds:
       - echo "=== Running in {{.ENV}} mode ==="
-      - hugo server --environment {{.ENV}} {{index .SETTINGS .ENV}} {{index .SETTINGS "common"}}
+      - hugo server --environment {{.ENV}} \
+        --bind 0.0.0.0 \
+        --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates \
+        {{.EXTRA_SETTINGS}}
+
+  run-dev:
+    desc: Starts local server in development mode.
+    cmds:
+      - task: run-base
+        vars:
+          ENV: development
+          EXTRA_SETTINGS: "--buildDrafts --buildExpired --buildFuture --disableFastRender --navigateToChanged"
+
+  run-prod:
+    desc: Starts a local server in production mode.
+    deps: [clean, update]
+    cmds:
+      - task: run-base
+        vars:
+          ENV: production
+          EXTRA_SETTINGS: "--gc --minify --templateMetrics --ignoreCache"

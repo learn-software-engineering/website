@@ -55,6 +55,7 @@ tasks:
 
   build:
     desc: Builds the website package
+    deps: [clean]
     silent: true
     cmds:
       - echo "Running build task for {{.ENV}}"

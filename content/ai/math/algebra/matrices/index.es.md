@@ -109,3 +109,225 @@ En palabras sencillas: una matriz es una tabla 2D de números. La notación \(\m
 - **Matriz identidad** \(\mathbf{I}_n\): la matriz \(n \times n\) con \(I_{ij} = 1\) si \(i = j\), de lo contrario \(0\).
 - **Matriz cero** \(\mathbf{0}\): todas las entradas son cero.
 - **Matriz diagonal**: una matriz cuadrada donde \(A_{ij} = 0\) para todo \(i \neq j\).
+
+### Las matrices como transformaciones lineales
+
+La propiedad más importante de una matriz es que define una **transformación lineal** \(T: \mathbb{R}^n \rightarrow \mathbb{R}^m\) mediante \(T(\mathbf{x}) = \mathbf{A}\mathbf{x}\).
+
+Una función \(T\) se llama **lineal** si y solo si satisface dos axiomas para todos los vectores \(\mathbf{u}, \mathbf{v} \in \mathbb{R}^n\) y todos los escalares \(\alpha \in \mathbb{R}\):
+
+- *Aditividad*: \(T(\mathbf{u} + \mathbf{v}) = T(\mathbf{u}) + T(\mathbf{v})\)
+- *Homogeneidad*: \(T(\alpha \mathbf{u}) = \alpha T(\mathbf{u})\)
+
+Estos dos axiomas son equivalentes a la condición única:
+
+$$
+T(\alpha \mathbf{u} + \beta \mathbf{v}) = \alpha T(\mathbf{u}) + \beta T(\mathbf{v})
+$$
+
+{{< callout type="info" >}}
+En términos sencillos: una transformación lineal preserva la estructura del espacio vectorial, no importa si sumas dos vectores primero y luego transformas, o si transformas cada uno por separado y luego sumas. Por eso apilar múltiples capas lineales (sin activación) en una red neuronal se colapsa en un único producto matricial: \(\mathbf{W}_2(\mathbf{W}_1\mathbf{x}) = (\mathbf{W}_2\mathbf{W}_1)\mathbf{x}\).
+{{< /callout >}}
+
+Un teorema fundamental del álgebra lineal establece que **toda** transformación lineal entre espacios de dimensión finita puede representarse como una matriz, y a la inversa, toda matriz define una transformación lineal. La matriz y la transformación lineal son, a efectos prácticos, el mismo objeto.
+
+### Suma de matrices y multiplicación por escalar
+
+El conjunto \(\mathbb{R}^{m \times n}\) de todas las matrices reales \(m \times n\) forma un **espacio vectorial** bajo las siguientes operaciones.
+
+**Suma de matrices**: Dadas \(\mathbf{A}, \mathbf{B} \in \mathbb{R}^{m \times n}\):
+
+$$
+(\mathbf{A} + \mathbf{B})_{ij} = A_{ij} + B_{ij}
+$$
+
+Esta operación satisface:
+- *Conmutatividad*: \(\mathbf{A} + \mathbf{B} = \mathbf{B} + \mathbf{A}\)
+- *Asociatividad*: \((\mathbf{A} + \mathbf{B}) + \mathbf{C} = \mathbf{A} + (\mathbf{B} + \mathbf{C})\)
+- *Elemento identidad*: existe una matriz cero \(\mathbf{0}\) tal que \(\mathbf{A} + \mathbf{0} = \mathbf{A}\)
+- *Elemento inverso*: para cada \(\mathbf{A}\), existe \(-\mathbf{A}\) tal que \(\mathbf{A} + (-\mathbf{A}) = \mathbf{0}\)
+
+**Multiplicación por escalar**: Dados \(\alpha \in \mathbb{R}\) y \(\mathbf{A} \in \mathbb{R}^{m \times n}\):
+
+$$
+(\alpha \mathbf{A})_{ij} = \alpha \cdot A_{ij}
+$$
+
+Esta operación satisface:
+- *Asociatividad*: \(\alpha(\beta \mathbf{A}) = (\alpha\beta)\mathbf{A}\)
+- *Elemento identidad*: \(1 \cdot \mathbf{A} = \mathbf{A}\)
+- *Distributividad respecto a la suma de matrices*: \(\alpha(\mathbf{A} + \mathbf{B}) = \alpha\mathbf{A} + \alpha\mathbf{B}\)
+- *Distributividad respecto a la suma de escalares*: \((\alpha + \beta)\mathbf{A} = \alpha\mathbf{A} + \beta\mathbf{A}\)
+
+{{< callout >}}
+Si estos axiomas te resultan familiares, tiene todo el sentido. Son exactamente los axiomas de espacio vectorial que vimos en el artículo sobre vectores. Las matrices *"son"* vectores en un espacio de mayor dimensión. Una matriz \(3 \times 4\) puede ser vista como un vector de \(12\) componentes dispuestos en una cuadrícula. Esto significa que todo teorema que demostremos sobre espacios vectoriales también aplica a matrices.
+{{< /callout >}}
+
+### Multiplicación de matrices
+
+Dados \(\mathbf{A} \in \mathbb{R}^{m \times k}\) y \(\mathbf{B} \in \mathbb{R}^{k \times n}\), su producto \(\mathbf{C} = \mathbf{A}\mathbf{B} \in \mathbb{R}^{m \times n}\) se define como:
+
+$$
+\boxed{C_{ij} = \sum_{l=1}^{k} A_{il} \cdot B_{lj}}
+$$
+
+Para calcular la entrada \(C_{ij}\), el elemento en la fila \(i\), columna \(j\) del resultado, toma el **producto punto de la fila \(i\) de \(\mathbf{A}\) con la columna \(j\) de \(\mathbf{B}\)**. Las dimensiones internas deben coincidir:
+
+$$\underbrace{\mathbf{A}}_{m \times k} \cdot \underbrace{\mathbf{B}}_{k \times n} = \underbrace{\mathbf{C}}_{m \times n}$$
+
+{{< callout type="info" >}}
+En otros términos: la multiplicación de matrices es composición de funciones. Aplicar la transformación \(\mathbf{B}\) primero, y luego \(\mathbf{A}\), produce el mismo resultado que la única transformación compuesta \(\mathbf{AB}\). Las dimensiones internas deben coincidir porque la dimensión de salida de la primera transformación debe igualar la dimensión de entrada de la segunda, exactamente como componer funciones.
+{{< /callout >}}
+
+La multiplicación de matrices satisface:
+- *Asociatividad*: \((\mathbf{AB})\mathbf{C} = \mathbf{A}(\mathbf{BC})\)
+- *Distributividad izquierda*: \(\mathbf{A}(\mathbf{B} + \mathbf{C}) = \mathbf{AB} + \mathbf{AC}\)
+- *Distributividad derecha*: \((\mathbf{A} + \mathbf{B})\mathbf{C} = \mathbf{AC} + \mathbf{BC}\)
+- *Identidad*: \(\mathbf{A}\mathbf{I} = \mathbf{I}\mathbf{A} = \mathbf{A}\) (para \(\mathbf{I}\) compatible)
+- **No conmutatividad**: \(\mathbf{AB} \neq \mathbf{BA}\) en general
+
+{{< callout >}}
+La no conmutatividad no es un defecto sino una característica fundamental de las transformaciones. Rotar una figura y luego reflejarla es geométricamente diferente a reflejarla y luego rotarla.
+{{< /callout >}}
+
+### La transpuesta
+
+La **transpuesta** de \(\mathbf{A} \in \mathbb{R}^{m \times n}\) es la matriz \(\mathbf{A}^\top \in \mathbb{R}^{n \times m}\) definida por:
+
+$$
+(\mathbf{A}^\top)_{ij} = A_{ji}
+$$
+
+{{< callout type="info" >}}
+En palabras simples: voltea la matriz a lo largo de su diagonal principal, las filas se convierten en columnas y las columnas en filas. Una matriz \(3 \times 5\) se convierte en una \(5 \times 3\). Geométricamente, la transpuesta corresponde al *adjunto* de la transformación, la transformación que *"deshace la parte de rotación"* mientras conserva el escalado.
+{{< /callout >}}
+
+La transpuesta satisface las siguientes propiedades:
+
+- *Doble transpuesta*: \((\mathbf{A}^\top)^\top = \mathbf{A}\)
+- *Linealidad*: \((\mathbf{A} + \mathbf{B})^\top = \mathbf{A}^\top + \mathbf{B}^\top\) y \((\alpha\mathbf{A})^\top = \alpha\mathbf{A}^\top\)
+- *Inversión del orden del producto*: \((\mathbf{AB})^\top = \mathbf{B}^\top \mathbf{A}^\top\)
+
+La propiedad de inversión del orden es **crítica** y aparece en cada derivación de retropropagación. Vamos a probarla completamente. Queremos demostrar que \([(\mathbf{AB})^\top]_{ij} = [\mathbf{B}^\top \mathbf{A}^\top]_{ij}\).
+
+Partimos de la definición de transpuesta:
+
+$$
+[(\mathbf{AB})^\top]_{ij} = [\mathbf{AB}]_{ji}
+$$
+
+Aplicando la definición de multiplicación de matrices a \([\mathbf{AB}]_{ji}\):
+
+$$
+[\mathbf{AB}]_{ji} = \sum_{l} A_{jl} \cdot B_{li}
+$$
+
+Reconociendo cada factor usando la definición de transpuesta (\(A_{jl} = [\mathbf{A}^\top]_{lj}\) y \(B_{li} = [\mathbf{B}^\top]_{il}\)):
+
+$$
+\sum_{l} A_{jl} B_{li} = \sum_{l} [\mathbf{B}^\top]_{il} \cdot [\mathbf{A}^\top]_{lj}
+$$
+
+Reconociendo la parte derecha como la definición de multiplicación de matrices \([\mathbf{B}^\top \mathbf{A}^\top]_{ij}\):
+
+$$
+\boxed{(\mathbf{AB})^\top = \mathbf{B}^\top \mathbf{A}^\top}
+$$
+
+**Matrices simétricas y antisimétricas** son casos especiales importantes:
+
+- \(\mathbf{A}\) es **simétrica** si \(\mathbf{A}^\top = \mathbf{A}\), equivalentemente \(A_{ij} = A_{ji}\) para todo \(i, j\). Las matrices de covarianza y las matrices kernel en Machine Learning son siempre simétricas.
+- \(\mathbf{A}\) es **antisimétrica** si \(\mathbf{A}^\top = -\mathbf{A}\), equivalentemente \(A_{ij} = -A_{ji}\) y todas las entradas diagonales son cero.
+
+{{< callout >}}
+Cualquier matriz cuadrada \(\mathbf{A}\) puede descomponerse de forma única en una parte simétrica y una parte antisimétrica:
+
+$$
+\mathbf{A} = \underbrace{\frac{\mathbf{A} + \mathbf{A}^\top}{2}}_{\text{simétrica}} + \underbrace{\frac{\mathbf{A} - \mathbf{A}^\top}{2}}_{\text{antisimétrica}}
+$$
+
+Esta descomposición tiene aplicaciones en física (análisis de deformación vs. rotación) y en investigación reciente sobre la estructura de los mecanismos de atención.
+{{< /callout >}}
+
+### La traza
+
+Para una matriz cuadrada \(\mathbf{A} \in \mathbb{R}^{n \times n}\), la **traza** es la suma de las entradas diagonales:
+
+$$
+\text{tr}(\mathbf{A}) = \sum_{i=1}^{n} A_{ii}
+$$
+
+{{< callout type="info" >}}
+En palabras simples: suma la diagonal principal. La traza captura cuánto la transformación *"expande"* el espacio en promedio.
+{{< /callout >}}
+
+Propiedades clave:
+- *Linealidad*: \(\text{tr}(\mathbf{A} + \mathbf{B}) = \text{tr}(\mathbf{A}) + \text{tr}(\mathbf{B})\) y \(\text{tr}(\alpha\mathbf{A}) = \alpha\,\text{tr}(\mathbf{A})\)
+- *Invarianza bajo transpuesta*: \(\text{tr}(\mathbf{A}^\top) = \text{tr}(\mathbf{A})\)
+- **Propiedad cíclica**: \(\text{tr}(\mathbf{ABC}) = \text{tr}(\mathbf{BCA}) = \text{tr}(\mathbf{CAB})\)
+
+La propiedad cíclica es omnipresente en las derivaciones de gradientes. Demostremos el caso base \(\text{tr}(\mathbf{AB}) = \text{tr}(\mathbf{BA})\).
+
+Partiendo de la definición de traza:
+
+$$
+\text{tr}(\mathbf{AB}) = \sum_{i} [\mathbf{AB}]_{ii} = \sum_{i} \sum_{j} A_{ij} B_{ji}
+$$
+
+Intercambiando el orden de la suma (válido ya que ambas sumas son finitas):
+
+$$
+\sum_{i} \sum_{j} A_{ij} B_{ji} = \sum_{j} \sum_{i} B_{ji} A_{ij}
+$$
+
+Reconociendo la suma de la derecha como la entrada diagonal \([\mathbf{BA}]_{jj}\):
+
+$$
+\sum_{j} \sum_{i} B_{ji} A_{ij} = \sum_{j} [\mathbf{BA}]_{jj} = \text{tr}(\mathbf{BA})
+$$
+
+$$
+\boxed{\text{tr}(\mathbf{AB}) = \text{tr}(\mathbf{BA})}
+$$
+
+{{< callout >}}
+Notá que esto se cumple incluso cuando \(\mathbf{AB}\) y \(\mathbf{BA}\) tienen distintas formas (por ejemplo, \(\mathbf{A} \in \mathbb{R}^{m \times n}\), \(\mathbf{B} \in \mathbb{R}^{n \times m}\)), ambas trazas son escalares e iguales.
+{{< /callout >}}
+
+### El determinante
+
+El **determinante** es una función escalar \(\det: \mathbb{R}^{n \times n} \rightarrow \mathbb{R}\) que mide cómo una matriz cuadrada escala los volúmenes \(n\)-dimensionales. Geométricamente, \(|\det(\mathbf{A})|\) es el factor por el que \(\mathbf{A}\) escala el volumen, y \(\text{sign}(\det(\mathbf{A}))\) codifica si la transformación preserva la orientación (positivo) o la invierte (negativo, como una reflexión).
+
+Comencemos con el caso \(2 \times 2\). Sea \(\mathbf{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}\). Las columnas son \(\mathbf{a}_1 = \begin{bmatrix}a \\ c\end{bmatrix}\) y \(\mathbf{a}_2 = \begin{bmatrix}b \\ d\end{bmatrix}\).
+
+El área con signo del paralelogramo formado por estos dos vectores columna es la componente $z$ de su producto vectorial. Para vectores 2D $[a, c, 0]$ y $[b, d, 0]$:
+
+$$\text{área con signo} = a \cdot d - b \cdot c$$
+
+$$\boxed{\det\begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc}$$
+
+{{< callout type="info" >}}
+En palabras simples: el determinante mide cuánto el cuadrado unitario se estira para formar un paralelogramo al aplicar la transformación. Si $\det(\mathbf{A}) = 0$, el paralelogramo tiene área cero — dos columnas son linealmente dependientes, una dimensión ha sido colapsada, y la matriz es **singular** (no invertible). Si $\det(\mathbf{A}) = 6$, la transformación multiplica todas las áreas por 6.
+{{< /callout >}}
+
+**El caso $3 \times 3$** mediante expansión por cofactores a lo largo de la primera fila. Para $\mathbf{A} \in \mathbb{R}^{3 \times 3}$:
+
+$$\det(\mathbf{A}) = A_{11}\det\begin{bmatrix}A_{22}&A_{23}\\A_{32}&A_{33}\end{bmatrix} - A_{12}\det\begin{bmatrix}A_{21}&A_{23}\\A_{31}&A_{33}\end{bmatrix} + A_{13}\det\begin{bmatrix}A_{21}&A_{22}\\A_{31}&A_{32}\end{bmatrix}$$
+
+La matriz $2 \times 2$ asociada a la entrada $A_{1j}$ es el **menor $(1,j)$** — obtenido borrando la fila 1 y la columna $j$. El menor con signo $C_{ij} = (-1)^{i+j} M_{ij}$ se llama **cofactor**. La expansión por cofactores se generaliza a cualquier fila o columna.
+
+**Caso general — la fórmula de Leibniz**: Para una matriz $n \times n$:
+
+$$\det(\mathbf{A}) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^{n} A_{i,\sigma(i)}$$
+
+donde $S_n$ es el conjunto de todas las permutaciones de $\{1, \ldots, n\}$ y $\text{sgn}(\sigma) = \pm 1$ es la paridad de la permutación.
+
+**Propiedades clave del determinante** — cada una tiene una interpretación geométrica clara:
+
+- *Multiplicatividad*: $\det(\mathbf{AB}) = \det(\mathbf{A})\det(\mathbf{B})$ — componer dos transformaciones multiplica sus factores de escalado de volumen
+- *Invarianza bajo transpuesta*: $\det(\mathbf{A}^\top) = \det(\mathbf{A})$
+- *Escalado de fila*: escalar una fila por $\alpha$ escala $\det$ por $\alpha$
+- *Intercambio de filas*: intercambiar dos filas niega el $\det$
+- *Adición de filas*: sumar un múltiplo de una fila a otra no cambia el $\det$
+- *Matrices triangulares*: $\det(\mathbf{A}) = \prod_{i} A_{ii}$ para $\mathbf{A}$ triangular superior o inferior
+- **Invertibilidad**: $\mathbf{A}$ es invertible si y solo si $\det(\mathbf{A}) \neq 0$

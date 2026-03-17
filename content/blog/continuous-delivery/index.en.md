@@ -112,13 +112,13 @@ It's worth noting that when we discuss CD, it inherently includes **Continuous D
 
 ## References
 
-[^1]: Beck, Kent, Mike Beedle, Arie van Bennekum, Alistair Cockburn, Ward Cunningham, Martin Fowler, James Grenning, Jim Highsmith, Andrew Hunt, Ron Jeffries, Jon Kern, Brian Marick, Robert C. Martin, Steve Mellor, Ken Schwaber, Jeff Sutherland, and Dave Thomas. [Manifesto for Agile Software Development](http://agilemanifesto.org/), 2001.
+[^1]: Beck, Kent, Mike Beedle, Arie van Bennekum, Alistair Cockburn, Ward Cunningham, Martin Fowler, James Grenning, Jim Highsmith, Andrew Hunt, Ron Jeffries, Jon Kern, Brian Marick, Robert C. Martin, Steve Mellor, Ken Schwaber, Jeff Sutherland, and Dave Thomas. [Manifesto for Agile Software Development](https://agilemanifesto.org/), 2001.
 
 [^2]: Fowler, Martin. [Continuous Delivery](https://martinfowler.com/bliki/ContinuousDelivery.html?utm_source=Codeship&utm_medium=CI-Guide), 2013.
 
 [^3]: Udd, Raoul. Adopting Continuous Delivery: A Case Study, 2016.
 
-[^4]: Leppanen, Marko, Simo Makinen, Max Pagels, Veli-Pekka Eloranta, Juha Itkonen, Mika V. Mantyla, and Tomi Mannisto. [The highways and country roads to continuous deployment](http://ieeexplore.ieee.org/document/7057604/). IEEE Software, 32(2):64-72, 2015.
+[^4]: Leppanen, Marko, Simo Makinen, Max Pagels, Veli-Pekka Eloranta, Juha Itkonen, Mika V. Mantyla, and Tomi Mannisto. [The highways and country roads to continuous deployment](https://ieeexplore.ieee.org/document/7057604). IEEE Software, 32(2):64-72, 2015.
 
 [^5]: Neely, Steve, and Steve Stolt. [Continuous delivery? Easy! Just change everything (well, maybe it is not that easy)](https://doi.org/10.1109/AGILE.2013.17). Proceedings - AGILE 2013, pp.121-128, 2013.
 

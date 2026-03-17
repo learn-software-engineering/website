@@ -1,3 +1,4 @@
+anticommutativity
 explainability
 invertibility
 regulariser

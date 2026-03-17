@@ -148,7 +148,7 @@ While Duvall[^5] has extolled the virtues of Continuous Integration (CI) in his 
 [^1]: [Continuous integration](https://www.thoughtworks.com/continuous-integration). ThoughtWorks, 2018.
 [^2]: Fowler, Martin. [Continuous Integration](https://martinfowler.com/articles/continuousIntegration.html). 2006.
 [^3]: Beck, Kent. Embrace Change with Extreme Programming. *IEEE Computer Magazine*, (c), 70-77. 1999.
-[^4]: Rodriguez Pilar, Markkula, Jouni, Oivo, Markku, & Turula, Kimmo. [Survey on agile and lean usage in Finnish software industry](http://dl.acm.org/citation.cfm?doid=2372251.2372275). In *Proceedings of the ACM-IEEE international symposium on Empirical software engineering and measurement - ESEM '12* (p. 139). ACM Press. DOI: 10.1145/2372251.2372275. 2012.
+[^4]: Rodriguez Pilar, Markkula, Jouni, Oivo, Markku, & Turula, Kimmo. [Survey on agile and lean usage in Finnish software industry](https://dl.acm.org/doi/10.1145/2372251.2372275). In *Proceedings of the ACM-IEEE international symposium on Empirical software engineering and measurement - ESEM '12* (p. 139). ACM Press. DOI: 10.1145/2372251.2372275. 2012.
 [^5]: Duvall, Paul M., Matyas, Steve, & Glover, Andrew. Continuous integration: improving software quality and reducing risk. Pearson Education, Inc., 2007.
 [^6]: Cauldwell, Patrick. Code Leader: Using people, tools and processes to build successful software. Wiley Publishing, Inc., 2008.
 [^7]: Humble, Jez & Farley, David. Continuous Delivery: Reliable Software Releases through Build, Test and Deployment Automation. Addison-Wesley, 2011.

@@ -259,6 +259,50 @@ $$
 funciona precisamente gracias a esta geometría. Las relaciones semánticas se codifican como *direcciones* en el espacio vectorial, y encontrar `reina` significa hallar el vector con mayor similitud coseno al vector de consulta. Todo modelo de embedding moderno (BERT, GPT, sentence-transformers) hereda esta filosofía geométrica. La siguiente vez que leas sobre ***"espacios de representación"*** en un paper de IA, recuerda: están hablando literalmente de la geometría que acabas de derivar.
 {{< /callout >}}
 
+### El producto vectorial (producto cruz)
+
+El producto punto toma dos vectores y devuelve un **escalar**. El **producto vectorial** toma dos vectores en \(\mathbb{R}^3\) y devuelve un **vector**, uno que es perpendicular a ambas entradas. Está definido únicamente en tres (y siete) dimensiones, lo que lo hace más especializado geométricamente que el producto punto.
+
+Dados \(\mathbf{u} = [u_1, u_2, u_3]^T\) y \(\mathbf{v} = [v_1, v_2, v_3]^T\), el producto vectorial \(\mathbf{u} \times \mathbf{v}\) se calcula expandiendo el siguiente determinante simbólico:
+
+$$
+\mathbf{u} \times \mathbf{v} = \begin{vmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3 \\ u_1 & u_2 & u_3 \\ v_1 & v_2 & v_3 \end{vmatrix}
+$$
+
+Expandiendo por la primera fila:
+
+$$
+\mathbf{u} \times \mathbf{v} = \mathbf{e}_1(u_2 v_3 - u_3 v_2) - \mathbf{e}_2(u_1 v_3 - u_3 v_1) + \mathbf{e}_3(u_1 v_2 - u_2 v_1)
+$$
+
+$$
+\boxed{\mathbf{u} \times \mathbf{v} = \begin{bmatrix} u_2 v_3 - u_3 v_2 \\ u_3 v_1 - u_1 v_3 \\ u_1 v_2 - u_2 v_1 \end{bmatrix}}
+$$
+
+{{< callout type="info" >}}
+En términos sencillos: cada componente del resultado es un determinante \(2 \times 2\) construido a partir de las otras dos componentes de las entradas. El patrón es cíclico: \((2,3)\), \((3,1)\), \((1,2)\).
+{{< /callout >}}
+
+Dos propiedades geométricas definen el producto vectorial por completo:
+- **Dirección:** \(\mathbf{u} \times \mathbf{v}\) es siempre ortogonal tanto a \(\mathbf{u}\) como a \(\mathbf{v}\). Podés verificarlo directamente: \((\mathbf{u} \times \mathbf{v}) \cdot \mathbf{u} = 0\) y \((\mathbf{u} \times \mathbf{v}) \cdot \mathbf{v} = 0\). La orientación sigue la **regla de la mano derecha**: curvá los dedos de tu mano derecha desde \(\mathbf{u}\) hacia \(\mathbf{v}\), y el pulgar apunta en la dirección de \(\mathbf{u} \times \mathbf{v}\).
+
+**Magnitud:** La longitud del resultado es igual al área del paralelogramo generado por \(\mathbf{u}\) y \(\mathbf{v}\):
+$$
+\|\mathbf{u} \times \mathbf{v}\| = \|\mathbf{u}\|\|\mathbf{v}\|\sin\theta
+$$
+
+{{< callout type="info" >}}
+Cuando \(\mathbf{u}\) y \(\mathbf{v}\) son paralelos (\(\theta = 0°\)), el paralelogramo es plano y el producto vectorial es el vector cero. Cuando son perpendiculares (\(\theta = 90°\)), el paralelogramo tiene área máxima y \(\|\mathbf{u} \times \mathbf{v}\|\) se maximiza. Este comportamiento es exactamente opuesto al del producto punto, que se maximiza cuando los vectores son paralelos y vale cero cuando son perpendiculares.
+{{< /callout >}}
+
+**Propiedad algebraica clave, anticonmutatividad**:
+
+$$
+\mathbf{u} \times \mathbf{v} = -(\mathbf{v} \times \mathbf{u})
+$$
+
+Intercambiar el orden invierte el signo y la dirección. Esto significa que el producto vectorial **no es conmutativo**, a diferencia del producto punto.
+
 ## Implementación en Python
 
 Implementamos todo desde cero: primero en Python puro para ver la mecánica, luego verificamos con NumPy.

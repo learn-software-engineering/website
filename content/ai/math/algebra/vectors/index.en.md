@@ -260,6 +260,51 @@ $$
 works precisely because of this geometry. Semantic relationships are encoded as *directions* in vector space, and finding `queen` means finding the vector whose cosine similarity to the query vector is maximized. Every modern embedding model (BERT, GPT, sentence-transformers) inherits this geometric philosophy. Next time you read something about word representation in vector spaces, remember they are talking about the same geometry we just derived.
 {{< /callout >}}
 
+### The cross product
+
+The dot product takes two vectors and returns a **scalar**. The **cross product** takes two vectors in \(\mathbb{R}^3\) and returns a **vector**, one that is perpendicular to both inputs. It is defined only in three (and seven) dimensions, which makes it more geometrically specialised than the dot product.
+
+Given \(\mathbf{u} = [u_1, u_2, u_3]^T\) and \(\mathbf{v} = [v_1, v_2, v_3]^T\), the cross product \(\mathbf{u} \times \mathbf{v}\) is computed by expanding the following symbolic determinant:
+
+$$
+\mathbf{u} \times \mathbf{v} = \begin{vmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \mathbf{e}_3 \\ u_1 & u_2 & u_3 \\ v_1 & v_2 & v_3 \end{vmatrix}
+$$
+
+Expanding along the first row:
+
+$$
+\mathbf{u} \times \mathbf{v} = \mathbf{e}_1(u_2 v_3 - u_3 v_2) - \mathbf{e}_2(u_1 v_3 - u_3 v_1) + \mathbf{e}_3(u_1 v_2 - u_2 v_1)
+$$
+
+$$
+\boxed{\mathbf{u} \times \mathbf{v} = \begin{bmatrix} u_2 v_3 - u_3 v_2 \\ u_3 v_1 - u_1 v_3 \\ u_1 v_2 - u_2 v_1 \end{bmatrix}}
+$$
+
+{{< callout type="info" >}}
+In plain English: each component of the result is a \(2 \times 2\) determinant built from the other two components of the inputs. The pattern is cyclic: \((2,3)\), \((3,1)\), \((1,2)\).
+{{< /callout >}}
+
+**Two geometric facts define the cross product completely**:
+
+**Direction:** \(\mathbf{u} \times \mathbf{v}\) is always orthogonal to both \(\mathbf{u}\) and \(\mathbf{v}\). You can verify this directly: \((\mathbf{u} \times \mathbf{v}) \cdot \mathbf{u} = 0\) and \((\mathbf{u} \times \mathbf{v}) \cdot \mathbf{v} = 0\). The orientation follows the **right-hand rule**: curl the fingers of your right hand from \(\mathbf{u}\) toward \(\mathbf{v}\), and your thumb points in the direction of \(\mathbf{u} \times \mathbf{v}\).
+
+**Magnitude:** The length of the result equals the area of the parallelogram spanned by \(\mathbf{u}\) and \(\mathbf{v}\), which can be expressed as:
+
+$$\|\mathbf{u} \times \mathbf{v}\| = \|\mathbf{u}\|\|\mathbf{v}\|\sin\theta$$
+
+
+{{< callout type="info" >}}
+When \(\mathbf{u}\) and \(\mathbf{v}\) are parallel (\(\theta = 0°\)), the parallelogram is flat and the cross product is the zero vector. When they are perpendicular (\(\theta = 90°\)), the parallelogram has maximum area and \(\|\mathbf{u} \times \mathbf{v}\|\) is maximised. This is the exact opposite behaviour to the dot product, which is maximised when vectors are parallel and zero when perpendicular.
+{{< /callout >}}
+
+**Key algebraic property, anticommutativity**:
+
+$$
+\mathbf{u} \times \mathbf{v} = -(\mathbf{v} \times \mathbf{u})
+$$
+
+Swapping the order flips the sign and the direction. This means the cross product is **not commutative**, unlike the dot product.
+
 ## Python implementation
 
 Let's implement everything from scratch, first in pure Python, then verify with NumPy.

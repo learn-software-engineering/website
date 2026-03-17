@@ -49,6 +49,7 @@ dictionaries:
   - web-services
   - custom-dict-acronyms
   - custom-dict-names
+  - custom-dict-other
   - custom-dict-words-en
   - custom-dict-words-es
 
@@ -70,6 +71,8 @@ dictionaryDefinitions:
     path: "./custom-dict-acronyms.txt"
   - name: custom-dict-names
     path: "./custom-dict-names.txt"
+  - name: custom-dict-other
+    path: "./custom-dict-other.txt"
   - name: custom-dict-words-en
     path: "./custom-dict-words-en.txt"
   - name: custom-dict-words-es

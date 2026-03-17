@@ -296,38 +296,68 @@ Notá que esto se cumple incluso cuando \(\mathbf{AB}\) y \(\mathbf{BA}\) tienen
 
 ### El determinante
 
-El **determinante** es una función escalar \(\det: \mathbb{R}^{n \times n} \rightarrow \mathbb{R}\) que mide cómo una matriz cuadrada escala los volúmenes \(n\)-dimensionales. Geométricamente, \(|\det(\mathbf{A})|\) es el factor por el que \(\mathbf{A}\) escala el volumen, y \(\text{sign}(\det(\mathbf{A}))\) codifica si la transformación preserva la orientación (positivo) o la invierte (negativo, como una reflexión).
+Antes de calcular ninguna fórmula, vale la pena hacer la pregunta de fondo: ¿por qué existe el determinante? ¿Qué problema resuelve?
 
-Comencemos con el caso \(2 \times 2\). Sea \(\mathbf{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}\). Las columnas son \(\mathbf{a}_1 = \begin{bmatrix}a \\ c\end{bmatrix}\) y \(\mathbf{a}_2 = \begin{bmatrix}b \\ d\end{bmatrix}\).
+Cuando una matriz codifica una transformación lineal, la pregunta más fundamental que podés hacerle es: **¿destruye información?** Una transformación que aplasta un plano 2D en una recta 1D perdió toda la información de la dimensión colapsada, no puede deshacerse. Una transformación que rota o estira el plano preserva toda la información y puede revertirse. El determinante es el único número que responde a esta pregunta, e indica por cuánto.
 
-El área con signo del paralelogramo formado por estos dos vectores columna es la componente $z$ de su producto vectorial. Para vectores 2D $[a, c, 0]$ y $[b, d, 0]$:
+Más precisamente, el determinante responde tres preguntas interconectadas de manera simultánea:
 
-$$\text{área con signo} = a \cdot d - b \cdot c$$
+**1. ¿Cómo escala la transformación los volúmenes?** En 2D, una transformación toma el cuadrado unitario (área = 1) y lo mapea a un paralelogramo. El determinante es el *área con signo* de ese paralelogramo. Si \(|\det(\mathbf{A})| = 6\), toda región del plano tiene su área multiplicada por 6 al aplicar \(\mathbf{A}\). En 3D, es el volumen con signo del paralelepípedo formado por los tres vectores columna.
 
-$$\boxed{\det\begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc}$$
+**2. ¿Preserva o invierte la orientación?** Un determinante positivo significa que la transformación es *"como una rotación o estiramiento"*, preserva la lateralidad, de la misma manera que tu mano derecha sigue siendo tu mano derecha después de una rotación. Un determinante negativo significa que la transformación incluye una reflexión, invierte la orientación, como si vieras el espacio en un espejo.
 
-{{< callout type="info" >}}
-En palabras simples: el determinante mide cuánto el cuadrado unitario se estira para formar un paralelogramo al aplicar la transformación. Si $\det(\mathbf{A}) = 0$, el paralelogramo tiene área cero — dos columnas son linealmente dependientes, una dimensión ha sido colapsada, y la matriz es **singular** (no invertible). Si $\det(\mathbf{A}) = 6$, la transformación multiplica todas las áreas por 6.
+**3. ¿Es la transformación invertible?** Esta es la pregunta práctica crítica. \(\det(\mathbf{A}) = 0\) significa que la transformación colapsa al menos una dimensión a cero, un plano 2D se convierte en una recta, un volumen 3D se aplana a una lámina. La información se pierde de manera irreversible y ninguna matriz puede recuperarla. La matriz es **singular** y no tiene inversa. \(\det(\mathbf{A}) \neq 0\) garantiza que la transformación es reversible.
+
+{{< callout type="important" >}}
+En Machine Learning, verificar el determinante antes de invertir una matriz no es un formalismo matemático, es un paso de depuración práctico. Las matrices de covarianza casi singulares causan inestabilidad numérica en procesos gaussianos, en la ecuación normal de la regresión lineal y en la reducción de dimensionalidad. Cuando un modelo produce salidas `NaN` o predicciones desproporcionadamente grandes después de una inversión matricial, un determinante cercano a cero suele ser el culpable. Usá `np.linalg.cond(A)` como primer diagnóstico.
 {{< /callout >}}
 
-**El caso $3 \times 3$** mediante expansión por cofactores a lo largo de la primera fila. Para $\mathbf{A} \in \mathbb{R}^{3 \times 3}$:
+#### El caso \(2 \times 2\), derivación desde la geometría
 
-$$\det(\mathbf{A}) = A_{11}\det\begin{bmatrix}A_{22}&A_{23}\\A_{32}&A_{33}\end{bmatrix} - A_{12}\det\begin{bmatrix}A_{21}&A_{23}\\A_{31}&A_{33}\end{bmatrix} + A_{13}\det\begin{bmatrix}A_{21}&A_{22}\\A_{31}&A_{32}\end{bmatrix}$$
+Sea \(\mathbf{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}\). Los dos vectores columna son \(\mathbf{a}_1 = \begin{bmatrix}a \\ c\end{bmatrix}\) y \(\mathbf{a}_2 = \begin{bmatrix}b \\ d\end{bmatrix}\).
 
-La matriz $2 \times 2$ asociada a la entrada $A_{1j}$ es el **menor $(1,j)$** — obtenido borrando la fila 1 y la columna $j$. El menor con signo $C_{ij} = (-1)^{i+j} M_{ij}$ se llama **cofactor**. La expansión por cofactores se generaliza a cualquier fila o columna.
+Estos dos vectores forman un paralelogramo. Queremos su área con signo. Embebiendo ambos vectores en 3D como \([a, c, 0]\) y \([b, d, 0]\) y calculando el producto vectorial, la componente \(z\) da:
 
-**Caso general — la fórmula de Leibniz**: Para una matriz $n \times n$:
+$$
+\text{área con signo} = a \cdot d - b \cdot c
+$$
+
+$$
+\boxed{\det\begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc}
+$$
+
+{{< callout type="info" >}}
+En palabras simples: multiplicá a lo largo de la diagonal principal (\(a \cdot d\)) y restá el producto a lo largo de la antidiagonal (\(b \cdot c\)). Si las dos columnas son paralelas (linealmente dependientes), abarcan área cero — y de hecho \(ad - bc = 0\) en ese caso. Probalo: con \(\mathbf{a}_1 = [2, 1]^\top\) y \(\mathbf{a}_2 = [4, 2]^\top\) (una es el doble de la otra), \(\det = 2 \cdot 2 - 4 \cdot 1 = 0\). Sin área, sin inversa. Ésta es la razón geométrica por la que las columnas linealmente dependientes hacen que una matriz no sea invertible.
+{{< /callout >}}
+
+#### El caso \(3 \times 3\), expansión por cofactores
+
+En 3D, el determinante mide el volumen con signo del paralelepípedo formado por los tres vectores columna. El cálculo se expande a lo largo de la primera fila, donde cada término contribuye con un área proyectada ponderada por la entrada correspondiente:
+
+$$
+\det(\mathbf{A}) = A_{11}\det\begin{bmatrix}A_{22}&A_{23}\\A_{32}&A_{33}\end{bmatrix} - A_{12}\det\begin{bmatrix}A_{21}&A_{23}\\A_{31}&A_{33}\end{bmatrix} + A_{13}\det\begin{bmatrix}A_{21}&A_{22}\\A_{31}&A_{32}\end{bmatrix}
+$$
+
+Cada matriz \(2 \times 2\) es un **menor** \(M_{1j}\): la submatriz obtenida borrando la fila 1 y la columna \(j\). El menor con signo \(C_{ij} = (-1)^{i+j} M_{ij}\) se llama **cofactor**. Los signos alternantes $+\,-\,+$ surgen de la geometría de las proyecciones — cada menor mide el área de una cara del paralelepípedo, y los signos aseguran que las contribuciones se combinen correctamente para dar el volumen con signo.
+
+{{< callout type="info" >}}
+En palabras simples: elegí cualquier fila. Para cada entrada, tapá su fila y su columna para revelar un bloque $2 \times 2$, calculá su determinante, multiplicá por la entrada, y alternás signos: $+\,-\,+$. Sumá los tres resultados. Esto es recursivo: un determinante $4 \times 4$ se expande en cuatro determinantes $3 \times 3$, y así sucesivamente — aunque en la práctica usamos la descomposición LU por eficiencia.
+{{< /callout >}}
+
+#### La fórmula general — Leibniz
+
+Para una matriz $n \times n$, el determinante suma sobre todas las formas de elegir una entrada de cada fila y cada columna simultáneamente — es decir, sobre todas las permutaciones:
 
 $$\det(\mathbf{A}) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^{n} A_{i,\sigma(i)}$$
 
-donde $S_n$ es el conjunto de todas las permutaciones de $\{1, \ldots, n\}$ y $\text{sgn}(\sigma) = \pm 1$ es la paridad de la permutación.
+donde $S_n$ es el conjunto de todas las permutaciones de $\{1, \ldots, n\}$ y $\text{sgn}(\sigma) = \pm 1$ es la paridad de la permutación. Esta fórmula tiene $n!$ términos, por lo que nunca se calcula directamente para matrices grandes — la descomposición LU calcula el determinante en $\mathcal{O}(n^3)$ como subproducto de la factorización. Pero la fórmula de Leibniz es la herramienta correcta para demostrar identidades.
 
-**Propiedades clave del determinante** — cada una tiene una interpretación geométrica clara:
+#### Propiedades clave
 
-- *Multiplicatividad*: $\det(\mathbf{AB}) = \det(\mathbf{A})\det(\mathbf{B})$ — componer dos transformaciones multiplica sus factores de escalado de volumen
-- *Invarianza bajo transpuesta*: $\det(\mathbf{A}^\top) = \det(\mathbf{A})$
-- *Escalado de fila*: escalar una fila por $\alpha$ escala $\det$ por $\alpha$
-- *Intercambio de filas*: intercambiar dos filas niega el $\det$
-- *Adición de filas*: sumar un múltiplo de una fila a otra no cambia el $\det$
-- *Matrices triangulares*: $\det(\mathbf{A}) = \prod_{i} A_{ii}$ para $\mathbf{A}$ triangular superior o inferior
+- *Multiplicatividad*: $\det(\mathbf{AB}) = \det(\mathbf{A})\det(\mathbf{B})$ — aplicar una transformación que duplica el volumen seguida de una que lo triplica produce una expansión global de seis veces
+- *Invarianza bajo transpuesta*: $\det(\mathbf{A}^\top) = \det(\mathbf{A})$ — filas y columnas contribuyen simétricamente al volumen
+- *Escalado de fila*: escalar una fila por $\alpha$ escala el $\det$ por $\alpha$ — estás escalando una dimensión del paralelepípedo
+- *Intercambio de filas*: intercambiar dos filas niega el $\det$ — estás invirtiendo la orientación
+- *Adición de filas*: sumar un múltiplo de una fila a otra no cambia el $\det$ — por esto la eliminación gaussiana funciona: nunca cambia el determinante
+- *Matrices triangulares*: $\det(\mathbf{A}) = \prod_{i} A_{ii}$ — solo importan las entradas diagonales
 - **Invertibilidad**: $\mathbf{A}$ es invertible si y solo si $\det(\mathbf{A}) \neq 0$

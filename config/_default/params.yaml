@@ -1,5 +1,10 @@
+blog:
+  list:
+    displayTags: true
+
 # Display the last modification date
 displayUpdatedDate: true
+
 # Display the author of the last modification
 displayUpdatedAuthor: true
 
@@ -7,7 +12,7 @@ editURL:
   enable: true
   base: "https://github.com/learn-software-engineering/website/edit/main"
 
-externalLinkDecoration: true
+externalLinkDecoration: false
 
 imageZoom:
   enable: true
@@ -32,3 +37,6 @@ theme:
   # light | dark | system
   default: system
   displayToggle: true
+
+toc:
+  displayTags: true

@@ -296,68 +296,173 @@ Notá que esto se cumple incluso cuando \(\mathbf{AB}\) y \(\mathbf{BA}\) tienen
 
 ### El determinante
 
-Antes de calcular ninguna fórmula, vale la pena hacer la pregunta de fondo: ¿por qué existe el determinante? ¿Qué problema resuelve?
+Antes de calcular ninguna fórmula, vale la pena hacerse las preguntas de fondo: ¿por qué existe el determinante? ¿Qué problema resuelve?
 
 Cuando una matriz codifica una transformación lineal, la pregunta más fundamental que podés hacerle es: **¿destruye información?** Una transformación que aplasta un plano 2D en una recta 1D perdió toda la información de la dimensión colapsada, no puede deshacerse. Una transformación que rota o estira el plano preserva toda la información y puede revertirse. El determinante es el único número que responde a esta pregunta, e indica por cuánto.
 
-Más precisamente, el determinante responde tres preguntas interconectadas de manera simultánea:
+Más precisamente, el determinante responde tres preguntas interconectadas de manera simultánea.
 
-**1. ¿Cómo escala la transformación los volúmenes?** En 2D, una transformación toma el cuadrado unitario (área = 1) y lo mapea a un paralelogramo. El determinante es el *área con signo* de ese paralelogramo. Si \(|\det(\mathbf{A})| = 6\), toda región del plano tiene su área multiplicada por 6 al aplicar \(\mathbf{A}\). En 3D, es el volumen con signo del paralelepípedo formado por los tres vectores columna.
+{{< details title="¿Cómo escala la transformación los volúmenes?" closed="true" >}}
+En dos dimensiones, las dos columnas de una matriz son simplemente dos vectores dibujados desde el origen. Dos vectores desde el mismo origen siempre encierran un paralelogramo, no es una elección, es geometría. El determinante es el *área con signo* de ese paralelogramo. Si \(|\det(\mathbf{A})| = 6\), toda región del plano tiene su área multiplicada por 6 al aplicar la transformación. En 3D, se convierte en el volumen con signo del paralelepípedo formado por los tres vectores columna.
 
-**2. ¿Preserva o invierte la orientación?** Un determinante positivo significa que la transformación es *"como una rotación o estiramiento"*, preserva la lateralidad, de la misma manera que tu mano derecha sigue siendo tu mano derecha después de una rotación. Un determinante negativo significa que la transformación incluye una reflexión, invierte la orientación, como si vieras el espacio en un espejo.
+{{< figure
+    src="images/volume-scale.es.svg"
+    alt="Escala de volúmenes por el determinante"
+    caption="Las dos columnas de una matriz \(2\times2\) son vectores que siempre forman un paralelogramo. El determinante es su área con signo."
+    >}}
+{{< /details >}}
 
-**3. ¿Es la transformación invertible?** Esta es la pregunta práctica crítica. \(\det(\mathbf{A}) = 0\) significa que la transformación colapsa al menos una dimensión a cero, un plano 2D se convierte en una recta, un volumen 3D se aplana a una lámina. La información se pierde de manera irreversible y ninguna matriz puede recuperarla. La matriz es **singular** y no tiene inversa. \(\det(\mathbf{A}) \neq 0\) garantiza que la transformación es reversible.
+{{< details title="¿Preserva o invierte la orientación?" closed="true" >}}
+La palabra *con signo* importa. Dos vectores siempre forman un paralelogramo, pero el *orden* en que los recorrés determina el signo del área. Si la rotación de \(\mathbf{a}_1\) hacia \(\mathbf{a}_2\) es **antihoraria**, el determinante es positivo. Si es **horaria**, el determinante es negativo. El contenido geométrico es idéntico (misma figura, misma área) pero el signo codifica si la transformación preserva o invierte la lateralidad del espacio.
+
+{{< figure
+    src="images/orientation.es.svg"
+    alt="Preservación o inversión de la orientación por el determinante"
+    caption="El orden de los vectores columna determina el signo del área, codificando si la transformación preserva o invierte la orientación."
+    >}}
+{{< /details >}}
+
+{{< details title="¿Es la transformación invertible?" closed="true" >}}
+\(\det(\mathbf{A}) = 0\) significa que los dos vectores columna son paralelos, yacen sobre la misma recta, encerrando área cero. La transformación colapsa un plano 2D en una recta 1D. La información se pierde de manera irreversible: infinitas entradas distintas producen la misma salida, por lo que no podés determinar de cuál viniste. La matriz es **singular** y no tiene inversa.
+
+{{< figure
+    src="images/invertible.es.svg"
+    alt="Transformación invertible"
+    caption="Una transformación es invertible si y solo si su determinante es distinto de cero."
+    >}}
+{{< /details >}}
 
 {{< callout type="important" >}}
-En Machine Learning, verificar el determinante antes de invertir una matriz no es un formalismo matemático, es un paso de depuración práctico. Las matrices de covarianza casi singulares causan inestabilidad numérica en procesos gaussianos, en la ecuación normal de la regresión lineal y en la reducción de dimensionalidad. Cuando un modelo produce salidas `NaN` o predicciones desproporcionadamente grandes después de una inversión matricial, un determinante cercano a cero suele ser el culpable. Usá `np.linalg.cond(A)` como primer diagnóstico.
+En ML, verificar el determinante antes de invertir una matriz no es un formalismo matemático, es un paso de depuración práctico. Las matrices de covarianza casi singulares causan inestabilidad numérica en [procesos gaussianos](https://es.wikipedia.org/wiki/Proceso_de_Gauss), en la ecuación normal de la regresión lineal y en la reducción de dimensionalidad. Cuando un modelo produce salidas `NaN` o predicciones desproporcionadamente grandes después de una inversión matricial, un determinante cercano a cero suele ser el culpable.
 {{< /callout >}}
 
 #### El caso \(2 \times 2\), derivación desde la geometría
 
 Sea \(\mathbf{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}\). Los dos vectores columna son \(\mathbf{a}_1 = \begin{bmatrix}a \\ c\end{bmatrix}\) y \(\mathbf{a}_2 = \begin{bmatrix}b \\ d\end{bmatrix}\).
 
-Estos dos vectores forman un paralelogramo. Queremos su área con signo. Embebiendo ambos vectores en 3D como \([a, c, 0]\) y \([b, d, 0]\) y calculando el producto vectorial, la componente \(z\) da:
-
-$$
-\text{área con signo} = a \cdot d - b \cdot c
-$$
+El determinante es el área con signo del paralelogramo que forman los cuatro vértices: \(O = (0,0)\), \(A = (a,c)\), \(B = (b,d)\) y \(C = (a+b,\, c+d)\).
 
 $$
 \boxed{\det\begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc}
 $$
 
-{{< callout type="info" >}}
-En palabras simples: multiplicá a lo largo de la diagonal principal (\(a \cdot d\)) y restá el producto a lo largo de la antidiagonal (\(b \cdot c\)). Si las dos columnas son paralelas (linealmente dependientes), abarcan área cero — y de hecho \(ad - bc = 0\) en ese caso. Probalo: con \(\mathbf{a}_1 = [2, 1]^\top\) y \(\mathbf{a}_2 = [4, 2]^\top\) (una es el doble de la otra), \(\det = 2 \cdot 2 - 4 \cdot 1 = 0\). Sin área, sin inversa. Ésta es la razón geométrica por la que las columnas linealmente dependientes hacen que una matriz no sea invertible.
-{{< /callout >}}
+Derivamos esto de dos maneras complementarias: primero geométricamente mediante sustracción del rectángulo delimitador, y luego algebraicamente mediante la fórmula de *Shoelace*.
 
-#### El caso \(3 \times 3\), expansión por cofactores
+{{< details title="Sustracción del rectángulo delimitador" closed="true" >}}
+Encerrá el paralelogramo en el rectángulo alineado con los ejes más pequeño que lo contiene: un rectángulo de ancho \(a+b\) y alto \(c+d\). El área de este rectángulo es \((a+b)(c+d)\).
 
-En 3D, el determinante mide el volumen con signo del paralelepípedo formado por los tres vectores columna. El cálculo se expande a lo largo de la primera fila, donde cada término contribuye con un área proyectada ponderada por la entrada correspondiente:
+La región entre el rectángulo y el paralelogramo se compone de exactamente seis piezas:
+
+- **Dos rectángulos** con lados \(b\) y \(c\) (esquinas superior izquierda e inferior derecha).
+- **Dos triángulos** con catetos \(a\) y \(c\) (triángulos superior e inferior).
+- **Dos triángulos** con catetos \(b\) y \(d\) (triángulos izquierdo y derecho).
+
+{{< figure
+    src="images/parallelogram-area.es.svg"
+    alt="Área del paralelogramo"
+    caption="El área del paralelogramo es la diferencia entre el rectángulo delimitador y el área de los triángulos."
+    >}}
+
+Expandiendo el área del rectángulo y restando las áreas de las seis piezas tendremos el area del paralelogramo (\(S\)):
 
 $$
-\det(\mathbf{A}) = A_{11}\det\begin{bmatrix}A_{22}&A_{23}\\A_{32}&A_{33}\end{bmatrix} - A_{12}\det\begin{bmatrix}A_{21}&A_{23}\\A_{31}&A_{33}\end{bmatrix} + A_{13}\det\begin{bmatrix}A_{21}&A_{22}\\A_{31}&A_{32}\end{bmatrix}
+\begin{aligned}
+  S &= (a+b)(c+d) - 2(bc) - 2\left(\frac{1}{2}ac\right) - 2\left(\frac{1}{2}bd\right) \\
+  S &= ac + ad + bc + bd - 2(bc) - 2\left(\frac{1}{2}ac\right) - 2\left(\frac{1}{2}bd\right) \\
+  S &= ac + ad + bc + bd - 2(bc) - ac - bd \\
+  S &= ad - bc
+\end{aligned}
+$$
+{{< /details >}}
+
+{{< details title="Fórmula de Shoelace" closed="true" >}}
+La **fórmula de Shoelace** (o fórmula del cordón de zapato) da el área con signo de cualquier polígono cuyos vértices se listen en orden. Para un polígono con \(n\) vértices \((x_1, y_1), \ldots, (x_n, y_n)\) recorridos en sentido antihorario:
+
+$$
+\text{área con signo} = \frac{1}{2}\sum_{i=1}^{n}\bigl(x_i y_{i+1} - x_{i+1} y_{i}\bigr)
 $$
 
-Cada matriz \(2 \times 2\) es un **menor** \(M_{1j}\): la submatriz obtenida borrando la fila 1 y la columna \(j\). El menor con signo \(C_{ij} = (-1)^{i+j} M_{ij}\) se llama **cofactor**. Los signos alternantes $+\,-\,+$ surgen de la geometría de las proyecciones — cada menor mide el área de una cara del paralelepípedo, y los signos aseguran que las contribuciones se combinen correctamente para dar el volumen con signo.
+donde los índices son cíclicos, es decir, \(x_{n+1} = x_1\), \(y_{n+1} = y_1\), etcétera y \(n\) es el número de vértices.
+
+La intuición detrás de cada término \(x_{i} y_{i+1} - x_{i+1} y_{i}\) es que mide el área con signo del triángulo formado por el origen, el vértice \(i\) y el vértice \(i+1\). Sumando estos triángulos alrededor del polígono se obtiene el área total con signo, positiva para recorrido antihorario, negativa para horario.
+
+Aplicamos esto al paralelogramo con vértices en orden antihorario:
+
+$$
+\mathbf{O} = (0,0), \quad A = (a,c), \quad C = (a+b,\, c+d), \quad B = (b,d)
+$$
+
+Expandiendo la suma término a término:
+
+**Término 1** (\(\mathbf{O} \to A\))
+$$
+\begin{aligned}
+  x_{\mathbf{O}}\, y_A - x_A\, y_{\mathbf{O}} &= 0 \cdot c - a \cdot 0 \\
+  x_{\mathbf{O}}\, y_A - x_A\, y_{\mathbf{O}} &= 0
+\end{aligned}
+$$
+
+**Término 2** (\(A \to C\))
+$$
+\begin{aligned}
+  x_A\, y_C - x_C\, y_A &= a(c+d) - (a+b)c \\
+  x_A\, y_C - x_C\, y_A &= ac + ad - ac - bc \\
+  x_A\, y_C - x_C\, y_A &= ad - bc
+\end{aligned}
+$$
+
+**Término 3** (\(C \to B\))
+$$
+\begin{aligned}
+  x_C\, y_B - x_B\, y_C &= (a+b)d - b(c+d) \\
+  x_C\, y_B - x_B\, y_C &= ad + bd - bc - bd \\
+  x_C\, y_B - x_B\, y_C &= ad - bc
+\end{aligned}
+$$
+
+**Término 4** (\(B \to O\))
+$$
+\begin{aligned}
+  x_B\, y_O - x_O\, y_B &= b \cdot 0 - 0 \cdot d \\
+  x_B\, y_O - x_O\, y_B &= 0
+\end{aligned}
+$$
+
+Sumando y aplicando el factor \(\tfrac{1}{2}\):
+$$
+\begin{aligned}
+  \text{área con signo} &= \frac{1}{2}\bigl[0 + (ad - bc) + (ad - bc) + 0\bigr] \\
+  \text{área con signo} &= \frac{1}{2} \cdot 2(ad-bc) \\
+  \text{área con signo} &= ad - bc
+\end{aligned}
+$$
+
+Esta derivación no asume ningún signo particular para \(a, b, c, d\) — vale para cualquier entrada real. El resultado es positivo cuando el recorrido \(\mathbf{O} \to A \to C \to B\) es antihorario (es decir, cuando \(ad > bc\)), y negativo cuando es horario. Ése es exactamente el signo que codifica la orientación.
+{{< /details >}}
+
+### Independencia lineal y espacios columna, fila y nulo
+
+Entender una matriz significa entender los *espacios* que crea y destruye.
+
+Un conjunto de vectores \(\{\mathbf{v}_1, \ldots, \mathbf{v}_k\}\) es **linealmente independiente** si la única solución a:
+
+$$
+\alpha_1 \mathbf{v}_1 + \alpha_2 \mathbf{v}_2 + \cdots + \alpha_k \mathbf{v}_k = \mathbf{0}
+$$
+
+es \(\alpha_1 = \alpha_2 = \cdots = \alpha_k = 0\). En otras palabras, ningún vector del conjunto puede escribirse como combinación de los demás. Las columnas linealmente dependientes son la firma de una matriz de rango deficiente.
+
+Para \(\mathbf{A} \in \mathbb{R}^{m \times n}\), se definen tres subespacios fundamentales:
+
+- **Espacio columna** (imagen), \(\text{col}(\mathbf{A}) \subseteq \mathbb{R}^m\): es el espacio generado por las columnas de \(\mathbf{A}\). Es el conjunto de todas las salidas posibles de la transformación \(\mathbf{A}\). El rango de \(\mathbf{A}\) es la dimensión de este espacio.
+
+- **Espacio fila**, \(\text{row}(\mathbf{A}) \subseteq \mathbb{R}^n\): el espacio generado por las filas de \(\mathbf{A}\). Equivalentemente, \(\text{row}(\mathbf{A}) = \text{col}(\mathbf{A}^\top)\).
+
+- **Espacio nulo** (núcleo), \(\text{null}(\mathbf{A}) \subseteq \mathbb{R}^n\): todos los vectores de entrada que \(\mathbf{A}\) mapea a cero:
+    $$
+    \text{null}(\mathbf{A}) = \{\mathbf{x} \in \mathbb{R}^n : \mathbf{A}\mathbf{x} = \mathbf{0}\}
+    $$
 
 {{< callout type="info" >}}
-En palabras simples: elegí cualquier fila. Para cada entrada, tapá su fila y su columna para revelar un bloque $2 \times 2$, calculá su determinante, multiplicá por la entrada, y alternás signos: $+\,-\,+$. Sumá los tres resultados. Esto es recursivo: un determinante $4 \times 4$ se expande en cuatro determinantes $3 \times 3$, y así sucesivamente — aunque en la práctica usamos la descomposición LU por eficiencia.
+En otras palabras: el espacio nulo es el "punto ciego" de la transformación. Cualquier vector en el espacio nulo es invisible para la matriz, produce cero señal de salida sin importar cuán grande sea. En el contexto de redes neuronales, las direcciones en el espacio nulo de una matriz de pesos no reciben ningún gradiente de esa capa y nunca serán actualizadas por los gradientes de esa capa por sí solos.
 {{< /callout >}}
-
-#### La fórmula general — Leibniz
-
-Para una matriz $n \times n$, el determinante suma sobre todas las formas de elegir una entrada de cada fila y cada columna simultáneamente — es decir, sobre todas las permutaciones:
-
-$$\det(\mathbf{A}) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^{n} A_{i,\sigma(i)}$$
-
-donde $S_n$ es el conjunto de todas las permutaciones de $\{1, \ldots, n\}$ y $\text{sgn}(\sigma) = \pm 1$ es la paridad de la permutación. Esta fórmula tiene $n!$ términos, por lo que nunca se calcula directamente para matrices grandes — la descomposición LU calcula el determinante en $\mathcal{O}(n^3)$ como subproducto de la factorización. Pero la fórmula de Leibniz es la herramienta correcta para demostrar identidades.
-
-#### Propiedades clave
-
-- *Multiplicatividad*: $\det(\mathbf{AB}) = \det(\mathbf{A})\det(\mathbf{B})$ — aplicar una transformación que duplica el volumen seguida de una que lo triplica produce una expansión global de seis veces
-- *Invarianza bajo transpuesta*: $\det(\mathbf{A}^\top) = \det(\mathbf{A})$ — filas y columnas contribuyen simétricamente al volumen
-- *Escalado de fila*: escalar una fila por $\alpha$ escala el $\det$ por $\alpha$ — estás escalando una dimensión del paralelepípedo
-- *Intercambio de filas*: intercambiar dos filas niega el $\det$ — estás invirtiendo la orientación
-- *Adición de filas*: sumar un múltiplo de una fila a otra no cambia el $\det$ — por esto la eliminación gaussiana funciona: nunca cambia el determinante
-- *Matrices triangulares*: $\det(\mathbf{A}) = \prod_{i} A_{ii}$ — solo importan las entradas diagonales
-- **Invertibilidad**: $\mathbf{A}$ es invertible si y solo si $\det(\mathbf{A}) \neq 0$

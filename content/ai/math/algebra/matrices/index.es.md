@@ -336,7 +336,17 @@ La palabra *con signo* importa. Dos vectores siempre forman un paralelogramo, pe
 En ML, verificar el determinante antes de invertir una matriz no es un formalismo matemático, es un paso de depuración práctico. Las matrices de covarianza casi singulares causan inestabilidad numérica en [procesos gaussianos](https://es.wikipedia.org/wiki/Proceso_de_Gauss), en la ecuación normal de la regresión lineal y en la reducción de dimensionalidad. Cuando un modelo produce salidas `NaN` o predicciones desproporcionadamente grandes después de una inversión matricial, un determinante cercano a cero suele ser el culpable.
 {{< /callout >}}
 
-#### El caso \(2 \times 2\), derivación desde la geometría
+#### Propiedades clave
+
+- **Multiplicatividad**: \(\det(\mathbf{AB}) = \det(\mathbf{A})\det(\mathbf{B})\), aplicar una transformación que duplica el volumen seguida de una que lo triplica produce una expansión global de seis veces.
+- **Invarianza bajo transpuesta**: \(\det(\mathbf{A}^\top) = \det(\mathbf{A})\), filas y columnas contribuyen simétricamente al volumen.
+- **Escalado de fila**: escalar una fila por \(\alpha\) también escala el determinante por \(\alpha\), estás escalando una dimensión del paralelepípedo.
+- **Intercambio de filas**: intercambiar dos filas niega el determinante, estás invirtiendo la orientación.
+- **Adición de filas**: sumar un múltiplo de una fila a otra no cambia el determinante. Por esto la eliminación gaussiana funciona: nunca cambia el determinante.
+- **Matrices triangulares**: \(\det(\mathbf{A}) = \prod_{i} A_{ii}\). Solo importan las entradas diagonales.
+- **Invertibilidad**: \(\mathbf{A}\) es invertible si y solo si \(\det(\mathbf{A}) \neq 0\).
+
+#### El caso 2x2, derivación desde la geometría
 
 Sea \(\mathbf{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}\). Los dos vectores columna son \(\mathbf{a}_1 = \begin{bmatrix}a \\ c\end{bmatrix}\) y \(\mathbf{a}_2 = \begin{bmatrix}b \\ d\end{bmatrix}\).
 
@@ -439,6 +449,46 @@ $$
 
 Esta derivación no asume ningún signo particular para \(a, b, c, d\) — vale para cualquier entrada real. El resultado es positivo cuando el recorrido \(\mathbf{O} \to A \to C \to B\) es antihorario (es decir, cuando \(ad > bc\)), y negativo cuando es horario. Ése es exactamente el signo que codifica la orientación.
 {{< /details >}}
+
+#### El caso 3x3, expansión por cofactores
+
+En 3D, el determinante mide el volumen con signo del paralelepípedo formado por los tres vectores columna. El cálculo se expande a lo largo de la primera fila, donde cada término contribuye con un área proyectada ponderada por la entrada correspondiente. Dada la matriz \(\mathbf{A} \in \mathbb{R}^{3 \times 3}\):
+
+$$
+\mathbf{A} = \begin{bmatrix} A_{11} & A_{12} & A_{13} \\ A_{21} & A_{22} & A_{23} \\ A_{31} & A_{32} & A_{33} \end{bmatrix}
+$$
+
+$$
+\det(\mathbf{A}) = A_{11}\det\begin{bmatrix}A_{22}&A_{23}\\A_{32}&A_{33}\end{bmatrix} - A_{12}\det\begin{bmatrix}A_{21}&A_{23}\\A_{31}&A_{33}\end{bmatrix} + A_{13}\det\begin{bmatrix}A_{21}&A_{22}\\A_{31}&A_{32}\end{bmatrix}
+$$
+
+{{< details title="Los menores de la matriz" closed="true" >}}
+Cada matriz \(2 \times 2\) es un **menor** \(M_{1j}\): la submatriz obtenida borrando la fila 1 y la columna \(j\). El menor con signo \(C_{ij} = (-1)^{i+j} M_{ij}\) se llama **cofactor**. Los signos alternantes siguen el patrón de tablero de ajedrez que se muestra a continuación, lo que asegura que las contribuciones se combinen correctamente para dar el volumen con signo.
+
+{{< figure
+    src="images/cofactor-sign-pattern.svg"
+    alt="Patrón de signos del cofactor"
+    caption="El patrón de signos del cofactor sigue un patrón de tablero de ajedrez."
+    >}}
+
+{{< callout type="info" >}}
+Elegí cualquier fila de la matriz. Para cada entrada, tapá su fila y su columna para revelar un bloque \(2 \times 2\), calculá su determinante, multiplicá por la entrada y por el signo del tablero de arriba, y sumá los tres resultados. Esto es recursivo: un determinante \(4 \times 4\) se expande en cuatro determinantes \(3 \times 3\), etc.
+{{< /callout >}}
+{{< /details >}}
+
+#### La fórmula general de Leibniz
+
+Para una matriz \(n \times n\), el determinante suma sobre todas las formas de elegir una entrada de cada fila y cada columna simultáneamente, es decir, sobre todas las permutaciones:
+
+$$
+\det(\mathbf{A}) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^{n} A_{i,\sigma(i)}
+$$
+
+donde \(S_n\) es el conjunto de todas las permutaciones de \(\{1, \ldots, n\}\) y \(\text{sgn}(\sigma) = \pm 1\) es la paridad de la permutación (\(+1\) si la permutación es par y \(-1\) si es impar).
+
+{{< callout type="important" >}}
+Esta fórmula tiene \(n!\) términos, por lo que nunca se calcula directamente para matrices grandes. La descomposición LU calcula el determinante en \(\mathcal{O}(n^3)\) como subproducto de la factorización. Pero la fórmula de Leibniz es la herramienta correcta para demostrar identidades.
+{{< /callout >}}
 
 ### Independencia lineal y espacios columna, fila y nulo
 

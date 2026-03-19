@@ -328,6 +328,16 @@ The word *signed* matters. Two vectors always form a parallelogram, but the *ord
 In ML, checking near-zero determinants is not a mathematical formality, it is a practical debugging step. Covariance matrices that are nearly singular cause numerical instability in [Gaussian processes](https://en.wikipedia.org/wiki/Gaussian_process), linear regression normal equations, and dimensionality reduction. When a model produces `NaN` outputs or wildly large predictions after a matrix inversion, a near-zero determinant is usually the culprit.
 {{< /callout >}}
 
+#### Key properties
+
+- **Multiplicativity**: \(\det(\mathbf{AB}) = \det(\mathbf{A})\det(\mathbf{B})\), applying a transformation that doubles volume followed by one that triples it produces a six-fold overall expansion.
+- **Transpose invariance**: \(\det(\mathbf{A}^\top) = \det(\mathbf{A})\), rows and columns contribute symmetrically to volume.
+- **Row scaling**: scaling one row by \(\alpha\) also scales the determinant by \(\alpha\), you are scaling one dimension of the parallelepiped.
+- **Row swap**: swapping two rows negates the determinant, you are flipping the orientation.
+- **Row addition**: adding a multiple of one row to another leaves the determinant unchanged. This is why Gaussian elimination works: it never changes the determinant.
+- **Triangular matrices**: \(\det(\mathbf{A}) = \prod_{i} A_{ii}\), only the diagonal entries matter.
+- **Invertibility**: \(\mathbf{A}\) is invertible if and only if \(\det(\mathbf{A}) \neq 0\).
+
 #### The 2x2 case, derivation from geometry
 
 Let \(\mathbf{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}\). The two column vectors are \(\mathbf{a}_1 = \begin{bmatrix}a \\ c\end{bmatrix}\) and \(\mathbf{a}_2 = \begin{bmatrix}b \\ d\end{bmatrix}\).
@@ -431,6 +441,46 @@ $$
 
 This derivation makes no assumption about the signs of \(a, b, c, d\), it holds for any real entries. The result is positive when the traversal \(\mathbf{O} \to A \to C \to B\) is anticlockwise (i.e., when \(ad > bc\)), and negative when it is clockwise. This is precisely the sign that encodes orientation.
 {{< /details >}}
+
+#### The 3x3 case, cofactor expansion
+
+In 3D, the determinant measures the signed volume of the parallelepiped formed by the three column vectors. The computation expands along the first row, each term contributing a projected area weighted by the corresponding entry. Given the matrix \(\mathbf{A} \in \mathbb{R}^{3 \times 3}\):
+
+$$
+\mathbf{A} = \begin{bmatrix} A_{11} & A_{12} & A_{13} \\ A_{21} & A_{22} & A_{23} \\ A_{31} & A_{32} & A_{33} \end{bmatrix}
+$$
+
+$$
+\det(\mathbf{A}) = A_{11}\det\begin{bmatrix}A_{22}&A_{23}\\A_{32}&A_{33}\end{bmatrix} - A_{12}\det\begin{bmatrix}A_{21}&A_{23}\\A_{31}&A_{33}\end{bmatrix} + A_{13}\det\begin{bmatrix}A_{21}&A_{22}\\A_{31}&A_{32}\end{bmatrix}
+$$
+
+{{< details title="The matrix minors" closed="true" >}}
+Each \(2 \times 2\) matrix is a **minor** \(M_{1j}\): the submatrix obtained by deleting row 1 and column \(j\). The signed minor \(C_{ij} = (-1)^{i+j} M_{ij}\) is the **cofactor**. The alternating signs follow the checkerboard pattern shown below, which ensures the contributions add up to the correct signed volume rather than cancelling arbitrarily.
+
+{{< figure
+    src="images/cofactor-sign-pattern.svg"
+    alt="Sign pattern of the cofactor"
+    caption="The sign pattern of the cofactor follows a checkerboard pattern."
+    >}}
+
+{{< callout type="info" >}}
+Pick any row from the matrix. For each entry, cover its row and column to reveal a \(2 \times 2\) block, compute its determinant, multiply by the entry and by the sign from the checkerboard above, then sum the three results. This is recursive: a \(4 \times 4\) determinant expands into four \(3 \times 3\) determinants, and so on.
+{{< /callout >}}
+{{< /details >}}
+
+#### The Leibniz general formula
+
+For an \(n \times n\) matrix, the determinant sums over all ways to pick one entry from each row and each column simultaneously, i.e., over all permutations:
+
+$$
+\det(\mathbf{A}) = \sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^{n} A_{i,\sigma(i)}
+$$
+
+where \(S_n\) is the set of all permutations of \(\{1, \ldots, n\}\) and \(\text{sgn}(\sigma) = \pm 1\) is the parity of the permutation (\(+1\) and \(-1\) for even and odd permutations, respectively).
+
+{{< callout type="important" >}}
+This formula has \(n!\) terms, so it is never computed directly for large matrices. LU decomposition computes the determinant in \(\mathcal{O}(n^3)\) as a by-product of factorisation. But the Leibniz formula is the right tool for proving identities.
+{{< /callout >}}
 
 ### Linear independence and column/row spaces
 

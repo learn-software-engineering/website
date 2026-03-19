@@ -506,6 +506,13 @@ Para \(\mathbf{A} \in \mathbb{R}^{m \times n}\), se definen tres subespacios fun
 
 - **Espacio columna** (imagen), \(\text{col}(\mathbf{A}) \subseteq \mathbb{R}^m\): es el espacio generado por las columnas de \(\mathbf{A}\). Es el conjunto de todas las salidas posibles de la transformación \(\mathbf{A}\). El rango de \(\mathbf{A}\) es la dimensión de este espacio.
 
+$$
+\begin{aligned}
+  \text{col}(\mathbf{A}) &= \{\mathbf{A}\mathbf{x} : \mathbf{x} \in \mathbb{R}^n\} \\
+  \text{col}(\mathbf{A}) &= \left\{ x_1 \begin{bmatrix}a_{11} \\ a_{21} \\ \vdots \\ a_{m1}\end{bmatrix} + x_2 \begin{bmatrix}a_{12} \\ a_{22} \\ \vdots \\ a_{m2}\end{bmatrix} + \cdots + x_n \begin{bmatrix}a_{1n} \\ a_{2n} \\ \vdots \\ a_{mn}\end{bmatrix} \right\} : x_i \in \mathbb{R}
+\end{aligned}
+$$
+
 - **Espacio fila**, \(\text{row}(\mathbf{A}) \subseteq \mathbb{R}^n\): el espacio generado por las filas de \(\mathbf{A}\). Equivalentemente, \(\text{row}(\mathbf{A}) = \text{col}(\mathbf{A}^\top)\).
 
 - **Espacio nulo** (núcleo), \(\text{null}(\mathbf{A}) \subseteq \mathbb{R}^n\): todos los vectores de entrada que \(\mathbf{A}\) mapea a cero:
@@ -516,3 +523,21 @@ Para \(\mathbf{A} \in \mathbb{R}^{m \times n}\), se definen tres subespacios fun
 {{< callout type="info" >}}
 En otras palabras: el espacio nulo es el "punto ciego" de la transformación. Cualquier vector en el espacio nulo es invisible para la matriz, produce cero señal de salida sin importar cuán grande sea. En el contexto de redes neuronales, las direcciones en el espacio nulo de una matriz de pesos no reciben ningún gradiente de esa capa y nunca serán actualizadas por los gradientes de esa capa por sí solos.
 {{< /callout >}}
+
+### Rango
+
+El **rango** de \(\mathbf{A}\) es la dimensión de su espacio columna, el número de columnas linealmente independientes:
+
+$$
+\text{rango}(\mathbf{A}) = \dim(\text{col}(\mathbf{A}))
+$$
+
+Un resultado fundamental, la **igualdad del rango fila y el rango columna**, establece que la dimensión del espacio fila siempre es igual a la dimensión del espacio columna:
+
+$$
+\text{rango}(\mathbf{A}) = \dim(\text{col}(\mathbf{A})) = \dim(\text{row}(\mathbf{A}))
+$$
+
+Para una matriz \(m \times n\): \(\text{rango}(\mathbf{A}) \leq \min(m, n)\).
+
+Cuando \(\text{rango}(\mathbf{A}) = \min(m,n)\), \(\mathbf{A}\) tiene **rango completo**. De lo contrario es **deficiente en rango** y mapea un subespacio no nulo de entradas a cero.

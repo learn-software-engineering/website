@@ -532,3 +532,120 @@ $$
 For an \(m \times n\) matrix: \(\text{rank}(\mathbf{A}) \leq \min(m, n)\).
 
 When \(\text{rank}(\mathbf{A}) = \min(m,n)\), \(\mathbf{A}\) is **full rank**. Otherwise it is **rank-deficient** and maps a nonzero subspace of inputs to zero.
+
+### The Rank-Nullity theorem
+
+This theorem elegantly connects the three fundamental subspaces.
+
+For any matrix \(\mathbf{A} \in \mathbb{R}^{m \times n}\):
+
+$$
+\boxed{\text{rank}(\mathbf{A}) + \text{nullity}(\mathbf{A}) = n}
+$$
+
+where \(\text{nullity}(\mathbf{A}) = \dim(\text{null}(\mathbf{A}))\).
+
+{{< details title="Proof sketch" closed="true" >}}
+Let \(r = \text{rank}(\mathbf{A})\) and let \(\{\mathbf{v}_1, \ldots, \mathbf{v}_{n-r}\}\) be a basis for \(\text{null}(\mathbf{A})\). Extend this to a basis for all of \(\mathbb{R}^n\) by adding \(r\) vectors \(\{\mathbf{w}_1, \ldots, \mathbf{w}_r\}\) from the row space of \(\mathbf{A}\) (which is orthogonal to the null space). The images \(\{\mathbf{A}\mathbf{w}_1, \ldots, \mathbf{A}\mathbf{w}_r\}\) are linearly independent (can be shown) and span \(\text{col}(\mathbf{A})\). So \(\dim(\text{col}(\mathbf{A})) = r\). The total basis has \(r + (n - r) = n\) elements, matching \(\dim(\mathbb{R}^n) = n\).
+
+{{< callout type="info" >}}
+In plain English: the \(n\) input dimensions split cleanly into two complementary parts. Some (\(r\) dimensions, the row space) get mapped to nonzero outputs. The rest (\(n - r\) dimensions, the null space) get mapped to zero. These two parts partition the input space completely and without overlap — which is why their dimensions must sum to exactly \(n\).
+{{< /callout >}}
+{{< /details >}}
+
+{{< callout >}}
+In ML terms: if you have a weight matrix \(\mathbf{W}\) of shape \(\mathbf{W}\) with \(n > m\) (an "over-parameterized" layer), then \(\text{nullity}(\mathbf{W}) \geq n - m > 0\). There is a whole subspace of weight perturbations that produce zero change in the layer's output. This is one reason why over-parameterized models can be aggressively pruned and compressed, many weight directions literally do nothing.
+{{< /callout >}}
+
+### The inverse
+
+For a **square** matrix \(\mathbf{A} \in \mathbb{R}^{n \times n}\), the **inverse** \(\mathbf{A}^{-1}\) is the unique matrix satisfying:
+
+$$
+\mathbf{A}\mathbf{A}^{-1} = \mathbf{A}^{-1}\mathbf{A} = \mathbf{I}_n
+$$
+
+The **invertible matrix theorem** states that the following conditions are all equivalent, *if any one holds, all hold, and the inverse exists*:
+
+- \(\text{rank}(\mathbf{A}) = n\) (full rank)
+- \(\det(\mathbf{A}) \neq 0\)
+- \(\text{null}(\mathbf{A}) = \{\mathbf{0}\}\) (trivial null space)
+- The columns of \(\mathbf{A}\) are linearly independent
+- The rows of \(\mathbf{A}\) are linearly independent
+- The equation \(\mathbf{A}\mathbf{x} = \mathbf{b}\) has a unique solution for every \(\mathbf{b} \in \mathbb{R}^n\)
+
+{{< callout type="important" >}}
+All six conditions are equivalent ways of saying the same thing, the transformation is fully reversible. If the matrix collapses any dimension, there is a nonzero null space, the determinant is zero, then you cannot undo the transformation. All roads lead to the same conclusion: invertibility is an all-or-nothing property.
+{{< /callout >}}
+
+Properties of the inverse:
+- *Double inverse*: \((\mathbf{A}^{-1})^{-1} = \mathbf{A}\)
+- *Product inverse*: \((\mathbf{AB})^{-1} = \mathbf{B}^{-1}\mathbf{A}^{-1}\) (order reverses, just as with the transpose)
+- *Transpose-inverse commutativity*: \((\mathbf{A}^\top)^{-1} = (\mathbf{A}^{-1})^\top\)
+- *Determinant*: \(\det(\mathbf{A}^{-1}) = \frac{1}{\det(\mathbf{A})}\)
+
+#### Computing the inverse
+
+For \(2 \times 2\) matrices, e.g. \(\mathbf{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}\) with \(\det(\mathbf{A}) = ad - bc \neq 0\), the inverse has a closed-form formula:
+
+We seek \(\mathbf{A}^{-1} = \begin{bmatrix} p & q \\ r & s \end{bmatrix}\) such that \(\mathbf{A}\mathbf{A}^{-1} = \mathbf{I}\):
+
+$$
+\begin{aligned}
+  \begin{bmatrix} a & b \\ c & d \end{bmatrix}\begin{bmatrix} p & q \\ r & s \end{bmatrix} &= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \\
+  \begin{bmatrix} ap+br & aq+bs \\ cp+dr & cq+ds \end{bmatrix} &= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+\end{aligned}
+$$
+
+From the first column: \(ap + br = 1\) and \(cp + dr = 0\). Solving:
+$$
+\begin{aligned}
+  p &= \frac{d}{ad-bc} \\
+  r &= \frac{-c}{ad-bc}
+\end{aligned}
+$$
+
+From the second column: \(aq + bs = 0\) and \(cq + ds = 1\). Solving:
+$$
+\begin{aligned}
+  q &= \frac{-b}{ad-bc} \\
+  s &= \frac{a}{ad-bc}
+\end{aligned}
+$$
+
+Therefore:
+$$
+\begin{aligned}
+   \mathbf{A}^{-1} &= \begin{bmatrix} p & q \\ r & s \end{bmatrix} \\
+   \mathbf{A}^{-1} &= \begin{bmatrix} \frac{d}{ad-bc} & \frac{-b}{ad-bc} \\ \frac{-c}{ad-bc} & \frac{a}{ad-bc} \end{bmatrix} \\
+   \mathbf{A}^{-1} &= \frac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}
+\end{aligned}
+$$
+
+Knowing that \(\det(\mathbf{A}) = ad - bc\), then:
+
+$$
+\boxed{\mathbf{A}^{-1} = \frac{1}{\det(\mathbf{A})} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}}
+$$
+
+{{< callout type="info" >}}
+To invert a \(2 \times 2\) matrix, swap the diagonal entries, negate the off-diagonal entries, and divide everything by the determinant. The determinant appears in the denominator, which is exactly why a zero determinant makes the inverse undefined (division by zero).
+{{< /callout >}}
+
+For \(n > 2\), the inverse is computed in practice via [**Gauss-Jordan elimination**](https://en.wikipedia.org/wiki/Gaussian_elimination) on the augmented matrix \([\mathbf{A}\,|\,\mathbf{I}]\).
+
+## Machine Learning and AI perspective
+
+Matrix operations are not merely computational primitives, they are the conceptual vocabulary of modern Machine Learning research, for example:
+
+**Low-rank structure in fine-tuning.** [Hu et al. (2021)](https://arxiv.org/abs/2106.09685), which observes that weight update matrices \(\Delta\mathbf{W}\) during fine-tuning of large language models are empirically low-rank. Rather than storing the full \(\Delta\mathbf{W} \in \mathbb{R}^{d \times d}\), LoRA decomposes it as \(\Delta\mathbf{W} = \mathbf{B}\mathbf{A}\) where \(\mathbf{B} \in \mathbb{R}^{d \times r}\), \(\mathbf{A} \in \mathbb{R}^{r \times d}\), with \(r \ll d\). This is valid precisely because a rank-\(r\) matrix has a natural factorization into two thin matrices, the rank concept we just derived. LoRA reduces trainable parameters by over 10000x on GPT-3 class models, and the entire insight rests on rank intuition.
+
+## Common pitfalls and debugging
+
+1. **Confusing shape conventions across frameworks**. NumPy uses `(batch, features)` convention. PyTorch's `nn.Linear(in_features, out_features)` stores its weight matrix as shape `(out_features, in_features)` and computes `x @ W.T + b` internally. So \(\mathbf{W}\) is stored transposed relative to the mathematical convention. If you manually initialize weights, verify with a forward pass on dummy data before trusting gradients.
+
+2. **Inverting nearly singular matrices**. `np.linalg.inv()` returns a result even for near-singular matrices, the numbers will be astronomically large and numerically meaningless. Always prefer `np.linalg.solve(A, b)` over `np.linalg.inv(A) @ b` for solving linear systems. Check `np.linalg.cond(A)` before inverting; condition numbers above \(10^{12}\) are a red flag.
+
+3. **Testing `det == 0` for singularity**. In floating point, the determinant of a truly singular matrix is almost never exactly zero, it will be some very small number like `1e-17`. Do not use determinant as a singularity test in code. Use `np.linalg.matrix_rank(A) < n` or `np.linalg.cond(A) > threshold` instead.
+
+4. **Forgetting that matrix multiplication is non-commutative**. The most common algebraic error when implementing attention from scratch. \(\mathbf{AB} \neq \mathbf{BA}\). Even when both products are well-defined and have the same shape (square matrices), they will produce different results. When in doubt, track shapes explicitly and reason about the semantics of each multiplication.

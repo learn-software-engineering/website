@@ -541,3 +541,120 @@ $$
 Para una matriz \(m \times n\): \(\text{rango}(\mathbf{A}) \leq \min(m, n)\).
 
 Cuando \(\text{rango}(\mathbf{A}) = \min(m,n)\), \(\mathbf{A}\) tiene **rango completo**. De lo contrario es **deficiente en rango** y mapea un subespacio no nulo de entradas a cero.
+
+### El teorema Rango-Nulidad
+
+Este teorema conecta elegantemente los tres subespacios fundamentales.
+
+Para cualquier matriz \(\mathbf{A} \in \mathbb{R}^{m \times n}\):
+
+$$
+\boxed{\text{rango}(\mathbf{A}) + \text{nulidad}(\mathbf{A}) = n}
+$$
+
+donde \(\text{nulidad}(\mathbf{A}) = \dim(\text{null}(\mathbf{A}))\).
+
+{{< details title="Esquema de demostración" closed="true" >}}
+Sea \(r = \text{rango}(\mathbf{A})\) y sea \(\{\mathbf{v}_1, \ldots, \mathbf{v}_{n-r}\}\) una base para \(\text{null}(\mathbf{A})\). Extiende esto a una base de \(\mathbb{R}^n\) añadiendo \(r\) vectores \(\{\mathbf{w}_1, \ldots, \mathbf{w}_r\}\) del espacio fila de \(\mathbf{A}\) (que es ortogonal al espacio nulo). Las imágenes \(\{\mathbf{A}\mathbf{w}_1, \ldots, \mathbf{A}\mathbf{w}_r\}\) son linealmente independientes y generan \(\text{col}(\mathbf{A})\). Por tanto \(\dim(\text{col}(\mathbf{A})) = r\). La base total tiene \(r + (n - r) = n\) elementos, coincidiendo con \(\dim(\mathbb{R}^n) = n\).
+
+{{< callout type="info" >}}
+En otras palabras: las \(n\) dimensiones de entrada se dividen limpiamente en dos partes complementarias. Algunas (\(r\) dimensiones, el espacio fila) se mapean a salidas no nulas. Las demás (\(n - r\) dimensiones, el espacio nulo) se mapean a cero. Estas dos partes particionan el espacio de entrada completamente y sin solapamiento, por eso sus dimensiones deben sumar exactamente \(n\).
+{{< /callout >}}
+{{< /details >}}
+
+{{< callout >}}
+En términos de ML, si tienes una matriz de pesos \(\mathbf{W}\) de forma \(m \times n\) con \(n > m\) (una capa "sobreparametrizada"), entonces \(\text{nulidad}(\mathbf{W}) \geq n - m > 0\). Existe todo un subespacio de perturbaciones de pesos que produce cambio cero en la salida de la capa. Ésta es una razón por la que los modelos sobreparametrizados pueden podarse y comprimirse agresivamente, muchas direcciones de peso literalmente no hacen nada.
+{{< /callout >}}
+
+### La inversa
+
+Para una matriz **cuadrada** \(\mathbf{A} \in \mathbb{R}^{n \times n}\), la **inversa** \(\mathbf{A}^{-1}\) es la única matriz que satisface:
+
+$$
+\mathbf{A}\mathbf{A}^{-1} = \mathbf{A}^{-1}\mathbf{A} = \mathbf{I}_n
+$$
+
+El **teorema de la matriz invertible** establece que las siguientes condiciones son todas equivalentes, *si cualquiera se cumple, todas se cumplen, y la inversa existe*:
+
+- \(\text{rango}(\mathbf{A}) = n\) (rango completo)
+- \(\det(\mathbf{A}) \neq 0\)
+- \(\text{null}(\mathbf{A}) = \{\mathbf{0}\}\) (espacio nulo trivial)
+- Las columnas de \(\mathbf{A}\) son linealmente independientes
+- Las filas de \(\mathbf{A}\) son linealmente independientes
+- La ecuación \(\mathbf{A}\mathbf{x} = \mathbf{b}\) tiene solución única para todo \(\mathbf{b} \in \mathbb{R}^n\)
+
+{{< callout type="important" >}}
+Las seis condiciones son formas equivalentes de decir lo mismo, la transformación es completamente reversible. Si la matriz colapsa alguna dimensión, hay un espacio nulo no trivial, el determinante es cero, ya no puedes deshacer la transformación. Todos los caminos llevan a la misma conclusión: la invertibilidad es una propiedad de todo o nada.
+{{< /callout >}}
+
+Propiedades de la inversa:
+- *Doble inversa*: \((\mathbf{A}^{-1})^{-1} = \mathbf{A}\)
+- *Inversa del producto*: \((\mathbf{AB})^{-1} = \mathbf{B}^{-1}\mathbf{A}^{-1}\) (el orden se invierte, igual que con la transpuesta)
+- *Conmutatividad transpuesta-inversa*: \((\mathbf{A}^\top)^{-1} = (\mathbf{A}^{-1})^\top\)
+- *Determinante*: \(\det(\mathbf{A}^{-1}) = \frac{1}{\det(\mathbf{A})}\)
+
+#### Cálculo de la inversa
+
+Para matrices \(2 \times 2\), como \(\mathbf{A} = \begin{bmatrix} a & b \\ c & d \end{bmatrix}\) con \(\det(\mathbf{A}) = ad - bc \neq 0\), existe una fórmula explícita que se deriva de la definición de inversa y el cálculo del determinante.
+
+Buscamos \(\mathbf{A}^{-1} = \begin{bmatrix} p & q \\ r & s \end{bmatrix}\) tal que \(\mathbf{A}\mathbf{A}^{-1} = \mathbf{I}\):
+
+$$
+\begin{aligned}
+  \begin{bmatrix} a & b \\ c & d \end{bmatrix}\begin{bmatrix} p & q \\ r & s \end{bmatrix} &= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \\
+  \begin{bmatrix} ap+br & aq+bs \\ cp+dr & cq+ds \end{bmatrix} &= \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix}
+\end{aligned}
+$$
+
+De la primera columna tenemos que: \(ap + br = 1\) y \(cp + dr = 0\). Resolviendo, encontramos que:
+$$
+\begin{aligned}
+  p &= \frac{d}{ad-bc} \\
+  r &= \frac{-c}{ad-bc}
+\end{aligned}
+$$
+
+De la segunda columna: \(aq + bs = 0\) y \(cq + ds = 1\). Resolviendo:
+$$
+\begin{aligned}
+  q &= \frac{-b}{ad-bc} \\
+  s &= \frac{a}{ad-bc}
+\end{aligned}
+$$
+
+Reemplazando:
+$$
+\begin{aligned}
+   \mathbf{A}^{-1} &= \begin{bmatrix} p & q \\ r & s \end{bmatrix} \\
+   \mathbf{A}^{-1} &= \begin{bmatrix} \frac{d}{ad-bc} & \frac{-b}{ad-bc} \\ \frac{-c}{ad-bc} & \frac{a}{ad-bc} \end{bmatrix} \\
+   \mathbf{A}^{-1} &= \frac{1}{ad - bc} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}
+\end{aligned}
+$$
+
+Sabiendo que \(\det(\mathbf{A}) = ad - bc\), entonces:
+
+$$
+\boxed{\mathbf{A}^{-1} = \frac{1}{\det(\mathbf{A})} \begin{bmatrix} d & -b \\ -c & a \end{bmatrix}}
+$$
+
+{{< callout type="info" >}}
+Para invertir una matriz \(2 \times 2\), intercambia las entradas diagonales, niega las entradas fuera de la diagonal, y divide todo por el determinante. El determinante aparece en el denominador, exactamente por eso un determinante nulo hace indefinida la inversa (división por cero).
+{{< /callout >}}
+
+Para \(n > 2\), la inversa se calcula en la práctica mediante [**eliminación de Gauss-Jordan**](https://es.wikipedia.org/wiki/Eliminaci%C3%B3n_de_Gauss-Jordan) sobre la matriz aumentada \([\mathbf{A}\,|\,\mathbf{I}]\).
+
+## Perspectiva de Machine Learning e IA
+
+Las operaciones matriciales no son meros primitivos computacionales, son el vocabulario conceptual de la investigación moderna en Machine Learning, por ejemplo:
+
+**Estructura de bajo rango en el ajuste fino**. [Hu et al. (2021)](https://arxiv.org/abs/2106.09685) introdujeron *LoRA (Low-Rank Adaptation)*, que observa que las matrices de actualización de pesos \(\Delta\mathbf{W}\) durante el ajuste fino de grandes modelos de lenguaje son empíricamente de bajo rango. En lugar de almacenar la \(\Delta\mathbf{W} \in \mathbb{R}^{d \times d}\) completa, LoRA la descompone como \(\Delta\mathbf{W} = \mathbf{B}\mathbf{A}\) donde \(\mathbf{B} \in \mathbb{R}^{d \times r}\), \(\mathbf{A} \in \mathbb{R}^{r \times d}\), con \(r \ll d\). Esto es válido precisamente porque una matriz de rango \(r\) tiene una factorización natural en dos matrices delgadas, el concepto de rango que acabamos de ver. LoRA reduce los parámetros entrenables más de 10000 veces en modelos de la escala de GPT-3.
+
+## Errores comunes y depuración
+
+1. **Confundir las convenciones de forma entre frameworks**. NumPy usa la convención `(batch, características)`. El `nn.Linear(in_features, out_features)` de PyTorch almacena su matriz de pesos con forma `(out_features, in_features)` y calcula `x @ W.T + b` internamente, por lo que \(\mathbf{W}\) se almacena transpuesta respecto a la convención matemática. Si inicializas pesos manualmente, verifica con una pasada hacia adelante sobre datos ficticios antes de confiar en los gradientes.
+
+2. **Invertir matrices casi singulares**. `np.linalg.inv()` devuelve un resultado incluso para matrices casi singulares, los números serán astronómicamente grandes y numéricamente sin sentido. Prefiere siempre `np.linalg.solve(A, b)` sobre `np.linalg.inv(A) @ b` para resolver sistemas lineales. Revisa `np.linalg.cond(A)` antes de invertir; los números de condición superiores a \(10^{12}\) son una señal de alerta.
+
+3. **Usar `det == 0` para detectar singularidad**. En punto flotante, el determinante de una matriz verdaderamente singular casi nunca es exactamente cero,será algún número muy pequeño como `1e-17`. No uses el determinante como prueba de singularidad en el código. En su lugar usa `np.linalg.matrix_rank(A) < n` o `np.linalg.cond(A) > umbral`.
+
+4. **Asumir que la multiplicación de matrices es conmutativa**. El error algebraico más común al implementar atención desde cero. \(\mathbf{AB} \neq \mathbf{BA}\). Incluso cuando ambos productos están bien definidos y tienen la misma forma (matrices cuadradas), producirán resultados diferentes. Ante la duda, rastrea las formas explícitamente y razona sobre la semántica de cada multiplicación.

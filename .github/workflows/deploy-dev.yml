@@ -14,7 +14,7 @@ env:
 jobs:
   spell-checker:
     runs-on: ubuntu-latest
-    container: ghcr.io/cn-docker/cspell:9.7.0
+    container: ghcr.io/cn-docker/cspell:9.8.0
     steps:
       - name: Checkout
         uses: actions/checkout@v6

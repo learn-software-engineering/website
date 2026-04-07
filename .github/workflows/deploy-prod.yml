@@ -18,7 +18,7 @@ env:
 jobs:
   spell-checker:
     runs-on: ubuntu-latest
-    container: ghcr.io/cn-docker/cspell:9.7.0
+    container: ghcr.io/cn-docker/cspell:10.0.0
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -27,7 +27,7 @@ jobs:
   build:
     needs: spell-checker
     runs-on: ubuntu-latest
-    container: ghcr.io/cn-docker/hugo:v0.159.1
+    container: ghcr.io/cn-docker/hugo:v0.160.0
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -70,7 +70,7 @@ jobs:
   index-now:
     needs: publish
     runs-on: ubuntu-latest
-    container: ghcr.io/cn-docker/hugo:v0.159.1
+    container: ghcr.io/cn-docker/hugo:v0.160.0
     steps:
       - name: Checkout
         uses: actions/checkout@v6

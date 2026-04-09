@@ -23,7 +23,7 @@ jobs:
   build:
     needs: spell-checker
     runs-on: ubuntu-latest
-    container: ghcr.io/cn-docker/hugo:v0.160.0
+    container: ghcr.io/cn-docker/hugo:v0.160.1
     steps:
       - name: Checkout
         uses: actions/checkout@v6

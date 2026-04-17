@@ -6,7 +6,7 @@ authors:
 description: >
   Domina vectores y espacios vectoriales para machine learning: intuición geométrica, producto punto, similitud coseno, normas, código NumPy y perspectiva de investigación para científicos en Machine Learning (ML).
 date: 2026-03-06
-tags: ["AI", "Maths", "Algebra", "Vectors"]
+tags: ["IA", "Matemáticas", "Álgebra", "Álgebra Lineal", "Vectores", "Escalares", "Espacio Vectorial"]
 ---
 
 En 2017, investigadores de Google Brain publicaron [**Attention Is All You Need**](https://arxiv.org/abs/1706.03762), el artículo que introdujo la arquitectura Transformer sobre la que hoy se construyen GPT-4, Gemini y prácticamente todos los modelos de lenguaje de vanguardia. En el corazón de esa arquitectura (y de toda red neuronal, sistema de recomendación y modelo de visión por computadora—) vive un objeto engañosamente simple: el **vector**.

@@ -1,0 +1,36 @@
+<svg width="100%" viewBox="0 0 560 218" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;display:block;margin:0 auto">
+  <rect width="560" height="218" fill="white" rx="6"/>
+  <defs>
+    <marker id="en3-ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M2 1L9 5L2 9" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-linecap="round"/>
+    </marker>
+    <marker id="en3-ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M2 1L9 5L2 9" fill="none" stroke="#047857" stroke-width="1.8" stroke-linecap="round"/>
+    </marker>
+  </defs>
+  <!-- Axes only (origin 75,175, scale=50) -->
+  <line x1="55"  y1="175" x2="290" y2="175" stroke="#aaa" stroke-width="1"/>
+  <line x1="75"  y1="190" x2="75"  y2="90"  stroke="#aaa" stroke-width="1"/>
+  <text x="65" y="188" font-size="11" fill="#bbb" font-family="sans-serif" text-anchor="end">O</text>
+  <!-- Degenerate parallelogram = collinear line -->
+  <!-- a1=[2.5,1]→(200,125), a2=[1.25,0.5]→(138,150), all collinear through O -->
+  <line x1="75" y1="175" x2="265" y2="97" stroke="#DC2626" stroke-width="3" stroke-linecap="round" opacity="0.35"/>
+  <!-- Vectors -->
+  <line x1="75" y1="175" x2="196" y2="128" stroke="#1D4ED8" stroke-width="2.5" marker-end="url(#en3-ab)"/>
+  <line x1="75" y1="175" x2="135" y2="152" stroke="#047857" stroke-width="2.5" marker-end="url(#en3-ag)"/>
+  <!-- Labels — all text-anchor=start, no off-screen risk -->
+  <text x="204" y="122" font-size="13" fill="#1D4ED8" font-family="sans-serif" font-weight="600">a₁ = [2.5, 1]</text>
+  <text x="140" y="165" font-size="13" fill="#047857" font-family="sans-serif" font-weight="600">a₂ = [1.25, 0.5]</text>
+  <text x="122" y="100" font-size="12" fill="#DC2626" font-family="sans-serif" font-weight="600">a₂ = ½ · a₁  →  parallel!</text>
+  <text x="155" y="198" font-size="12" fill="#DC2626" font-family="sans-serif" text-anchor="middle">2D plane collapses to a 1D line</text>
+  <!-- Panel divider -->
+  <line x1="308" y1="20" x2="308" y2="200" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- Right panel: calculation -->
+  <text x="320" y="46"  font-size="13" fill="#333" font-family="sans-serif" font-weight="600">det(A) = ad − bc</text>
+  <text x="320" y="70"  font-size="13" fill="#777" font-family="sans-serif">       = (2.5)(0.5) − (1.25)(1)</text>
+  <text x="320" y="94"  font-size="13" fill="#777" font-family="sans-serif">       = 1.25 − 1.25</text>
+  <text x="320" y="118" font-size="14" fill="#DC2626" font-family="sans-serif" font-weight="700">       = 0  →  no inverse</text>
+  <line x1="320" y1="132" x2="548" y2="132" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="320" y="152" font-size="12" fill="#888" font-family="sans-serif">Parallel columns → zero area →</text>
+  <text x="320" y="170" font-size="12" fill="#888" font-family="sans-serif">information lost → not reversible.</text>
+</svg>

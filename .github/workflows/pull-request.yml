@@ -17,7 +17,7 @@ jobs:
   build:
     needs: spell-checker
     runs-on: ubuntu-latest
-    container: ghcr.io/cn-docker/hugo:v0.160.1
+    container: ghcr.io/cn-docker/hugo:v0.162.0
     env:
       ENV: development
     steps:

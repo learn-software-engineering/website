@@ -11,7 +11,7 @@ jobs:
     container: ghcr.io/cn-docker/cspell:10.0.1
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: CSpell
         run: task spell-check
   build:
@@ -22,7 +22,7 @@ jobs:
       ENV: development
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: recursive
       - name: Build with Hugo

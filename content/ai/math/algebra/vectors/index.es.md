@@ -9,7 +9,7 @@ date: 2026-03-06
 tags: ["AI", "Maths", "Algebra", "Vectors"]
 ---
 
-En 2017, investigadores de Google Brain publicaron [**Attention Is All You Need**](https://arxiv.org/abs/1706.03762), el artículo que introdujo la arquitectura Transformer sobre la que hoy se construyen GPT-4, Gemini y prácticamente todos los modelos de lenguaje de vanguardia. En el corazón de esa arquitectura (y de toda red neuronal, sistema de recomendación y modelo de visión por computadora—) vive un objeto engañosamente simple: el **vector**.
+En 2017, investigadores de Google Brain publicaron [**Attention Is All You Need**](https://arxiv.org/abs/1706.03762), el artículo que introdujo la arquitectura Transformer sobre la que hoy se construyen GPT-4, Gemini y prácticamente todos los modelos de lenguaje de vanguardia. En el corazón de esa arquitectura (y de toda red neuronal, sistema de recomendación y modelo de visión por computadora) vive un objeto engañosamente simple: el **vector**.
 
 Cuando un modelo de lenguaje lee la palabra *"banco"*, no ve una cadena de texto. Ve un vector en un espacio de 4096 dimensiones donde *"banco (financiero)"* y *"banco (asiento)"* ocupan regiones mensurablemente distintas. Cuando un motor de búsqueda decide que tu consulta coincide con un documento, está calculando el ángulo entre dos vectores. Cuando una red neuronal aprende, está desplazando vectores por el espacio en respuesta a un gradiente, que es, él mismo, otro vector.
 

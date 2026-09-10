@@ -4,6 +4,7 @@ autocompletado
 bayesianos
 contrastivo
 convolucionales
+covarianza
 curvá
 dejá
 descripto
@@ -14,15 +15,20 @@ explicabilidad
 extensibilidad
 geométricamente
 icónico
+imaginate
+indexación
 inicializador
 interpretabilidad
+invertibilidad
 iteradores
 mapeos
 mensurablemente
 modularidad
 multinivel
+notá
 ocultamiento
 operandos
+pensalo
 pensás
 podés
 recordá
@@ -30,6 +36,7 @@ recursión
 recursivamente
 redirecciona
 renormalizando
+retropropagación
 reusabilidad
 rotarla
 semánticamente

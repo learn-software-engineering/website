@@ -6,7 +6,7 @@ authors:
 description: >
   Master vectors, scalars & vector spaces from scratch. Step-by-step math derivations, runnable Python code, and research-grade insights for aspiring Machine Learning (ML) scientists.
 date: 2026-03-06
-tags: ["AI", "Maths", "Algebra", "Vectors"]
+tags: ["AI", "Maths", "Algebra", "Linear Algebra", "Vectors", "Scalars", "Vector Spaces"]
 ---
 
 In 2017, researchers at Google Brain published [**Attention Is All You Need**](https://arxiv.org/abs/1706.03762), introducing the Transformer architecture that now underlies GPT-4, Gemini, and virtually every state-of-the-art language model. At the heart of that architecture (and of every neural network, recommendation system, and computer vision model) is a deceptively simple object: the **vector**.
@@ -20,13 +20,13 @@ This article builds your working foundation for all of that. By the end, you wil
 - Reason geometrically about high-dimensional data, a non-negotiable skill for Machine Learning research.
 - Read a research paper that uses vector notation without losing the thread.
 
-No fluff, let's start.
+Let's start.
 
 ## Prerequisites
 
 Before reading this article, you should be comfortable with:
 
-- **High school algebra:** variables, functions, the coordinate plane.
+- **High school algebra**: variables, functions, the coordinate plane.
 - **Python basics**: lists, loops, functions, importing libraries.
 - **Basic calculus intuition** (helpful but not required): the idea that a derivative points in the direction of steepest increase.
 

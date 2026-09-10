@@ -1,0 +1,49 @@
+<svg width="100%" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" style="max-width:600px;display:block;margin:0 auto">
+  <rect width="600" height="260" fill="white" rx="6"/>
+  <defs>
+    <marker id="en2-ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M2 1L9 5L2 9" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-linecap="round"/>
+    </marker>
+    <marker id="en2-ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M2 1L9 5L2 9" fill="none" stroke="#047857" stroke-width="1.8" stroke-linecap="round"/>
+    </marker>
+    <marker id="en2-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M2 1L9 5L2 9" fill="none" stroke="#B91C1C" stroke-width="1.8" stroke-linecap="round"/>
+    </marker>
+  </defs>
+  <!-- Panel titles -->
+  <text x="112" y="20" font-size="13" fill="#166534" font-family="sans-serif" text-anchor="middle" font-weight="600">det &gt; 0  (anticlockwise)</text>
+  <text x="432" y="20" font-size="13" fill="#991B1B" font-family="sans-serif" text-anchor="middle" font-weight="600">det &lt; 0  (clockwise)</text>
+  <!-- Divider -->
+  <line x1="295" y1="28" x2="295" y2="245" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4 3"/>
+  <!-- === LEFT PANEL: det>0 ===  origin (68,215), scale=43 -->
+  <!-- a1=[2,1]→(154,172), a2=[0.5,2]→(90,129), sum→(176,86) -->
+  <line x1="50"  y1="215" x2="220" y2="215" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="68"  y1="230" x2="68"  y2="70"  stroke="#e5e7eb" stroke-width="0.8"/>
+  <polygon points="68,215 154,172 176,86 90,129" fill="#D1FAE5" fill-opacity="0.6" stroke="#059669" stroke-width="1.2"/>
+  <line x1="154" y1="172" x2="176" y2="86"  stroke="#047857" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+  <line x1="90"  y1="129" x2="176" y2="86"  stroke="#1D4ED8" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+  <line x1="68"  y1="215" x2="150" y2="175" stroke="#1D4ED8" stroke-width="2.5" marker-end="url(#en2-ab)"/>
+  <line x1="68"  y1="215" x2="88"  y2="133" stroke="#047857" stroke-width="2.5" marker-end="url(#en2-ag)"/>
+  <!-- Rotation symbol near origin -->
+  <text x="88" y="203" font-size="18" fill="#166534" font-family="sans-serif">↺</text>
+  <!-- Labels (text-anchor=start, no off-screen risk) -->
+  <text x="157" y="170" font-size="12" fill="#1D4ED8" font-family="sans-serif" font-weight="600">① a₁</text>
+  <text x="94"  y="122" font-size="12" fill="#047857" font-family="sans-serif" font-weight="600">② a₂</text>
+  <text x="114" y="153" font-size="11" fill="#166534" font-family="sans-serif" text-anchor="middle">area = +3.5</text>
+  <text x="112" y="244" font-size="11" fill="#555" font-family="sans-serif" text-anchor="middle">a₁ then a₂: left turn → positive</text>
+  <!-- === RIGHT PANEL: det<0 ===  origin (372,215), scale=43 -->
+  <!-- a1=[0.5,2] drawn FIRST (blue)→(394,129), a2=[2,1] drawn SECOND (red)→(458,172), sum→(480,86) -->
+  <line x1="354" y1="215" x2="524" y2="215" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="372" y1="230" x2="372" y2="70"  stroke="#e5e7eb" stroke-width="0.8"/>
+  <polygon points="372,215 394,129 480,86 458,172" fill="#FEE2E2" fill-opacity="0.6" stroke="#DC2626" stroke-width="1.2"/>
+  <line x1="394" y1="129" x2="480" y2="86"  stroke="#B91C1C" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+  <line x1="458" y1="172" x2="480" y2="86"  stroke="#1D4ED8" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+  <line x1="372" y1="215" x2="392" y2="133" stroke="#1D4ED8" stroke-width="2.5" marker-end="url(#en2-ab)"/>
+  <line x1="372" y1="215" x2="454" y2="175" stroke="#B91C1C" stroke-width="2.5" marker-end="url(#en2-ar)"/>
+  <text x="392" y="203" font-size="18" fill="#991B1B" font-family="sans-serif">↻</text>
+  <text x="397" y="122" font-size="12" fill="#1D4ED8" font-family="sans-serif" font-weight="600">① a₁</text>
+  <text x="461" y="170" font-size="12" fill="#B91C1C" font-family="sans-serif" font-weight="600">② a₂</text>
+  <text x="424" y="153" font-size="11" fill="#991B1B" font-family="sans-serif" text-anchor="middle">area = −3.5</text>
+  <text x="432" y="244" font-size="11" fill="#555" font-family="sans-serif" text-anchor="middle">a₁ then a₂: right turn → negative</text>
+</svg>

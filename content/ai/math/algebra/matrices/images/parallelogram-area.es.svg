@@ -1,0 +1,133 @@
+<svg width="100%" viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg" style="max-width:560px;display:block;margin:0 auto">
+  <rect width="560" height="300" fill="white" rx="6"/>
+  <defs>
+    <marker id="es-pf-ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M2 1L9 5L2 9" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-linecap="round"/>
+    </marker>
+    <marker id="es-pf-ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M2 1L9 5L2 9" fill="none" stroke="#047857" stroke-width="1.8" stroke-linecap="round"/>
+    </marker>
+  </defs>
+
+  <!--
+    a=2, b=0.5, c=1, d=2  →  det = ad−bc = 3.5
+    Escala 60px/unidad, origen O en pantalla (70,260).
+    O=(70,260)  A=(190,200)  B=(100,140)  C=(220,80)
+    Esquinas de ángulo recto:
+      ra1=(190,260)  [ángulo recto de T1, en borde inferior del bbox]
+      ra2=(220,200)  [ángulo recto de T2, en borde derecho del bbox]
+      ra3=(70,140)   [ángulo recto de T3, en borde izquierdo del bbox]
+      ra4=(100,80)   [ángulo recto de T4, en borde superior del bbox]
+    6 piezas externas (las hipotenusas son aristas del paralelogramo):
+      T1 ½ac  : O  ra1  A      — hipotenusa = arista O→A
+      R1 bc   : ra1 (220,260) ra2 A   — rectángulo inferior-derecho
+      T2 ½bd  : A  ra2  C      — hipotenusa = arista A→C
+      T3 ½bd  : O  ra3  B      — hipotenusa = arista O→B
+      R2 bc   : ra3 B  ra4 (70,80)   — rectángulo superior-izquierdo
+      T4 ½ac  : B  ra4  C      — hipotenusa = arista B→C
+  -->
+
+  <!-- ── 6 PIEZAS EXTERNAS (renderizadas antes del paralelogramo) ─── -->
+
+  <!-- T1  ½ac (azul): ángulo recto en (190,260), hipotenusa = arista O→A -->
+  <polygon points="70,260 190,260 190,200" fill="#BFDBFE" stroke="#93C5FD" stroke-width="0.8"/>
+
+  <!-- R1  bc (verde): rectángulo inferior-derecho -->
+  <polygon points="190,260 220,260 220,200 190,200" fill="#A7F3D0" stroke="#6EE7B7" stroke-width="0.8"/>
+
+  <!-- T2  ½bd (ámbar): ángulo recto en (220,200), hipotenusa = arista A→C -->
+  <polygon points="190,200 220,200 220,80" fill="#FDE68A" stroke="#FCD34D" stroke-width="0.8"/>
+
+  <!-- T3  ½bd (ámbar): ángulo recto en (70,140), hipotenusa = arista O→B -->
+  <polygon points="70,260 70,140 100,140" fill="#FDE68A" stroke="#FCD34D" stroke-width="0.8"/>
+
+  <!-- R2  bc (verde): rectángulo superior-izquierdo -->
+  <polygon points="70,140 100,140 100,80 70,80" fill="#A7F3D0" stroke="#6EE7B7" stroke-width="0.8"/>
+
+  <!-- T4  ½ac (azul): ángulo recto en (100,80), hipotenusa = arista B→C -->
+  <polygon points="100,140 100,80 220,80" fill="#BFDBFE" stroke="#93C5FD" stroke-width="0.8"/>
+
+  <!-- ── PARALELOGRAMO ─────────────────────────────────────────────── -->
+  <polygon points="70,260 190,200 220,80 100,140" fill="#FEF9C3" stroke="#D97706" stroke-width="1.8"/>
+
+  <!-- ── RECTÁNGULO DELIMITADOR (punteado) ────────────────────────── -->
+  <rect x="70" y="80" width="150" height="180" fill="none" stroke="#9CA3AF" stroke-width="1.2" stroke-dasharray="5 3"/>
+
+  <!-- ── MARCADORES DE ÁNGULO RECTO (cuadrados de 8 px) ───────────── -->
+  <!-- T1 en (190,260): brazos hacia izquierda y arriba -->
+  <path d="M 182,260 L 182,252 L 190,252" fill="none" stroke="#6B7280" stroke-width="1"/>
+  <!-- T2 en (220,200): brazos hacia izquierda y arriba -->
+  <path d="M 212,200 L 212,192 L 220,192" fill="none" stroke="#6B7280" stroke-width="1"/>
+  <!-- T3 en (70,140): brazos hacia abajo y derecha -->
+  <path d="M 70,148 L 78,148 L 78,140" fill="none" stroke="#6B7280" stroke-width="1"/>
+  <!-- T4 en (100,80): brazos hacia abajo y derecha -->
+  <path d="M 100,88 L 108,88 L 108,80" fill="none" stroke="#6B7280" stroke-width="1"/>
+
+  <!-- ── VECTORES (se detienen ~6px antes para las puntas de flecha) ─ -->
+  <line x1="70" y1="260" x2="185" y2="203" stroke="#1D4ED8" stroke-width="2.5" marker-end="url(#es-pf-ab)"/>
+  <line x1="70" y1="260" x2="97"  y2="144" stroke="#047857" stroke-width="2.5" marker-end="url(#es-pf-ag)"/>
+
+  <!-- ── ETIQUETAS DE VÉRTICES ──────────────────────────────────────── -->
+  <text x="63"  y="273" font-size="12" fill="#374151" font-family="sans-serif" text-anchor="end"   font-weight="700">O</text>
+  <text x="194" y="197" font-size="12" fill="#1D4ED8" font-family="sans-serif" font-weight="700">A(a,c)</text>
+  <text x="104" y="135" font-size="12" fill="#047857" font-family="sans-serif" font-weight="700">B(b,d)</text>
+  <text x="222" y="78"  font-size="11" fill="#B45309" font-family="sans-serif" font-weight="700">C</text>
+
+  <!-- ── ETIQUETAS DE ÁREA en cada pieza ───────────────────────────── -->
+  <!-- T1 centroide (150,240) -->
+  <text x="150" y="243" font-size="11" fill="#1E40AF" font-family="sans-serif" text-anchor="middle" font-weight="700">½ac</text>
+  <!-- R1 centroide (205,230) -->
+  <text x="205" y="234" font-size="10" fill="#065F46" font-family="sans-serif" text-anchor="middle" font-weight="700">bc</text>
+  <!-- T2 centroide (210,160) — triángulo estrecho, fuente pequeña -->
+  <text x="212" y="162" font-size="9"  fill="#92400E" font-family="sans-serif" text-anchor="middle" font-weight="700">½bd</text>
+  <!-- T3 centroide (80,180) — triángulo estrecho, fuente pequeña -->
+  <text x="80"  y="183" font-size="9"  fill="#92400E" font-family="sans-serif" text-anchor="middle" font-weight="700">½bd</text>
+  <!-- R2 centroide (85,110) -->
+  <text x="85"  y="113" font-size="10" fill="#065F46" font-family="sans-serif" text-anchor="middle" font-weight="700">bc</text>
+  <!-- T4 centroide (140,100) -->
+  <text x="140" y="103" font-size="11" fill="#1E40AF" font-family="sans-serif" text-anchor="middle" font-weight="700">½ac</text>
+  <!-- Paralelogramo centroide (145,170) -->
+  <text x="145" y="166" font-size="11" fill="#92400E" font-family="sans-serif" text-anchor="middle" font-weight="700">S</text>
+  <text x="145" y="181" font-size="10" fill="#92400E" font-family="sans-serif" text-anchor="middle">=ad−bc</text>
+
+  <!-- ── ANOTACIONES DE DIMENSIÓN ────────────────────────────────── -->
+  <!-- Inferior: a+b -->
+  <line x1="70"  y1="278" x2="220" y2="278" stroke="#9CA3AF" stroke-width="0.8"/>
+  <line x1="70"  y1="275" x2="70"  y2="281" stroke="#9CA3AF" stroke-width="1"/>
+  <line x1="220" y1="275" x2="220" y2="281" stroke="#9CA3AF" stroke-width="1"/>
+  <text x="145" y="291" font-size="11" fill="#9CA3AF" font-family="sans-serif" text-anchor="middle">a + b</text>
+  <!-- Derecha: c+d -->
+  <line x1="234" y1="80" x2="234" y2="260" stroke="#9CA3AF" stroke-width="0.8"/>
+  <line x1="231" y1="80"  x2="237" y2="80"  stroke="#9CA3AF" stroke-width="1"/>
+  <line x1="231" y1="260" x2="237" y2="260" stroke="#9CA3AF" stroke-width="1"/>
+  <text x="248" y="173" font-size="11" fill="#9CA3AF" font-family="sans-serif" text-anchor="start" dominant-baseline="central">c + d</text>
+
+  <!-- ── DIVISOR DE PANEL ─────────────────────────────────────────── -->
+  <line x1="276" y1="15" x2="276" y2="290" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- ── PANEL DERECHO: derivación ─────────────────────────────────── -->
+  <text x="290" y="34"  font-size="12" fill="#374151" font-family="sans-serif" font-weight="700">S  =  bbox  −  6 piezas externas</text>
+  <text x="290" y="55"  font-size="11" fill="#374151" font-family="sans-serif">S  =  (a+b)(c+d) − ac − bd − 2bc</text>
+  <text x="290" y="73"  font-size="11" fill="#6B7280" font-family="sans-serif">   =  ac+ad+bc+bd − ac − bd − 2bc</text>
+  <text x="290" y="93"  font-size="13" fill="#D97706" font-family="sans-serif" font-weight="700">   =  ad − bc  ✓</text>
+
+  <line x1="290" y1="106" x2="548" y2="106" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="290" y="123" font-size="11" fill="#374151" font-family="sans-serif" font-weight="700">6 piezas externas:</text>
+
+  <!-- Triángulos ½ac (azul) -->
+  <polygon points="290,134 310,134 310,148" fill="#BFDBFE" stroke="#93C5FD" stroke-width="0.8"/>
+  <text x="316" y="147" font-size="11" fill="#1E40AF" font-family="sans-serif">½ac  ×2  =  ac</text>
+
+  <!-- Rectángulos bc (verde) -->
+  <rect x="290" y="158" width="20" height="14" rx="1" fill="#A7F3D0" stroke="#6EE7B7" stroke-width="0.8"/>
+  <text x="316" y="170" font-size="11" fill="#065F46" font-family="sans-serif">bc  ×2  =  2bc</text>
+
+  <!-- Triángulos ½bd (ámbar) -->
+  <polygon points="290,181 290,195 310,195" fill="#FDE68A" stroke="#FCD34D" stroke-width="0.8"/>
+  <text x="316" y="194" font-size="11" fill="#92400E" font-family="sans-serif">½bd  ×2  =  bd</text>
+
+  <line x1="290" y1="208" x2="548" y2="208" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="290" y="225" font-size="11" fill="#6B7280"  font-family="sans-serif">total externo  =  ac + 2bc + bd</text>
+  <text x="290" y="248" font-size="11" fill="#374151"  font-family="sans-serif" font-weight="600">∴  S  =  (a+b)(c+d) − (ac + 2bc + bd)</text>
+  <text x="305" y="270" font-size="13" fill="#D97706"  font-family="sans-serif" font-weight="700">=  ad − bc</text>
+</svg>

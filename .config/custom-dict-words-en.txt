@@ -1,4 +1,5 @@
 anticommutativity
 explainability
+invertibility
 regulariser
 sidelining

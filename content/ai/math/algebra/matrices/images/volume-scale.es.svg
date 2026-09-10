@@ -1,0 +1,74 @@
+<svg width="100%" viewBox="0 0 620 282" xmlns="http://www.w3.org/2000/svg" style="max-width:620px;display:block;margin:0 auto">
+  <rect width="620" height="282" fill="white" rx="6"/>
+  <defs>
+    <marker id="es1-ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M2 1L9 5L2 9" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-linecap="round"/>
+    </marker>
+    <marker id="es1-ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+      <path d="M2 1L9 5L2 9" fill="none" stroke="#047857" stroke-width="1.8" stroke-linecap="round"/>
+    </marker>
+  </defs>
+  <!-- Grid: origen (75,252), escala=55 -->
+  <line x1="75"  y1="30"  x2="75"  y2="260" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="130" y1="30"  x2="130" y2="260" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="185" y1="30"  x2="185" y2="260" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="240" y1="30"  x2="240" y2="260" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="55"  y1="252" x2="265" y2="252" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="55"  y1="197" x2="265" y2="197" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="55"  y1="142" x2="265" y2="142" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="55"  y1="87"  x2="265" y2="87"  stroke="#e5e7eb" stroke-width="0.8"/>
+  <!-- Ejes -->
+  <line x1="55"  y1="252" x2="265" y2="252" stroke="#aaa" stroke-width="1.2"/>
+  <line x1="75"  y1="265" x2="75"  y2="22"  stroke="#aaa" stroke-width="1.2"/>
+  <text x="268" y="256" font-size="13" fill="#aaa" font-family="sans-serif">x</text>
+  <text x="71"  y="17"  font-size="13" fill="#aaa" font-family="sans-serif" text-anchor="middle">y</text>
+  <text x="65"  y="265" font-size="11" fill="#bbb" font-family="sans-serif" text-anchor="end">O</text>
+  <!-- Marcas de eje -->
+  <text x="130" y="270" font-size="10" fill="#ccc" font-family="sans-serif" text-anchor="middle">1</text>
+  <text x="185" y="270" font-size="10" fill="#ccc" font-family="sans-serif" text-anchor="middle">2</text>
+  <text x="240" y="270" font-size="10" fill="#ccc" font-family="sans-serif" text-anchor="middle">3</text>
+  <text x="63"  y="200" font-size="10" fill="#ccc" font-family="sans-serif" text-anchor="end">1</text>
+  <text x="63"  y="145" font-size="10" fill="#ccc" font-family="sans-serif" text-anchor="end">2</text>
+  <text x="63"  y="90"  font-size="10" fill="#ccc" font-family="sans-serif" text-anchor="end">3</text>
+  <!-- Cuadrado unitario: (75,252),(130,252),(130,197),(75,197) -->
+  <polygon points="75,252 130,252 130,197 75,197" fill="#DBEAFE" fill-opacity="0.5" stroke="#93C5FD" stroke-width="0.8" stroke-dasharray="3 2"/>
+  <text x="102" y="230" font-size="9" fill="#60A5FA" font-family="sans-serif" text-anchor="middle">área=1</text>
+  <!-- Paralelogramo: O(75,252), a1(185,197), a1+a2(213,87), a2(103,142) -->
+  <polygon points="75,252 185,197 213,87 103,142" fill="#FEF3C7" stroke="#D97706" stroke-width="1.2"/>
+  <line x1="185" y1="197" x2="213" y2="87"  stroke="#047857" stroke-width="1" stroke-dasharray="5 3" opacity="0.6"/>
+  <line x1="103" y1="142" x2="213" y2="87"  stroke="#1D4ED8" stroke-width="1" stroke-dasharray="5 3" opacity="0.6"/>
+  <!-- Vectores -->
+  <line x1="75" y1="252" x2="181" y2="200" stroke="#1D4ED8" stroke-width="2.5" marker-end="url(#es1-ab)"/>
+  <line x1="75" y1="252" x2="101" y2="147" stroke="#047857" stroke-width="2.5" marker-end="url(#es1-ag)"/>
+  <!-- Etiqueta de área -->
+  <text x="139" y="172" font-size="12" fill="#92400E" font-family="sans-serif" text-anchor="middle" font-weight="600">área = 3.5</text>
+  <!-- a1+a2 -->
+  <circle cx="213" cy="87" r="2.5" fill="#B45309"/>
+  <text x="218" y="82" font-size="11" fill="#B45309" font-family="sans-serif">a₁+a₂</text>
+  <!-- Etiquetas de vectores (text-anchor=start, sin riesgo de salirse) -->
+  <text x="190" y="194" font-size="13" fill="#1D4ED8" font-family="sans-serif" font-weight="600">a₁ = [2, 1]</text>
+  <text x="108" y="133" font-size="13" fill="#047857" font-family="sans-serif" font-weight="600">a₂ = [0.5, 2]</text>
+  <!-- Divisor de panel -->
+  <line x1="300" y1="15" x2="300" y2="275" stroke="#e5e7eb" stroke-width="1"/>
+  <!-- Panel derecho: título -->
+  <text x="460" y="26" font-size="12" fill="#6b7280" font-family="sans-serif" text-anchor="middle">Las columnas de A se convierten en vectores</text>
+  <!-- Corchetes de la matriz (líneas) -->
+  <line x1="322" y1="58"  x2="322" y2="128" stroke="#555" stroke-width="2"/>
+  <line x1="322" y1="58"  x2="334" y2="58"  stroke="#555" stroke-width="2"/>
+  <line x1="322" y1="128" x2="334" y2="128" stroke="#555" stroke-width="2"/>
+  <line x1="492" y1="58"  x2="492" y2="128" stroke="#555" stroke-width="2"/>
+  <line x1="492" y1="58"  x2="480" y2="58"  stroke="#555" stroke-width="2"/>
+  <line x1="492" y1="128" x2="480" y2="128" stroke="#555" stroke-width="2"/>
+  <!-- Columna 1 (azul) x=375; Columna 2 (verde) x=450 -->
+  <text x="375" y="84"  font-size="16" fill="#1D4ED8" font-family="sans-serif" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="375" y="110" font-size="16" fill="#1D4ED8" font-family="sans-serif" font-weight="700" text-anchor="middle" dominant-baseline="central">1</text>
+  <text x="450" y="84"  font-size="16" fill="#047857" font-family="sans-serif" font-weight="700" text-anchor="middle" dominant-baseline="central">0.5</text>
+  <text x="450" y="110" font-size="16" fill="#047857" font-family="sans-serif" font-weight="700" text-anchor="middle" dominant-baseline="central">2</text>
+  <text x="375" y="143" font-size="11" fill="#1D4ED8" font-family="sans-serif" text-anchor="middle">a₁</text>
+  <text x="450" y="143" font-size="11" fill="#047857" font-family="sans-serif" text-anchor="middle">a₂</text>
+  <!-- Divisor y fórmula -->
+  <line x1="313" y1="156" x2="608" y2="156" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="322" y="176" font-size="13" fill="#222" font-family="sans-serif">det(A)  =  ad − bc</text>
+  <text x="322" y="200" font-size="13" fill="#777" font-family="sans-serif">        =  (2)(2) − (0.5)(1)</text>
+  <text x="322" y="224" font-size="14" fill="#D97706" font-family="sans-serif" font-weight="700">        =  3.5  ✓</text>
+</svg>
